@@ -6,7 +6,6 @@ Template Name: SolidWize Homepage
 
 <?php get_header(); ?>
 <div class="header-background-image">
-	<div id="header-background-Footer"></div>
 	<div class="CTAsection">
 		<h1>Design Better Products, Faster.</h1>
 		<h2>Online SolidWorks Training available 24/7.</h2>		
@@ -14,6 +13,8 @@ Template Name: SolidWize Homepage
 	<a href="<?php bloginfo('url'); ?>/training/" class="btn btn-custom btn-large">Check out our training</a>
 	<img class="homeimage" src="<?php echo get_stylesheet_directory_uri(); ?>/images/solidworkshomewindows.png" >
 </div>
+<div id="header-background-Footer"></div>
+
 			<div id="content" class="clearfix row-fluid">
 				<div id="main" class="clearfix homepage rawr" role="main">
 				<div class="homesec1">
@@ -22,7 +23,7 @@ Template Name: SolidWize Homepage
 											
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/playvideo.jpg">
 						<h3>First time here?</h3>
-						<p>Watch the video to see what we're all about.</p>  
+						<p>Watch this video to see what we're all about.</p>  
 					</div>
 				</a>
 				

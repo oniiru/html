@@ -43,7 +43,6 @@
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/bootstrap.less">
-  		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/responsive.less">
   		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.bxslider.css">
 		
 		
@@ -110,12 +109,7 @@
 								<div class="solidlogo">
 								<a href="<?php bloginfo('url'); ?>"><span>S</span>olid<span>W</span>ize</a>
 								</div>
-								
-								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-								</a>
+							
 								<?php if (!is_user_logged_in()) { ?>
 								<div class="signinbuttons">
 									<div class="btn-group">
@@ -155,7 +149,7 @@
 								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom">Upgrade Account</a>
 							</div>
 							<?php } ?>
-								<div class="nav-collapse">
+								<div class="nav-menusandsuch">
 									<?php bones_main_nav2(); // Adjust using Menus in Wordpress Admin ?>
 								</div>
 								
