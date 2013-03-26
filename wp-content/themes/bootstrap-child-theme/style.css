@@ -2290,7 +2290,7 @@ margin-top: -6px;
 
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
+@media only screen and (min-width: 768px) and (max-width: 839px) {}
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
@@ -2301,13 +2301,23 @@ margin-top: -6px;
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 839px) {
+
+	.CTAsection h1 {
+	font-size: 32px !important;
+	margin-bottom: -5px;
+	
+	}
+	.CTAsection h2 {
+	font-size: 22px;
+}
+	
 
 	
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 480px) {	
+@media only screen and (max-width: 479px) {	
 	.videohome {
 	width: 200px;
 	float:none;
