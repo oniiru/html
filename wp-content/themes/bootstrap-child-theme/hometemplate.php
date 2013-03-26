@@ -29,17 +29,17 @@ Template Name: SolidWize Homepage
 				
 				
 				<div id="videomodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">	
-				<div class="modal-header"></div><div class="modal-body"></div>	<div class="modal-footer"></div></div>		
+				<div class="modal-header"></div><div class="modal-body modalvid"></div>	<div class="modal-footer"></div></div>		
 	
 
 				<script>
-				$(document).ready(function() {
-				$('#videomodal').on('show', function () {
-				  $('div.modal-body').html('<iframe src="http://player.vimeo.com/video/58140022?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="700" height="394" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');  
+				jQuery(document).ready(function() {
+				jQuery('#videomodal').on('show', function () {
+				  jQuery('div.modalvid').html('<iframe src="http://player.vimeo.com/video/58140022?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="700" height="394" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');  
 				});
 
-				$('#videomodal').on('hide', function () {
-				  $('div.modal-body').html('&nbsp;');  
+				jQuery('#videomodal').on('hide', function () {
+				  jQuery('div.modalvid').html('&nbsp;');  
 				});
 
 				});
