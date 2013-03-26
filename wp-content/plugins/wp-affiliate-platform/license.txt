@@ -1,0 +1,24 @@
+WP Affiliate Platform (Multi Site License)
+End User License Agreement
+Copyright, Tips and Tricks HQ (http://www.tipsandtricks-hq.com/)
+All rights reserved.
+
+By using the software, you agree to be bound by the terms of this license. If you have any questions 
+about the terms below, please contact tipsandtricks-hq.com for clarification.
+
+
+1.) You must have paid tipsandtricks-hq.com to use the software.
+
+2.) The copyright holder retains all intellectual property rights to the software.
+
+3.) You are granted the right to install the software on as many websites as you want, limited only to websites you own.
+
+4.) You are granted the right to freely modify the software for your own personal use.
+
+5.) You may not use code snippets from the software elsewhere.
+
+6.) You may not re-distribute (either freely, or for any kind of compensation) the software, 
+    in whole or in part, to any 3rd party.
+
+7.) You expressly acknowledge and agree that use of the software is at your sole risk. No 
+    warrantly is provided, either express or implied.

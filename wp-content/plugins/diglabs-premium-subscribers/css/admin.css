@@ -1,0 +1,181 @@
+/*  ADMIN STYLES */
+
+/*
+#container{
+	overflow: auto;
+}
+#plans {
+	float: left;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+}
+#plans ul {
+	list-style: none;
+	border: 1px solid #999;
+	border-radius: 5px;
+	height: 400px;
+	overflow: scroll;
+}
+#plans ul li {
+	margin: 0;
+	padding: 10px 5px;
+	border-bottom: 1px solid #eee;
+}
+#plans ul li:first-child {
+	border-radius: 5px 5px 0 0;
+}
+#plans ul li a {
+	color: #333;
+	text-decoration: none;
+	display: block;
+}
+#plans ul li:hover {
+	background-color: #eeffee;
+}
+
+#form {
+	width: 500px;
+	float: left;
+	margin: 0 0 0 10px;
+	padding: 0;
+}
+
+#plan_list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+
+#plan_list li { 
+	cursor: move;
+	margin: 5px 0; 
+	padding: 5px; 
+	border: 1px solid #eee;
+	border-radius: 3px;
+	background-color: #fafafa;
+	width: 200px;
+	display: block;
+	position: relative;
+}
+#plan_list li span.delete { 
+	position: absolute; 
+	top: -2px;
+	left: 165px;
+	color: #ff3333;
+}
+#plan_list li span.delete:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+*/
+
+.area {
+	margin: 0 0 20px 0;
+	padding: 20px;
+	background-color: #f6f6f6;
+}
+.section {
+	overflow: auto;
+	margin: 0 0 22px 0;
+}
+.section h4 {
+	overflow: auto;
+	position: relative;
+}
+.section h4 span.edit {
+	float: right;
+	color:#999;
+	cursor: pointer;
+	font-weight: normal;
+}
+.section h4 span.edit:hover{
+	color:#000;
+	text-decoration: underline;
+}
+.section dl {
+	margin: 0;
+	padding: 0;
+}
+.section dt {
+	display: block;
+	float: left;
+	width: 100px;
+	padding: 0 15px 0 0;
+	color: #888;
+	text-align: right;
+	line-height: 22px;
+}
+.section dd {
+	color: #000;
+	margin-left: 90px;
+	padding-bottom: 5px;
+	line-height: 22px;
+	min-height: 22px;
+}
+.form {
+	display: none;
+	background-color: #f6f6f6;
+	overflow: auto;
+	margin: 0 0 10px 0;
+	padding: 15px;
+	border: 1px solid #dadada;
+	border-top: 1px solid #bbb;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;		
+}
+.form input {
+	background-color: #ffffff;
+}
+.form input:focus {
+	color: #000;
+}
+.container {
+	padding: 15px;
+	font-size: 13px;
+	line-height: 13px;
+	background-color: #fff;
+	border: 1px solid #dadada;
+	border-top: 1px solid #bbb;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;	
+}
+.gravatar {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 86px;
+}
+.username {
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: bold;
+}
+.expiration {
+	font-size: 18px;
+	color: #999;
+}
+
+#dlps_validation_error {
+	display: none;
+	margin: 0 0 10px 0;
+	padding: 3px 5px;
+	background-color: #ffaaaa;
+	border: 1px solid #ff6666;
+}
+
+
+/* ------- ADMIN PLANS --------- */
+.recurring {
+	display: none;
+}
+.deactive td {
+	color: #888;
+	text-decoration: line-through;
+}
+td.actions {
+	text-decoration: none;
+}
+td.actions a {
+	text-decoration: underline;
+}

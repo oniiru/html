@@ -1,0 +1,61 @@
+.login{margin:0
+auto;padding:0px;width:320px}.login
+p.error{padding:5px;border:1px
+solid #c00;background-color:#ffebe8;color:#333}.login
+p.message{padding:5px;border:1px
+solid #e6db55;background-color:#ffffe0;color:#333}.login form
+label{Font-size:120%;display:inline;margin:0px
+0px}.login form p.forgetmenot
+label{display:inline;margin:0
+auto}.login
+input{margin:5px
+10px}.mu_register
+.hint{font-size:12px;margin-bottom:10px;display:block}.mu_register
+label.checkbox{display:inline}#pass-strength-result{border-style:solid;border-width:1px;margin:12px
+5px 5px 1px;padding:3px
+5px;text-align:center;width:200px}#pass-strength-result.strong,#pass-strength-result.short{font-weight:bold}#pass-strength-result{background-color:#eee;border-color:#ddd !important}#pass-strength-result.bad{background-color:#ffb78c;border-color:#ff853c !important}#pass-strength-result.good{background-color:#ffec8b;border-color:#fc0 !important}#pass-strength-result.short{background-color:#ffa0a0;border-color:#f04040 !important}#pass-strength-result.strong{background-color:#c3ff88;border-color:#8dff1c !important}#theme-my-login
+#loginform{margin:0
+auto}#theme-my-login
+p{font-size:14px;font-weight:bold;margin:0
+0 5px}#theme-my-login
+input{}#theme-my-login #user_login, #theme-my-login #user_pass, #theme-my-login
+#user_email{width:97%;font-size:14px;height:28px;margin:5px
+0;padding:2px}#theme-my-login
+#rememberme{font-size:12px !important;font-weight:normal;margin:0}#theme-my-login
+.submit{margin:0
+0 10px}#theme-my-login #wp-submit , #theme-my-login .button-primary{background-color:#005186;border:medium none;color:#FFF;font-size:16px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;padding:8px
+20px;margin:0px
+0 0}#theme-my-login #wp-submit:hover, #theme-my-login .button-primary:hover{cursor:pointer;background-color:#266b98}#custom_action_links{font-weight:normal !important}.profile{width:100% !important}form#your-profile label,th{font-size:14px}#theme-my-login
+.message{margin:0
+0 20px;text-align:center}#theme-my-login #your-profile
+h3{border-bottom:1px solid #e1e1e1;margin:0
+0 10px;padding:0
+0 10px}#theme-my-login .form-table{margin:0
+0 20px}#theme-my-login #your-profile
+input{font-size:1.2em}.entry-title
+span.locked{background:url(/wp-content/plugins/diglabs-premium-subscribers/images/locked.png) no-repeat;padding:0
+0 0 50px;min-height:30px;display:block}.entry-title
+span.unlocked{background:url(/wp-content/plugins/diglabs-premium-subscribers/images/unlocked.png) no-repeat;padding:0
+0 0 50px;min-height:30px;display:block}.dlps_container
+.framed{margin:0
+0 10px 0;padding:15px;border:1px
+solid #dadada;border-top:1px solid #bbb;-o-border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}.dlps_container
+.info{background-color:#efe}.dlps_container
+.error{background-color:#fee}.dlps_container input.button-primary{font-size:13px !important;line-height:16px !important;padding:3px
+10px !important;float:right;border-color:#298cba;font-weight:bold;color:#fff !important;background-color:#21759b;text-shadow:rgba(0, 0, 0, 0.3) 0 -1px 0;cursor:pointer;border-width:1px;border-style:solid;-webkit-border-radius:11px;-moz-border-radius:11px;border-radius:11px;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}.dlps_container input.button-primary:hover{border-color:#333}#dlps_register,#dlps_login{width:320px;margin:0
+auto}#dlps_register form,
+#dlps_login
+form{padding:26px
+24px 46px;font-weight:normal;background-color:#fff;border:1px
+solid #e5e5e5;-o-border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-shadow:rgba(200,200,200,0.7) 0 4px 10px -1px;-webkit-box-shadow:rgba(200,200,200,0.7) 0 4px 10px -1px;box-shadow:rgba(200,200,200,0.7) 0 4px 10px -1px}#dlps_register form p,
+#dlps_login form
+p{margin-bottom:0}#dlps_register label,
+#dlps_login
+label{color:#777;font-size:14px;display:block}#dlps_register .input,
+#dlps_login
+.input{font-weight:200;font-size:24px;line-height:30px;height:30px;width:100%;padding:3px;margin:2px
+6px 16px 0;border:1px
+solid #e5e5e5;background-color:#fbfbfb;outline:none;-moz-box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2);-webkit-box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2);box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2)}#dlps_login p.remember
+label{display:inline !important}#dlps_register input:focus,
+#dlps_login input:focus{border:1px
+solid #aaa}

@@ -1,0 +1,183 @@
+/* Setup page */
+#stripe-payments-admin-wrap ol {
+	list-style: decimal;
+}
+
+#stripe-payments-admin-wrap li {
+	overflow: auto;
+}
+
+#stripe-payments-admin-wrap label {
+	width: 200px;
+	display: inline-block;
+	text-align: right;
+}
+
+#stripe-payments-admin-wrap .instructions {
+	margin: 10px;
+	padding: 10px;
+	background-color: #eeeeff;
+	border: 1px solid #6666ff;
+}
+#stripe-payments-admin-wrap .instructions ul {
+	margin: 10px 20px;
+	list-style-type: circle;
+}
+#stripe-payments-admin-wrap .instructions ul li {
+	margin-bottom: 5px;
+}
+
+/* Pagination */
+.pagination {
+	clear:both;
+	padding:20px 0;
+	position:relative;
+	font-size:11px;
+	line-height:13px;
+}
+
+.pagination span, .pagination a {
+	display:block;
+	float:left;
+	margin: 2px 2px 2px 0;
+	padding:6px 9px 5px 9px;
+	text-decoration:none;
+	width:auto;
+	color:#fff;
+	background: #555;
+}
+
+.pagination a:hover{
+	color:#fff;
+	background: #3279BB;
+}
+
+.pagination .current{
+	padding:6px 9px 5px 9px;
+	background: #3279BB;
+	color:#fff;
+}
+
+/* Customer information */
+.area {
+	margin: 0 0 20px 0;
+	padding: 20px;
+	background-color: #f6f6f6;
+}
+.section {
+	overflow: auto;
+}
+.section h4 {
+	overflow: auto;
+	position: relative;
+}
+.section h4 span.add {
+	float: right;
+	color:#999;
+	cursor: pointer;
+	font-weight: normal;
+}
+.section h4 span.add:hover{
+	color:#000;
+	text-decoration: underline;
+}
+.section dl {
+	margin: 0;
+	padding: 0;
+}
+.section dt {
+	display: block;
+	float: left;
+	width: 75px;
+	padding: 0 15px 0 0;
+	color: #888;
+	text-align: right;
+	line-height: 22px;
+}
+.section dd {
+	color: #000;
+	margin-left: 90px;
+	padding-bottom: 5px;
+	line-height: 22px;
+}
+.form {
+	display: none;
+	margin: 0 0 10px 0;
+	padding: 15px;
+	border: 1px solid #dadada;
+	border-top: 1px solid #bbb;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;		
+}
+.container {
+	padding: 15px;
+	font-size: 13px;
+	line-height: 13px;
+	background-color: #fff;
+	border: 1px solid #dadada;
+	border-top: 1px solid #bbb;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;	
+}
+.container ul {
+
+}
+.container li {
+	overflow: auto;
+	padding: 3px 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+.container li span {
+	display: inline-block;
+}
+.container li span.amount {
+	width: 70px;
+}
+.container li span.payid {
+	width: 160px;
+}
+.container li span.date {
+	width: 160px;
+}
+.title {
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: bold;
+}
+.refund {
+	float: right;
+}
+.gravatar {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 86px;
+}
+.gravatar img {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.gravatar span.mode {
+	padding: 1px 5px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: #ffff44;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+}
+.id {
+	font-size: 18px;
+	color: #999;
+}
+

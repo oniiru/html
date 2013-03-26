@@ -1,0 +1,58 @@
+<script src="<?php echo get_bloginfo('stylesheet_directory');?>/js/fileuploader.js" type="text/javascript"></script>
+<script>
+	var uploader = new qq.FileUploader({                 element: document.getElementById('file-uploader'),						 multiple: true,                action: '<?php echo get_bloginfo('stylesheet_directory');?>/js/php.php',               onSubmit: function(id, fileName){			   jQuery('.qq-upload-list li').remove();			  },			   onComplete: function(id, fileName, responseJSON){				 s=jQuery.parseJSON(responseJSON);			   jQuery('#fattact').val(responseJSON.f);			  }            });
+</script>
+<div class="modalinner">
+	<div class="container headerShort">
+		<h3>Student Accounts</h3>
+	</div>
+	<div id="contact_modal_container" class="container content">
+		<p class="blurb">
+			Still in school? SolidWize is 50% off for students. Attach a class schedule from the
+last six months, and I’ll send you a discount code.
+		</p>
+		<form action="" method="post" id="contact_form" class="noDisable">
+			<div class="hiddenFields" style="display:none;">
+				<input type="hidden" name="form-type" value="contact" />
+				<input type="hidden" name="vid" id="vid2" value="" />
+			</div>
+			<div class="colLeft">
+				<label>Your Name <span class="req">*</span></label>
+				<input type="text" class="formfield required" name="name" value="" />
+				<label>Email Address <span class="req">*</span></label>
+				<input type="text" class="formfield required" name="email" value="" />
+				<label>Phone Number</label>
+				<input type="text" class="formfield" name="phone" value="" />
+				<label>School</label>
+				<input type="text" class="formfield" value="" name="company" value="" />
+				<label>Class Schedule</label>
+				<div id="file-uploader"></div>
+			</div>
+			<div class="colRight">
+				<label>Message</label>				<textarea class="formfield" name="message" ></textarea>
+				<ul class="contactOptions">
+					<li class="phone">
+						Call Me: <span>(760)-705-8888</span>
+					</li>
+					<li class="email">
+						Email Me: <a href="mailto:Rohit@SolidWize.com"> Rohit@SolidWize.com</a>
+					</li>
+				</ul>
+				<input type="image" name="submit" class="rollOver" value="Submit" src="<?php echo get_bloginfo('stylesheet_directory');?>/images/box/btn_send-form_i.png" />
+			</div>
+			<input type="hidden" name="fileattact" id="fattact" value=""/>
+		</form>
+	</div><a href="#" class="close">Close Modal</a>
+	<div id="success">
+		<h3>We have received your submission!</h3>
+		<p>
+			Thank you for contacting SolidWize. We will be in touch with you shortly.
+		</p>
+		<h3 class="follow">Follow Us:</h3>
+		<div class="modal-share">
+			<a href="http://twitter.com/SolidWize" class="twitter" target="_blank">Twitter</a><a href="http://www.facebook.com/pages/ReTargeter/86431563890" target="_blank" class="facebook">Facebook</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		if( jQuery('#contact_form').length ){		 jQuery('#contact_form div.hiddenFields').append('<input type="hidden" name="cerberus" value="1" id="cerberus" />');		window.validateForms['contact_form'] = new FormValidator('contact_form',{name: 'Name Required', email: 'Email Address Required'});				 if ( jQuery('#contact_form input:hidden[name="cerberus"]').val() == '1' ) {			 jQuery('#contact_form').submit(function(s){				 s.preventDefault();				 return false;			 });			 jQuery('#contact_form input[name="submit"]').click(function(e){				 if(window.validateForms['contact_form'].validate()){					 var submitButton = jQuery(this);					 var loading = '<div id="processing_form"><img src="<?php echo get_bloginfo('stylesheet_directory');?>/images/box / ajax - loader.gif" alt="Processing" /> Processing Submission...</div>';					 submitButton.hide();					 submitButton.parent().append(loading);												 var success;					 e.preventDefault();					 var parameters = jQuery('#contact_form').serialize();					 jQuery.ajax({ url:"<?php bloginfo('home');?>"+" / wp - admin / admin - ajax.php",						 data:'action=contact_pro&'+ parameters,												 type: 'POST',						 complete: function(response){							 var responseJSON = jQuery.parseJSON(response.responseText);							 if( responseJSON['contactf'] == 202 ) {								 jQuery('#processing_form').remove();								 submitButton.show();								 jQuery('#contact_modal_container').fadeOut(function(){									 jQuery('#success').fadeIn();								 });							 } else { 								 jQuery('#processing_form').remove();								 submitButton.show();									 }							 jQuery(':input, #contact_form').not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');															}					});							return false;				}			});		}			 }</script>
+</div>

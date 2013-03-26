@@ -1,0 +1,127 @@
+@import url('secondary-royal-blue.css');
+/* ************************************************************************* */
+/* KARMA ROYAL BLUE
+/* ************************************************************************* */
+
+
+/*---------------------------------------------------------------*/
+/* HEADER 
+/*---------------------------------------------------------------*/
+#header .header-holder {background:#182947 url(../images/karma-royal-blue/bg-header-holder.jpg) 0 0 repeat-x !important;}
+.big-banner #header .header-holder {background:#182947 url(../images/karma-royal-blue/bg-big-header-holder.png) 0 0 repeat-x !important;}
+.top-block {background:#13223C !important;}
+
+
+
+/*---------------------------------------------------------------*/
+/* FOOTER
+/*---------------------------------------------------------------*/
+#footer {background:#182947 url(../images/karma-royal-blue/bg-footer.jpg) repeat-x !important;}
+#footer_bottom {background:#0A1322 url(../images/karma-royal-blue/bg-footer-bottom.jpg) repeat-x !important;color: #868686 !important;}
+
+
+
+/*---------------------------------------------------------------*/
+/* NAVIGATION
+/*---------------------------------------------------------------*/
+#menu-main-nav li strong {color:#FFF !important;}
+#menu-main-nav a span {color:#7D92B9 !important;} /* link color parent level  */
+#menu-main-nav a:hover span,
+#menu-main-nav li.current_page_item a span,
+#menu-main-nav li.current_page_parent a span,
+#menu-main-nav li.current-page-ancestor a span,
+#menu-main-nav .drop ul li.current-menu-item a,
+#menu-main-nav .drop ul li.current-menu-item a span,
+#menu-main-nav .drop ul .drop ul li.current-menu-item a,
+#menu-main-nav .drop ul .drop ul li.current-menu-item a span{text-decoration:none;color:#FFF !important;} /* A. active link color parent level (see B)  */
+#menu-main-nav .drop ul li.current-menu-item a,
+#menu-main-nav .drop ul li.current-menu-item a span,
+#menu-main-nav .drop ul .drop ul li.current-menu-item a,
+#menu-main-nav .drop ul .drop ul li.current-menu-item a span{text-decoration:none;color:#6984AB !important;} /* B. active dropdown link color (if different than A)  */
+#menu-main-nav li {background:url(../images/_global/seperator-main-nav.png) 0 50% no-repeat !important;}
+
+/* dropdown */
+#menu-main-nav .drop .t {background:url(../images/_global/global-sprite.png) -724px -938px no-repeat !important;}
+#menu-main-nav .drop .b {background:url(../images/_global/global-sprite.png) -724px -949px no-repeat !important;}
+#menu-main-nav .drop .c, #menu-main-nav li.parent:hover {background:#101E35 !important;}
+/* IE only - un-comment for rounded corners 
+*:first-child+html #menu-main-nav li.parent:hover {background:url(../images/_global/global-sprite.png) -724px -877px no-repeat !important;} 
+*:first-child+html #menu-main-nav li.parent:hover {background-color: none !important;}
+*:first-child+html #menu-main-nav li.parent {min-width: 88px !important;width: auto !important;} */
+
+
+/* dropdown link hover rounded image top */
+#menu-main-nav .drop ul li.hover a,
+#menu-main-nav .drop ul a:hover {background:#283B67 url(../images/karma-royal-blue/bg-drop-li-t.jpg) no-repeat !important;}
+#menu-main-nav .drop ul .drop ul li.hover a,
+#menu-main-nav .drop ul .drop ul a:hover {background:#283B67 url(../images/karma-royal-blue/bg-drop-li-t.jpg) no-repeat !important;}
+#menu-main-nav .drop ul .drop ul .drop ul li.hover a,
+#menu-main-nav .drop ul .drop ul .drop ul a:hover {background:#283B67 url(../images/karma-royal-blue/bg-drop-li-t.jpg) no-repeat !important;}
+#menu-main-nav .drop ul .drop ul .drop ul li.current-menu-item a,
+#menu-main-nav .drop ul .drop ul .drop ul li.current_page_ancestor a,
+#menu-main-nav .drop ul .drop ul .drop ul li.hover a,
+#menu-main-nav .drop ul .drop ul .drop ul a:hover {background:#283B67 url(../images/karma-royal-blue/bg-drop-li-t.jpg) no-repeat !important;}
+
+/* dropdown link hover rounded image bottom */
+#menu-main-nav .drop ul li.hover a span,
+#menu-main-nav .drop ul a:hover span {background:url(../images/karma-royal-blue/bg-drop-li-b.jpg) 0 100% no-repeat !important;color:#FFF !important;}
+#menu-main-nav .drop ul .drop ul li.hover a span,
+#menu-main-nav .drop ul .drop ul a:hover span {background:url(../images/karma-royal-blue/bg-drop-li-b.jpg) 0 100% no-repeat !important;color:#FFF !important;}
+#menu-main-nav .drop ul .drop ul .drop ul li.hover a span,
+#menu-main-nav .drop ul .drop ul .drop ul a:hover span {background:url(../images/karma-royal-blue/bg-drop-li-b.jpg) 0 100% no-repeat !important;color:#FFF !important;}
+#menu-main-nav .drop ul .drop ul .drop ul li.current-menu-item a span,
+#menu-main-nav .drop ul .drop ul .drop ul li.current_page_ancestor a span,
+#menu-main-nav .drop ul .drop ul .drop ul li.hover a span,
+#menu-main-nav .drop ul .drop ul .drop ul a:hover span {background:url(../images/karma-royal-blue/bg-drop-li-b.jpg) 0 100% no-repeat !important;color:#FFF !important;}
+
+/* misc nav settings */
+#menu-main-nav li.current-menu-parent li a span,
+#menu-main-nav li.current-menu-item li a span,
+#menu-main-nav li.current_page_ancestor li a span,
+#menu-main-nav .drop ul a,
+#menu-main-nav .drop ul a span,
+#menu-main-nav .drop ul .drop ul a,
+#menu-main-nav .drop ul .drop ul a span,
+#menu-main-nav .drop ul .drop ul .drop ul a,
+#menu-main-nav .drop ul .drop ul .drop ul a span,
+#menu-main-nav li .sub-menu li .sub-menu li .sub-menu li a span {background:none !important;color: #FFF !important;} /* C. dropdown link color */
+.search-header #menu-main-nav .sub-menu a span, .search-header #menu-main-nav .current_page_parent  .sub-menu a span, .error-header #menu-main-nav .sub-menu a span, .error-header #menu-main-nav .current_page_parent  .sub-menu a span {color: #FFF !important;}
+#menu-main-nav .drop ul li.current-menu-item ul li a,
+#menu-main-nav .drop ul li.current-menu-item ul li a span {color:#FFF !important;} /* D. dropdown link color (match C) */
+.search-header #menu-main-nav a span, .search-header #menu-main-nav .current_page_parent a span,
+.error-header #menu-main-nav a span, .error-header #menu-main-nav .current_page_parent a span{color:#6984AB !important;}
+/* #menu-main-nav li{text-shadow:1px 1px 1px #172D52;} */
+#menu-main-nav .sub-menu li {text-shadow:none !important;}
+
+
+
+
+
+/*---------------------------------------------------------------*/
+/* LINKS + LISTS
+/*---------------------------------------------------------------*/
+.top-block, .top-block a, #header .sub-nav li, #header .sub-nav2 li {color:#B1B1B1 !important;}
+.top-block a:hover {color:#FFF !important;}
+.top-block .sub-nav ul li, .top-block .sub-nav2 ul li {background:url(../images/_global/separator-toolbar.png) 0 50% no-repeat !important;}
+.footer-holder a {color:#6984AB !important;}
+.footer-holder a:hover {color:#FFF !important;}
+#footer_bottom a {color:#6984AB !important;text-decoration:underline;}
+#footer_bottom a:hover {color:#FFF !important;text-decoration:none;}
+.footer_post h4 a{color:#FFF !important;}
+#mc_signup .mc_required, .mc_required, #mc-indicates-required {color:#6984AB !important;}
+
+
+#footer .blogroll a{color:#FFF !important;font-weight:bold;}
+#footer .blogroll a:hover{color:#FFF !important;}
+#footer .blogroll li{color:#6984AB !important;}
+
+
+
+
+/*---------------------------------------------------------------*/
+/* TYPOGRAPHY
+/*---------------------------------------------------------------*/
+#footer h3 {border-bottom: 1px solid #516D8A !important;}
+#footer, #footer_bottom {color: #DDD !important;}
+#footer .footer_post h4, #footer .footer_post h4 a {font-weight: bold !important;}
+#mc_signup_form label {color:#DDD !important;}

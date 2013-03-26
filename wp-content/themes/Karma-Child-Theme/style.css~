@@ -1,0 +1,689 @@
+/*
+Theme Name:     Karma Child Theme
+Theme URI:      http://themeforest.net/item/karma-clean-and-modern-wordpress-theme/168737?ref=TrueThemes
+Description:    Child theme for the Karma theme 
+Author:         TrueThemes
+Author URI:     http://themeforest.net/user/TrueThemes?ref=TrueThemes
+Template:       Karma
+Version:        0.1.0
+*/
+
+@import url("../Karma/style.css");
+
+
+/* ------- Insert custom styles below this line ------- */
+/*new line */
+/* ***************************** General styles*************************** */
+.top-block .top-holder {width:980px;margin:0 auto;font-size:14px;padding:4px 0;min-height:4px;height:auto;}
+
+#header .sub-nav a, #header .sub-nav2 a {color: #575C60;text-decoration: none;}
+#header .sub-nav a:hover, #header .sub-nav2 a:hover {color: #8B949A;}
+#header .sub-nav li, #header .sub-nav2 li {color: #ffffff;}
+
+#menu-main-nav li  {text-transform:uppercase;display:block;font-size:16px;letter-spacing: 0.6px;font-weight:800;}
+
+body {margin:0;background:#ffffff;font:1.2em/20px "helvetica neue",Helvetica,Arial,Verdana,sans-serif;color:#666;min-width:1003px;}
+
+#main {background:url(images/bg-div-main.jpg) 0 0 repeat-x;display:table-footer-group;position:relative;width:100%;}
+
+/*** blog stuff **/
+
+.post_title h2 a { 
+	color:#016ba5 !important;
+	text-decoration:none !important;
+}
+
+.full_content_blog {
+	width: 940px !important;
+}
+
+.full_width {
+	width: 100% !important;
+}
+
+
+.no_bg {
+	background: none !important;
+}
+
+.custom_blog_wrap {
+    float: left;
+    margin-bottom: 20px;
+    width: 660px;
+}
+
+.custom_post_content {
+	margin: -5px 0 0;	
+    min-height: 40px;
+    padding-bottom: 15px;
+    position: relative;
+    width: 660px;
+	float: left;
+}
+
+.custom_post_content p {
+	padding: 0 0 5px;
+}
+
+.custom_single_blog_wrap {
+	background: none repeat scroll 0 0 transparent !important;
+	float: left;
+	margin-bottom: 20px;
+}
+
+
+
+/* :::::::::: Modal Window Styles (BEGIN) :::::::::: */
+#modalBg{
+	z-index: 10;
+	position: fixed; 
+	width: 100%; 
+	height: 100%; 
+	top: 0; 
+	left: 0; 
+	background: #000; 
+	background: url('images/box/modal_bg.png') 0 0 repeat; 
+	z-index: 9999;
+	display: none;
+}
+#modalContainer{
+	position:absolute; 
+	width: 615px;
+	height: 240px;
+	top: 25%;
+	left: 50%;
+	margin-left: -315px;
+	background: url('images/box/modalBox_bg.png') 0 0 repeat; 
+	color: #333;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+#modal{
+	position: relative;
+	background: #fff;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	height: 100%;
+}
+#modal a.close,
+#modal a.close:link,
+#modal a.close:visited{
+	z-index: 10;
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	width: 49px;
+	height: 0;
+	padding: 49px 0 0;
+	line-height: 50px;
+	background: url('images/box/modal_btn-close.png') 0 0 repeat;
+	top: -25px;
+	right: -25px;
+}
+#modal a.close:hover{ background-position: 0 -50px }
+#modal .container{
+	z-index: 1;
+}
+#modal .container.headerShort{
+	padding: 0 40px;
+	
+}
+#modal .container.content{
+	min-height: 75px;
+	padding: 30px 40px 0;
+}
+#modal .colLeft{
+	width: 270px;
+	float: left;
+}
+#modal .colRight{
+	width: 240px;
+	padding: 0 0 0 20px;
+	float: right;
+}
+#modal.newsletter .colRight{
+	background: url('images/box/border-vertical.png') 0 0 repeat-y;
+}
+#modal .headerShort  h3{
+	margin: 0;
+	padding: 25px 0 20px;
+	font-size: 24px;
+	font-family:"Estrangelo Edessa";
+	font-size:30px;
+	color:#000;
+	background: url('images/box/dot.png') bottom left repeat-x;
+}
+#modal   h3{
+	margin: 0;
+	padding: 25px 0 20px;
+	font-size: 24px;
+	font-family:"Estrangelo Edessa";
+	font-size:30px;
+	color:#000;
+ 
+}
+#modal p{
+	margin: 0;
+	padding: 0;
+}
+#modal p.ttl, #modal label,#modal p.desc,#modal p.blurb{
+	
+	font-family:"Estrangelo Edessa";
+	font-size:16px;
+	color:#636361;
+}
+
+#modal p.num{
+	padding: 15px 0 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+#modal .formfield{
+	display: block;
+	width: 220px;
+	margin: 5px 0 10px;
+}
+#modal.contact .colLeft .formfield{
+	width: 240px;
+}
+#modal .colRight textarea.formfield{
+	width: 220px;
+	height: 175px;
+}
+#modal .colRight label.updates{
+	display: block;
+	padding: 15px 0 0;
+}
+#modal .container.content{
+	padding-top: 15px;
+}
+#modal p.blurb{
+	padding: 0 0 15px 0;
+	
+}
+#modal ul.contactOptions{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 10px 0 0;
+	font-size: 11px;
+}
+#modal ul.contactOptions li{
+	display: block;
+font-family:"Estrangelo Edessa";
+	font-size:16px;
+	color:#636361;
+	padding: 0;
+}
+#modal ul.contactOptions li span,#modal ul.contactOptions li a{
+text-decoration:none;
+color:#941111;
+}
+#modal.contact input[type=image]{
+	margin: 15px 0 0;
+	float: right;
+}
+#modal.newsletter #success{
+	padding: 25px 0 0;
+}
+#success{
+	padding: 40px 0 0;
+	text-align: center;
+	display: none;
+}
+#success h3{
+	padding-bottom: 10px;
+}
+#success p{
+	color: #666;
+}
+#success h3.follow{
+	padding: 50px 0 0;
+	font-size: 18px;
+}
+#success .modal-share{
+	width: 411px;
+	height: 204px;
+	margin: 30px auto 0;
+	position:relative;
+	overflow: hidden;
+}
+#success .modal-share a{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 155px;
+	height: 0;
+	padding: 117px 0 0;
+	line-height: 130px;
+	background: url('images/box/social-share.png') 0 0 no-repeat;
+}
+
+
+#success .modal-share a.twitter,
+#success .modal-share a.twitter:link,
+#success .modal-share a.twitter:visited{
+	background-position: 0 0;
+	float: left;
+}
+
+#success .modal-share a.twitter:hover{
+	background-position: 0 -117px;
+}
+
+#success .modal-share a.facebook,
+#success .modal-share a.facebook:link,
+#success .modal-share a.facebook:visited{
+	background-position: -155px 0;
+	float: right;
+	width: 156px;
+}
+
+#success .modal-share a.facebook:hover{
+	background-position: -155px -117px;
+}
+#labs_modal_container{
+	max-height: 400px;
+	overflow-y: scroll;
+}
+.formContainer span.error, #modal.contact span.error, #footer_signup span.error, #newsletter_signup span.error {
+    display: none;
+}
+#home_content .contactUs .formContainer .error input.required, #modal.contact .error input.required, #footer_signup .error input.required, #newsletter_signup .error input.required {
+    border: 1px solid #CC0000;
+}
+.modalinner{
+overflow:hidden;
+}
+.qq-uploader { position:relative; width: 100%;}
+
+.qq-upload-button {
+    display:block; /* or inline-block */
+    width: 120px; 
+height:38px;    
+text-indent:-9999px;
+font-size:0;
+line-height:0;
+    background:url(images/box/attact.png); 
+
+}
+.qq-upload-button-hover {    background:url(images/box/attacthover.png); }
+.qq-upload-button-focus {outline:1px dotted black;}
+
+.qq-upload-drop-area {
+    position:absolute; top:0; left:0; width:100%; height:100%; min-height: 70px; z-index:2;
+    background:#FF9797; text-align:center; 
+}
+.qq-upload-drop-area span {
+    display:block; position:absolute; top: 50%; width:100%; margin-top:-8px; font-size:16px;
+}
+.qq-upload-drop-area-active {background:#FF7171;}
+
+.qq-upload-list {margin:5px 0 0 10px; padding:0; list-style:disc;}
+.qq-upload-list li { margin:0; padding:0; line-height:15px; font-size:12px;}
+.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+    margin-right: 7px;
+}
+
+.qq-upload-file {}
+.qq-upload-spinner {display:inline-block; background: url("images/box/loading.gif"); width:15px; height:15px; vertical-align:text-bottom;}
+.qq-upload-size,.qq-upload-cancel {font-size:11px;}
+
+.qq-upload-failed-text {display:none;}
+.qq-upload-fail .qq-upload-failed-text {display:inline;}
+/* :::::::::: Modal Window Styles (END) :::::::::: */
+
+/* :::::::: Begin Homepage labelled as Pricing Template :::::::::: */
+#prcontain{
+width:850px;
+margin:auto;
+overflow:hidden;
+}
+
+.pricingpage p,.pricingpage h2,.pricingpage h3,.pricingpage span{
+font-family:"Estrangelo Edessa";
+}
+#forhead,#pricingmain{
+background:url(images/dot.png) left bottom repeat-x;
+padding-bottom:30px;
+margin-bottom:30px;
+overflow:hidden;
+}
+#hintro h2{
+font-size:36px;
+line-height:38px;
+font-weight:normal;
+margin-bottom:0;
+}
+#hintro h2 span{
+color:#b70909;
+}
+#hvideo,#hintro{
+width:440px;
+float:left;
+}
+#hintro{
+float:right;
+}
+.pricingpage p{
+margin:0;
+padding:0;
+color:#000;
+font-size:16px;
+font-family:"Estrangelo Edessa";
+}
+.center{
+text-align:center;
+}
+
+
+a.bntstarted{
+display:block;
+width:270px;
+height:66px;
+background:url(images/bntstart.png) no-repeat;
+text-indent:-9999px;
+font-size:0;
+line-height:0;
+margin:auto;
+}
+a.bntstarted:hover{
+background:url(images/bntstart-hover.png) no-repeat;
+}
+.prices{
+float:left;
+width:425px;
+height:200px;
+margin-top:10px;
+}
+.prices1{
+float:right;
+width:425px;
+height:200px;
+margin-top:10px;
+}
+.pimg{
+float:left;
+}
+.ptext{
+float:right;}
+
+.pimg{
+width:203px;
+}
+.ptext{
+width:202px;
+padding-right:20px;
+
+}
+.pricingpage p.ptitle{
+font-size:22px;
+padding: 5px 0;
+}
+.pricingpage .ptext p{
+  font-size: 18px;
+    line-height: 28px;
+    padding-top: 20px;
+}
+#priceslast.prices{
+float:center;
+margin:auto;
+}
+#pricingfoot{
+width:565px;
+margin:auto;
+overflow:hidden;
+}
+#prf,#prr{
+float:left;
+}
+#prf{
+width:165px;
+height:155px;
+}
+#prr{
+width:400px;
+}
+
+/* :::::::: End Homepage labelled as Pricing Template :::::::::: */
+
+/* SignUp Template*/
+.boxes{
+margin-bottom:0px;
+padding:20px 0;
+
+}
+.blocks {
+position:relative;
+width:571px;
+height:370px;
+margin:auto;
+margin-top:20px;
+}
+.boxes h2{ 
+font-size:30px;
+text-align:center;
+color:#014377;
+padding-bottom:10px;
+}
+#bl1{
+background:url(images/boxes.png) no-repeat;
+width:204px;
+height:270px;
+position:absolute;
+top:40;
+left:0;
+z-index:10;
+padding:40px 60px 20px 30px;
+}
+#bl2{
+background:url(images/boxes-s.png)  no-repeat;
+width:306px;
+height:315px;
+position:absolute;
+top:40;
+right:0;
+z-index:20;
+padding-top:15px;
+}
+#bl1.bbs .bprices{
+font-size:56px;
+   font-family:tahoma;
+   line-height: 56px;
+}
+#bl2.bbs .bprices{
+font-size:52px;
+  
+   line-height: 52px;
+}
+#bl2.bbs  p.bprices{
+margin:13px 0 18px;
+}
+.bbs h3{
+ text-shadow: none;
+ text-align:center;
+ font-size:26px;
+
+
+ margin:0;
+ line-height:40px;
+}
+
+
+.bbs p,.bbs a{
+color:#fff;
+margin:0;
+ text-align:center;
+ font-size:14px;
+}
+.bbs p{
+font-size:16px;
+line-height:21px;
+}
+#content .choosebnt{
+background:url(images/bntnone.png) no-repeat;
+width:171px;
+height:32px;
+display:block;
+color:#fff !important;
+text-transform:capitalize;
+text-decoration:none;
+font-size:22px;
+padding-top:10px;
+ margin:auto;
+ margin-top:220px;
+}
+
+#content .choosebnt1{
+background:url(images/bntnone.png) no-repeat;
+width:171px;
+height:32px;
+display:block;
+color:#fff !important;
+text-transform:capitalize;
+text-decoration:none;
+font-size:22px;
+padding-top:10px;
+ margin:auto;
+ margin-top:245px;
+}
+
+#content .choosebnt:hover {
+background:url(images/bnthover.png) no-repeat;
+}
+
+#content .choosebnt1:hover {
+background:url(images/bnthover.png) no-repeat;
+}
+
+/* End SignUp Template*/
+/*login or sign up form*/ 
+#signupchar{
+width:400px;
+margin:auto;
+}
+#signupchar p{
+margin-bottom:5px;
+}
+table td, table th{
+padding:2px 0;
+}
+#signupchar h2{
+color:#005186;
+font-size:30px;
+text-shadow: none;
+font-family:"Estrangelo Edessa";
+}
+#signupchar  p.accounttype,#signupchar  p.informations{
+font-family:Tahoma;
+font-size:20px;
+color:#005186;
+margin:15px 0;
+}
+select#select_packets{
+width:300px;
+padding:2px 1px;
+border:1px solid #a6a6a6;
+font-family:Tahoma;
+font-size:14px;
+background:#fff;
+}
+#signupchar input{
+width:373px;
+border:1px solid #a6a6a6;
+}
+input#createaccountbnt{
+background:none;
+background:url(images/create-account.png) no-repeat;
+width:329px;
+height:88px;
+text-indent:-9999px;
+border:none;
+cursor:pointer;
+}
+#signupchar a{
+color:#005186;
+text-decoration:none;
+}
+input#createaccountbnt:hover{
+background:url(images/create-account-hover.png) no-repeat;
+}
+label.error{
+color:#ff7200;
+}
+
+#signupchar  input.error{
+border:1px solid #ff7200;
+}
+
+#modal .loginpop .headerShort h3 {
+    
+    font-size: 26px;
+    margin: 0;
+    padding: 15px 0 20px;
+}
+.loginpop p,.loginpop h3{
+font-family:"Estrangelo Edessa";
+}
+
+.loginpop p{
+font-size:18px !important;
+}
+#contentpop{
+height:250px;
+
+margin:10px auto;
+}
+.lg1,.lg2,.lg3{
+float:left;
+height:55px;
+}
+.lg1{
+width:204px;
+}
+.lg1 a{
+width:204px;
+height:55px;
+background:url(images/become-mem.png) no-repeat;
+display:block;
+text-indent:-9999px;
+font-size:0;
+line-height:0;
+}
+.lg1 a:hover{
+background:url(images/become-mem-h.png) no-repeat;
+}
+.lg2{
+width:200px;
+padding-top: 15px;
+height:40px;
+}
+.lg2 p{
+text-align:right;
+padding-right:5px;
+}
+.lg3{
+width:108px;
+float:right;
+}
+.lg3 a{
+width:103px;
+height:55px;
+background:url(images/loginpop.png) no-repeat;
+display:block;
+text-indent:-9999px;
+font-size:0;
+line-height:0;
+}
+.lg3 a:hover{
+background:url(images/loginpop-h.png) no-repeat;
+}
+.blue{
+color:#0036ff;
+}
+/*end login sign up form */

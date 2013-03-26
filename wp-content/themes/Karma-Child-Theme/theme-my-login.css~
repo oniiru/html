@@ -1,0 +1,254 @@
+.login {
+
+	/*display:inline;*/
+
+	margin:0 auto;
+
+	padding: 0px;
+	
+	width: 320px;
+
+}
+
+
+
+.login p.error {
+
+	
+
+	padding: 5px;
+
+	border: 1px solid #c00;
+
+	background-color: #ffebe8;
+
+	color: #333;
+
+}
+
+
+
+.login p.message {
+
+	padding: 5px;
+
+	border: 1px solid #e6db55;
+
+	background-color: #ffffe0;
+
+	color: #333;
+
+}
+
+
+
+.login form label {
+
+	
+
+	Font-size:120%;
+
+	display: inline; 
+
+	
+
+	margin:0px 0px
+
+}
+
+
+
+.login form p.forgetmenot label {
+
+	
+
+	display: inline;
+
+	margin:0 auto;
+
+}
+
+
+
+.login input {
+
+	margin: 5px 10px;
+
+}
+
+
+
+.mu_register .hint {
+
+	font-size: 12px;
+
+	margin-bottom: 10px;
+
+	display: block;
+
+}
+
+
+
+.mu_register label.checkbox {
+
+	display: inline;
+
+}
+
+
+
+#pass-strength-result {
+
+    border-style: solid;
+
+    border-width: 1px;
+
+    margin: 12px 5px 5px 1px;
+
+    padding: 3px 5px;
+
+    text-align: center;
+
+    width: 200px;
+
+}
+
+
+
+#pass-strength-result.strong,
+
+#pass-strength-result.short {
+
+    font-weight: bold;
+
+}
+
+
+
+#pass-strength-result {
+
+    background-color: #eee;
+
+    border-color: #ddd !important;
+
+}
+
+
+
+#pass-strength-result.bad {
+
+    background-color: #ffb78c;
+
+    border-color: #ff853c !important;
+
+}
+
+
+
+#pass-strength-result.good {
+
+    background-color: #ffec8b;
+
+    border-color: #fc0 !important;
+
+}
+
+
+
+#pass-strength-result.short {
+
+    background-color: #ffa0a0;
+
+    border-color: #f04040 !important;
+
+}
+
+
+
+#pass-strength-result.strong {
+
+    background-color: #c3ff88;
+
+    border-color: #8dff1c !important;
+
+}
+
+#theme-my-login #loginform {
+	margin: 0 auto;
+}
+
+#theme-my-login p {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 5px;
+}
+
+#theme-my-login input {
+}
+	
+
+#theme-my-login #user_login, #theme-my-login #user_pass, #theme-my-login #user_email {
+	width: 97%;
+	font-size: 14px;
+    height: 28px;
+    margin: 5px 0;
+    padding: 2px;    
+}
+
+#theme-my-login #rememberme {
+	font-size: 12px !important;
+	font-weight: normal;
+	margin: 0;
+}
+
+#theme-my-login .submit {
+	margin: 0 0 10px;
+}
+
+#theme-my-login #wp-submit , #theme-my-login .button-primary {
+	background-color: #005186;
+	border: medium none;	
+	color: #FFFFFF;
+	font-size: 16px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	padding: 8px 20px;
+	margin: 10px 0 0;
+}
+
+#theme-my-login #wp-submit:hover, #theme-my-login .button-primary:hover {
+	cursor: pointer;
+}
+
+#custom_action_links {
+	font-weight: normal !important;
+}
+
+.profile {
+	width: 100% !important;
+}
+
+form#your-profile label, th {
+	font-size: 14px;
+
+}
+
+#theme-my-login .message {
+	margin: 0 0 20px;
+}
+
+#theme-my-login #your-profile h3 {
+	border-bottom: 1px solid #e1e1e1;
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+}
+
+#theme-my-login .form-table {
+	margin: 0 0 20px;
+}
+
+#theme-my-login #your-profile input {
+	font-size: 1.2em;
+}

@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+.hide{
+	display: none;
+}
+.closed .inside {
+	display: none;
+}
+.closed h3.directory-name span.icon-before {
+	background-position: 0 -213px;
+}
+#no-access .error{
+	color: #900;
+	background: #F0D9D9;
+	border: 1px solid #E0B4B4;
+	display: none;
+}
+h3.directory-name {
+	display: block;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-family: 'open sans', sans-serif;
+	font-size: 14px;
+
+}
+
+h3.directory-name span {
+	color: #000000;
+	font-family: 'open sans', sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1.7em;
+}
+
+h3.directory-name span.icon-before {
+
+	background: url('../images/subject-sprite.png') no-repeat scroll 0 -236px transparent;
+	display:block;
+	float:left;
+	width:20px;
+	height: 20px;
+	margin-top: 10px;
+}
+
+
+ul.video-list {
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+.inside .iframe {
+	display: none;
+}
+
+ul.video-list li {
+	list-style: none;
+	padding: 3px 0 3px 20px;
+	font-family: "open sans" sans-serif;
+	font-weight: 400;
+}
+ul.video-list li.show_duration{
+	border-bottom: 1px solid #E1E1E1;	
+}
+
+ul.video-list a {
+	text-decoration: none;
+}
+
+ul.video-list li span.video-duration {
+	font-family: 'open sans', sans-serif;
+	color: #777;
+	float: right;
+}
+
+ul.video-list a.noaccess {
+	color: #777 !important;
+}
+
+a.show_iframe {
+	color: #0087C2 !important;
+}
+
+/* Get Access Button*/
+
+#buttonNoLgin {
+	background: none repeat scroll 0 0 
+		#EEE;
+	position: relative;
+	margin-top: 5px;
+	padding: 10px;
+	border-top: 1px solid 
+		#444;
+	border-bottom: 1px solid 
+		#444;
+}
+
+#buttonNoLgin p {margin-bottom:2px;}
+#buttonNoLgin a.subscribevids {
+	top:7px;
+	right: 10px;
+	padding: 3px 7px 3px 7px;
+}
+
+
+#buttonNoLgin a {
+	display: block;
+	position: absolute;
+	color: 
+		white;
+	text-decoration: none;
+}
+
+.noaccesssubscribe, .noaccesssubscribe:visited, .emailvids, .emailvids:visited {
+	background: #222; 
+	display: inline-block; 
+	color: #fff !important; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	text-align: center;
+	font-weight:300;
+	border:2px outset buttonface;
+
+
+}
+.noaccesssubscribe, .noaccesssubscribe:visited {padding: 10px 10px 10px 10px;font-size:24px;}
+.emailvids, .emailvids:visited {
+	height:42px;
+	font-size:18px;
+	float:right;
+	padding:0px 8px 0px 8px;
+}
+
+.blue.noaccesssubscribe, .blue.noaccesssubscribe:visited, .blue.emailvids, .blue.emailvids:visited {background-color: #347DCA;}
+.blue.noaccesssubscribe:hover, .blue.emailvids:hover{ background-color: #28598e; text-decoration:none;}
+.green.noaccesssubscribe, .green.noaccesssubscribe:visited, .green.emailvids, .green.emailvids:visited		{ background-color: #91bd09; }
+.green.noaccesssubscribe:hover, .green.emailvids:hover{ background-color: #749a02; text-decoration:none; }
+.red.noaccesssubscribe, .red.noaccesssubscribe:visited, .red.emailvids, .red.emailvids:visited			{ background-color: #e33100; }
+.red.noaccesssubscribe:hover, .red.emailvids:hover{ background-color: #872300; text-decoration:none;}
+.magenta.noaccesssubscribe, .magenta.noaccesssubscribe:visited, .magenta.emailvids, .magenta.emailvids:visited		{ background-color: #a9014b; }
+.magenta.noaccesssubscribe:hover, .magenta.emailvids:hover{ background-color: #630030; text-decoration:none;}
+.orange.noaccesssubscribe, .orange.noaccesssubscribe:visited, .orange.emailvids, .orange.emailvids:visited		{ background-color: #ff5c00; }
+.orange.noaccesssubscribe:hover, .orange.emailvids:hover{ background-color: #d45500; text-decoration:none; }
+.yellow.noaccesssubscribe, .yellow.noaccesssubscribe:visited, .yellow.emailvids, .yellow.emailvids:visited		{ background-color: #ffb515; }
+.yellow.noaccesssubscribe:hover, .yellow.emailvids:hover{ background-color: #fc9200; text-decoration:none;}
+
+/*Popup Window*/
+#no-access{
+	width: 520px;
+}	
+/* End Get Access Button*/
+
+p.noaccesstab {
+	font-size:1.3em;
+	margin-top:15px;
+}
+
+/* No access popup*/
+.noaccesspopup {
+	font-family: "open sans", sans-serif;
+	text-align:center;
+	color:#000;
+}
+
+.noaccesspopup img{
+	margin:10px auto 10px auto;
+	display:block;
+}	
+
+.noaccesspopup h3{
+	font-size:24px;
+	font-weight:700;
+	padding-bottom:5px;
+	border-bottom:2px dotted #000;
+	margin:10px;
+}
+
+.noaccesspopup p{
+	font-size:16px;
+	font-weight:100;
+	line-height:1.2em;
+	margin:0 10px 0 10px;
+
+}
+
+.noaccesspopup span{
+	color:#0087C2;
+}
+#signup9999 {
+	text-align:center;
+}
+#email9999 {
+	display:block;
+	margin:auto;
+	width:450px;
+}
+#email9999 h3{
+	font-size:20px;
+	font-weight:700;
+	padding-bottom:5px;
+	border-bottom:2px dotted #000;
+	margin:20px 10px 10px 10px;
+	text-align:center;
+}
+
+#email9999 .input {
+	height:40px;
+	width:240px;
+	font-size:18px;
+	font-family: 'open sans', sans-serif;
+	font-weight:300;
+	border-radius:2px;
+}
+
+.alreadyamember{
+	font-size: 14px;
+	font-family: 'open sans', sans-serif;
+	font-weight: 300;
+	margin-top: 3px;
+	color: #666;
+}
+.alreadyamember p {margin-top:0px}
+@font-face {
+	font-family: 'open sans';
+	src: url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800');
+}
+
+/*  Subcription Bar */
+#buttonNoLgin{
+	background: none repeat scroll 0 0 #E8F2FF;
+	height: 23px!important;
+	position:relative;
+	margin-top: 5px;
+	padding: 10px;
+	width: 915px;
+	border-top:1px solid lightblue;
+	border-bottom:1px solid lightblue;
+	font-family:"Open Sans", sans-serif; 
+	font-weight: 100;
+}
+
+#buttonNoLgin a{
+	width: auto!important;
+	display:block;
+	height:20px;
+	position:absolute;
+	color:#fff;
+	text-decoration:none;
+} 
+.btnposition {
+	top:7px;
+	right: 10px;
+}
+
+#buttonNoLgin #user_email{
+	position: absolute;
+	top: 7px;
+	height: 22px;
+	right: 200px;
+}
+
+.blue.subscribevids, .blue.subscribevids:visited, .blue.emailvids, .blue.emailvids:visited {background-color: #347DCA;}
+.blue.subscribevids:hover, .blue.emailvids:hover{ background-color: #28598e; text-decoration:none;}
+.green.subscribevids, .green.subscribevids:visited, .green.emailvids, .green.emailvids:visited		{ background-color: #91bd09; }
+.green.subscribevids:hover, .green.emailvids:hover{ background-color: #749a02; text-decoration:none; }
+.red.subscribevids, .red.subscribevids:visited, .red.emailvids, .red.emailvids:visited			{ background-color: #e33100; }
+.red.subscribevids:hover, .red.emailvids:hover{ background-color: #872300; text-decoration:none;}
+.magenta.subscribevids, .magenta.subscribevids:visited, .magenta.emailvids, .magenta.emailvids:visited		{ background-color: #a9014b; }
+.magenta.subscribevids:hover, .magenta.emailvids:hover{ background-color: #630030; text-decoration:none;}
+.orange.subscribevids, .orange.subscribevids:visited, .orange.emailvids, .orange.emailvids:visited		{ background-color: #ff5c00; }
+.orange.subscribevids:hover, .orange.emailvids:hover{ background-color: #d45500; text-decoration:none; }
+.yellow.subscribevids, .yellow.subscribevids:visited, .yellow.emailvids, .yellow.emailvids:visited		{ background-color: #ffb515; }
+.yellow.subscribevids:hover, .yellow.emailvids:hover{ background-color: #fc9200; text-decoration:none;}
+
+li.ui-state-active {border-bottom:1px solid #f8f8f8 !important;}

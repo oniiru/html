@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zendesk Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-13 19:56+0300\n"
+"PO-Revision-Date: 2011-05-13 19:56+0300\n"
+"Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
+"Language-Team: Zendesk <support@zendesk.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;_e;esc_attr_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../zendesk-support.php:333
+msgid "Zendesk for WordPress Settings"
+msgstr ""
+
+#: ../zendesk-support.php:337
+msgid "You're almost there! Just one more thing..."
+msgstr ""
+
+#: ../zendesk-support.php:338
+msgid "Before you get your hands on all the juicy Zendesk for Wordpress features, we need to know your Zendesk subdomain. <br /> Your subdomain tells us who you are, and gives us access to the Zendesk API."
+msgstr ""
+
+#: ../zendesk-support.php:347
+#: ../zendesk-support.php:379
+msgid "Save Changes"
+msgstr ""
+
+#: ../zendesk-support.php:367
+msgid "Zendesk Remote Authentication Settings"
+msgstr ""
+
+#: ../zendesk-support.php:369
+msgid "Woah there Nelly!"
+msgstr ""
+
+#: ../zendesk-support.php:370
+msgid "Remote authentication takes a little bit of setup in here and inside Zendesk too. Don't worry, it's not rocket surgery."
+msgstr ""
+
+#: ../zendesk-support.php:371
+msgid "Check out this handy guide on getting it set up for WordPress."
+msgstr ""
+
+#: ../zendesk-support.php:1156
+msgid "Howdy! Looks like the WordPress administrator hasn't set this plugin up yet. Give them a poke to get moving!"
+msgstr ""
+
+#: ../zendesk-support.php:1177
+msgid "Use your Zendesk account credentials to log in the form below. Please note that these are not your WordPress username and password."
+msgstr ""
+
+#: ../zendesk-support.php:1182
+msgid "Username:"
+msgstr ""
+
+#: ../zendesk-support.php:1186
+msgid "Password:"
+msgstr ""
+
+#: ../zendesk-support.php:1190
+msgid "Login to Zendesk"
+msgstr ""
+
+#: ../zendesk-support.php:1191
+msgid "Don't have an account?"
+msgstr ""
+
+#: ../zendesk-support.php:1191
+msgid "Sign up!"
+msgstr ""
+
+#: ../zendesk-support.php:1231
+#: ../zendesk-support.php:1334
+msgid "logout"
+msgstr ""
+
+#: ../zendesk-support.php:1235
+#: ../zendesk-support.php:1335
+msgid "powered by Zendesk"
+msgstr ""
+
+#: ../zendesk-support.php:1291
+msgid "Change view"
+msgstr ""
+
+#: ../zendesk-support.php:1291
+msgid "cancel"
+msgstr ""
+
+#: ../zendesk-support.php:1315
+msgid "There are no views available for this account."
+msgstr ""
+
+#: ../zendesk-support.php:1325
+msgid "Viewing Ticket"
+msgstr ""
+
+#: ../zendesk-support.php:1325
+msgid "back"
+msgstr ""
+
+#: ../zendesk-support.php:1333
+msgid "My Helpdesk"
+msgstr ""
+
+#: ../zendesk-support.php:1334
+msgid "Logged in as"
+msgstr ""
+
+#: ../zendesk-support.php:1474
+#: ../zendesk-support.php:1526
+msgid "Remote authentication is not configured yet."
+msgstr ""
+
+#: ../zendesk-support.php:1546
+msgid "Remote authentication failed: "
+msgstr ""
+
+#: ../zendesk-support.php:1548
+msgid "Try again"
+msgstr ""
+
+#: ../zendesk-support.php:1570
+msgid "We need your Zendesk subdomain, so we can use Zendesk's API to get your ticket information."
+msgstr ""
+
+#: ../zendesk-support.php:1588
+msgid "Click here to change your account"
+msgstr ""
+
+#: ../zendesk-support.php:1605
+msgid "Your account is using SSL"
+msgstr ""
+
+#: ../zendesk-support.php:1607
+msgid "Your account is <strong>not</strong> using SSL"
+msgstr ""
+
+#: ../zendesk-support.php:1620
+msgid "The Dashboard Widget can be changed depending on a User's capabilitites."
+msgstr ""
+
+#: ../zendesk-support.php:1654
+msgid "The contact form is a way for users to submit support requests. It can be added to the dashboard using the options above."
+msgstr ""
+
+#: ../zendesk-support.php:1725
+msgid "Check this to allow users without Zendesk accounts to submit requests."
+msgstr ""
+
+#: ../zendesk-support.php:1726
+msgid "If disabled, people will see the Zendesk login form with an option to sign up."
+msgstr ""
+
+#: ../zendesk-support.php:1763
+msgid "Contact form submissions will be done \"via\" this agent, through the Zendesk API. <br /> This agent must be authenticated into Zendesk via the Wordpress for Zendesk widget.<br /> Agents not authenticated via the dashboard widget are not shown here."
+msgstr ""
+
+#: ../zendesk-support.php:1764
+msgid "Learn more at Zendesk.com"
+msgstr ""
+
+#: ../zendesk-support.php:1774
+msgid "The Zendesk Dropbox places a convenient tab on your pages that allow your visitors to contact you via a pop-up form."
+msgstr ""
+
+#: ../zendesk-support.php:1787
+msgid "Check this to display the Zendesk drop box on every post and page"
+msgstr ""
+
+#: ../zendesk-support.php:1812
+msgid "The general remote authentication settings"
+msgstr ""
+
+#: ../zendesk-support.php:1829
+msgid "Remote authentication is enabled"
+msgstr ""
+
+#: ../zendesk-support.php:1831
+msgid "Remote authentication is <strong>disabled</strong>"
+msgstr ""
+
+#: ../zendesk-support.php:1834
+msgid "To activate remote authentication, ensure a shared token <br /> is entered below and click &quot;Save Changes&quot;"
+msgstr ""
+
+#: ../zendesk-support.php:1864
+msgid "The settings that need to be configured in your Zendesk account."
+msgstr ""
+
