@@ -2319,7 +2319,10 @@ margin-top: -6px;
 	margin-bottom:30px !important;
 	
 }
-
+.leftthing h3, .middlething h3, .rightthing h3 {
+	margin-bottom:-5px;
+	
+}
 	.leftthing, .middlething, .rightthing {
 	display: block;
 	vertical-align: top;
