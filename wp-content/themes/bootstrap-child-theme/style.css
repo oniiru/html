@@ -2310,6 +2310,7 @@ margin-top: -6px;
 	.videohome {
 	width: 200px;
 	float:none;
+	margin-bottom:30px;
 	
 }
 
@@ -2373,12 +2374,17 @@ font-size: 17px !important;
 	width:350px;
 	float:none;
 	margin:auto;
+	text-align:center;
 }
 
 .homesecright h3 { 
 	font-size:23px;
+	text-align:center;
 }
 	
+.homesec2 p {
+	text-align:center;
+}
 .bx-viewport {
 width: 300px !important;
 margin: auto !important;
@@ -2419,7 +2425,8 @@ margin-left: 0px;
 }
 .homesec4 .btn {
 	float:none;
-	margin:0px !important;
+	margin:0px 0 15px 0 !important;
+	
 }
 
 /* Mobile Portrait Size Only (devices and browsers) */
