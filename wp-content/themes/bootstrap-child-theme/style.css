@@ -2272,10 +2272,20 @@ width: 448px;
 text-align: left;
 margin-top: -6px;
 }
+
+/*vid categories*/
+
+.itemLeft img {
+	width:200px !important;
+
 }
-
-
-
+.itemRight {
+	width:465px;
+}
+.itemRight h2 {
+	margin:15px 0 0 0;
+}
+}
 
 
 @media only screen and (max-width:839px) {
@@ -2350,9 +2360,26 @@ width:350px ;
 	.CTAsection h2 {
 	font-size: 22px;
 }
-	
+
+#incontent {
+	text-align:center;
+}
+.itemLeft {
+	margin:auto;
+	float:none
 }
 
+.itemRight {
+	width:auto;
+	float:none;
+	
+	
+}
+.itemRight h2{
+	margin:0px;
+}
+
+}
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {	
 	.videohome {
@@ -2513,6 +2540,36 @@ margin-left: 0px;
 	
 }
 
+h2.categoryTitle {
+	width:auto;
+	float:none;
+}
+#searchlib {
+width:auto;
+float:none;	
+}
+
+#searchlib #ss{
+	width:inherit;
+	
+}
+
+.itemLeft img {
+	width:200px !important;
+
+}
+.itemRight h2 {
+	font-size:30px;
+	width:260px;
+	margin:auto;
+	line-height:1em;
+}
+.itemRight p {
+	width: 200px;
+	margin: auto;
+	font-size: 14px;
+	}
+}
 }
 
 /* Mobile Portrait Size Only (devices and browsers) */

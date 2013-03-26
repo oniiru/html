@@ -97,12 +97,12 @@ h2.categoryTitle{
     font-weight: 500;
 
 }
-#searchlib{
-    width:400px;
-    float:right;
-    font-size: 16px;
-    height: 40px;
-    padding: 0 0 0 2px;
+	#searchlib {
+	width: 400px;
+	float: right;
+	font-size: 16px;
+	height: 50px;
+	padding: 5px 0 0 2px;
 }
 #searchlib #ss{
     height: 35px;
