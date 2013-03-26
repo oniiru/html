@@ -2200,6 +2200,12 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 	text-shadow: 1px 1px 1px black;
 }
 
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	
+}
+
 /* 6 - Media Queries
 ================================================== */
 @media only screen and (max-width: 910px){
@@ -2267,14 +2273,15 @@ margin-top: -6px;
 }
 }
 
+
+
+
+
 @media only screen and (max-width:839px) {
-	.leftthing, .middlething, .rightthing {
-	display: block;
-	vertical-align: top;
-	width: 287px;
-	margin: auto;
-	margin-bottom:50px;
-}
+	
+	
+	
+
 	
 	
 }
@@ -2304,6 +2311,14 @@ margin-top: -6px;
 	width: 200px;
 	float:none;
 	
+}
+
+	.leftthing, .middlething, .rightthing {
+	display: block;
+	vertical-align: top;
+	width: 287px;
+	margin: auto;
+	margin-bottom:50px;
 }
 
 .videohome p {
