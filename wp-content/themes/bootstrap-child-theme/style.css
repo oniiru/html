@@ -1617,7 +1617,7 @@ color: rgb(77, 75, 75);
 	font-weight: 300;
 }
 .homesec2 h3 {
-	text-align:center;
+	text-align:left;
 }
 
 .modal-header {padding:3	px !important; border-bottom:0px !important;}
@@ -2306,7 +2306,7 @@ margin-top: -6px;
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 767px) {	
+@media only screen and (max-width: 480px) {	
 	.videohome {
 	width: 200px;
 	float:none;
@@ -2314,7 +2314,7 @@ margin-top: -6px;
 	
 }
 
-.leftthing img, .middlething img, .rightthing img {
+.leftthing p, .middlething p, .rightthing p {
 	margin-bottom:30px !important;
 	
 }
@@ -2382,9 +2382,15 @@ font-size: 17px !important;
 	margin:auto;
 	text-align:center;
 }
-
+.homesec2 h2 { 
+	font-size:28px;
+}
 .homesecright h3 { 
 	font-size:23px;
+	text-align:center;
+}
+	
+.homesec2 h3 {
 	text-align:center;
 }
 	
