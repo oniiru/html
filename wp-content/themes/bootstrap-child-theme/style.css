@@ -234,7 +234,6 @@ background-color: #2f96b4;
 		
 		.homepage {
 			text-align:center;
-			width:1000px;
 			margin:auto;
 		}
 		.imgblock {
@@ -490,8 +489,9 @@ margin: auto;
 }
 
 #content {
-	width:980px;
+	width:1000px;
 	margin:50px auto 0;
+	padding:0px;
 }
 
 .lead {
@@ -1578,8 +1578,6 @@ color: rgb(77, 75, 75);
 	display: block;
 	overflow: hidden;
 	margin-bottom: 30px;
-	padding:0 22px;
-	height:150px;
 }
 .homesec2 {
 	display:block;
@@ -1687,9 +1685,7 @@ cursor:default;}
 	position: relative;
 	bottom: 15px;
 }
-.rawr{
-	width:980px !important;
-}
+
 .leftthing, .middlething, .rightthing {
 	display:inline-block;
 	vertical-align:top;
@@ -1706,7 +1702,7 @@ cursor:default;}
 	margin-top:0px ;
 }
 .middlething {
-	margin:0 58px;
+	margin:0 68px;
 }
 
 .homesec3 {
@@ -1789,7 +1785,9 @@ ul.bxslider {
 	margin:0 0 10px 10px !important;
 }
 .bx-viewport {
-	width:968px !important;
+	width: 980px !important;
+	margin-left: 4px !important;
+	}
 }
 
 .bx-wrapper .bx-viewport img{
@@ -2205,14 +2203,84 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 
 /* 6 - Media Queries
 ================================================== */
-
+@media only screen and (max-width: 910px){
+	.CTAsection h1 {
+		font-size:50px !important;
+	}
+	.CTAsection h2 {
+		margin-top:0px;
+	}
+}
 
 /* Smaller than standard 960 (devices and browsers) */
-@media only screen and (min-width: 960px) and (max-width: 1100px){
+@media only screen and (min-width:840px) and (max-width: 1024px){
+
+	.middlething img, .leftthing img, .rightthing img {
+		width:240px !important;
+	}
+	#content {
+		width:820px;
+		margin:50px auto 0;
+		padding:0px;
+	}
+	
+	.middlething {
+		margin:0 42px;
+	}
 
 
-
+	.homesec2 p {
+		width: 242px;
+	}
+	
+	.bx-viewport {width:97.5% !important;}
+	.homesec3 blockquote p {
+	font-weight: 500 !important;
+	max-width: 630px
 }
+.homesec4 .sec4left {margin-left:50px;
+}
+.homesec4 .btn {margin-right:50px;
+}
+.videohome h3 {
+	padding-left: 172px;
+	padding-top: 0px;
+	font-size:22px;
+}
+.videohome p {
+	width: 150px;
+}
+.videohome {
+	width:322px;
+	margin-top:10px;
+}
+
+.videohome img {
+width: 157px;
+margin-top: 10px;
+}
+.homesecright {
+float: right;
+float: right;
+width: 448px;
+text-align: left;
+margin-top: -6px;
+}
+}
+
+@media only screen and (max-width:839px) {
+	.leftthing, .middlething, .rightthing {
+	display: block;
+	vertical-align: top;
+	width: 287px;
+	margin: auto;
+	margin-bottom:50px;
+}
+	
+	
+}
+
+
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {}
