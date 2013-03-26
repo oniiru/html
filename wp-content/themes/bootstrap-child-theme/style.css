@@ -1710,9 +1710,10 @@ cursor:default;}
 }
 
 .homesec3 h2 {
-	font-weight: 300;
-	font-size: 28px;
-	margin-bottom:25px;
+font-weight: 500;
+font-size: 19px;
+margin-bottom: 25px;
+	
 }
 
 .homesec3 img {
@@ -2398,10 +2399,11 @@ font-size: 17px !important;
 	text-align:center;
 }
 .bx-viewport {
-width: 300px !important;
+width: 278px !important;
 margin: auto !important;
 left: 0px !important;
 }
+
 .homesec3 blockquote p {
 font-weight: 500 !important;
 max-width: 300px;}
@@ -2410,9 +2412,11 @@ max-width: 300px;}
 display: block;
 vertical-align: top;
 }
-
+.homesec3 blockquote p {
+	max-width:280px;
+}
 .homesec3 {
-	width:350px;
+	width:300px;
 	margin:auto;
 }
 
@@ -2435,6 +2439,15 @@ float: none;
 vertical-align: center;
 margin-left: 0px;
 }
+
+.homesec4 h2 {
+	font-size:24px;
+}
+
+.homesec4 h4 {
+	font-size:15px;
+}
+
 .homesec4 .btn {
 	float:none;
 	margin:15px 0 0px 0 !important;
