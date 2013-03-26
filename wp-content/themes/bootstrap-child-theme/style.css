@@ -2279,29 +2279,68 @@ margin-top: -6px;
 
 
 @media only screen and (max-width:839px) {
+	.videohome {
+		float:none;
+		margin-bottom:30px;
+	}
 	
+	#content {
+		width:459px;
+	}
 	
-	
+	.bx-viewport {
+	width: 437px !important;
+}
+.homesec3 blockquote p {
+font-weight: 500 !important;
+max-width: 261px;
 
+}
+	.homesecright {
+	float: right;
+	float: none;
+	width: 459px;
+	text-align: center;
+	margin-top: 1px;
+	}
+
+	.leftthing p, .middlething p, .rightthing p {
+		margin-bottom:30px !important;
 	
+	}
+	.leftthing h3, .middlething h3, .rightthing h3 {
+		margin-bottom:-5px;
 	
+	}
+		.leftthing, .middlething, .rightthing {
+		display: block;
+		vertical-align: top;
+		width: 350px;
+		margin: auto;
+		margin-bottom:50px;
+	}
+	.leftthing img, .middlething img, .rightthing img {
+width:350px ;	
+	}
+
+	.homesec2 p {
+		width: 350px;
+	}
+	
+	.homesec4 {
+		text-align:center;
+	}
+	.homesec4 .sec4left { 
+		float:none;
+		margin:0;
+		text-align:center
+	}
+	.homesec4 .btn {
+	float: none;
+	margin-top: 12px;
+	margin-right: 0 !important;
 }
 
-
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 839px) {}
-
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
-
-
-
-	
-}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 839px) {
 
 	.CTAsection h1 {
 	font-size: 32px !important;
@@ -2311,8 +2350,6 @@ margin-top: -6px;
 	.CTAsection h2 {
 	font-size: 22px;
 }
-	
-
 	
 }
 
@@ -2370,6 +2407,7 @@ font-size: 20px;
 .solidlogo span {
 font-size: 24px;
 }
+
 .CTAsection h1 {
 font-size: 16px !important;
 margin-bottom: -17px;
@@ -2469,6 +2507,8 @@ margin-left: 0px;
 	float:none;
 	margin:15px 0 0px 0 !important;
 	
+}
+
 }
 
 /* Mobile Portrait Size Only (devices and browsers) */
