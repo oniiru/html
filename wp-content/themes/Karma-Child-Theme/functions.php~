@@ -1,0 +1,273 @@
+<?php 
+
+/* Insert custom functions here */
+
+if(function_exists('theme_my_login')) {
+	function your_widget_display() {
+	
+		if(is_user_logged_in()) {
+			echo '<ul><li><a href="'.$GLOBALS['theme_my_login']->get_login_page_link( 'action=profile' ).'">My Profile</a></li><li><a href="'.$GLOBALS['theme_my_login']->get_login_page_link( 'action=logout' ).'">Log Out</a></li></ul>';
+		} else {
+			echo '<ul><li><a href="'.get_bloginfo('url').'/sign-in/">Sign Up</a></li><li><a href="'.$GLOBALS['theme_my_login']->get_login_page_link( 'action=login' ).'">Log In</a></li></ul>';
+		}
+	}
+
+
+
+	wp_register_sidebar_widget(
+		'your_widget_1',        // your unique widget id
+		'SolidWize Widget',          // widget name
+		'your_widget_display',  // callback function
+		array(                  // options
+			'description' => 'Description of what your widget does'
+		)
+	);
+}
+
+function custom_limit_content($content_length = 250, $allowtags = true, $allowedtags = '', $id = '', $readmore_text = '') {
+global $post;
+$content = $post->post_content;
+
+if(!empty($id)) {
+	$title = get_the_title($id);
+	$permalink = get_permalink($id);
+	
+	$link = ' ... <a href="'.$permalink.'" rel="bookmark" title="'.$title.'"><span>'.$readmore_text.'</span></a>';
+} else {
+	$link = '...';
+}
+
+$content = apply_filters('the_content', $content);
+if (!$allowtags){
+	$allowedtags .= '<style>';
+	$content = strip_tags($content, $allowedtags);
+}
+$wordarray = explode(' ', $content, $content_length + 1);
+if(count($wordarray) > $content_length) :
+	array_pop($wordarray);
+	array_push($wordarray, $link);
+	$content = implode(' ', $wordarray);
+	$content .= "</p>";
+endif;
+
+echo $content;
+}
+
+	
+if (class_exists('MultiPostThumbnails')) {
+			new MultiPostThumbnails(array(
+			'label' => 'Secondary Image',
+			'id' => 'secondary-image',
+			'post_type' => 'post'
+			)
+		);
+	}
+/*Make Folder to save files upload for form studens*/
+$fpath=str_replace('\\','/',ABSPATH);
+
+$fpath.='wp-content/files';
+if(!is_dir($fpath))
+mkdir($fpath, 0777,true);
+/*End Make folder*/
+add_action('wp_head', 'add_var_script');
+function add_var_script(){
+?>
+<script type='text/javascript'>
+var urltemp="<?php print get_bloginfo('stylesheet_directory'); ?>/";
+var urlhome="<?php bloginfo('home'); ?>/";
+</script>
+<?php
+}
+function my_scripts_method() {
+ wp_enqueue_script('boxcriptv', get_bloginfo('stylesheet_directory')."/js/validationf.js");
+   wp_enqueue_script('boxcript', get_bloginfo('stylesheet_directory')."/js/app.js");
+  
+
+
+}    
+ 
+add_action('wp_enqueue_scripts', 'my_scripts_method');
+add_action('wp_ajax_contactEmail_action', 'implement_ajax_email');
+add_action('wp_ajax_nopriv_contactEmail_action', 'implement_ajax_email');
+add_action('wp_ajax_contactuser_action', 'implement_ajax_user');
+add_action('wp_ajax_nopriv_contactuser_action', 'implement_ajax_user');
+add_action('wp_ajax_contactstudent_action', 'implement_ajax_student');
+add_action('wp_ajax_nopriv_contactstudent_action', 'implement_ajax_student');
+add_action('wp_ajax_loginpop_action', 'implement_ajax_loginpop');
+add_action('wp_ajax_nopriv_loginpop_action', 'implement_ajax_loginpop');
+function implement_ajax_email(){
+
+require_once 'contact.php';
+die();
+}
+function implement_ajax_user(){
+
+require_once 'contact-user.php';
+die();
+}
+function implement_ajax_student(){
+
+require_once 'contact-student.php';
+die();
+}
+function implement_ajax_loginpop(){
+
+require_once 'loginpop.php';
+die();
+}
+add_action('wp_ajax_contact_pro', 'implement_contact_pro');
+add_action('wp_ajax_nopriv_contact_pro', 'implement_contact_pro');
+function implement_contact_pro(){
+$name=$_POST['name'];
+$email=$_POST['email'];
+$company=$_POST['company'];
+$message=$_POST['message'];
+$number_user=$_POST['numberuser'];
+$file=$_POST['fileattact'];
+if($file){
+	if(sendEmailAtt($name,$email,$company,$message,$file))
+	print '{"contactf":202}';
+}else{
+	if(sendEmailMan($name,$email,$company,$message,$number_user))
+	print '{"contactf":202}';
+}
+die();
+}
+function sendEmailMan($name,$email,$company,$mess,$number_user=''){
+	if($number_user)
+	$subject = 'Contact User ';
+	else
+	$subject = 'Contact Form ';
+	$to = 'rohit@solidwize.com';
+
+			$headers = "From: SolidWize<info@ttvtech.com> \r\n";
+			$headers .= "Reply-To: SolidWize <".$email.">\r\n"; 
+			$headers .= "Return-Path: SolidWize <".$email.">\r\n"; 
+			$headers .= "MIME-Version: 1.0\r\n";
+			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+			$message='<h2>SolidWize Contact</h2>';
+			$message.='<p>Name : '.$name.'</p>';
+			$message.='<p>Email : '.$email.'</p>';
+			$message.='<p>Company : '.$company.'</p>';
+			
+			$message.='<p>Message : '.$mess.'</p>';
+			if($number_user)
+			$message.='<p>Number User : '.$number_user.'</p>';
+             if(mail($to, $subject, $message, $headers))
+			 return true;
+	return false;
+		
+            
+}
+function sendEmailAtt($name,$email,$company,$mess,$file){
+	$fpath=str_replace('\\','/',ABSPATH);
+	$fpath.='wp-content/files';
+	$mail_to = "rohit@solidwize.com";
+	$from_mail = $email;
+	$from_name = "SolidWize Contact";
+	$reply_to = $email;;
+	$subject = "Contact Students";
+	$message='<h2>SolidWize Contact Student</h2>';
+	$message.='<p>Name : '.$name.'</p>';
+	$message.='<p>Email : '.$email.'</p>';
+	$message.='<p>Company : '.$company.'</p>';
+	$message.='<p>Message : '.$mess.'</p>';
+
+	$file_name = $file;
+	$path = $fpath.'/';
+
+	$file = $path.$file_name;
+	$file_size = filesize($file);
+	$handle = fopen($file, "r");
+	$content = fread($handle, $file_size);
+	fclose($handle);
+	$content = chunk_split(base64_encode($content));
+
+/* Set the email header */
+
+	$boundary = md5(uniqid(time()));
+
+	// Email header
+	$header = "From: ".$from_name." <".$from_mail.">\r\n";
+	$header .= "Reply-To: ".$reply_to."\r\n";
+	$header .= "MIME-Version: 1.0\r\n";
+
+	$header .= "Content-Type: multipart/mixed; boundary=\"".$boundary."\"\r\n";
+	$header .= "This is a multi-part message in MIME format.\r\n";
+	$header .= "--".$boundary."\r\n";
+
+	$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$header .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+	$header .= "$message\r\n";
+	$header .= "--".$boundary."\r\n";
+
+	$header .= "Content-Type: application/xml; name=\"".$file_name."\"\r\n";
+	$header .= "Content-Transfer-Encoding: base64\r\n";
+	$header .= "Content-Disposition: attachment; filename=\"".$file_name."\"\r\n\r\n";
+	$header .= $content."\r\n";
+	$header .= "--".$boundary."--";
+
+	if (mail($mail_to, $subject, "", $header)) 
+	return true;
+	
+return false;
+
+
+}
+
+class custom_walker extends Walker_Nav_Menu
+{
+      function start_el(&$output, $item, $depth, $args)
+      {
+           global $wp_query;
+		     
+           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+           $class_names = $value = '';
+
+           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+           $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+		   $output .= $indent . '<li id="testitem-'. $item->ID . '"' . $value . $class_names .'>';
+			 
+			 if(strpos($item->attr_title,'[contact]')||$item->attr_title=='[contact]')
+				$attributes  = ' id="contact" ';
+			 if(strpos($item->attr_title,'[contact-user]')||$item->attr_title=='[contact-user]')
+				$attributes  = ' id="contact-user" ';
+			 if(strpos($item->attr_title,'[contact-student]')||$item->attr_title=='[contact-student]')
+				$attributes  = ' id="contact-student" ';
+			 if(strpos($item->attr_title,'[login-pop]')||$item->attr_title=='[login-pop]')
+				$attributes  = ' id="login-pop" ';
+			 $item->attr_title=str_replace('[contact]','', $item->attr_title);
+			  $item->attr_title=str_replace('[contact-user]','', $item->attr_title);
+			  $item->attr_title=str_replace('[contact-student]','', $item->attr_title);
+			  $item->attr_title=str_replace('[login-pop]','', $item->attr_title);
+           $attributes  .= ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+			
+           $prepend = '<strong>';
+           $append = '</strong>';
+           $description  = ! empty( $item->description ) ? '<span class="navi-description">'.esc_attr( $item->description ).'</span>' : '';
+
+           if($depth != 0)
+           {
+                     $description = $append = $prepend = "";
+           }
+		   
+
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'><span>';
+            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+            $item_output .= $description.$args->link_after;
+            $item_output .= '</span></a>';
+            $item_output .= $args->after;
+			
+
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            }
+}
+?>

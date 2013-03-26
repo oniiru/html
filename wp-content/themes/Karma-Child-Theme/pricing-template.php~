@@ -1,0 +1,95 @@
+<?php
+/*
+Template Name: Pricing Template
+*/
+
+?>
+
+<?php get_header(); ?>
+</div><!-- header-area -->
+</div><!-- end rays -->
+</div><!-- end header-holder -->
+</div><!-- end header -->
+
+<?php truethemes_before_main_hook();// action hook, see truethemes_framework/global/hooks.php ?>
+
+<div id="main">
+
+<div class="main-area pricingpage">
+
+
+
+<div class="main-holder">
+<div class="content_full_width" id="content">
+<div id="forhead">
+	<div id="hvideo">
+	<iframe src="http://player.vimeo.com/video/29705507?title=0&amp;byline=0&amp;portrait=0" width="440" height="250" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe> 
+	</div>
+	<div id="hintro">
+		<h2>Online <span>SolidWorks</span> Training For Engineers. Available 24/7.</h2>
+		<p>-Learn at your own pace: Play, pause, rewind.</p>
+		<p>-Access training from any computer</p>
+		<br/>
+		<p class="center">7 Day Trial</p>
+		<p><a href="#" class="bntstarted">Get Started Now</a></p>
+
+	</div>
+</div>
+<div id="pricingmain">
+<div id="prcontain">
+	
+	<div class="prices">
+		<p class="ptitle">Save Time and Money</p>
+		<div class="pimg"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im1.jpg"/></div>
+		<div class="ptext">
+			<p>Increase the ROI of using SolidWorks by utilizing the available tools more efficiently.</p>
+		</div>
+	</div>
+	
+	<div class="prices1">
+		<p class="ptitle">Train Your Team</p>
+		<div class="pimg"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im3.jpg"/></div>
+		<div class="ptext">
+			<p>Get your team up speed quickly with a multi-user account</p>
+		</div>
+	</div>
+
+	<div class="prices">
+		<p class="ptitle">Design Better Products</p>
+		<div class="pimg"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im2.jpg"/></div>
+		<div class="ptext">
+			<p>Create more robust designs by utilizing SolidWorks to its full potential</p>
+		</div>
+	</div>
+	
+	<div class="prices1">
+		<p class="ptitle">Exercise Files</p>
+		<div class="pimg"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im4.jpg"/></div>
+		<div class="ptext">
+			<p>All solidworks files included so that you can follow along with the lessons</p>
+		</div>
+	</div>
+	
+</div>
+<div id="priceslast" class="prices">
+		<p class="ptitle">Fresh Content</p>
+		<div class="pimg"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im5.jpg"/></div>
+		<div class="ptext">
+			<p>The SolidWize library is constantly growing, so you'll always be able to find new content. </p>
+		</div>
+	</div>
+</div>
+<div id="pricingfoot">
+	<div id="prf"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/im6.jpg"/></div>
+	<div id="prr">
+	<h2 class="center">Try SolidWize Today!</h2>
+	<p class="center">7 Day Trial</p>
+			<p><a href="#" class="bntstarted">Get Started Now</a></p>
+	</div>
+</div>
+</div><!-- end content -->
+</div><!-- end main-holder -->
+</div><!-- main-area -->
+<?php get_footer(); ?>
+</div>
+

@@ -1,0 +1,93 @@
+#truethemes_container #header
+{
+	background:#E7E7E7 url(images/admin-bg-grad-grey.jpg) repeat-x left top;
+	border:1px solid #C6C6C6;
+}
+#truethemes_container #header .logo h2{font-style:normal;padding-left: 50px;background: url(images/icon_option_grey.png) 0 75% no-repeat;}
+.save_bar_top{background:#EFF8FF url(images/bg-save-bar-grey.jpg) repeat-x;border:solid #B0C8D7;height:35px;text-align:right;border-width:0 1px 1px;padding:10px 20px 0;
+-webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+}
+#truethemes_container #main
+{
+	background-color:#F1F1F1;
+	border-bottom:1px solid #d8d8d8;
+	border-left:1px solid #d8d8d8;
+	border-right:1px solid #d8d8d8;
+}
+#truethemes_container #of-nav ul li a:link
+{
+	border-bottom:1px solid #d8d8d8;
+	border-right:1px solid #d8d8d8;
+	color:#21759B;
+	display:block;
+	font-family:Georgia, Serif;
+	font-size:13px;
+	padding:15px 10px 12px 36px;
+	text-decoration:none;
+	background:url(images/bg-icn.png) 0 0 no-repeat;
+}
+
+#truethemes_container #of-nav ul li.current a,#truethemes_container #of-nav ul li.current a:hover{
+background:#fff;
+border-right:1px solid #FFF;
+color:#333;
+}
+#truethemes_container #of-nav ul li a:hover{color:#D64E21;}
+
+
+/* GENERAL SETTINGS */
+#truethemes_container #of-nav ul li #item1 {background:url(images/bg-icn.png) 0 0 no-repeat;}
+#truethemes_container #of-nav ul li #item1:hover {background:url(images/bg-icn.png) -358px 0 no-repeat;}
+#truethemes_container #of-nav ul li.current #item1, #truethemes_container #of-nav ul li.current #item1:hover {background: #FFF url(images/bg-icn.png) -358px 0 no-repeat;}
+
+/* STYLING OPTIONS */
+#truethemes_container #of-nav ul li #item2 {background:url(images/bg-icn.png) 0 -45px no-repeat;}
+#truethemes_container #of-nav ul li #item2:hover {background:url(images/bg-icn.png) -358px -45px no-repeat;}
+#truethemes_container #of-nav ul li.current #item2, #truethemes_container #of-nav ul li.current #item2:hover {background: #FFF url(images/bg-icn.png) -358px -45px no-repeat;}
+
+/* TYPOGRAPHY */
+#truethemes_container #of-nav ul li #item3 {background:url(images/bg-icn.png) 0 -90px no-repeat;}
+#truethemes_container #of-nav ul li #item3:hover {background:url(images/bg-icn.png) -358px -90px no-repeat;}
+#truethemes_container #of-nav ul li.current #item3, #truethemes_container #of-nav ul li.current #item3:hover {background: #FFF url(images/bg-icn.png) -358px -90px no-repeat;}
+
+/* INTERFACE OPTIONS */
+#truethemes_container #of-nav ul li #item4 {background:url(images/bg-icn.png) 0 -135px no-repeat;}
+#truethemes_container #of-nav ul li #item4:hover {background:url(images/bg-icn.png) -358px -135px no-repeat;}
+#truethemes_container #of-nav ul li.current #item4, #truethemes_container #of-nav ul li.current #item4:hover {background: #FFF url(images/bg-icn.png) -358px -135px no-repeat;}
+
+/* FORM SETTINGS */
+#truethemes_container #of-nav ul li #item5 {background:url(images/bg-icn.png) 0 -360px no-repeat;}
+#truethemes_container #of-nav ul li #item5:hover {background:url(images/bg-icn.png) -358px -360px no-repeat;}
+#truethemes_container #of-nav ul li.current #item5, #truethemes_container #of-nav ul li.current #item5:hover {background: #FFF url(images/bg-icn.png) -358px -360px no-repeat;}
+
+/* BLOG SETTINGS */
+#truethemes_container #of-nav ul li #item6 {background:url(images/bg-icn.png) 0 -180px no-repeat;}
+#truethemes_container #of-nav ul li #item6:hover {background:url(images/bg-icn.png) -358px -180px no-repeat;}
+#truethemes_container #of-nav ul li.current #item6, #truethemes_container #of-nav ul li.current #item6:hover {background: #FFF url(images/bg-icn.png) -358px -180px no-repeat;}
+
+/* HOMEPAGE SETTINGS */
+#truethemes_container #of-nav ul li #item7 {background:url(images/bg-icn.png) 0 -225px no-repeat;}
+#truethemes_container #of-nav ul li #item7:hover {background:url(images/bg-icn.png) -358px -225px no-repeat;}
+#truethemes_container #of-nav ul li.current #item7, #truethemes_container #of-nav ul li.current #item7:hover {background: #FFF url(images/bg-icn.png) -358px -225px no-repeat;}
+
+/* JAVASCRIPT SETTINGS */
+#truethemes_container #of-nav ul li #item8 {background:url(images/bg-icn.png) 0 -270px no-repeat;}
+#truethemes_container #of-nav ul li #item8:hover {background:url(images/bg-icn.png) -358px -270px no-repeat;}
+#truethemes_container #of-nav ul li.current #item8, #truethemes_container #of-nav ul li.current #item8:hover {background: #FFF url(images/bg-icn.png) -358px -270px no-repeat;}
+
+/* ADDITIONAL SETTINGS */
+#truethemes_container #of-nav ul li #item9 {background:url(images/bg-icn.png) 0 -315px no-repeat;}
+#truethemes_container #of-nav ul li #item9:hover {background:url(images/bg-icn.png) -358px -315px no-repeat;}
+#truethemes_container #of-nav ul li.current #item9, #truethemes_container #of-nav ul li.current #item9:hover {background: #FFF url(images/bg-icn.png) -358px -315px no-repeat;}
+
+
+
+
+#truethemes_container #content{
+background-color:#fff;border-left:1px solid #D8D8D8;float:left;font-family:"Lucida Grande", Sans-serif;margin-left:-1px;min-height:550px;width:559px;padding:0 22px;padding-top:5px;
+}

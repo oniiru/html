@@ -1,0 +1,47 @@
+2.2.8
+-----------------------------------------
+* Fixed the more robust comparison to make it more robust.
+
+2.2.7
+-----------------------------------------
+* Added a more robust comparison for detecting the payment notification URL.
+
+2.2.6
+-----------------------------------------
+* Fixed issue where form includes a description. Emails previously would not be sent.
+* Loaded javascript only if a payment form is present on the page and pushed the load to the page footer.
+
+* Removed 'amount' from 'createToken' call as it is no longer supported by Stripe
+
+2.2.5
+-----------------------------------------
+* Fixed issue with plans having amounts that were not integer (e.g. 9.99)
+* Fixed issue with invalid coupon codes.
+
+2.2.4
+-----------------------------------------
+* Added back the feature of being able to HTTP POST to a page containing a payment form and having all POST data embedded into the new form.
+
+2.2.3
+-----------------------------------------
+* Fixed errors when invalid of no API keys are configured.
+* Fixed issue related to recurring payments not receiving emails.
+
+2.2.0.0
+-----------------------------------------
+* Added Stripe.com management elements (Customers, Payments, Subscriptions, Events) to the plugin admin panel.
+* Removed the docs that were in the admin page. Not as maintainable.
+* Refactoring of code for maintainability.
+* Coupon support using the [stripe_form_coupon] or [stripe_form_coupon code='id'] short code.
+* Wordpress update API support.
+* Added hooks to support premium subscriber plugin.
+
+
+2.1.0.0
+-----------------------------------------
+* Support for stripe-php-1.6.1
+* Fixed a few bugs.
+
+2.0.0.0
+-----------------------------------------
+* Initial paid release
