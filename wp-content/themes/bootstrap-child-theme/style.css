@@ -1617,7 +1617,7 @@ color: rgb(77, 75, 75);
 	font-weight: 300;
 }
 .homesec2 h3 {
-	text-align:left;
+	text-align:center;
 }
 
 .modal-header {padding:3	px !important; border-bottom:0px !important;}
@@ -2425,7 +2425,7 @@ margin-left: 0px;
 }
 .homesec4 .btn {
 	float:none;
-	margin:0px 0 15px 0 !important;
+	margin:15px 0 0px 0 !important;
 	
 }
 
