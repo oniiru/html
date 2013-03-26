@@ -2314,6 +2314,11 @@ margin-top: -6px;
 	
 }
 
+.leftthing img, .middlething img, .rightthing img {
+	margin-bottom:30px !important;
+	
+}
+
 	.leftthing, .middlething, .rightthing {
 	display: block;
 	vertical-align: top;
@@ -2340,6 +2345,7 @@ font-weight: 300;
 position: relative;
 top: 7px;
 margin-left: 20px;
+padding-left:0px !important;
 }
 
 .solidlogo {
@@ -2351,12 +2357,12 @@ font-size: 20px;
 font-size: 24px;
 }
 .CTAsection h1 {
-font-size: 24px !important;
+font-size: 22px !important;
 margin-bottom: -17px;
 }
 
 .CTAsection h2 {
-font-size: 17px;
+font-size: 15px;
 }
 
 .header-background-image .btn {
@@ -2371,7 +2377,7 @@ font-size: 17px !important;
 #content {width:inherit;}
 
 .homesecright {
-	width:350px;
+	width:250px;
 	float:none;
 	margin:auto;
 	text-align:center;
