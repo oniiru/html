@@ -2444,6 +2444,10 @@ margin-left: 0px;
 	font-size:24px;
 }
 
+.navbar-fixed-top {
+	position:absolute;
+}
+
 .homesec4 h4 {
 	font-size:15px;
 }
