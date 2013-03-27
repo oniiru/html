@@ -2809,6 +2809,10 @@ h3.directory-name span {
 	font-size:24px !important;
 	line-height:1.2em;
 }
+.aboutright h4, .aboutright h5, .aboutright p, .aboutleft h4, .aboutleft h5, .aboutleft p {
+	width:280px;
+	
+}
 
 .singlepitch {
 	text-align:left;
