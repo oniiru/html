@@ -2343,12 +2343,17 @@ height:auto;
 		margin-left:0px !important;
 		margin-top:30px !important;
 	}
+	
+	.pricingpage .accordion {width: 280px;
+margin: auto;
+}
 	.freeplan, .monthlyplan, .businessplan {
 		display:block;
 		border:1px solid #ddd;
 		margin:auto;
 		margin-bottom: 15px;
 		border-radius:4px;
+		width:250px;
 	}
 	.pricingpage .accordion .span6 {
 		width:99%;
@@ -2773,7 +2778,7 @@ h3.directory-name span {
 	position: relative;
 	font-size: 14px;
 	line-height: 1.2em;
-	margin-left: -20px;
+	margin-left: -10px;
 }
 
 .modal {
