@@ -2753,6 +2753,7 @@ float:none;
 	width: 200px;
 	margin: auto;
 	font-size: 14px;
+	text-align:center;
 	}
 .ion_tabs {
 	width:300px;
@@ -2761,6 +2762,11 @@ float:none;
 
 ul.video-list li a {
 	font-size:11px;
+}
+
+#cancelmembership .btn {
+	font-size:10px;
+	padding:4px 8px;
 }
 .ion-css .postbox {
 	text-align:left;
