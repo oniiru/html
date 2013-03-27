@@ -2368,6 +2368,7 @@ margin: auto;
 		font-size:27px !important;
 		margin:0px;
 		line-height:1.2em;
+		margin-top:-5px;
 	}
 	
 	.pricingpage h3 {
@@ -2832,7 +2833,18 @@ h3.directory-name span {
 	width:260px;
 	
 }
+.pricingplanimg {
+height: 150px;
 
+}
+
+.freeplan img {
+margin-top: 20px;
+}
+
+.freeplan {
+	height:485px;
+}
 .singlepitch {
 	text-align: center;
 }

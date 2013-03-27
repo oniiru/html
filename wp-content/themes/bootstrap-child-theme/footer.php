@@ -29,5 +29,9 @@
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 
 	</body>
-
+	<script>
+	jQuery('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { 
+	    e.stopPropagation(); 
+	});
+	</script>
 </html>

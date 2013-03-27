@@ -86,13 +86,13 @@ Template Name: Student Pricing
 								  <div class="span6">
 									 <h3>Is your site secure?</h3>
 									 <p>Of course! Our site is secured by Godaddy and Stripe. We go to great lengths to keep your data secured.</p>
-									 <img src="https://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/img/api-cloud.png" style="float:right">
+									 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/api-cloud.png" style="float:right">
 						 <div style="float:right; margin-right: 20px; margin-top: 30px;"> <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=7BtpZZvt6QuT91PTamzlUZdFu62QjzQ5h3eno4XpGhnOjLof6J2"></script></span></div>
 								  </div>
 								  <div class="span6">
 									  <h3>Are you affiliated with SolidWorks?</h3>
 									  <p>We are an official SolidWorks Solutions Partner, and as such can display this nifty logo!</p>
-									  <img style="float:right; margin-top:20px;" src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/solutions.png">
+									  <img style="float:right; margin-top:20px;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/solutions.png">
 								  </div>
 							  </div>
 							  <div class="row">
