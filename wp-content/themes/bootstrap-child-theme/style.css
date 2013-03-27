@@ -2842,7 +2842,7 @@ min-width: 260px!important;
 input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
 width: 250px;
 }
-input#phone {
+input#bphone {
 	width:250px;
 }
 .pmpro_sslseal {
@@ -2866,8 +2866,8 @@ padding:10px 20px;
 max-width: 169px !important;
 }
 .passfix {
-	margin-left:0px;
-	margin-top:30px;
+	margin-left:0px !important;
+	margin-top:30px !important;
 }
 .pmpro_thead-msg {
 	margin-left:0px;}
