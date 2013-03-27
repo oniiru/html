@@ -279,7 +279,7 @@ Template Name: Billing Template
 											<div class="opaque_placeholder cvvfix" style="margin-left:20px;width:180px">
 												<label style="width:35px !important" for="CVV">CVV <?php if (pmpro_getClassForField("CVV")=='pmpro_required') echo '&nbsp;*' ?></label>
 												<input class="input" id="CVV" <?php if($gateway != "stripe") { ?>name="CVV"<?php } ?> type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class="<?php echo pmpro_getClassForField("CVV");?>" />
-												<small style="padding-left: 70px;"><a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><img style="margin-top:10px;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"></a></small>
+												<small style="padding-left: 70px;"><a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><img style="margin-top:10px;" class="questionfix" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"></a></small>
 											</div>
 											
 											<?php

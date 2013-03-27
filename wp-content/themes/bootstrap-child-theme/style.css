@@ -2105,7 +2105,6 @@ p.signouttext {
 }
 .billingpage .cvvfix {
 	
-margin-left: 10px !important;
 width: 180px;
 margin-top: 13px;
 
@@ -2206,13 +2205,13 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 	
 }
 
-.modaliframevid {
-	width:700px;
-	height:394px;
-}
 
 .pricingpage h3 {
 	line-height:1.2em;
+}
+
+h2.categoryTitle {
+	width:auto !important;
 }
 /* 6 - Media Queries
 ================================================== */
@@ -2343,6 +2342,9 @@ height:auto;
 		margin-left:0px !important;
 		margin-top:30px !important;
 	}
+	.billingpage .cvvfix {
+		margin-top:7px;
+	}
 	
 	.pricingpage .accordion {width: 300px;
 margin: auto;
@@ -2368,9 +2370,8 @@ margin: auto;
 		font-size:27px !important;
 		margin:0px;
 		line-height:1.2em;
-		margin-top:-5px;
+		margin-top:-5px !important;
 	}
-	
 	.pricingpage h3 {
 		font-size:17px !important;
 		line-height:1.2em;
@@ -2541,7 +2542,10 @@ max-width: 169px !important;
 
 }
 
-
+.modaliframevid {
+	width:600px;
+	height:337px;
+}
 
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -2839,7 +2843,7 @@ h3.directory-name span {
 	width:260px;
 	
 }
-.pricingplanimg {
+.freeplan .pricingplanimg {
 height: 150px;
 
 }
@@ -2938,6 +2942,8 @@ max-width: 120px !important;
 .pmpro_thead-msg {
 	margin-left:0px;
 	width:263px;}
+	
+	
 	.questionfix {
 		display:none;
 	}
@@ -2970,5 +2976,18 @@ margin-left: 5px !important;}
 #menu-header-signed-in li a {
 	padding: 10px 7px 10px;
 }
+
+p.signouttext { 
+	width:250px;
+
+}
+
+.billingpage input#CVV {
+	height: 22px !important;
+}
+
+.modaliframevid {
+	width:260px;
+	height:146px;
 }
 /* Mobile Portrait Size Only (devices and browsers) */
