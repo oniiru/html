@@ -2850,7 +2850,8 @@ input#bphone {
 }
 
 #discount_code_button {
-	margin-left:-48px;
+	margin-left: -48px !important;
+	height: 48px;
 }
 input#discount_code {
 	width: 150px
@@ -2889,7 +2890,7 @@ padding:10px 20px;
 	font-size:12px !important;
 }
 .awesomeradio_container {
-max-width: 169px !important;
+max-width: 120px !important;
 }
 .passfix {
 	margin-left:0px !important;
@@ -2909,11 +2910,6 @@ max-width: 169px !important;
 		margin-top:40px;
 	}
 
-
-
-	.form_date {
-		margin-right:34px !important;
-	}
 #other_discount_code_p {
 	margin-top: 22px !important;
 }
