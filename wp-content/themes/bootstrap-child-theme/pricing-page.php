@@ -30,10 +30,10 @@ Template Name: Pricing Page
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/intropricing.png">
 									</div>
 									<h2>Free</h2>
+									<h4><br>Includes:</h4>	
 									<p>
-									Unlimited access to our Intro To SolidWorks and Part Modeling sections. <br><br>
-									Comprehensive excercise files for both sections. <br><br>
-									<b>Totally free forever.</b>
+									Free access to our Intro and Part Modeling sections forever. </p>
+									<p style="border-bottom:0px">Comprehensive excercise files for both sections.
 									</p>
 									<?php if(pmpro_hasMembershipLevel('1')) 
 									{ ?>  
@@ -53,11 +53,14 @@ Template Name: Pricing Page
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/proimage.png">
 									</div>
 									<h2>Pro</h2>
+									<h4><br>Includes:</h4>	
+									
 									<p>
-									Unlimited access to our entire library of training material. <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"><br><br>
-									Comprehensive excercise files and exams <br><br>
-									<b>Paid Monthly: $57/Month<br>
-										Paid Yearly: $34/Month</b>
+									Unlimited access to our entire library of training material. <img class="pricingq" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"> </p>
+									<p>Comprehensive excercise files, quizzes and CSWP prep course. </p>
+								<p>	Fanatical customer support - office hours, chat, email, phone, you name it!</p>
+									<p class="mooo">Starting at $34/Month (if paid annually)
+									
 									</p>
 									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6)))									
 									{ ?>  
@@ -77,13 +80,15 @@ Template Name: Pricing Page
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/enterprise.png">
 									</div>
 									<h2>Teams</h2>
+									<h4><br>Includes:</h4>	
+									
 									<p>
-										Pro Memberships for your whole team.	
-									 <br><br>
-									 Custom content based on your specific needs.
-									 <br><br>
-									 									<b>Deep discounts for multi-user accounts.</b>
+										Get your whole team up to speed with Pro Memberships.	<br>
+									 </p>
+									<p> Custom content based on your specific needs.
 									</p>
+									 	<p class="mooo">Deep discounts for multi-user accounts.
+									</p> 
 									<a class="btn btn-custom btn-large" href="#businesscontactmodal" data-toggle="modal">Contact Us</a>
 								</div>
 							</a>

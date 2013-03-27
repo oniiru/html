@@ -28,7 +28,25 @@ h1 {
 	line-height: 1.6em	;
 	font-size: 16px;
 }
+.pricingq {
+	width: 17px;
+	position: relative;
+	top: -2px;
+	left: 5px;
+	display:none;
+}
 
+.freeplan .btn {
+	margin-top:106px;
+}
+
+.monthlyplan .btn {
+	margin-top:9px;
+}
+
+.businessplan .btn {
+	margin-top:67px;
+}
 .content {
 	width:980px;
 }
@@ -132,7 +150,7 @@ h1 {
 
 .freeplan, .monthlyplan, .businessplan {
 	width: 278px;
-	height: 580px;
+	height: 600px;
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: middle;
@@ -147,17 +165,43 @@ h1 {
 }
 
 .pricingplanimg {
-	height:250px;
+	height:205px;
+	
+}
+
+
+.pricingplan a:active{
+	color:black !important;
+}
+
+.pricingplanimg img {
+	max-width: 85% !important;
 }
 
 .pricingplan p {
-	height:185px;
-}
+	padding-bottom: 10px;
+	margin-top: 10px;
+	border-bottom: 1px dotted lightgrey;
+	line-height:1.3em;
+	}
+	
+
+	.mooo {
+		border-bottom:0px !important;
+		font-weight:600;
+		font-style:italic;
+	}
 
 .pricingplan h2{
 	font-size:36px;
 	font-family:"open sans" sans-serif;
 	
+}
+
+.pricingplan h4 {
+	line-height:14px;
+	font-weight:700px;
+	margin-bottom:15px;
 }
 .freeplan {
 	border-right: 1px solid #ebebeb;
@@ -1577,6 +1621,7 @@ color: rgb(77, 75, 75);
 	display: block;
 	overflow: hidden;
 	margin-bottom: 30px;
+	padding-top:10px;
 }
 .homesec2 {
 	display:block;
@@ -1598,7 +1643,7 @@ color: rgb(77, 75, 75);
 	float: right;
 	width: 482px;
 	text-align: left;
-	margin-top: 1px;
+	margin-top: -14px;
 }
 
 .homesecright h3 {
@@ -1611,9 +1656,9 @@ color: rgb(77, 75, 75);
 
 .homesecright p {
 	margin: 0 0 10px;
-	font-size: 17px;
-	line-height: 1.5em;
-	color: rgb(77, 75, 75);
+	font-size: 19px;
+	line-height: 1.3em;
+	color: rgb(48, 45, 45);
 	font-weight: 300;
 }
 .homesec2 h3 {
@@ -1627,9 +1672,9 @@ color: rgb(77, 75, 75);
 	width:281px;
 	text-align:left;
 	margin:0px !important;
-	color: rgb(77, 75, 75);
+	color: rgb(48, 45, 45);
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.5em;
 	
 }
@@ -2248,7 +2293,13 @@ h2.categoryTitle {
 		margin:0 42px;
 	}
 
-
+	.businessplan .btn {
+	margin-top: 84px;
+	}
+	
+	.freeplan .btn {
+	margin-top: 140px;
+	}
 	.homesec2 p {
 		width: 242px;
 	}
@@ -2565,6 +2616,9 @@ max-width: 169px !important;
 	height:337px;
 }
 
+.freeplan, .monthlyplan, .businessplan { height: 625px;
+}
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -2822,7 +2876,8 @@ h3.directory-name span {
 	padding: 10px 0;
 	
 }
-#incontent {padding:10px;}
+#incontent {padding:10px;
+}
 #buttonNoLgin p{
 	width: 130px;
 	top: -5px;
@@ -2960,7 +3015,8 @@ max-width: 120px !important;
 }
 .pmpro_thead-msg {
 	margin-left:0px;
-	width:263px;}
+	width:263px;
+}
 	
 	
 	.questionfix {
@@ -3004,6 +3060,7 @@ p.signouttext {
 	margin: -73px 0 0 -130px !important;
 }
 .billingpage input#CVV {
+
 	height: 22px !important;
 }
 
@@ -3011,5 +3068,10 @@ p.signouttext {
 	width:260px;
 	height:146px;
 }
+
+.freeplan .btn {
+margin-top: 60px;
+}
+
 }
 /* Mobile Portrait Size Only (devices and browsers) */

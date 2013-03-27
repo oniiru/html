@@ -46,8 +46,8 @@ Template Name: SolidWize Homepage
 				</script>    
 				
 					<div class="homesecright">
-						<h3>From zero experience to job-ready</h3>
-						<p>The extensive Treehouse library of step-by-step video courses and training exercises will give you a wide range of competitive, in-demand technology skills that will help you land your next dream job or build your startup idea. No experience? </p>
+						<h3>Become a SolidWorks Master</h3>
+						<p>Our membership-based online SolidWorks training is geared to make you the most efficient and creative SolidWorks user possible. It works whether you are learning from the ground up, need to top off your skills, or just want a place to consult when you get stuck.  </p>
 					</div>
 					
 					
@@ -58,17 +58,17 @@ Template Name: SolidWize Homepage
 					<div class="leftthing">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/learn.jpg">
 						<h3>Learn</h3>
-						<p>Learn from over 650 videos created by our expert teachers on web design, coding, business, and much more. Our library is continually refreshed with the latest on web technology so you'll never fall behind.</p>
+						<p>Learn from hundreds of tutorials covering all of the major SolidWorks toolsets. Whether you are just starting out or already more advanced, you'll be able to learn at your own pace from any internet-ready device. Our material is updated weekly, so you will always be able to continue progressing.</p>
 					</div>
 					<div class="middlething">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/practice.jpg">
 						<h3>Practice</h3>
-						<p>Practice what you've learned through quizzes and interactive Code Challenges. This style of practicing will allow you to retain information you've learned so you can apply it to your own future projects.</p>
+						<p>Excercise files and quizzes accompany each course, so you'll have plenty of time to practice. We even have weekly member only webinars, where you can ask our trainers specific questions in person. When it comes to your education, we mean business!</p>
 					</div>
 					<div class="rightthing">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/design.jpg">
 						<h3>Design</h3>
-						<p>You'll earn badges as you journey through our extensive library of courses. These badges are an indicator of what skills you currently possess and are viewable by anyone (even recruiters from big companies!).</p>
+						<p>Design that innovative product that's been burning in your mind. If you get stuck, we're here to help. You study SolidWorks to design and build amazing products. Our training and fanatical customer support are here to help you do just that. <a href="<?php bloginfo('url'); ?>/pricing">Let's get started.</a></p>
 					</div>
 				</div>
 				<div class="homesec3">
