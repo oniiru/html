@@ -2344,7 +2344,7 @@ height:auto;
 		margin-top:30px !important;
 	}
 	
-	.pricingpage .accordion {width: 280px;
+	.pricingpage .accordion {width: 300px;
 margin: auto;
 }
 	.freeplan, .monthlyplan, .businessplan {
@@ -2755,6 +2755,10 @@ ul.video-list li a {
 .ion-css .ui-tabs .ui-tabs-nav li {
 	
 }
+
+.pricingpage h1 {
+	margin-top:-5px !important;
+}
 h3.directory-name span.icon-before {
 	margin-top: -1px;
 }
@@ -2782,8 +2786,9 @@ h3.directory-name span {
 }
 
 .modal {
-	width:350px;
-	margin: -250px 0 0 -175px;
+	width: 290px;
+	margin: -250px 0 0 -145px;
+	}
 }
 
 .post_content p {
@@ -2825,11 +2830,9 @@ h3.directory-name span {
 		
 }
 .pmpro_form {
-	width:350px !important;
-}
-
-.pmpro_form {
-	text-align:left;
+	width:280px !important;
+	padding: 5px 10px;
+		text-align:left;
 }
 
 .awesomeradio_label {
@@ -2837,9 +2840,11 @@ min-width: 260px!important;
 }
 
 input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
-width: 315px;
+width: 250px;
 }
-
+input#phone {
+	width:250px;
+}
 .pmpro_sslseal {
 	display:none;
 }
@@ -2860,13 +2865,24 @@ padding:10px 20px;
 .awesomeradio_container {
 max-width: 169px !important;
 }
-
+.passfix {
+	margin-left:0px;
+	margin-top:30px;
+}
 .pmpro_thead-msg {
 	margin-left:0px;}
 	.questionfix {
 		display:none;
 	}
-	
+	.pmpro_form thead th {
+	font-size: 21px !important;	
+	}
+
+	#pmpro_user_fields {
+		margin-top:40px;
+	}
+
+
 
 	.form_date {
 		margin-right:34px !important;
@@ -2879,8 +2895,7 @@ input.awesomeradio {
 }
 
 .submitfixer {
-	margin-left:-44px !important;
-}
+margin-left: 5px !important;}
 }
 
 /* Mobile Portrait Size Only (devices and browsers) */

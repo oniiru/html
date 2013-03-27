@@ -320,7 +320,7 @@ Template Name: Checkout Template
 												do_action('pmpro_checkout_after_email');
 											?>
 				
-											<div class="opaque_placeholder" style="width:365px;margin-left:20px">
+											<div class="passfix opaque_placeholder" style="width:365px;margin-left:20px">
 												<label for="password">Password <?php if (pmpro_getClassForField("password")=='pmpro_required') echo '&nbsp;*' ?></label>
 												<input id="password" name="password" type="password" class="input" size="30" value="<?php echo esc_attr($password)?>" /> 
 											</div>
