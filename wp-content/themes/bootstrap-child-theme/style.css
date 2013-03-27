@@ -2732,7 +2732,7 @@ float:none;
 	font-size: 14px;
 	}
 .ion_tabs {
-	width:310px;
+	width:300px;
 	margin:auto;
 }
 
@@ -2745,6 +2745,7 @@ ul.video-list li a {
 	font-size:12px;
 }
 .ion-css .ui-tabs .ui-tabs-nav li {
+	
 }
 h3.directory-name span.icon-before {
 	margin-top: -1px;
@@ -2757,7 +2758,7 @@ h3.directory-name span {
 	padding: 10px 0;
 	
 }
-
+#incontent {padding:10px;}
 #buttonNoLgin p{
 	width: 130px;
 	top: -5px;
