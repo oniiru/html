@@ -2859,26 +2859,23 @@ input#discount_code {
 
 select#ExpirationMonth {
 width: 118px;
-height:48px;
+height:48px !important;
 }
 
 select#ExpirationYear {
 	width:63px;
-	height:48px;
+	height:48px !important;
 }
 
 
 .form_date {
 	margin-right:101px !important;
 }
-select#ExpirationMonth {
-	width:118px;
-	height:48px !important;
-}
+
 
 .awesomeradio_label {
-max-width: 75px !important;
-min-width:75px !important;
+max-width: 100px !important;
+min-width:100px !important;
 padding:10px 20px;
 }
 .pmpro_form p {
