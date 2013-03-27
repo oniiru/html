@@ -134,7 +134,7 @@ Template Name: Checkout Template
 									<?php if($pmpro_show_discount_code) { ?>
 									<tr id="other_discount_code_tr" class="awesomediscount" style="display: none;">
 										<td colspan="2">
-											<div class="opaque_placeholder">
+											<div class="discountfixer opaque_placeholder">
 												<label for="discount_code">Discount Code </label>
 												<input class="input <?php echo pmpro_getClassForField("discount_code");?>" id="discount_code" name="discount_code" type="text" size="20" value="<?php echo esc_attr($discount_code)?>" />
 												<input type="button" id="discount_code_button" class="btn btn-success" name="discount_code_button" value="Apply" style="margin-left:20px;"/>
@@ -243,7 +243,7 @@ Template Name: Checkout Template
 													<label for="bfirstname">First Name <?php if (pmpro_getClassForField("bfirstname")=='pmpro_required') echo '&nbsp;*' ?></label>
 													<input id="bfirstname" name="bfirstname" type="text" class="input" size="30" value="<?php echo esc_attr($bfirstname)?>" /> 
 												</div>
-												<div class="opaque_placeholder" style="width:365px;margin-left:20px">
+												<div class="opaque_placeholder littlebillfix" style="width:365px;margin-left:20px">
 													<label for="blastname">Last Name <?php if (pmpro_getClassForField("blastname")=='pmpro_required') echo '&nbsp;*' ?></label>
 													<input id="blastname" name="blastname" type="text" class="input" size="30" value="<?php echo esc_attr($blastname)?>" /> 
 												</div>
@@ -662,10 +662,10 @@ if ( is_user_logged_in() ) {
 												$pmpro_show_cvv = apply_filters("pmpro_show_cvv", true);
 												if($pmpro_show_cvv) {
 											?>
-											<div class="opaque_placeholder" style="margin-left:20px;width:180px">
+											<div class="cvvfix opaque_placeholder" style="margin-left:20px;width:180px">
 												<label style="width:35px !important" for="CVV">CVV <?php if (pmpro_getClassForField("CVV")=='pmpro_required') echo '&nbsp;*' ?></label>
 												<input class="input" id="CVV" <?php if($gateway != "stripe") { ?>name="CVV"<?php } ?> type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class="<?php echo pmpro_getClassForField("CVV");?>" />
-												<small style="padding-left: 70px;"><a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><img style="margin-top:10px;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"></a></small>
+												<small style="padding-left: 70px;"><a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><img style="margin-top:10px;" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png" class="questionfix"></a></small>
 											</div>
 											<?php } ?>
 											<div class="form_date">
@@ -700,7 +700,7 @@ if ( is_user_logged_in() ) {
 												</select> 
 											</div>
 											</div>
-											<div class="opaque_placeholder" style="margin-left:15px;margin-top:13px">
+											<div class="phonefix opaque_placeholder" style="margin-left:15px;margin-top:13px">
 												<label for="bphone">Phone <?php if (pmpro_getClassForField("bphone")=='pmpro_required') echo '&nbsp;*' ?></label>
 												<input id="bphone" name="bphone" type="text" class="input" size="30" value="<?php echo esc_attr($bphone)?>" /> 
 												<?php echo formatPhone($bphone); ?>
@@ -817,7 +817,7 @@ if ( is_user_logged_in() ) {
 			
 										<span id="pmpro_submit_span" <?php if(($gateway == "paypalexpress" || $gateway == "paypalstandard") && $pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>
 											<input type="hidden" name="submit-checkout" value="1" />		
-											<input type="submit" class="btn btn-success btn-large" style="margin-left:78px;padding-left: 50px !important;
+											<input type="submit" class="submitfixer btn btn-success btn-large" style="margin-left:78px;padding-left: 50px !important;
 padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Checkout<?php } else { ?>Confirm<?php } ?> &raquo;" />	
 			
 										</span>

@@ -30,7 +30,7 @@
 				<input type="text" class="formfield" value="" name="company" value="" />
 			</div>
 			<div class="colRight">
-				<label>Message</label>				
+				<label>Message</label>
 				<textarea class="formfield" name="message" ></textarea>
 				<input type="submit" name="submit" class="contact signupbutton" value="Submit"  />
 			</div>
@@ -51,42 +51,42 @@
 			formValidation.init();
 			jQuery('#contact_form div.hiddenFields').append('<input type="hidden" name="cerberus" value="1" id="cerberus" />');
 			window.validateForms['contact_form'] = new FormValidator('contact_form',{name: 'Name Required', email: 'Email Address Required'});
-			if ( jQuery('#contact_form input:hidden[name="cerberus"]').val() == '1' ) {			
-				jQuery('#contact_form').submit(function(s){				
-					s.preventDefault();	return false;			
+			if ( jQuery('#contact_form input:hidden[name="cerberus"]').val() == '1' ) {
+				jQuery('#contact_form').submit(function(s){
+					s.preventDefault();	return false;
 				});
 				jQuery('#contact_form input[name="submit"]').click(function(e){
 					if(window.validateForms['contact_form'].validate()){
 						var submitButton = jQuery(this);
-						var loading = '<div id="processing_form"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/box/ajax-loader.gif" alt="Processing" /> Processing Submission...</div>';					
+						var loading = '<div id="processing_form"><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/box/ajax-loader.gif" alt="Processing" /> Processing Submission...</div>';
 						submitButton.hide();
 						submitButton.parent().append(loading);
 						var success;
 						e.preventDefault();
-						var parameters = jQuery('#contact_form').serialize();					
+						var parameters = jQuery('#contact_form').serialize();
 						jQuery.ajax({
-							url:"<?php bloginfo('home'); ?>/wp-admin/admin-ajax.php",
-							data:'action=contact_pro&'+ parameters,											
-							type: 'POST',						
+							url:"<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php",
+							data:'action=contact_pro&'+ parameters,
+							type: 'POST',
 							complete: function(response){
-								var responseJSON = jQuery.parseJSON(response.responseText);						
-								if( responseJSON['contactf'] == 202 ) {								
-									jQuery('#processing_form').remove();						
-									submitButton.show();											
-									jQuery('#contact_modal_container').fadeOut(function(){				
-										jQuery('#success').fadeIn();							
-									});						
-								} else { 						
-									jQuery('#processing_form').remove();		
-									submitButton.show();									
-								}							
-								jQuery(':input, #contact_form').not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');	
+								var responseJSON = jQuery.parseJSON(response.responseText);
+								if( responseJSON['contactf'] == 202 ) {
+									jQuery('#processing_form').remove();
+									submitButton.show();
+									jQuery('#contact_modal_container').fadeOut(function(){
+										jQuery('#success').fadeIn();
+									});
+								} else {
+									jQuery('#processing_form').remove();
+									submitButton.show();
+								}
+								jQuery(':input, #contact_form').not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
 							}
-						});							
-						return false;				
-					}			
-				});		
-			}		
+						});
+						return false;
+					}
+				});
+			}
 		}
 	</script>
 </div>

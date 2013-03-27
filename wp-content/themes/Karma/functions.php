@@ -6,8 +6,8 @@ require_once(TEMPLATEPATH . '/truethemes_framework/truethemes_framework_init.php
 load_theme_textdomain ('truethemes_localize');
 
 
-
-// **** Add your custom codes below this line ****
 add_theme_support( 'post-thumbnails' );
+// **** Add your custom codes below this line ****
+
 
 ?>

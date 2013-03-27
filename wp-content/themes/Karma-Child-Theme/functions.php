@@ -1,9 +1,8 @@
 <?php
-add_action('template_redirect', 'my_redirect', 1);
-
+add_action ('template_redirect', 'my_redirect', 1 );
 function my_redirect() {
     if (is_user_logged_in() && is_front_page()) {
-        wp_redirect(site_url('member'));
+        wp_redirect(('member'));
         die();
     }
 	 if (!is_user_logged_in() && is_page('member')) {
@@ -162,8 +161,8 @@ function sendEmailMan($name, $email, $company, $mess, $number_user = '') {
         $subject = 'Contact Form ';
     $to = 'rohit@solidwize.com';
 
-    $headers = "From: SolidWize<info@ttvtech.com> \r\n";
-    $headers .= "Reply-To: SolidWize <" . $email . ">\r\n";
+    $headers = "From: SolidWize<rohit@solidwize.com> \r\n";
+    $headers .= "Reply-To: $email \r\n";
     $headers .= "Return-Path: SolidWize <" . $email . ">\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -253,7 +252,7 @@ class custom_walker extends Walker_Nav_Menu {
         $output .= $indent . '<li id="testitem-' . $item->ID . '"' . $value . $class_names . '>';
 
         if (strpos($item->attr_title, '[contact]') || $item->attr_title == '[contact]')
-            $attributes = ' id="contact"' . $item->ID . ' class="contactform"';
+            $attributes = ' id="contact" ';
         if (strpos($item->attr_title, '[contact-user]') || $item->attr_title == '[contact-user]')
             $attributes = ' id="contact-user" ';
         if (strpos($item->attr_title, '[contact-student]') || $item->attr_title == '[contact-student]')
@@ -416,36 +415,27 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
 
     if ($level_id == 0) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
+        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
     if ($level_id == 1) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
+        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
 
-    if (($level_id == 2) || ($level_id == 3)) {
+    if (($level_id == 2) || ($level_id == 3) || ($level_id == 4)) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)))
             $wp_user_object->set_role('standardmember');
     }
-    else {
-        $wp_user_object = new WP_User($user_id);
-        if (in_array("standardmember", $wp_user_object->roles))
-            $wp_user_object->set_role('freemember');
-    }
 
-    if (($level_id == 4) || ($level_id == 5) || ($level_id == 5)) {
+    if (($level_id == 5) || ($level_id == 6)) {
         $wp_user_object = new WP_User($user_id);
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)))
             $wp_user_object->set_role('promotionalmember');
     }
-    else {
-        $wp_user_object = new WP_User($user_id);
-        if (in_array("promotionalmember", $wp_user_object->roles))
-            $wp_user_object->set_role('freemember');
-    }
+
 }
 
 add_action("pmpro_after_change_membership_level", "my_pmpro_after_change_membership_level", 10, 2);
@@ -456,7 +446,7 @@ add_action("pmpro_after_change_membership_level", "my_pmpro_after_change_members
 
 function my_pmpro_profile_start_date($date, $order) {
     if (($order->membership_id == 2) || ($order->membership_id == 3) || ($order->membership_id == 4))
-        $date = date("Y-m-d", strtotime("+ 1 Days")) . "T0:0:0";
+        $date = date("Y-m-d", strtotime("+ 7 Days")) . "T0:0:0";
 
     return $date;
 }
@@ -466,22 +456,21 @@ add_filter("pmpro_profile_start_date", "my_pmpro_profile_start_date", 10, 2);
 function my_pmpro_level_cost_text($cost, $level) {
     if ($level->id == 3) {
         $cost = str_replace("Year.", "Year", $cost);
-        $cost .= " after your <strong>1 day trial</strong>.";
+        $cost .= " after your <strong>7 day trial</strong>.";
     }
 
     if ($level->id == 2) {
         $cost = str_replace("Month.", "Month", $cost);
-        $cost .= " after your <strong>1 day trial</strong>.";
+        $cost .= " after your <strong>7 day trial</strong>.";
     }
 
     if ($level->id == 4) {
         $cost = str_replace("Month.", "Month", $cost);
-        $cost .= " after your <strong>1 day trial</strong>.";
+        $cost .= " after your <strong>7 day trial</strong>.";
     }
 
     return $cost;
 }
-
 add_filter("pmpro_level_cost_text", "my_pmpro_level_cost_text", 10, 2);
 
 //function my_pmpro_after_change_membership_level($level, $user_id) {
@@ -493,54 +482,42 @@ add_filter("pmpro_level_cost_text", "my_pmpro_level_cost_text", 10, 2);
 //}
 
 //add_action('pmpro_after_change_membership_level', 'my_pmpro_after_change_membership_level');
-/*
-  Don't send WP's default notification email.
- */
-
-function my_pmpro_wp_new_user_notification($notify) {
-    return false;
-}
-
-add_filter("pmpro_wp_new_user_notification", "my_pmpro_wp_new_user_notification");
-
-remove_action("wp", "pmpro_wp", 1);
-add_action("wp", "custom_pmpro_wp", 1);
-
-//this code runs after $post is set, but before template output
-function custom_pmpro_wp() {
-    if (!is_admin()) {
-        global $post, $pmpro_pages, $pmpro_page_name, $pmpro_page_id;
-
-        //run the appropriate preheader function
-        foreach ($pmpro_pages as $pmpro_page_name => $pmpro_page_id) {
-            if ($pmpro_page_name == "checkout") {
-                continue;  //we do the checkout shortcode every time now
-            }
-
-            if (!empty($post->ID) && $pmpro_page_id == $post->ID) {
-
-                require_once(KARMA_TEMPLATEPATH . "/preheaders/" . $pmpro_page_name . ".php");
-
-                function pmpro_pages_shortcode($atts, $content = null, $code = "") {
-                    global $pmpro_page_name;
-                    ob_start();
-                    include(KARMA_TEMPLATEPATH . "/pages/" . $pmpro_page_name . ".php");
-                    $temp_content = ob_get_contents();
-                    ob_end_clean();
-                    return apply_filters("pmpro_pages_shortcode_" . $pmpro_page_name, $temp_content);
-                }
-
-                add_shortcode("pmpro_" . $pmpro_page_name, "pmpro_pages_shortcode");
-                break; //only the first page found gets a shortcode replacement
-            }
-        }
-
-        //make sure you load the preheader for the checkout page. the shortcode for checkout is loaded below
-        if (!empty($post->post_content) && strpos($post->post_content, "[pmpro_checkout]") !== false) {
-            require_once(KARMA_TEMPLATEPATH . "/preheaders/checkout.php");
-        }
-    }
-}
+// 
+// //this code runs after $post is set, but before template output
+// function custom_pmpro_wp() {
+    // if (!is_admin()) {
+        // global $post, $pmpro_pages, $pmpro_page_name, $pmpro_page_id;
+// 
+        // //run the appropriate preheader function
+        // foreach ($pmpro_pages as $pmpro_page_name => $pmpro_page_id) {
+            // if ($pmpro_page_name == "checkout") {
+                // continue;  //we do the checkout shortcode every time now
+            // }
+// 
+            // if (!empty($post->ID) && $pmpro_page_id == $post->ID) {
+// 
+                // require_once(KARMA_TEMPLATEPATH . "/preheaders/" . $pmpro_page_name . ".php");
+// 
+                // function pmpro_pages_shortcode($atts, $content = null, $code = "") {
+                    // global $pmpro_page_name;
+                    // ob_start();
+                    // include(KARMA_TEMPLATEPATH . "/pages/" . $pmpro_page_name . ".php");
+                    // $temp_content = ob_get_contents();
+                    // ob_end_clean();
+                    // return apply_filters("pmpro_pages_shortcode_" . $pmpro_page_name, $temp_content);
+                // }
+// 
+                // add_shortcode("pmpro_" . $pmpro_page_name, "pmpro_pages_shortcode");
+                // break; //only the first page found gets a shortcode replacement
+            // }
+        // }
+// 
+        // //make sure you load the preheader for the checkout page. the shortcode for checkout is loaded below
+        // if (!empty($post->post_content) && strpos($post->post_content, "[pmpro_checkout]") !== false) {
+            // require_once(KARMA_TEMPLATEPATH . "/preheaders/checkout.php");
+        // }
+    // }
+// }
 ?>
 <?php
 /*
@@ -561,7 +538,7 @@ function my_pmpro_checkout_after_email()
 ?>
 	<div>
 		<label for="firstname">First Name</label>
-		<input id="firstname" name="firstname" type="text" class="input" size="30" value="<?=esc_attr($firstname)?>" />
+		<input id="firstname" name="firstname" type="text" class="input" size="30" value="<?=esc_attr($firstname)?>" /> 
 	</div>
 	<div>
 		<label for="lastname">Last Name</label>
@@ -575,7 +552,7 @@ function my_pmpro_checkout_after_email()
 	
 <?php
 }
-add_action('pmpro_checkout_after_email', 'my_pmpro_checkout_after_email');
+add_action('pmpro_checkout_after_password', 'my_pmpro_checkout_after_email');
 
 //update the user after checkout
 function my_update_first_and_last_name_after_checkout($user_id)
@@ -702,19 +679,4 @@ jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeh
 </script>
 <?php
 }
-//function wpa_pmpro_after_checkout($user_id)
-//{
-//	$morder = new MemberOrder();
-//	$morder->getLastMemberOrder();
-//	
-//	if(!empty($morder->InitialPayment))
-//	{
-//		$sale_amt = $morder->InitialPayment; //TODO - The commission will be calculated based on this amount
-//		$unique_transaction_id = $morder->code; //TODO - The unique transaction ID for reference
-//		$email = $morder->Email; //TODO - Customer email for record
-//		$referrer = $_COOKIE['ap_id'];
-//		do_action('wp_affiliate_process_cart_commission', array("referrer" => $referrer, "sale_amt" =>$sale_amt, "txn_id"=>$unique_transaction_id, "buyer_email"=>$email));
-//	}
-//}
-//add_action("pmpro_after_checkout", "wpa_pmpro_after_checkout");
 ?>

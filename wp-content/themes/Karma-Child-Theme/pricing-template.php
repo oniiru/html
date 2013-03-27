@@ -19,17 +19,16 @@
 <div id="bluebar">
 	<div class="bluebarbackgroundhome">
 					<div class="homeimage">
-						<img class="wereabout" src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/wereabout.png">
+						<img class="wereabout" src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/wereabout.png">
 						<iframe class="introvid" src="http://player.vimeo.com/video/58140022" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 		<div id="bluebarleft">
 		<h1>SolidWorks Training <br>Available Online 24/7.</h1>
-		<p><b>+</b> CAD more efficiently, design better products, <br>and deliver them faster.</p>
-		<p><b>+</b> Learn at your own pace and on your own time, <br>at work or at home.</p>
-		<p><b>+</b> Get the most out of your SolidWorks investment. </p>
+		<p><b>+</b> CAD more efficiently, and design better products, faster.</p>
+		<p><b>+</b> Learn at your own pace and on your own time.</p>
+		<p><b>+</b> Get the most from your SolidWorks investment. </p>
 		
 			<div class="homepricingbutton">
-			<a href="/training/" class="extralarge red awesome">Try Us Out »</a>	
-			<!-- <p>or <a href="/training/">watch sample videos</a></p> -->
+<a href="/training/" class="extralarge red awesome" style="background-color: rgb(237, 109, 49); border-color: rgb(234, 86, 16); font-size: 20px; height: 20px; padding: 10px 30px; text-align: center; box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px, rgba(255, 255, 255, 0.2) 2px 2px 1px inset;">View Courses</a>			<!-- <p>or <a href="/training/">watch sample videos</a></p> -->
 			</div>
 		</div>	
 	</div>
@@ -68,27 +67,27 @@
 </div>
 <div id="whitebarouter">
 <div id="whitebar">
-	<center><img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/membershipincludes.png"></center>
+	<center><img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/membershipincludes.png"></center>
 	<div class="featureset">
 		<div class="featureset1">
-		<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/books.png">
+		<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/books.png">
 <h2>Access to All Courses</h2>
 			<p>Get instant access to hundreds of tutorials and training files. New Courses added weekly.</p>
 		</div>
 		<div class="featureset1">
-					<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/slide.png">
+					<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/slide.png">
 
 			<h2>Online Office Hours</h2>
 			<p>Join our member-only office hours and get your specific questions answered in live weekly webinars.</p>
 		</div>
 		<div class="featureset1">
-		<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/cert.png">
+		<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/cert.png">
 
 			<h2>Get Certified</h2>
 			<p>With lots of exclusive content and practice exams catering to the CSWP. You'll be a certified professional in no time.</p>
 		</div>
 		<div class="featureset2">
-					<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/hand.png">
+					<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/hand.png">
 			<h2>Insane Customer Service</h2>
 			<p>Phone, email, chat, you name it. We are here to make sure you are learning. We even create courses based on customer requests.</p>
 		</div>
@@ -114,13 +113,13 @@ I've tried all kinds of SolidWorks books, but there are always things lost in tr
 <p>Killer training. Unbelievably efficient and concise. <br><span>-Adam, <i>Del West USA</i></span></p></div>
 		
 		<div class="rightbottom"> 
-			<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/securedstandard.png">
-			<img style="border:2px solid darkgrey; margin-left:10px;" src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/authorize.png">
+			<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/securedstandard.png">
+			<img style="border:2px solid darkgrey; margin-left:10px;" src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/authorize.png">
 
 		</div></div> -->
 						<!-- <div id="browsehome">
 		<div id="browsecontenthome">
-			<img src="http://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/images/trainingvideos.png">
+			<img src="http://solidwize.com/wp-content/themes/Karma-Child-Theme/images/trainingvideos.png">
 			<h4><a href="/training/">First time here? Browse our training videos.</a></h4>
 			<p><a href="/training/">Take a look at our videos and see how we can help you stay competitive, and design better products.</a></p>
 		</div> 
@@ -128,7 +127,7 @@ I've tried all kinds of SolidWorks books, but there are always things lost in tr
 <!-- <div style="height:120px;">
 <div class="solutionspartner"><h2>An Official SolidWorks Solutions Partner</h2><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/solutions.png"></div>
 <div class="secure"><h2>Super Secure</h2>
-				<img src="https://solidwize.com/solidwize/wp-content/themes/Karma-Child-Theme/img/api-cloud.png" style="float:right">
+				<img src="https://solidwize.com/wp-content/themes/Karma-Child-Theme/img/api-cloud.png" style="float:right">
 <div style="float:right; margin-right: 20px; margin-top: 15px;"> <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=7BtpZZvt6QuT91PTamzlUZdFu62QjzQ5h3eno4XpGhnOjLof6J2"></script></span></div>
 </div>
 </div>  -->
@@ -182,7 +181,7 @@ I've tried all kinds of SolidWorks books, but there are always things lost in tr
 				<div class="whitebar2left"><p>Sign up for our Mailing list. <br><span>Tips and tricks delivered to your inbox. No spam, promise.</span></p>
 				<div id="part2whitebar"> <h1> Thanks!</h1>
 
-<form action="http://solidwize.us4.list-manage.com/subscribe/post" method="post" target="">
+<form action="http://solidwize.us4.list-manage.com/subscribe/post" method="post" target="AweberFormSubmitFrame">
 <div style="display: none;">
 <input type="hidden" name="u" value="494e8ca59ce929723b6b66b09" />
 <input type="hidden" name="id" value="e6f87d622e" />

@@ -6,33 +6,10 @@
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-
 <?php wp_head(); ?>
 <!--[if lte IE 8]>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/lt8.css" media="screen"/>
 <![endif]-->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.howdydo-bar.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/inputfocus.js"></script>
-
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.main.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready( function(){
-			jQuery( '#howdy' ).howdyDo({
-				action		: 'push',
-				effect		: 'slide',
-				keepState	: 'false',
-				easing		: 'easeOutBounce',
-				duration	: 500,
-				closeAnchor	: '<img src="http://swztest.solidwize.com/wp-content/uploads/2012/01/close-16x16.png" border=0 />',
-						openAnchor	: '<img src="http://swztest.solidwize.com/wp-content/uploads/2012/01/up.png" border=0 />',
-
-			});
-		});
-	</script>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" <?php if (is_page_template('template-homepage-3D.php') || is_page_template('template-homepage-jquery-2.php')) {echo 'class="big-banner"';} ?>>

@@ -36,7 +36,7 @@ do_action_ref_array( 'tml_lostpassword_form', array( &$template ) ); // TML hook
 
 		<p class="submit">
 
-			<input type="submit" name="wp-submit" class="btn btn-info" id="wp-submit<?php $template->the_instance(); ?>" value="<?php _e( 'Get New Password', 'theme-my-login' ); ?>" />
+			<input type="submit" name="wp-submit" class="btn btn-success" id="wp-submit<?php $template->the_instance(); ?>" value="<?php _e( 'Get New Password', 'theme-my-login' ); ?>" />
 
 			<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'lostpassword' ); ?>" />
 

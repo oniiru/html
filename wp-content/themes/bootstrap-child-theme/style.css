@@ -817,17 +817,15 @@ h1.webinars {
 
 
 #cancelmembership {
-	width:500px;
+	max-width:500px;
 	text-align:center;
 	margin:100px auto;
 	padding: 50px 15px;
-	background: #fff;
+	background: #f8f8f8;
 	border: 1px solid #ddd;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-	-moz-box-shadow: 0 0 5px rgba(0,0,0, .2);
-	box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+	
 }
 
 .login {
@@ -1077,12 +1075,12 @@ form#your-profile label, th {
 }
 
 #profileinner {
-	width:600px;
+	max-width:600px;
 	margin:auto;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-	background:#fff;
+	background:#f8f8f8;
 	border: 1px solid #ddd;
 	border-radius:4px;
+	padding:20px;
 	
 	
 }
@@ -1095,11 +1093,13 @@ form#your-profile label, th {
 	float:left;
 	font-weight:300 !important;
 }
-
+.pmpro_form input {
+	font-size:18px ;
+}
 /*signupform*/
 
 .pmpro_form {
-	width: 780px;
+	max-width: 780px;
 	margin: auto;
 	background: rgb(236,247,253);
 	padding: 5px 20px;
@@ -1849,7 +1849,6 @@ ul.bxslider {
 /*signupform*/
 
 .pmpro_form {
-	width: 780px;
 	margin: auto;
 	background: rgb(77, 77, 77);
 	padding: 5px 20px;
@@ -2207,6 +2206,14 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 	
 }
 
+.modaliframevid {
+	width:700px;
+	height:394px;
+}
+
+.pricingpage h3 {
+	line-height:1.2em;
+}
 /* 6 - Media Queries
 ================================================== */
 @media only screen and (max-width: 910px){
@@ -2285,13 +2292,86 @@ margin-top: -6px;
 .itemRight h2 {
 	margin:15px 0 0 0;
 }
+.aboutright, .aboutleft{
+	display:block;
+	width:auto;
+	
 }
+
+
+
+.aboutright p, .aboutleft p {
+	margin-bottom:30px;
+	width:auto;
+}
+
+.freeplan, .monthlyplan, .businessplan {
+width: 230px;
+height:auto;
+}
+
+.pricingcontainer {
+	width:auto;
+}
+.pricingcontainer .btn-large {
+	font-size:17px;
+	margin-bottom:30px;
+}
+
+.pricingpage .accordion h3 {
+	font-size: 18px;
+	line-height: 1.2em;
+	
+}
+.pricingpage .accordion .row {
+	margin-bottom:15px;
+}
+
+}
+
+
+
 
 
 @media only screen and (max-width:839px) {
 	.videohome {
 		float:none;
 		margin-bottom:30px;
+	}
+	
+	.littlebillfix {
+		margin-left:0px !important;
+		margin-top:30px !important;
+	}
+	.freeplan, .monthlyplan, .businessplan {
+		display:block;
+		border:1px solid #ddd;
+		margin:auto;
+		margin-bottom: 15px;
+		border-radius:4px;
+	}
+	.pricingpage .accordion .span6 {
+		width:99%;
+		margin-left:0px !important;
+		overflow:hidden;
+	}
+	
+		.pricingpage .accordion .span12 {
+			text-align:left !important;
+		}
+	.pricingpage h1 {
+		font-size:27px !important;
+		margin:0px;
+		line-height:1.2em;
+	}
+	
+	.pricingpage h3 {
+		font-size:17px !important;
+		line-height:1.2em;
+	}
+
+	.pricingcontainer {
+		width:auto;
 	}
 	
 	#content {
@@ -2332,7 +2412,9 @@ max-width: 261px;
 	.leftthing img, .middlething img, .rightthing img {
 width:350px ;	
 	}
-
+	.pricingpage {
+		overflow:hidden;
+	}
 	.homesec2 p {
 		width: 350px;
 	}
@@ -2379,7 +2461,83 @@ width:350px ;
 	margin:0px;
 }
 
+.row-fluid [class*="span"] {
+	float:none;
 }
+
+.rawrblog {width:100% !important;
+}
+
+.pagination {
+	height:auto;
+}
+
+.blogpitch h3 {
+	font-size:17px;
+}
+
+.blogpitch a {
+	margin-top:7px;
+}
+
+#sidebar1 {
+	display:none;
+}
+.page-header h1 {
+	font-size:30px !important;
+	line-height:1.2em;
+}
+
+.singlepitch a {
+	margin-top: -4px;
+}
+.pmpro_sslseal {
+	display:none;
+}
+
+.billingsub {
+	margin-top:30px !important;
+}
+
+.form_date {
+	float: right;
+	margin-top: -2px !important;
+	margin-right: 29px !important;
+}
+
+.cvvfix {
+	width: 60px !important;
+	float: left !important;
+	margin-left:0px !important;
+}
+.phonefix {
+	margin-top:0px !important;
+	margin-left:0px !important;
+	margin-bottom:30px !important;
+}
+
+.awesomeradio_label {
+max-width: 106px !important;
+min-width:106px !important;
+}
+
+.awesomeradio_container {
+max-width: 169px !important;
+}
+
+#other_discount_code_p {
+	margin-top: 22px !important;
+}
+.discountfixer {
+	margin-top:20px !important;
+
+}
+
+}
+
+
+
+
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {	
 	.videohome {
@@ -2388,6 +2546,8 @@ width:350px ;
 	margin-bottom:30px;
 	
 }
+
+
 
 .homesec2 p {
 width: 285px;
@@ -2569,6 +2729,135 @@ float:none;
 	margin: auto;
 	font-size: 14px;
 	}
+.ion_tabs {
+	width:350px;
+	margin:auto;
+}
+
+ul.video-list li a {
+	font-size:11px;
+}
+
+.ui-tabs-anchor {
+	padding:4px;
+	font-size:12px;
+}
+.ion-css .ui-tabs .ui-tabs-nav li {
+}
+
+#buttonNoLgin {
+	padding: 10px 0;
+	
+}
+
+#buttonNoLgin p{
+	width: 130px;
+	top: -5px;
+	position: relative;
+	font-size: 14px;
+	line-height: 1.2em;
+	margin-left: 10px;
+}
+
+.modal {
+	width:350px;
+	margin: -250px 0 0 -175px;
+}
+
+.post_content p {
+	padding:0 20px;
+}
+.aboutright, .aboutleft {
+	width:inherit;
+}
+.post_content {
+	text-align:center;
+}
+
+.rawrblog {
+	width: 350px !important;
+	margin: auto !important;
+}
+.page-header h1 {
+	font-size:24px !important;
+	line-height:1.2em;
+}
+
+.singlepitch {
+	text-align:left;
+}
+.singlepitch h3 {font-size:15px;
+}
+.singlepitch a {
+	margin-top:-2px;
+}
+.singlepitch .btn-large {
+	font-size:14px;
+	
+}
+
+.pmpro_left, .pmpro_right { 
+	float:none;
+	margin:auto;
+	width:300px;
+		
+}
+.pmpro_form {
+	width:350px !important;
+}
+
+.pmpro_form {
+	text-align:left;
+}
+
+.awesomeradio_label {
+min-width: 260px!important;
+}
+
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
+width: 315px;
+}
+
+.pmpro_sslseal {
+	display:none;
+}
+
+
+.awesomeradio_label {
+max-width: 106px !important;
+min-width:106px !important;
+padding:10px 20px;
+}
+.pmpro_form p {
+	padding:0px;
+}
+.awesomeradio_label p {
+	width:100px !important;	
+	padding:0px;
+}
+.awesomeradio_container {
+max-width: 169px !important;
+}
+
+.pmpro_thead-msg {
+	margin-left:0px;}
+	.questionfix {
+		display:none;
+	}
+	
+
+	.form_date {
+		margin-right:34px !important;
+	}
+#other_discount_code_p {
+	margin-top: 22px !important;
+}
+input.awesomeradio {
+	display:none !important;
+}
+
+.submitfixer {
+	margin-left:-44px !important;
 }
 }
 

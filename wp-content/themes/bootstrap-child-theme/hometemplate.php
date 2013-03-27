@@ -35,7 +35,7 @@ Template Name: SolidWize Homepage
 				<script>
 				jQuery(document).ready(function() {
 				jQuery('#videomodal').on('show', function () {
-				  jQuery('div.modalvid').html('<iframe src="http://player.vimeo.com/video/58140022?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="700" height="394" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');  
+				  jQuery('div.modalvid').html('<iframe src="http://player.vimeo.com/video/58140022?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" class="modaliframevid" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');  
 				});
 
 				jQuery('#videomodal').on('hide', function () {

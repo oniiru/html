@@ -290,7 +290,7 @@ Template Name: Billing Template
 								</tbody>
 								</table>																	
 			
-								<div align="center">
+								<div align="center" class="billingsub">
 									<input type="hidden" name="update-billing" value="1" />
 									<input type="submit" class="btn btn-success" value="Update" />
 									<input type="button" name="cancel" class="btn btn-success" value="Cancel" onclick="location.href='<?php echo pmpro_url("account")?>';" />

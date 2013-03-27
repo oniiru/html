@@ -1,26 +1,28 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
+	<script src="//cdn.optimizely.com/js/175175161.js"></script>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php truethemes_meta_hook();// action hook, see truethemes_framework/global/hooks.php ?>
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<meta name="google-site-verification" content="R9P-bdszn9tzUr-OOiAVnixcAbHckC0uM_M5VBiuUEk" />
 <link href='<?php bloginfo('stylesheet_directory'); ?>/style2.css' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 
 <?php wp_head(); ?>
 <!--[if lte IE 8]>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/lt8.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/lt8.css" media="screen"/>
 <![endif]-->
-<!-- <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.howdydo-bar.js"></script> -->
+ <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.howdydo-bar.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/inputfocus.js"></script>
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.main.js"></script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 jQuery(document).ready( function(){
 			jQuery( '#howdy' ).howdyDo({
 				action		: 'push',
@@ -28,13 +30,13 @@ jQuery(document).ready( function(){
 				keepState	: 'false',
 				easing		: 'easeOutBounce',
 				duration	: 500,
-				closeAnchor	: '<img src="http://solidwize.com/wp-content/uploads/2012/01/close-16x16.png" border=0 />',
-						openAnchor	: '<img src="http://swztest.solidwize.com/wp-content/uploads/2012/01/up.png" border=0 />',
-				delay		:  7000,
-				autostart   :  true,
+				closeAnchor	: '<img src="http://solidwize.com/solidwize/wp-content/uploads/2012/01/close-16x16.png" border=0 />',
+						openAnchor	: '<img src="http://solidwize.com/solidwize/wp-content/uploads/2012/01/up.png" border=0 />',
+
 			});
-		});
-	</script> -->
+
+});
+	</script>
 <script type="text/javascript">
 			function footerPosition () {
 			
@@ -87,6 +89,8 @@ jQuery(document).ready(function(){
 		  	footerPosition();
 		});
 	</script>
+	<script type="text/javascript">var _kiq = _kiq || [];</script>
+<script type="text/javascript" src="//s3.amazonaws.com/ki.js/41612/802.js" async="true"></script>
 <div id="wrapper" <?php if (is_page_template('template-homepage-3D.php') || is_page_template('template-homepage-jquery-2.php')) {echo 'class="big-banner"';} ?>>
 <div id="header" <?php if (is_page_template('template-homepage-3D.php')){echo "style='height: 560px;'";} ?>>
 
@@ -153,10 +157,10 @@ if ($ka_logo_text == ''){
 <div class="clearright"></div>
 <div id="index-menu" class="<?php if (is_user_logged_in() ) print 'divnavlogged'; ?>">
 	<ul>
-		<li><a href="<?php bloginfo('siteurel'); ?>/pricing-2"> Pricing</a></li>
-		<li><a href="<?php bloginfo('siteurel'); ?>/training">Training</a></li>
-		<li><a href="<?php bloginfo('siteurel'); ?>/blog">Blog</a></li>
-		<li><a href="<?php bloginfo('siteurel'); ?>/about">About</a></li>
+		<li><a href="<?php bloginfo('siteurl'); ?>/pricing-2"> Pricing</a></li>
+		<li><a href="<?php bloginfo('siteurl'); ?>/training">Courses</a></li>
+		<li><a href="<?php bloginfo('siteurl'); ?>/blog">Blog</a></li>
+		<li><a href="<?php bloginfo('siteurl'); ?>/about">About</a></li>
 		
 	</ul>
 </div>
@@ -167,3 +171,4 @@ if ($ka_logo_text == ''){
 <?php endif; ?>
 
 <?php truethemes_after_primary_navigation_hook();// action hook, see truethemes_framework/global/hooks.php ?>
+<!-- <div id="howdy"> Now get the first 6 hours of training absolutely Free! <a class="webinars2button" href="http://solidwize.com/pricing-2">Sign Up Now!</a></div> -->

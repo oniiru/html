@@ -22,27 +22,12 @@ truethemes_before_main_hook();
 
 				<div class="boxes">
 
-					<h1>Learn SolidWorks Today!</h1>
+					<h1>Learn SolidWorks Today!</h1>	
 
 					<h2>7 day risk-free trial. Cancel at any time. </h2>
 
 
 					<div id="offers" class="group">
-
-						<?php
-						$subacess = get_option('chargify');
-						$student = $subacess["studentplan"];
-						$products = ion_chargify::products();
-						foreach ($products as $pro)
-							if ($pro->id == $sudent)
-								$p = $pro;
-						?><script type="text/javascript">
-							function submitplan() {
-								document.studentform.submit();
-							}
-
-						</script>
-
 
 
 						<div id="offer-two" style="margin:0 auto 0 300px">
@@ -51,13 +36,9 @@ truethemes_before_main_hook();
 
 							<h4>only <span style="font-size:1.2em;">$25</span>/month</h4>
 
-							<form name="studentform" action="<?php print $subacess["signuppageurl"]; ?>" method="post">
 
-								<a class="red signupbutton" href="javascript:submitplan();" title="">Get Started</a>
+								<a style="left:50px" class="red signupbutton" href="<?php echo pmpro_url("checkout", "?level=" . 4,"https")?>" title="">Get Started</a>
 
-								<input type="hidden" name="studentoption" value="<?php print $subacess["studentplan"]; ?>"/>
-
-							</form>
 
 							<ul style="padding-top:10px;">
 
@@ -74,22 +55,22 @@ truethemes_before_main_hook();
 								<li><span style="color:#0087C2;font-weight:bold;font-size:14px;">For a limited time: FREE 30 minute consultation with founder, Rohit Mitra</span></li>
 							</ul>
 						</div>
-					</div>
+					</div>	
 				</div>
 				<div style="margin-top: 30px">
-					<?php
-					if (have_posts()) :
+<?php
+if (have_posts()) :
 
-						while (have_posts()) : the_post();
+	while (have_posts()) : the_post();
 
-							the_content();
+		the_content();
 
-							truethemes_link_pages();
+		truethemes_link_pages();
 
-						endwhile;
+	endwhile;
 
-					endif;
-					?></div>
+endif;
+?></div>
 
 			</div><!-- end content -->
 

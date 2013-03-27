@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <?php $ka_blogtitle = get_option('ka_blogtitle');
-$ka_searchbar = get_option('ka_searchbar');
 $ka_crumbs = get_option('ka_crumbs'); ?>
 </div><!-- header-area -->
 </div><!-- end rays -->
@@ -18,6 +17,7 @@ $ka_crumbs = get_option('ka_crumbs'); ?>
   <?php truethemes_before_article_title_hook();// action hook, see truethemes_framework/global/hooks.php ?>        
           
             <h1><?php echo $ka_blogtitle; ?></h1>
+            <?php if ($ka_searchbar == "true"){get_template_part('searchform','childtheme');} else {} ?>
             <?php if ($ka_crumbs == "true"){ $bc = new simple_breadcrumb;} else {} ?>
           
 <?php truethemes_after_searchform_hook();// action hook, see truethemes_framework/global/hooks.php ?>          

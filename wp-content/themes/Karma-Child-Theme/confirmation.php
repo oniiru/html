@@ -16,7 +16,7 @@ truethemes_before_main_hook();
                    <?php
 global $wpdb, $current_user, $pmpro_invoice, $pmpro_msg, $pmpro_msgt, $pmpro_currency_symbol;
 
-if ($pmpro_msg) {
+if($pmpro_msg) {
 	?>
 	<div class="pmpro_message <?php echo $pmpro_msgt ?>"><?php echo $pmpro_msg ?></div>
 	<?php
@@ -25,20 +25,23 @@ if ($pmpro_msg) {
 $confirmation_message = "<h9><b>Thanks for signing up! Your " . $current_user->membership_level->name . " is now active.</b></h9>";
 
 //confirmation message for this level
-$level_message = $wpdb->get_var("SELECT l.confirmation FROM $wpdb->pmpro_membership_levels l LEFT JOIN $wpdb->pmpro_memberships_users mu ON l.id = mu.membership_id WHERE mu.user_id = '" . $current_user->ID . "' LIMIT 1");
-if (!empty($level_message))
+$level_message = $wpdb->get_var("SELECT l.confirmation FROM $wpdb->pmpro_membership_levels l LEFT JOIN $wpdb->pmpro_memberships_users mu ON l.id = mu.membership_id WHERE mu.status = 'active' AND mu.user_id = '" . $current_user->ID . "' LIMIT 1");if(!empty($level_message))
 	$confirmation_message .= "\n" . stripslashes($level_message) . "\n";
 ?>
 
 
 			
 
-<?php if ($pmpro_invoice) { ?>
+<?php if($pmpro_invoice) { ?>
 	<?php
 	$pmpro_invoice->getUser();
 	$pmpro_invoice->getMembershipLevel();
 
 	$confirmation_message .= "<p>A welcome email has been sent to <strong>" . $pmpro_invoice->user->user_email . "</strong>. The details of your membership account and a receipt for your initial membership invoice are below. If you are ready to get started click on one of the topics below.</p>";
+//check instructions		
+		if($pmpro_invoice->gateway == "check")
+			$confirmation_message .= wpautop(pmpro_getOption("instructions"));
+
 	$confirmation_message = apply_filters("pmpro_confirmation_message", $confirmation_message, $pmpro_invoice);
 
 	echo apply_filters("the_content", $confirmation_message);
@@ -76,10 +79,10 @@ if (!empty($level_message))
 	<ul> 
 		<li><strong>Account:</strong> <?php echo $pmpro_invoice->user->display_name ?> (<?php echo $pmpro_invoice->user->user_email ?>)</li>
 		<li><strong>Membership Level:</strong> <?php echo $current_user->membership_level->name ?></li>
-		<?php if ($current_user->membership_level->enddate) { ?>
+		<?php if($current_user->membership_level->enddate) { ?>
 			<li><strong>Membership Expires:</strong> <?php echo date("n/j/Y", $current_user->membership_level->enddate) ?></li>
 		<?php } ?>
-		<?php if ($pmpro_invoice->getDiscountCode()) { ?>
+		<?php if($pmpro_invoice->getDiscountCode()) { ?>
 			<li><strong>Discount Code:</strong> <?php echo $pmpro_invoice->discount_code->code ?></li>
 		<?php } ?>
 	</ul>
@@ -98,27 +101,27 @@ if (!empty($level_message))
 				<td>
 					<?php echo $pmpro_invoice->billing->name ?><br />
 					<?php echo $pmpro_invoice->billing->street ?><br />
-					<?php if ($pmpro_invoice->billing->city && $pmpro_invoice->billing->state) { ?>
+					<?php if($pmpro_invoice->billing->city && $pmpro_invoice->billing->state) { ?>
 						<?php echo $pmpro_invoice->billing->city ?>, <?php echo $pmpro_invoice->billing->state ?> <?php echo $pmpro_invoice->billing->zip ?> <?php echo $pmpro_invoice->billing->country ?><br />
 					<?php } ?>
 					<?php echo formatPhone($pmpro_invoice->billing->phone) ?>
 				</td>
 				<td>
-					<?php if ($pmpro_invoice->accountnumber) { ?>
+					<?php if($pmpro_invoice->accountnumber) { ?>
 						<?php echo $pmpro_invoice->cardtype ?> ending in <?php echo last4($pmpro_invoice->accountnumber) ?><br />
 						<small>Expiration: <?php echo $pmpro_invoice->expirationmonth ?>/<?php echo $pmpro_invoice->expirationyear ?></small>
-					<?php } elseif ($pmpro_invoice->payment_type) { ?>
+					<?php } elseif($pmpro_invoice->payment_type) { ?>
 						<?php echo $pmpro_invoice->payment_type ?>
 					<?php } ?>
 				</td>
 				<td><?php echo $pmpro_invoice->membership_level->name ?></td>
-				<td><?php if ($pmpro_invoice->total) echo $pmpro_currency_symbol . number_format($pmpro_invoice->total, 2); else echo "---"; ?></td>
+				<td><?php if($pmpro_invoice->total) echo $pmpro_currency_symbol . number_format($pmpro_invoice->total, 2); else echo "---"; ?></td>
 			</tr>
 		</tbody>
 	</table>
 	<?php
 } else {
-	$confirmation_message .= "<p>A welcome email has been sent to <strong>" . $current_user->user_email . "</strong>. You now have access to the first three hours of our training. Click on one of the buttons below to get started.</p>";
+	$confirmation_message .= "<p>A welcome email has been sent to <strong>" . $current_user->user_email . "</strong>. You now have access to the first six hours of our training. Click on one of the buttons below to get started.</p>";
 
 	$confirmation_message = apply_filters("pmpro_confirmation_message", $confirmation_message, false);
 
@@ -167,7 +170,8 @@ if (!empty($level_message))
 <?php
 	} 
 ?>
-
+<img src="https://secure.adnxs.com/seg?add=383718&t=2" width="1" height="1" />
+<img src="https://secure.adnxs.com/px?id=44575&t=2" width="1" height="1" />
 
             </div><!-- end content -->
         </div><!-- end main-holder -->

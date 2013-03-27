@@ -6,7 +6,19 @@
 <?php truethemes_before_main_hook();
 	// action hook, see truethemes_framework/global/hooks.php
 ?>
+<script>
+	jQuery(document).ready(function() {
+   jQuery('#yearlybutton').click(function(){
+     jQuery('#monthlymembership').hide();
+     jQuery('#yearlymembership').show();
+   });
+   jQuery('#monthlybutton').click(function(){
+     jQuery('#yearlymembership').hide();
+     jQuery('#monthlymembership').show();
+   });
+ });
 
+</script>
 <div id="main">
 <div class="main-area" style="padding-top: 0px !important;">	<div class="main-holder">
 		<div id="content" class="content_full_width">
@@ -15,7 +27,10 @@
 			<div class="boxes">
 				<h1 style="margin-bottom:5px;">Learn SolidWorks Today!</h1>	
 				<h2 style="margin-bottom:20px;">7 day risk-free trial. Cancel at any time. </h2>
-					
+					<div class="btn-group" data-toggle="buttons-radio">
+  <button type="button" id="monthlybutton" class="btn btn-info btn-large active">Monthly</button>
+  <button type="button" id="yearlybutton" class="btn btn-info btn-large">Yearly <span style="font-size:12px;">(40% Off)</span></button>
+</div>
 					
 					<div id="offers" class="group">
 
