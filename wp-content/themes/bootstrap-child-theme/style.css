@@ -2952,7 +2952,12 @@ input.awesomeradio {
 
 .submitfixer {
 margin-left: 5px !important;}
-
+.warringup p {
+	text-align:center;
+}
+.warringup a {
+	margin-left:0px;
+}
 .itemleft {
 	left:-10px;
 }
