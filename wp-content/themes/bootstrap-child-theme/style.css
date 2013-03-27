@@ -2942,7 +2942,7 @@ max-width: 120px !important;
 	#pmpro_user_fields {
 		margin-top:40px;
 	}
-
+	
 #other_discount_code_p {
 	margin-top: 22px !important;
 }
@@ -2952,6 +2952,12 @@ input.awesomeradio {
 
 .submitfixer {
 margin-left: 5px !important;}
-}
 
+.itemleft {
+	left:-10px;
+}
+#menu-header-signed-in li a {
+	padding: 10px 7px 10px;
+}
+}
 /* Mobile Portrait Size Only (devices and browsers) */
