@@ -2739,7 +2739,10 @@ float:none;
 ul.video-list li a {
 	font-size:11px;
 }
-
+.ion-css .postbox {
+	text-align:left;
+	
+}
 .ui-tabs-anchor {
 	padding:4px !important;
 	font-size:12px;
@@ -2752,6 +2755,8 @@ h3.directory-name span.icon-before {
 }
 h3.directory-name span {
 	vertical-align:top;
+	font-size: 11px;
+	
 }
 
 #buttonNoLgin {
