@@ -2540,6 +2540,8 @@ max-width: 169px !important;
 
 }
 
+#videomodal {
+	margin: -168px 0 0 -300px !important;
 }
 
 .modaliframevid {
@@ -2547,6 +2549,7 @@ max-width: 169px !important;
 	height:337px;
 }
 
+}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {	
@@ -2981,7 +2984,9 @@ p.signouttext {
 	width:250px;
 
 }
-
+#videomodal {
+	margin: -73px 0 0 -130px !important;
+}
 .billingpage input#CVV {
 	height: 22px !important;
 }
@@ -2989,5 +2994,6 @@ p.signouttext {
 .modaliframevid {
 	width:260px;
 	height:146px;
+}
 }
 /* Mobile Portrait Size Only (devices and browsers) */
