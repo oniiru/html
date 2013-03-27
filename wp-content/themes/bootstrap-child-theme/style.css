@@ -2849,10 +2849,35 @@ input#bphone {
 	display:none;
 }
 
+#discount_code_button {
+	margin-left:-48px;
+}
+input#discount_code {
+	width: 150px
+}
+
+select#ExpirationMonth {
+width: 118px;
+height:48px;
+}
+
+select#ExpirationYear {
+	width:63px;
+	height:48px;
+}
+
+
+.form_date {
+	margin-right:101px !important;
+}
+select#ExpirationMonth {
+	width:118px;
+	height:48px !important;
+}
 
 .awesomeradio_label {
-max-width: 106px !important;
-min-width:106px !important;
+max-width: 75px !important;
+min-width:75px !important;
 padding:10px 20px;
 }
 .pmpro_form p {
@@ -2861,6 +2886,7 @@ padding:10px 20px;
 .awesomeradio_label p {
 	width:100px !important;	
 	padding:0px;
+	font-size:12px !important;
 }
 .awesomeradio_container {
 max-width: 169px !important;
@@ -2870,7 +2896,8 @@ max-width: 169px !important;
 	margin-top:30px !important;
 }
 .pmpro_thead-msg {
-	margin-left:0px;}
+	margin-left:0px;
+	width:263px;}
 	.questionfix {
 		display:none;
 	}
