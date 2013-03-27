@@ -2563,8 +2563,11 @@ max-width: 169px !important;
 }
 .blogpitch a {
 	font-size:14px;
+	float:none;
 }
-
+.post_content p {
+	text-align:left;
+}
 .homesec2 p {
 width: 285px;
 }
@@ -2831,12 +2834,13 @@ h3.directory-name span {
 }
 
 .singlepitch {
-	text-align:left;
+	text-align: center;
 }
 .singlepitch h3 {font-size:15px;
 }
 .singlepitch a {
 	margin-top:-2px;
+	float:none;
 }
 .singlepitch .btn-large {
 	font-size:14px;
