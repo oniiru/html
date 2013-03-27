@@ -2703,6 +2703,8 @@ margin-left: 0px;
 h2.categoryTitle {
 	width:auto;
 	float:none;
+	line-height: 1.2em;
+	
 }
 #searchlib {
 width:auto;
@@ -2730,7 +2732,7 @@ float:none;
 	font-size: 14px;
 	}
 .ion_tabs {
-	width:320px;
+	width:310px;
 	margin:auto;
 }
 
@@ -2739,10 +2741,16 @@ ul.video-list li a {
 }
 
 .ui-tabs-anchor {
-	padding:4px;
+	padding:4px !important;
 	font-size:12px;
 }
 .ion-css .ui-tabs .ui-tabs-nav li {
+}
+h3.directory-name span.icon-before {
+	margin-top: -1px;
+}
+h3.directory-name span {
+	vertical-align:top;
 }
 
 #buttonNoLgin {
@@ -2756,7 +2764,7 @@ ul.video-list li a {
 	position: relative;
 	font-size: 14px;
 	line-height: 1.2em;
-	margin-left: 10px;
+	margin-left: -20px;
 }
 
 .modal {
