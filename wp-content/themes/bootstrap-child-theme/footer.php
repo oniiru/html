@@ -16,20 +16,7 @@
 			
 				
 				</div> <!-- end #inner-footer -->
-				<!-- MixPanel Start -->
 				
-				<script type="text/javascript">
-				mixpanel.name_tag('<?php global $current_user;
-				get_currentuserinfo(); echo $current_user->user_login; ?>');
-				mixpanel.track('Viewed Post', {
-				    "Title":"<?php single_post_title(); ?>",
-				    "Author":"<?php the_author(); ?>",
-				    "Tags":"<?php $posttags = get_the_tags(); $count=0;
-				   if ($posttags) { foreach($posttags as $tag) { $count++;
-				   if (1 == $count) { echo $tag->name . ''; } } } ?>",
-				});
-				</script>
-				<!-- MixPanel End -->
 				
 			</footer> <!-- end footer -->
 		
@@ -41,7 +28,7 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
-
+	
 	</body>
 	<script>
 	jQuery('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { 
