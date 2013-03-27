@@ -2405,6 +2405,8 @@ height:auto;
 		margin-bottom:30px;
 	}
 	
+	
+	
 	.littlebillfix {
 		margin-left:0px !important;
 		margin-top:30px !important;
@@ -2617,6 +2619,11 @@ max-width: 169px !important;
 }
 
 .freeplan, .monthlyplan, .businessplan { height: 625px;
+}
+
+.passfix {
+	margin-top:30px;
+	margin-left:0px;
 }
 
 }
