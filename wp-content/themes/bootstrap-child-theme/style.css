@@ -2213,6 +2213,14 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 h2.categoryTitle {
 	width:auto !important;
 }
+#videomodal {
+	margin: -168px 0 0 -300px !important;
+}
+
+.modaliframevid {
+	width:600px;
+	height:337px;
+}
 /* 6 - Media Queries
 ================================================== */
 @media only screen and (max-width: 910px){
@@ -2324,6 +2332,14 @@ height:auto;
 }
 .pricingpage .accordion .row {
 	margin-bottom:15px;
+}
+#videomodal {
+	margin: -168px 0 0 -300px !important;
+}
+
+.modaliframevid {
+	width:600px;
+	height:337px;
 }
 
 }
