@@ -2356,7 +2356,7 @@ margin-top: -6px;
 /*vid categories*/
 
 .itemLeft img {
-	width:200px !important;
+	width:200px;
 
 }
 .itemRight {
@@ -2852,7 +2852,7 @@ float:none;
 }
 
 .itemLeft img {
-	width:200px !important;
+	width:200px ;
 
 }
 .itemRight h2 {
