@@ -56,17 +56,12 @@ h1 {
 	display:none;
 }
 
-.freeplan .btn {
-	margin-top:106px;
+
+
+.pricingpoints {
+	height:220px;
 }
 
-.monthlyplan .btn {
-	margin-top:9px;
-}
-
-.businessplan .btn {
-	margin-top:67px;
-}
 .content {
 	width:980px;
 }
@@ -2316,12 +2311,9 @@ h2.categoryTitle {
 		margin:0 42px;
 	}
 
-	.businessplan .btn {
-	margin-top: 84px;
-	}
 	
-	.freeplan .btn {
-	margin-top: 140px;
+	.pricingpoints {
+		height:245px;
 	}
 	.homesec2 p {
 		width: 242px;
@@ -2428,7 +2420,9 @@ height:auto;
 		margin-bottom:30px;
 	}
 	
-	
+	.pricingpoints {
+		height:250px;
+	}
 	
 	.littlebillfix {
 		margin-left:0px !important;
@@ -2650,7 +2644,7 @@ max-width: 169px !important;
 }
 .pricingpage h1 {
 	margin-top:-5px !important;
-	font-size: 40px !important;
+	font-size: 24px !important;
 }
 
 }
@@ -2893,7 +2887,13 @@ ul.video-list li a {
 
 .pricingpage h1 {
 	margin-top:-5px !important;
-	font-size:35px !important;
+	font-size:20px !important;
+}
+
+.pricingpage h3 {
+font-size: 14px !important;
+line-height: 1.2em;
+margin-top: 0px;
 }
 h3.directory-name span.icon-before {
 	margin-top: -1px;
@@ -2961,9 +2961,7 @@ height: 150px;
 margin-top: 20px;
 }
 
-.freeplan {
-	height:485px;
-}
+
 .singlepitch {
 	text-align: center;
 }
@@ -3104,9 +3102,7 @@ p.signouttext {
 	height:146px;
 }
 
-.freeplan .btn {
-margin-top: 60px;
-}
+
 
 }
 /* Mobile Portrait Size Only (devices and browsers) */

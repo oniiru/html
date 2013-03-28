@@ -27,11 +27,12 @@ Template Name: Pricing Page
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/intropricing.png">
 									</div>
 									<h2>Free</h2>
-									<h4><br>Includes:</h4>	
+									<h4><br>Includes:</h4>
+									<div class="pricingpoints">	
 									<p>
 									Free access to our Intro and Part Modeling sections forever. </p>
 									<p style="border-bottom:0px">Comprehensive excercise files for both sections.
-									</p>
+									</p></div>
 									<?php if(pmpro_hasMembershipLevel('1')) 
 									{ ?>  
 											<h5>This is your current level</h5>
@@ -49,6 +50,7 @@ Template Name: Pricing Page
 									</div>
 									<h2>Pro</h2>
 									<h4><br>Includes:</h4>	
+									<div class="pricingpoints">	
 									
 									<p>
 									Unlimited access to our entire library of training material. <img class="pricingq" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"> </p>
@@ -56,7 +58,7 @@ Template Name: Pricing Page
 								<p>	Fanatical customer support - office hours, chat, email, phone, you name it!</p>
 									<p class="mooo">Starting at $34/Month (if paid annually)
 									
-									</p>
+									</p></div>
 									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6)))									
 									{ ?>  
 											<h5>This is your current level</h5>
@@ -74,6 +76,7 @@ Template Name: Pricing Page
 									</div>
 									<h2>Teams</h2>
 									<h4><br>Includes:</h4>	
+									<div class="pricingpoints">	
 									
 									<p>
 										Get your whole team up to speed with Pro Memberships.	<br>
@@ -81,7 +84,7 @@ Template Name: Pricing Page
 									<p> Custom content based on your specific needs.
 									</p>
 									 	<p class="mooo">Deep discounts for multi-user accounts.
-									</p> 
+									</p> </div>
 									<a class="btn btn-custom btn-large" href="#businesscontactmodal" data-toggle="modal">Contact Us</a>
 								</div>
 							<div class="alert alert-info studentalert">
