@@ -1783,6 +1783,7 @@ margin-bottom: 25px;
 .homesec3 img {
 	display:inline-block;
 	vertical-align:top;
+	display:none !important;
 }
 
 .homesec3 blockquote {
