@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Billing Template
+Template Name: ConfirmationTemplate
 */
 ?>
 

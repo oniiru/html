@@ -237,7 +237,7 @@ class IonVideoDirectoryDisplay {
 		 if(pmpro_hasMembershipLevel('1')) 
 								{ ?>  
 									<div id="buttonNoLgin">
-										<p>Upgrade your account to access every training section.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger" title="subscribe">Upgrade Now</a>
+										<p>Access our entire training library.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger" title="subscribe">Upgrade Now</a>
 									</div>
 									<?php }
 									
