@@ -126,7 +126,7 @@ Template Name: ConfirmationTemplate
 							
 						});
 						
-						</script
+						</script>
 					</div>	
 			
 				</div> <!-- end #main -->
