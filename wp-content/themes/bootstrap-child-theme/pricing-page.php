@@ -11,8 +11,8 @@ Template Name: Pricing Page
 			
 				<div id="main" class="span12 clearfix" role="main">
 					<center>
-					<h1>Learn SolidWorks the right way</h1>
-					<h3>7 Day Free Trial, Cancel at any time.</h3>
+					<h1>Learn SolidWorks the Right Way</h1>
+					<h3>7 day free trial, 30 day money back guarantee.</h3>
 				</center>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -92,7 +92,6 @@ Template Name: Pricing Page
 									<a class="btn btn-custom btn-large" href="#businesscontactmodal" data-toggle="modal">Contact Us</a>
 								</div>
 							</a>
-							<p class="planguarantee">All plans come with a free 7-day trial and 30 day money-back guarantee!</p>
 							<div class="alert alert-info studentalert">
 								Still in School? Checkout our killer <a href="<?php bloginfo('url'); ?>/student"><b> student discount.</b> </a>
 							</div>

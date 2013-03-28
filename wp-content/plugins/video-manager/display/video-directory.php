@@ -88,7 +88,7 @@ class IonVideoDirectoryDisplay {
 												if ($ion_auth_users->all($o['options'])) {
 													if ($google_analytic == 'on') {
 														?>
-														<a onClick="mixpanel.identify('richard98'); mixpanel.track('Video Play', {'video': <?php echo stripslashes($chapter->directory_name); ?> - <?php echo $list['video_name']; ?>, 'Section': '<?php the_title(); ?>'});" class="<?php echo (!empty($o['media_id']) ? 'show_jw_player' : 'show_iframe'); ?>" href="#<?php echo sanitize_title($list['video_name']); ?>-<?php echo $list['ID']; ?><?php echo (!empty($o['media_id']) ? '_wrapper' : ''); ?>" title="<?php echo stripslashes($list['video_name']); ?>"><?php echo stripslashes($list['video_name']); ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($o['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a class="<?php echo (!empty($o['media_id']) ? 'show_jw_player' : 'show_iframe'); ?>" href="#<?php echo sanitize_title($list['video_name']); ?>-<?php echo $list['ID']; ?><?php echo (!empty($o['media_id']) ? '_wrapper' : ''); ?>" title="<?php echo stripslashes($list['video_name']); ?>"><?php echo stripslashes($list['video_name']); ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($o['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>
@@ -98,7 +98,7 @@ class IonVideoDirectoryDisplay {
 												} else {
 													if ($google_analytic == 'on') {
 														?>
-														<a class="login-pop noaccess" onClick="_gaq.push(['_trackEvent', 'Videos', 'Try to play', '<?php echo stripslashes($chapter->directory_name); ?> - <?php echo $list['video_name']; ?>']);" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a class="login-pop noaccess" onClick="function(){mixpanel.identify('<?php echo $current_user->user_email ?>'); mixpanel.track('Video Attempt', {'video': <?php echo stripslashes($chapter->directory_name); ?> - <?php echo $list['video_name']; ?>, 'Section': '<?php the_title(); ?>'});}" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>

@@ -11,8 +11,9 @@ Template Name: Student Pricing
 			
 				<div id="main" class="span12 clearfix" role="main">
 					<center>
-					<h1>Learn SolidWorks the right way</h1>
-					<h3>7 Day Free Trial, Cancel at any time.</h3>
+						<h1>Learn SolidWorks the Right Way</h1>
+						<h3>7 day free trial, 30 day money back guarantee.</h3>
+					
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -27,12 +28,14 @@ Template Name: Student Pricing
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/proimage.png">
 									</div>
-									<h2>Student Plan</h2>
+									<h2>Pro</h2>
+									<h4><br>Includes:</h4>	
+									
 									<p>
-									Unlimited access to our entire library of training material. <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"><br><br>
-									Comprehensive excercise files and exams <br><br>
-									<b>$25/Month
-									</b>
+									Unlimited access to our entire library of training material. <img class="pricingq" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"> </p>
+									<p>Comprehensive excercise files, quizzes and CSWP prep course. </p>
+								<p>	Fanatical customer support - office hours, chat, email, phone, you name it!</p>
+									<p class="mooo">Only $25/Month
 									</p>
 									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6)))									
 									{ ?>  

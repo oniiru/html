@@ -11,7 +11,7 @@ Template Name: Checkout Template
 			
 				<div id="main" class="span12 clearfix" role="main">
 
-					<h1 style="text-align: center;font-weight: 700 !important;font-size: 47px !important;margin-top: -15px;color: rgb(77, 77, 77);">Sign Up Today</h1>
+					<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Sign Up Today</h1>
 					<h3 style="text-align:center;color:darkgrey;margin-bottom:25px">Get started in only 30 seconds.</h3>
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
@@ -818,7 +818,7 @@ if ( is_user_logged_in() ) {
 										<span id="pmpro_submit_span" <?php if(($gateway == "paypalexpress" || $gateway == "paypalstandard") && $pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>
 											<input type="hidden" name="submit-checkout" value="1" />		
 											<input type="submit" class="submitfixer btn btn-success btn-large" style="margin-left:78px;padding-left: 50px !important;
-padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Checkout<?php } else { ?>Confirm<?php } ?> &raquo;" />	
+padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Start Learning<?php } else { ?>Start Learning<?php } ?> &raquo;" />	
 			
 										</span>
 										

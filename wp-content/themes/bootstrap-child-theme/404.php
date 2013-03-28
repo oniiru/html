@@ -9,10 +9,10 @@
 						<header>
 
 							<div class="hero-unit">
-							
+								<center>
 								<h1>Epic 404 - Article Not Found</h1>
 								<p>This is embarassing. We can't find what you were looking for.</p>
-															
+									</center>						
 							</div>
 													
 						</header> <!-- end article header -->
