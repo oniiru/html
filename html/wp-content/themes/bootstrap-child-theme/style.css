@@ -2311,7 +2311,6 @@ h2.categoryTitle {
 		margin:0 42px;
 	}
 
-	
 	.pricingpoints {
 		height:245px;
 	}
@@ -2370,6 +2369,9 @@ margin-top: -6px;
 	width:auto;
 	
 }
+
+.newimage {width: 100px !important;}
+
 
 
 
@@ -2646,6 +2648,9 @@ max-width: 169px !important;
 	margin-top:-5px !important;
 	font-size: 24px !important;
 }
+
+.itemLeft .newimage {
+	left:-4px;
 
 }
 
@@ -3101,7 +3106,9 @@ p.signouttext {
 	width:260px;
 	height:146px;
 }
-
+.newimage {width: 100px !important;
+	left:34px;
+}
 
 
 }
