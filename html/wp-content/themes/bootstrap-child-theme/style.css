@@ -153,6 +153,10 @@ h1 {
 .pricingcontainer a {
 	color:black;
 }
+
+#no-access {
+	background:white;
+}
 .pricingcontainer a:hover{
 	text-decoration:none;
 	color:black;
