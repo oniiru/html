@@ -1564,7 +1564,7 @@ class MCAPI {
      * @param bool $send_welcome optional if your double_optin is false and this is true, we will send your lists Welcome Email if this subscribe succeeds - this will *not* fire if we end up updating an existing subscriber. If double_optin is true, this has no effect. defaults to false.
      * @return boolean true on success, false on failure. When using MCAPI.class.php, the value can be tested and error messages pulled from the MCAPI object (see below)
      */
-    function listSubscribe($id, $email_address, $merge_vars=NULL, $email_type='html', $double_optin=true, $update_existing=false, $replace_interests=true, $send_welcome=false) {
+    function listSubscribe($id, $email_address, $merge_vars=NULL, $email_type='html', $double_optin=false, $update_existing=false, $replace_interests=true, $send_welcome=false) {
         $params = array();
         $params["id"] = $id;
         $params["email_address"] = $email_address;
@@ -1649,7 +1649,7 @@ class MCAPI {
             string message the full error message
             string email the email address being processed
      */
-    function listBatchSubscribe($id, $batch, $double_optin=true, $update_existing=false, $replace_interests=true) {
+    function listBatchSubscribe($id, $batch, $double_optin=false, $update_existing=false, $replace_interests=true) {
         $params = array();
         $params["id"] = $id;
         $params["batch"] = $batch;
