@@ -20,10 +20,7 @@ Template Name: Pricing Page
 						
 						<header>
 							<div class="pricingcontainer">
-								<?php if(!pmpro_hasMembershipLevel('1')) 
-								{ ?> 
-									<a href="<?php echo pmpro_url("checkout", "?level=" . 1,"https")?>">
-										<?php }?>
+							
 								<div class="freeplan pricingplan">
 								
 									<div class="pricingplanimg">
@@ -43,11 +40,9 @@ Template Name: Pricing Page
 										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 1,"https")?>">Get Started</a>
 									<?php }?>
 									
-								</div></a>
-								<?php if(!pmpro_hasMembershipLevel(array(2,3,5,6)))
-								{ ?> 
-								<a href="<?php echo pmpro_url("checkout", "?level=" . 2,"https")?>">
-									<?php }?>
+								</div>
+								
+								
 								<div class="monthlyplan pricingplan">
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/proimage.png">
@@ -73,8 +68,6 @@ Template Name: Pricing Page
 										<?php }?>
 									
 								</div>
-							</a>
-							<a href="#businesscontactmodal" data-toggle="modal">
 								<div class="businessplan pricingplan">
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/enterprise.png">
@@ -91,7 +84,6 @@ Template Name: Pricing Page
 									</p> 
 									<a class="btn btn-custom btn-large" href="#businesscontactmodal" data-toggle="modal">Contact Us</a>
 								</div>
-							</a>
 							<div class="alert alert-info studentalert">
 								Still in School? Checkout our killer <a href="<?php bloginfo('url'); ?>/student"><b> student discount.</b> </a>
 							</div>
