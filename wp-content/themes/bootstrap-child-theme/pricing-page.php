@@ -189,8 +189,11 @@ Template Name: Pricing Page
 								<p> Contact us regarding information and pricing on our multi-member plans. This is the perfect option for businesses and educational institutions.<br><br>
 								<span style="color:rgb(255, 92, 0);margin-top:5px">  Call Us: 877.688.7563<br>
 								  Email:<a href="mailto:andrew@solidwize.com"> Andrew@SolidWize.com</a></span></p>
-							    <p><?php echo do_shortcode('[gravityform id="3" name="Business Contact Form" title="false" description="false"]') ?>
-										</p>
+  							    <p><iframe src="<?php bloginfo('url'); ?>/businessform" 
+  frameborder="0" scrolling="auto" name="myInlineFrame" width="100%" height="245px">
+  </iframe>
+  </p>
+							   
 							  </div>
 							  <div class="modal-footer">
 								  

@@ -4,7 +4,8 @@
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	
 	<head>
 		<script src="//cdn.optimizely.com/js/175175161.js"></script>
@@ -185,18 +186,14 @@
 								<p>  Have questions about SolidWize? Let us know what's on your mind and we'll be in touch shortly.<br><br>
 								<span style="color:rgb(255, 92, 0);margin-top:5px">  Call Us: 877.688.7563<br>
 								  Email:<a href="mailto:andrew@solidwize.com"> Andrew@SolidWize.com</a></span></p>
-							    <p><?php echo do_shortcode('[gravityform id="2" name="Contact Form" title="false" description="false"]') ?>
+							    <p><iframe src="<?php bloginfo('url'); ?>/contact-form" 
+frameborder="0" scrolling="auto" name="myInlineFrame" width="100%" height="245px">
+</iframe>
 </p>
 							  </div>
 							  <div class="modal-footer">
 								  
 							  </div>
 							</div>
-							<script>
-							jQuery(document).ready(function(){
-							jQuery('#gform_submit_button_2').addClass('btn btn-success');
-							jQuery('a[title="contactform"]').attr("data-toggle", "modal");
-						});
-						
-						</script>
+							
 		<div class="container-fluid">
