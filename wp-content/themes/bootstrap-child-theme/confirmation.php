@@ -117,10 +117,10 @@ Template Name: ConfirmationTemplate
 					
 						<script type="text/javascript">
 						
-						mixpanel.alias("<?php echo $current_user->user_email ?>");
+						mixpanel.identify("<?php echo $current_user->user_email ?>");
 						mixpanel.people.set({
 						    "$email": "<?php echo $current_user->user_email ?>",    // only special properties need the $
-						    "$membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
+						    "membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
 							"$name": "<?php echo $pmpro_invoice->billing->name ?>",
 							
 							
