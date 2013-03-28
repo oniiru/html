@@ -142,7 +142,7 @@
 								  				<script>
 								  				jQuery(document).ready(
 								  					function(){
-														jQuery("a[title='contactform']").attr("data-toggle", "modal");
+														jQuery("a[title=contactform]").attr("data-toggle", "modal");
 											
 		
 														});
