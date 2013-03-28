@@ -3109,7 +3109,7 @@ p.signouttext {
 	height:146px;
 }
 .newimage {width: 100px !important;
-	left:34px;
+	left:34px !important;
 }
 
 
