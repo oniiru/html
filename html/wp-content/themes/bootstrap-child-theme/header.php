@@ -139,15 +139,7 @@
 											});
 												</script>
 												
-								  				<script>
-								  				jQuery(document).ready(
-								  					function(){
-														jQuery("a[title=contactform]").attr("data-toggle", "modal");
-											
-		
-														});
-															</script>
-								
+								  				
 								
 								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom">Sign Up</a>
 								
@@ -185,6 +177,16 @@
 				</div>
 			
 			</div> <!-- end #inner-header -->
+		
+		
+			<script>
+			jQuery(document).ready(
+				function(){
+					jQuery('a[title="contactform"]').attr("data-toggle", "modal");
+		
+
+					});
+						</script>
 		
 		</header> <!-- end header -->
 							<div id="contactmodal" class="modal hide fade">
