@@ -25,9 +25,7 @@
 		<script type="text/javascript">
 		mixpanel.identify('<?php global $current_user;
 		get_currentuserinfo(); echo $current_user->ID; ?>');
-		mixpanel.track('Viewed Post', {
-		    "Title":"Visited <?php single_post_title(); ?>",
-		});
+		mixpanel.track('Viewed <?php single_post_title(); ?>');
 		</script>
 		<!-- MixPanel End -->
 	</body>

@@ -122,8 +122,9 @@ Template Name: ConfirmationTemplate
 						    "$email": "<?php echo $current_user->user_email ?>",    // only special properties need the $
 						    "membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
 							"$name": "<?php echo $current_user->display_name?>",
-							
-							
+							"discount": "<?php echo $pmpro_invoice->discount_code->code?>",
+							"$created": "<?php echo date('l jS F Y'); ?>",
+						
 						});
 						
 						</script>
