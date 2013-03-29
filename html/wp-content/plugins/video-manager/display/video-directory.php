@@ -98,7 +98,7 @@ class IonVideoDirectoryDisplay {
 												} else {
 													if ($google_analytic == 'on') {
 														?>
-														<a class="login-pop noaccess" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a class="login-pop noaccess" onclick="trackclicktry()" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>
