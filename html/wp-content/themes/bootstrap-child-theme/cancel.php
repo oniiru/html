@@ -37,9 +37,9 @@
 			mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
 			mixpanel.people.set({
 			    "membership_Level": "<?php echo $current_user->membership_level->name ?> - Cancelled", 
-				"cancellation_date": "<?php echo date('Y/m/d'); ?>",	
-							
-							});
+				"cancellation_date": "<?php echo date('YYYY-MM-DDTHH:MM:SS'); ?>",	
+			});
+	
 						return confirm('This will perminantly delete your account and immediately cancel billing. Are you sure you want to proceed?');
 			};
 			</script>
