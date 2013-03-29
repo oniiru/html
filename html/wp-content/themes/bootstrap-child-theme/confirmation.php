@@ -123,7 +123,7 @@ Template Name: ConfirmationTemplate
 						    "membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
 							"$name": "<?php echo $current_user->display_name?>",
 							"discount": "<?php echo $pmpro_invoice->discount_code->code?>",
-							"$created": "<?php echo date(); ?>",
+							"$created": "<?php echo date('Y/m/d'); ?>",
 						
 						});
 						
