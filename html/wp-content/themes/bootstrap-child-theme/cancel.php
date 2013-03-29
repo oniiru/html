@@ -40,7 +40,7 @@
 				"cancellation_date": "<?php echo date('Y/m/d'); ?>",	
 							
 							});
-			};
+			});
 			</script>
 			
 			
