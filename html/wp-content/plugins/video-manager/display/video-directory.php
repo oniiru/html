@@ -111,18 +111,15 @@ class IonVideoDirectoryDisplay {
 											<?php
 										}
 									endif;
-									?>
+									?> 
 								</ul><!-- .video-list -->
 								<script type="text/javascript">
-									$(".show_iframe").click(function(){
+									$("a.show_iframe").click(function(){
 										mixpanel.identify('<?php global $current_user;
 get_currentuserinfo(); echo $current_user->ID; ?>');
-mixpanel.people.increment({
-   "Videos Watched": 1,
-    "<?php the_title(); ?> - Videos Watched": 1 
-});
-});
-										
+										mixpanel.people.increment("Videos Watched", 1);
+										mixpanel.people.increment("<?php the_title(); ?> - Videos Watched", 1);
+									});
 										</script>
 								
 								<div class="iframe">
