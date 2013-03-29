@@ -116,8 +116,7 @@ class IonVideoDirectoryDisplay {
 								
 										<script type="text/javascript">
 										function trackpersonclick(){
-										mixpanel.identify('<?php global $current_user;
-														get_currentuserinfo(); echo $current_user->user_login; ?>');
+										mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
 														mixpanel.people.increment({
 														    "Videos Watched": 1,
 														    "<?php the_title(); ?> - Videos Watched": 1,
