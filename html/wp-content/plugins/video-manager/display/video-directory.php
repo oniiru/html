@@ -98,7 +98,7 @@ class IonVideoDirectoryDisplay {
 												} else {
 													if ($google_analytic == 'on') {
 														?>
-														<a href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a class="login-pop noaccess" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>
@@ -120,6 +120,13 @@ class IonVideoDirectoryDisplay {
 														mixpanel.people.increment({
 														    "Videos Watched": 1,
 														    "<?php the_title(); ?> - Videos Watched": 1,
+														});
+										};
+										
+										function trackclicktry(){
+										mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
+														mixpanel.people.increment({
+														    "Tried to watch <?php the_title(); ?> video": 1,
 														});
 										};
 										</script>
