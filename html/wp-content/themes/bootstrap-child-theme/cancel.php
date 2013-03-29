@@ -29,4 +29,15 @@
 					<?php } ?>
 				</div>
 			</div><!-- end content -->
+			
+			<script type="text/javascript">
+				$(".yeslink").click(function(){	
+					mixpanel.identify("<?php echo $current_user->ID ?>");
+					mixpanel.people.set({
+					    "membership_Level": "<?php echo $current_user->membership_level->name ?> - Cancelled", 
+						"cancellation_date": "<?php echo date('l jS F Y'); ?>"
+						   
+						               
+				})
+			</script>
 <?php get_footer(); ?>

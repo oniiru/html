@@ -113,6 +113,14 @@ class IonVideoDirectoryDisplay {
 									endif;
 									?>
 								</ul><!-- .video-list -->
+								<script type="text/javascript"	>
+									$(".show_iframe").click(function(){
+										mixpanel.identify("<?php echo $current_user->ID ?>");
+										mixpanel.people.increment("Videos Watched");
+										mixpanel.people.increment("<?php the_title(); ?> - Videos Watched");
+										
+										</script>
+								
 								<div class="iframe">
 									<?php
 									if ($chapter->video_count > 0) :
