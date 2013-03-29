@@ -40,6 +40,7 @@
 				"cancellation_date": "<?php echo date('Y/m/d'); ?>",	
 							
 							});
+						return confirm('This will perminantly delete your account and immediately cancel billing. Are you sure you want to proceed?');
 			};
 			</script>
 			
