@@ -20,7 +20,7 @@
 						<p>Are you sure you want to cancel your membership?</p>
 
 						<p>
-							<a class="yeslink btn btn-danger" onCLick="trackcancel(), return confirm('This will perminantly delete your account and immediately cancel billing. Are you sure you want to proceed?')" href="<?php echo pmpro_url("cancel", "?confirm=true") ?>">Yes, cancel my account</a>
+							<a class="yeslink btn btn-danger" onCLick="trackcancel()" href="<?php echo pmpro_url("cancel", "?confirm=true") ?>">Yes, cancel my account</a>
 							|
 							<a class="nolink btn btn-info" href="<?php echo pmpro_url("account") ?>">No, keep my account</a>
 						</p>
