@@ -88,7 +88,7 @@ class IonVideoDirectoryDisplay {
 												if ($ion_auth_users->all($o['options'])) {
 													if ($google_analytic == 'on') {
 														?>
-														<a class="<?php echo (!empty($o['media_id']) ? 'show_jw_player' : 'show_iframe'); ?>" href="#<?php echo sanitize_title($list['video_name']); ?>-<?php echo $list['ID']; ?><?php echo (!empty($o['media_id']) ? '_wrapper' : ''); ?>" title="<?php echo stripslashes($list['video_name']); ?>"><?php echo stripslashes($list['video_name']); ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($o['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a onclick="trackpersonclick()" class="<?php echo (!empty($o['media_id']) ? 'show_jw_player' : 'show_iframe'); ?>" href="#<?php echo sanitize_title($list['video_name']); ?>-<?php echo $list['ID']; ?><?php echo (!empty($o['media_id']) ? '_wrapper' : ''); ?>" title="<?php echo stripslashes($list['video_name']); ?>"><?php echo stripslashes($list['video_name']); ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($o['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>
@@ -111,15 +111,16 @@ class IonVideoDirectoryDisplay {
 											<?php
 										}
 									endif;
-									?> 
+									?>
 								</ul><!-- .video-list -->
-								<script type="text/javascript">
-									$("a.show_iframe").click(function(){
+								
+										<script type="text/javascript">
+										function trackpersonclick(){
 										mixpanel.identify('<?php global $current_user;
-get_currentuserinfo(); echo $current_user->ID; ?>');
-										mixpanel.people.increment("Videos Watched", 1);
-										mixpanel.people.increment("<?php the_title(); ?> - Videos Watched", 1);
-									});
+														get_currentuserinfo(); echo $current_user->user_login; ?>');
+										mixpanel.people.increment('Videos Watched');
+										mixpanel.people.increment('<?php the_title(); ?> - Videos Watched');
+										};
 										</script>
 								
 								<div class="iframe">
