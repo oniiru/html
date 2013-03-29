@@ -30,14 +30,19 @@
 				</div>
 			</div><!-- end content -->
 			
+			
+	
 			<script type="text/javascript">
-				$(".yeslink").click(function(){	
-					mixpanel.identify("<?php echo $current_user->ID ?>");
-					mixpanel.people.set({
-					    "membership_Level": "<?php echo $current_user->membership_level->name ?> - Cancelled", 
-						"cancellation_date": "<?php echo date('l jS F Y'); ?>"
-						   
-						               
-				})
+			function trackcancel(){
+			mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
+			mixpanel.people.set({
+			    "membership_Level": "<?php echo $current_user->membership_level->name ?> - Cancelled", 
+				"cancellation_date": "<?php echo date(); ?>",	
+							
+							});
+			};
 			</script>
+			
+			
+		
 <?php get_footer(); ?>
