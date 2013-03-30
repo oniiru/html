@@ -116,16 +116,17 @@ Template Name: ConfirmationTemplate
 						<p align="center"><a href="<?php echo pmpro_url("account")?>">View Your Membership Account &raquo;</a></p>           
 					
 						<script type="text/javascript">
-						
+						mixpanel.alias("<?php echo $current_user->ID ?>");
+						mixpanel.name_tag('<?php echo $current_user->display_name?>');
 						mixpanel.identify("<?php echo $current_user->ID ?>");
 						mixpanel.people.set({
 						    "$email": "<?php echo $current_user->user_email ?>",    // only special properties need the $
 						    "membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
 							"$name": "<?php echo $current_user->display_name?>",
 							"discount": "<?php echo $pmpro_invoice->discount_code->code?>",
-							"$created": "<?php echo date('Y-m-dTH:i:s'); ?>",
-						
+							"$created": "<?php echo date('Y-m-d TH:i:s'); ?>",
 						});
+							mixpanel.track("Converted", {"Level": "<?php echo $current_user->membership_level->name ?>"};
 						
 						</script>
 					</div>	
