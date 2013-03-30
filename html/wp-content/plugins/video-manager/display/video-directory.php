@@ -98,11 +98,11 @@ class IonVideoDirectoryDisplay {
 												} else {
 													if ($google_analytic == 'on') {
 														?>
-														<a class="login-pop noaccess" onclick="trackclicktry()" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a title="<?php echo stripslashes($list['video_name']); ?>" class="login-pop noaccess" onclick="trackclicktry()" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													} else {
 														?>
-														<a class="login-pop noaccess" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
+														<a class="login-pop noaccess" title="<?php echo stripslashes($list['video_name']); ?>" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
 													}
 												}
@@ -116,20 +116,31 @@ class IonVideoDirectoryDisplay {
 								
 										<script type="text/javascript">
 										function trackpersonclick(){
-										mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
+											<?php if (is_user_logged_in()) { ?>
+										mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>'); 											<?php } ?>
 														mixpanel.people.increment({
 														    "Videos Watched": 1,
 														    "<?php the_title(); ?> - Videos Watched": 1,
 														});
+														
+														
 										};
 										
 										function trackclicktry(){
+											<?php if (is_user_logged_in()) { ?>
+											
 										mixpanel.identify('<?php global $current_user; get_currentuserinfo(); echo $current_user->ID; ?>');
+										<?php } ?>
 														mixpanel.people.increment({
 														    "Tried to watch <?php the_title(); ?> video": 1,
 														});
+					
 										};
-										</script>
+										
+										
+										
+										var pagetitle = '<?php the_title(); ?>';
+									</script>
 								
 								<div class="iframe">
 									<?php
@@ -248,14 +259,14 @@ class IonVideoDirectoryDisplay {
 		if (!is_user_logged_in()) {
 			?>
 			<div id="buttonNoLgin">
-				<p><?php echo $attr['text']; ?></p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger" title="subscribe"><?php echo $attr['btntext']; ?></a>
+				<p><?php echo $attr['text']; ?></p><a href="<?php echo $sign_up; ?>" class="videosignupbtn btnposition btn btn-danger" title="subscribe"><?php echo $attr['btntext']; ?></a>
 			</div>
 			<?php
 		}
 		 if(pmpro_hasMembershipLevel('1')) 
 								{ ?>  
 									<div id="buttonNoLgin">
-										<p>Access our entire training library.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger" title="subscribe">Upgrade Now</a>
+										<p>Access our entire training library.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger video	" title="subscribe">Upgrade Now</a>
 									</div>
 									<?php }
 									

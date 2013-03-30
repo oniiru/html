@@ -61,13 +61,13 @@
 					<?php if (!is_user_logged_in()) { ?>
 					<div class="blogpitch">
 						<h3>Start learning SolidWorks <br>for free with <span class="solidwizei">S</span><span>olid</span><span class="solidwizei">W</span><span>ize</span>.</h3>
-						<a class="btn btn-success btn-large" href="<?php bloginfo('url'); ?>/training"> Watch Tutorials </a>
+						<a class="btn btn-success btn-large blogpitchout" href="<?php bloginfo('url'); ?>/training"> Watch Tutorials </a>
 					</div>
 					<?php } ?>
 					<?php if(pmpro_hasMembershipLevel('1')) { ?>
 						<div class="blogpitch">
 							<h3>Upgrade your <span class="solidwizei">S</span><span>olid</span><span class="solidwizei">W</span><span>ize</span> account<br> to take your skills to the next level.</h3>
-							<a class="btn btn-success btn-large" href="<?php bloginfo('url'); ?>/training"> Upgrade Now </a>
+							<a class="btn btn-success btn-large blogpitchin" href="<?php bloginfo('url'); ?>/pricing"> Upgrade Now </a>
 						</div>
 						<?php } ?>
 					

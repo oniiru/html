@@ -8,6 +8,7 @@ jQuery(document).ready( function() {
 
 	jQuery('.show_iframe').fancybox({
 		'onComplete':function(){
+			mixpanel.track("Watched Video", {"Category": pagetitle, "Title": this.title});
 			var container = jQuery(jQuery(jQuery('#fancybox-content').html()).html());
 			var content = jQuery(container).html();
 			var containerID = jQuery(container).attr('id');
@@ -52,10 +53,11 @@ jQuery(document).ready( function() {
 //	});
 	
 	jQuery('.noaccess').click(function(){
+		mixpanel.track("Video Attempted", {"Category": pagetitle, "Title": this.title});
 		var popup_id = jQuery(this).attr('href').split('-');
 		var url = jQuery('#ajax-url').val();
 		var content;
-		
+	
 		popup_id = popup_id[1];
 		content = jQuery('#no-access-content-' + popup_id).html();
 
