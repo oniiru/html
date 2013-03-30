@@ -141,7 +141,7 @@ mixpanel.init("03e2a1adcadcc51e01360cf9b89514ff");</script><!-- end Mixpanel -->
 												
 								  				
 								
-								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom">Sign Up</a>
+								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom headersignupbtn">Sign Up</a>
 								
 								</div>
 								<?php 	};
@@ -149,7 +149,7 @@ mixpanel.init("03e2a1adcadcc51e01360cf9b89514ff");</script><!-- end Mixpanel -->
 								<?php if(pmpro_hasMembershipLevel('1')) 
 								{ ?>  
 							<div class="signinbuttons">
-								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom">Upgrade Account</a>
+								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom headerupgradebtn">Upgrade Account</a>
 							</div>
 							<?php } ?>
 								<div class="nav-menusandsuch">

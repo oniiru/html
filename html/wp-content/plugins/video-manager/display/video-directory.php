@@ -140,7 +140,7 @@ class IonVideoDirectoryDisplay {
 										
 										
 										var pagetitle = '<?php the_title(); ?>';
-																				</script>
+									</script>
 								
 								<div class="iframe">
 									<?php
@@ -266,7 +266,7 @@ class IonVideoDirectoryDisplay {
 		 if(pmpro_hasMembershipLevel('1')) 
 								{ ?>  
 									<div id="buttonNoLgin">
-										<p>Access our entire training library.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger videoupgradebtn" title="subscribe">Upgrade Now</a>
+										<p>Access our entire training library.</p><a href="<?php echo $sign_up; ?>" class="btnposition btn btn-danger video	" title="subscribe">Upgrade Now</a>
 									</div>
 									<?php }
 									

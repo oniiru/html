@@ -34,6 +34,21 @@
 		<?php } ?>
 		
 		mixpanel.track('Viewed <?php single_post_title(); ?>');
+		mixpanel.track_links('.accordion-toggle', 'Opened FAQ', {
+		    'Page': '<?php the_title(); ?>'
+		});
+		mixpanel.track_links('.businessplan a', 'Clicked Business Plan Contact Us');
+		   
+		mixpanel.track_links('.freeplan a', 'Clicked Signup Button', {
+		    'Type': 'Free Plan',
+		});
+		mixpanel.track_links('.monthlyplan a', 'Clicked Signup Button', {
+		    'Type': 'Standard Plan',
+		    'Page': '<?php the_title(); ?>'
+		});
+		mixpanel.track_links('#other_discount_code_a', 'Clicked Coupon Link');
+		
+		
 		</script>
 		<!-- MixPanel End -->
 		

@@ -126,7 +126,7 @@ Template Name: ConfirmationTemplate
 							"discount": "<?php echo $pmpro_invoice->discount_code->code?>",
 							"$created": "<?php echo date('Y-m-d TH:i:s'); ?>",
 						});
-							mixpanel.track("Converted", {"Level": "<?php echo $current_user->membership_level->name ?>"};
+							mixpanel.track("Converted", {"Level": "<?php echo $current_user->membership_level->name ?>"});
 						
 						</script>
 					</div>	

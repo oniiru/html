@@ -221,10 +221,10 @@ switch(id){
 </div>
 </div>';
 		if (!is_user_logged_in()) {
-			$str.='<div class="warringup"><h3>New to SolidWize? Click on any of the links below to try a few of our free videos.</h3><p>Ready to pull the trigger and become a SolidWorks badass? <a href="http://solidwize.com/pricing" class="btn btn-danger" title="Sign Up">Sign Up Now</a> </p></div>';
+			$str.='<div class="warringup"><h3>New to SolidWize? Click on any of the links below to try a few of our free videos.</h3><p>Ready to pull the trigger and become a SolidWorks badass? <a href="http://solidwize.com/pricing" class="btn btn-danger catsignupbtn" title="Sign Up">Sign Up Now</a> </p></div>';
 		}
 		if(pmpro_hasMembershipLevel('1')) {
-			$str.='<div class="warringup"><h3>You now have unlimited access to the Intro and Parts section.</h3><p>Upgrade your account to take your learning to the next level. <a href="http://solidwize.com/pricing" class="btn btn-danger" title="Sign Up">Upgrade Now</a> </p></div>';
+			$str.='<div class="warringup"><h3>You now have unlimited access to the Intro and Parts section.</h3><p>Upgrade your account to take your learning to the next level. <a href="http://solidwize.com/pricing" class="btn btn-danger catupgradebtn" title="Sign Up">Upgrade Now</a> </p></div>';
 			
 		}
 
