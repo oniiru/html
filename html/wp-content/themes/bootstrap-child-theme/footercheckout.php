@@ -1,21 +1,5 @@
 			<footer role="contentinfo">
 			
-				<div id="inner-footer">
-		          <hr />
-		          <div id="widget-footer" class=" row-fluid">
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-		            <?php endif; ?>
-		          </div>
-					
-					
-			
-				
-				</div> <!-- end #inner-footer -->
-				
 			</footer> <!-- end footer -->
 		
 		</div> <!-- end #container -->
