@@ -5,7 +5,6 @@
 		          
 					
 						<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-					<a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
 			
 				
 				</div> <!-- end #inner-footer -->
