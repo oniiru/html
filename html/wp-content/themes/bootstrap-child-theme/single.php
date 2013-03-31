@@ -22,13 +22,13 @@
 							<?php the_content(); ?>
 							<?php if (!is_user_logged_in()) { ?>
 							
-							<div class="blogpitch singlepitchout">
+							<div class="blogpitch singlepitch singlepitchout">
 								<h3>Want to keep learning?</h3>
 								<a class="btn btn-success btn-large" href="<?php bloginfo('url'); ?>/training"> Learn More </a>
 							</div><?php } ?>
 							
 							<?php if(pmpro_hasMembershipLevel('1')) { ?>
-								<div class="blogpitch singlepitchin">
+								<div class="blogpitch singlepitch singlepitchin">
 									<h3>Want to keep learning?</h3>
 									<a class="btn btn-success btn-large" href="<?php bloginfo('url'); ?>/training"> Upgrade Now </a>
 								</div><?php } ?>
