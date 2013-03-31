@@ -2664,6 +2664,8 @@ max-width: 169px !important;
 
 }
 
+}
+
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {	
 	.videohome {
@@ -2760,7 +2762,9 @@ font-size: 17px !important;
 }
 
 
-#content {width:inherit;}
+#content {
+	width:inherit;
+}
 
 .homesecright {
 	width:250px;
@@ -2768,9 +2772,11 @@ font-size: 17px !important;
 	margin:auto;
 	text-align:center;
 }
+
 .homesec2 h2 { 
 	font-size:28px;
 }
+
 .homesecright h3 { 
 	font-size:23px;
 	text-align:center;
@@ -2783,6 +2789,7 @@ font-size: 17px !important;
 .homesec2 p {
 	text-align:center;
 }
+
 .bx-viewport {
 width: 278px !important;
 margin: auto !important;
@@ -2791,16 +2798,19 @@ left: 0px !important;
 
 .homesec3 blockquote p {
 font-weight: 500 !important;
-max-width: 300px;}
+max-width: 300px;
+}
 
 .homesec3 img {
 display: block;
 vertical-align: top;
 display:none !important;
 }
+
 .homesec3 blockquote p {
 	max-width:280px;
 }
+
 .homesec3 {
 	width:300px;
 	margin:auto;
@@ -2810,6 +2820,7 @@ display:none !important;
 	margin-left: 88px;
 	
 }
+
 blockquote{
 	padding:0px;
 	margin:0px;
@@ -2818,7 +2829,11 @@ blockquote{
 	margin-left:-10px !important;
 	margin-bottom: 20px !important;
 }
-.homesec4 {width:272px;text-align:center;}
+
+.homesec4 {
+	width:272px;text-align:center;
+}
+
 .homesec4 .sec4left {
 text-align: center;
 float: none;
@@ -2850,6 +2865,7 @@ h2.categoryTitle {
 	line-height: 1.2em;
 	
 }
+
 #searchlib {
 width:auto;
 float:none;	
@@ -2857,25 +2873,27 @@ float:none;
 
 #searchlib #ss{
 	width:inherit;
-	
 }
 
 .itemLeft img {
 	width:200px ;
 
 }
+
 .itemRight h2 {
 	font-size:30px;
 	width:260px;
 	margin:auto;
 	line-height:1em;
 }
+
 .itemRight p {
 	width: 200px;
 	margin: auto;
 	font-size: 14px;
 	text-align:center;
 	}
+	
 .ion_tabs {
 	width:300px;
 	margin:auto;
@@ -2889,16 +2907,14 @@ ul.video-list li a {
 	font-size:10px;
 	padding:4px 8px;
 }
+
 .ion-css .postbox {
 	text-align:left;
-	
 }
+
 .ui-tabs-anchor {
 	padding:4px !important;
 	font-size:12px;
-}
-.ion-css .ui-tabs .ui-tabs-nav li {
-	
 }
 
 .pricingpage h1 {
@@ -2911,24 +2927,29 @@ font-size: 14px !important;
 line-height: 1.2em;
 margin-top: 0px;
 }
+
 h3.directory-name span.icon-before {
 	margin-top: -1px;
 }
+
 h3.directory-name span {
 	vertical-align:top;
 	font-size: 11px;
 	
 }
+
 .show_iframe {
 	width:184px;
 	display:inline-block;
 }
+
 #buttonNoLgin {
 	padding: 10px 0;
-	
 }
+
 #incontent {padding:10px;
 }
+
 #buttonNoLgin p{
 	width: 130px;
 	top: -5px;
@@ -2941,15 +2962,16 @@ h3.directory-name span {
 .modal {
 	width: 290px;
 	margin: -250px 0 0 -145px;
-	}
-
+}
 
 .post_content p {
 	padding:0 20px;
 }
+
 .aboutright, .aboutleft {
 	width:inherit;
 }
+
 .post_content {
 	text-align:center;
 }
@@ -2964,10 +2986,11 @@ h3.directory-name span {
 	font-size:24px !important;
 	line-height:1.2em;
 }
+
 .aboutright h4, .aboutright h5, .aboutright p, .aboutleft h4, .aboutleft h5, .aboutleft p {
 	width:260px;
-	
 }
+
 .freeplan .pricingplanimg {
 height: 150px;
 
@@ -2977,16 +3000,18 @@ height: 150px;
 margin-top: 20px;
 }
 
-
 .singlepitch {
 	text-align: center;
 }
+
 .singlepitch h3 {font-size:15px;
 }
+
 .singlepitch a {
 	margin-top:-2px;
 	float:none;
 }
+
 .singlepitch .btn-large {
 	font-size:14px;
 	
@@ -2998,6 +3023,7 @@ margin-top: 20px;
 	width:300px;
 		
 }
+
 .pmpro_form {
 	width:280px !important;
 	padding: 5px 10px;
@@ -3011,9 +3037,11 @@ min-width: 260px!important;
 input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
 width: 250px;
 }
+
 input#bphone {
 	width:250px;
 }
+
 .pmpro_sslseal {
 	display:none;
 }
@@ -3047,47 +3075,55 @@ max-width: 85px !important;
 min-width:85px !important;
 padding:10px 20px;
 }
+
 .pmpro_form p {
 	padding:0px;
 }
+
 .awesomeradio_label p {
 	width:100px !important;	
 	padding:0px;
 	font-size:12px !important;
 }
+
 .awesomeradio_container {
 max-width: 120px !important;
 }
+
 .passfix {
 	margin-left:0px !important;
 	margin-top:30px !important;
 }
+
 .pmpro_thead-msg {
 	margin-left:0px;
 	width:263px;
 }
 	
 	
-	.questionfix {
-		display:none;
-	}
-	.pmpro_form thead th {
+.questionfix {
+	display:none;
+}
+	
+.pmpro_form thead th {
 	font-size: 21px !important;	
-	}
+}
 
-	#pmpro_user_fields {
-		margin-top:40px;
-	}
+#pmpro_user_fields {
+	margin-top:40px;
+}
 	
 #other_discount_code_p {
 	margin-top: 22px !important;
 }
+
 input.awesomeradio {
 	display:none !important;
 }
 
 .submitfixer {
-margin-left: 5px !important;}
+	margin-left: 5px !important;
+}
 .warringup p {
 	text-align:center;
 }
@@ -3097,6 +3133,7 @@ margin-left: 5px !important;}
 .itemLeft {
 	left:-10px;
 }
+
 #menu-header-signed-in li a {
 	padding: 10px 7px 10px;
 }
@@ -3105,11 +3142,12 @@ p.signouttext {
 	width:250px;
 
 }
+
 #videomodal {
 	margin: -73px 0 0 -130px !important;
 }
-.billingpage input#CVV {
 
+.billingpage input#CVV {
 	height: 22px !important;
 }
 
@@ -3117,7 +3155,9 @@ p.signouttext {
 	width:260px;
 	height:146px;
 }
-.newimage {width: 100px !important;
+
+.newimage {
+	width: 100px !important;
 	left:34px !important;
 }
 
