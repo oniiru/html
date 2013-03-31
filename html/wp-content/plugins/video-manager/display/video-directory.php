@@ -65,7 +65,7 @@ class IonVideoDirectoryDisplay {
 						<div class="postbox">
 							<h3 class="directory-name">
 								<span class="icon-before"></span>
-								<span><?php echo stripslashes($chapter->directory_name); ?></span>
+								<span class="directorynamefix"><?php echo stripslashes($chapter->directory_name); ?></span>
 								<?php if ($duration) : ?>
 									<span style="float:right;"><?php echo $hours . 'hr ' . str_pad($minutes, 2, 0, STR_PAD_LEFT) . 'm ' . str_pad($seconds, 2, 0, STR_PAD_LEFT) . 's'; ?></span>
 								<?php endif; ?>

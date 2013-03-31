@@ -3156,6 +3156,10 @@ p.signouttext {
 	height:146px;
 }
 
+.directorynamefix {
+	width: 160px !important;
+	display: inline-block;
+}
 .newimage {
 	width: 100px !important;
 	left:34px !important;
