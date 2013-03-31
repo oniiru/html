@@ -137,9 +137,17 @@ class IonVideoDirectoryDisplay {
 					
 										};
 										
-										
-										
 										var pagetitle = '<?php the_title(); ?>';
+										
+					
+						  				jQuery(document).ready(
+						  					function(){
+										if(jQuery("#tab4").length > 0){
+											jQuery(".ui-tabs-anchor").addClass("tabsfix")
+										};
+										
+									});
+									
 									</script>
 								
 								<div class="iframe">
