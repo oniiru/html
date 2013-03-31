@@ -2901,6 +2901,7 @@ float:none;
 
 ul.video-list li a {
 	font-size:11px;
+	width:200px;
 }
 
 #cancelmembership .btn {
@@ -2951,7 +2952,7 @@ h3.directory-name span {
 }
 
 #buttonNoLgin p{
-	width: 130px;
+	width: 150px;
 	top: -5px;
 	position: relative;
 	font-size: 14px;
