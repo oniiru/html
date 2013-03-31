@@ -142,7 +142,7 @@ Template Name: account
 													<li><a href="<?php echo pmpro_url("billing", "", "https")?>">Update Billing Information</a></li>
 												<?php } ?>
 												<?php if(count($pmpro_levels) > 1) { ?>
-													<li><a href="<?php echo pmpro_url("levels")?>">Change Membership Level</a></li>
+													<li><a class="pmprochange" href="<?php echo pmpro_url("levels")?>">Change Membership Level</a></li>
 												<?php } ?>
 												<li><a href="<?php echo pmpro_url("cancel")?>">Cancel Membership</a></li>
 												<?php 

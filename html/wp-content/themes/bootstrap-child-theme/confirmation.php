@@ -120,7 +120,7 @@ Template Name: ConfirmationTemplate
 						mixpanel.name_tag('<?php echo $current_user->display_name?>');
 						mixpanel.identify("<?php echo $current_user->ID ?>");
 						mixpanel.people.set({
-						    "$email": "<?php echo $current_user->user_email ?>",    // only special properties need the $
+						    "$email": "<?php echo $current_user->user_email ?>", 
 						    "membership_Level": "<?php echo $current_user->membership_level->name ?>",                   
 							"$name": "<?php echo $current_user->display_name?>",
 							"discount": "<?php echo $pmpro_invoice->discount_code->code?>",

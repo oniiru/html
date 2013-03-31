@@ -16,6 +16,8 @@
 		<?php if (is_user_logged_in()) { ?>
 		mixpanel.identify('<?php global $current_user;
 		get_currentuserinfo(); echo $current_user->ID; ?>');
+		mixpanel.name_tag('<?php echo $current_user->display_name?>');
+		
 		<?php } ?>
 		
 		mixpanel.track('Viewed <?php single_post_title(); ?>');
