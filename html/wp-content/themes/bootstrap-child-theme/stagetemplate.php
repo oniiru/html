@@ -12,7 +12,7 @@ Template Name: Stage Template
 
 					<div class="testdiv">
 					<div class="indivstep">
-						<div style="background:url('/SWZTEST/swztest/wp-content/themes/bootstrap-child-theme/images/tableimg.png');" class="stepimg">
+						<div style="background:url('/swzsandbox/html/wp-content/themes/bootstrap-child-theme/images/tableimg.png');" class="stepimg">
 							<div class="stepicon iconred">
 								<img src="<?php bloginfo('stylesheet_directory');?>/images/checkmark.png">
 							</div>

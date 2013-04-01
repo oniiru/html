@@ -1420,7 +1420,7 @@ form.pmpro_form .pmpro_submit span {float:none !important;}
 
 .iconblue {}
 
-.iconred {	background:url('/SWZTEST/swztest/wp-content/themes/bootstrap-child-theme/images/reddiamond.png');
+.iconred {	background:url('/swzsandbox/html/wp-content/themes/bootstrap-child-theme/images/reddiamond.png');
 }
 
 .icongreen {}
@@ -2385,7 +2385,7 @@ margin-top: -6px;
 	
 }
 
-.newimage {width: 100px !important;}
+.newimage, .freeimage {width: 100px !important;}
 
 
 
@@ -2664,7 +2664,7 @@ max-width: 169px !important;
 	font-size: 24px !important;
 }
 
-.itemLeft .newimage {
+.itemLeft .newimage, .itemLeft .freeimage {
 	left:-4px;
 
 }
@@ -3169,7 +3169,7 @@ p.signouttext {
 	width: 160px !important;
 	display: inline-block;
 }
-.newimage {
+.newimage, .freeimage {
 	width: 100px !important;
 	left:34px !important;
 }

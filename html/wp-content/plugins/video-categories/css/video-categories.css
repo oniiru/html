@@ -66,7 +66,7 @@ h2.categoryTitle{
     float:left;
     position: relative;
 }
-.itemLeft .newimage{
+.itemLeft .newimage, .itemLeft .freeimage {
     position: absolute;
     top: -9px;
     left: -9px;

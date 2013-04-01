@@ -20,9 +20,10 @@ class categoriesVideo {
 		update_post_meta($post_id, 'include_video_field', $_POST['include_video_field']);
 		update_post_meta($post_id, 'subtitle_field', $_POST['subtitle_field']);
 		update_post_meta($post_id, 'new_content', $_POST['new_content']);
+		update_post_meta($post_id, 'free_content', $_POST['free_content']);
 		$expire_date = get_post_meta($post_id, 'expire_date', true) || '';
 		if ($_POST['new_content'] == 'on') {
-			if ($expire_date == '') {
+			if ($expire_date == '') {  
 				add_post_meta($post_id, 'expire_date', date('F jS, Y', strtotime('+2 weeks')));
 			}
 		} else {
@@ -40,11 +41,13 @@ class categoriesVideo {
 	function metaAccessBoxVideo($post) {
 		$chkInclude = get_post_meta($post->ID, 'include_video_field', true);
 		$subTitle = get_post_meta($post->ID, 'subtitle_field', true);
+		$freeContent = get_post_meta($post->ID, 'free_content', true);
 		$newContent = get_post_meta($post->ID, 'new_content', true);
 		$expireDate = get_post_meta($post->ID, 'expire_date', true);
 		if ($chkInclude == "on")
 			$checked = 'checked="checked"';
-
+		if ($freeContent== "on")
+			$freeChecked = 'checked="checked"';
 		if ($newContent == 'on' && strtotime($expireDate) >= strtotime('now')) {
 			$newChecked = 'checked="checked"';
 		} else {
@@ -56,6 +59,8 @@ class categoriesVideo {
 		echo '<label for="inlude_new_field">Include in video category?</label></p>';
 		echo '<p><label>Subtitle - To be included on video category page</label><br/>';
 		echo '<input type="text" id="subtitle_field" name="subtitle_field" size="70" value="' . $subTitle . '"/></p>';
+		echo '<p><input type="checkbox" id="free_content" name="free_content" ' . $freeChecked . ' />&nbsp;&nbsp;';
+		echo '<label for="free_content">Free Content</label>';		
 		echo '<p><input type="checkbox" id="new_content" name="new_content" ' . $newChecked . ' />&nbsp;&nbsp;';
 		echo '<label for="new_content">New Content</label>&nbsp;&nbsp;&nbsp;&nbsp;<label>Expires : </label>' . $expireDate . '</p>';
 	}
@@ -168,6 +173,12 @@ class categoriesVideo {
 			setup_postdata($post);
 			$arID = 'item_' . $post->ID;
 			$expired_date = get_post_meta($post->ID, 'expire_date', true);
+			$free_content = get_post_meta($post->ID, 'free_content', true);
+			if ($free_content == 'on') {
+				$free_image = '<img class="freeimage" src="' . plugin_dir_url() . '/video-categories/images/freecontentribbon.png" />';
+			} else {
+				$free_image = '';
+			}
 			$new_content = get_post_meta($post->ID, 'new_content', true);
 			if ($new_content == 'on' && strtotime($expired_date) >= strtotime('now')) {
 				$new_image = '<img class="newimage" src="' . plugin_dir_url() . '/video-categories/images/newimage.png" />';
@@ -184,7 +195,7 @@ class categoriesVideo {
 			$src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
 			$content .= '<div id="item_' . $post->ID . '" class="itempage ' . $class . '">
                     <div class="itemLeft">
-                        <a href="' . get_permalink($post->ID) . '" title="' . get_the_title() . '">' . $new_image . '<img width="275" height="150" src="' . $src[0] . '" /></a>
+                        <a href="' . get_permalink($post->ID) . '" title="' . get_the_title() . '">' . $new_image . $free_image . '<img width="275" height="150" src="' . $src[0] . '" /></a>
                     </div>
                     <div class="itemRight"><h2>' . get_the_title() . '</h2><p>' . $intro . '</p></div>
                 </div>';
