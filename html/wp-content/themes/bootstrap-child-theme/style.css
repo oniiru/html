@@ -3164,7 +3164,13 @@ p.signouttext {
 	width: 100px !important;
 	left:34px !important;
 }
-
+.tabsfix {
+	white-space: normal;
+	width: 64px;
+	line-height: 1em;
+	height: 23px;
+	padding: 2px !important;
+}
 
 }
 /* Mobile Portrait Size Only (devices and browsers) */
