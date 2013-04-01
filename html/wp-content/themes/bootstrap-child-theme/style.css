@@ -2664,6 +2664,10 @@ max-width: 169px !important;
 
 }
 
+.tabsfix {
+	padding: 4px !important;
+}
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
