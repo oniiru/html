@@ -161,6 +161,7 @@ h1 {
 
 #no-access {
 	background:white;
+	width:auto;
 }
 .pricingcontainer a:hover{
 	text-decoration:none;
