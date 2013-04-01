@@ -39,6 +39,7 @@
 			    "membership_status": "CANCELLED", 
 				"cancellation_date": "<?php echo date('Y-m-dTH:i:s'); ?>",	
 			});
+			mixpanel.track('Cancelled');
 	
 						return confirm('This will perminantly delete your account and immediately cancel billing. Are you sure you want to proceed?');
 			};
