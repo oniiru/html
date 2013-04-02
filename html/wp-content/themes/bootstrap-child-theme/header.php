@@ -50,7 +50,7 @@
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.bxslider.min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.bxslider.min.js"></script>		
 		
 		
 		<!-- end of wordpress head -->

@@ -1,0 +1,118 @@
+/* Easy Post Order CSS - 2011/05/03 Young J. Yoon */
+
+#epo-icon {
+	width: 36px;
+	height: 36px;
+	background: url("../images/bhs-plugins.png") no-repeat;
+	float: left;
+	margin: 14px 8px 0 0;
+}
+
+#epo-frame {
+	display: block;
+	margin-left: 300px;
+}
+#epo-settings-column {
+	clear: both;
+    display: inline;
+    float: left;
+    margin-left: -300px;
+    padding-top: 24px;
+    width: 281px;
+}
+div.inside {
+	clear: both;
+    padding: 0 10px;
+}
+	#epo-instructions code {
+		font-size: 12px;
+		line-height: 120%;
+		display: block;
+		overflow: auto;
+	}
+#select_ptype, #select_cat { width: 185px; }
+
+#epo-management-liquid {
+	padding-top: 10px;
+	margin-bottom: 40px;
+}
+	#epo-header {
+		background: url("../images/gray-grad.png") repeat-x scroll left top #DFDFDF;
+		height: 35px;
+		-moz-border-radius-topleft: 6px;
+		-moz-border-radius-topright: 6px;
+		border-top-left-radius: 6px;
+	    border-top-right-radius: 6px;
+	    border-width: 1px 1px 0;
+	    border-style: solid;
+	    border-color: #CCC;
+	    padding: 15px 1em 0;
+	}
+		.save_epo { float: right; }
+		#now-editing { 
+			color: #999;
+			text-transform: uppercase;
+			text-shadow: 0 1px 0 #FFFFFF;
+			font-weight: bold;
+		}
+		#selected-ptype-display span {
+			color: #000;
+			text-transform: uppercase;
+			text-shadow: 0 1px 0 #FFFFFF;
+			font-weight: bold;
+		}
+	#post-body {
+		padding: 10px;
+		border-width: 0 1px;
+		border-style: solid;
+		border-color: #CCC;
+	}
+	
+	#epo-output {
+		font-weight: bold;
+		color: ##13455B;
+	}
+	#epo-queue {
+		padding: 1em 0;
+	}
+		#epo-queue li {
+			background: url("../images/gray-grad.png") repeat-x scroll left top #DFDFDF;
+			cursor: move;
+			display: block;
+			width: 400px;
+			margin: 1em 0;
+			padding: 8px 1em;
+			border-radius: 6px;
+			-moz-border-radius: 6px;
+		}
+		#epo-queue li span.post-title {
+			font-weight: bold;
+			text-shadow: 0 1px 0 #FFFFFF;
+    		word-wrap: break-word;
+    		display: inline-block;
+    		width: 250px;
+    		vertical-align: middle;
+		}
+		#epo-queue li span.post-cat {
+			text-align: right;
+			display: inline-block;
+			width: 138px;
+			color: #999;
+			text-transform: uppercase;
+			text-shadow: 0 1px 0 #FFFFFF;
+			font-weight: bold;
+			vertical-align: middle;
+		}
+		
+	#epo-footer {
+		background: url("../images/gray-grad.png") repeat-x scroll left top #DFDFDF;
+		height: 35px;
+		-moz-border-radius-bottomleft: 6px;
+		-moz-border-radius-bottomright: 6px;
+		border-bottom-left-radius: 6px;
+	    border-bottom-right-radius: 6px;
+	    border-width: 0 1px 1px;
+	    border-style: solid;
+	    border-color: #CCC;
+	    padding: 15px 1em 0;
+	}

@@ -20,6 +20,8 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+	
+		
 		<!-- MixPanel Start -->
 		<script type="text/javascript">
 		<?php if (is_user_logged_in()) { ?>
