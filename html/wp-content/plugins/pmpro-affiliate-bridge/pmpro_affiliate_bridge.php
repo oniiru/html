@@ -10,9 +10,6 @@ Version: 1.0
 Author URI: 
 */
 
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-include_once( ABSPATH . DIRECTORY_SEPARATOR . 'wp-includes' . DIRECTORY_SEPARATOR . 'pluggable.php');
-
 /**
  * Verifies dependencies of plugin
  * @return boolean
@@ -68,6 +65,8 @@ function pmproa_process_affiliate_transaction($morder) {
  * Initializes plugin
  */
 function pmproa_init(){
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	include_once( ABSPATH . DIRECTORY_SEPARATOR . 'wp-includes' . DIRECTORY_SEPARATOR . 'pluggable.php');
 	pmproa_paths_init();
 	include_once( PMPROA_PATH . DIRECTORY_SEPARATOR . 'pmproa_notice.class.php' );
 	if(is_admin() && is_user_logged_in()) {

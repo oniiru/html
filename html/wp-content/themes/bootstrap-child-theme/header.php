@@ -50,7 +50,8 @@
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.bxslider.min.js"></script>		
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.bxslider.min.js"  type="text/javascript"></script>		
+        <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>   
 		
 		
 		<!-- end of wordpress head -->
@@ -154,7 +155,7 @@ mixpanel.init("48ebc33d8f538e16132f168d4b402d94");</script><!-- end Mixpanel -->
 												
 								  				
 								
-								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom headersignupbtn">Sign Up</a>
+								<a href="\pricing" class="btn btn-small btn-custom headersignupbtn">Sign Up</a>
 								
 								</div>
 								<?php 	};

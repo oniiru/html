@@ -42,5 +42,23 @@ array( 'title', 'editor', 'comments',
 )
 );
 }
+	
+add_filter( 'template_include', 'include_template_function_lesson', 1 );
 
+function include_template_function_lesson( $template_path ) {
+    if ( get_post_type() == 'lesson_views' ) {
+        if ( is_single() ) {
+            // checks if the file exists in the theme first,
+            // otherwise serve the file from the plugin
+            if ( $theme_file = locate_template( array ( 'lesson_template.php' ) ) ) {
+                $template_path = $theme_file;
+            } else {
+                $template_path = plugin_dir_path( __FILE__ ) . '/lesson_template.php';
+            }
+        }
+    }
+    return $template_path;
+}
+
+	
 ?>

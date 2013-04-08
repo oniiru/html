@@ -20,6 +20,8 @@
 		<![endif]-->
 		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.isotope.js"  type="text/javascript"></script>		
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/JS/jquery.easing.js"  type="text/javascript"></script>		
 	
 		
 		<!-- MixPanel Start -->

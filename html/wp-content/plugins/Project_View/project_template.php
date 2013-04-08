@@ -15,7 +15,7 @@ get_header(); ?>
 		// get post type by post
 		$post_type = $post->post_type;
 		// get post type taxonomies
-		$taxonomies = get_object_taxonomies($post_type);
+		$taxonomies = 'lessons';
 		foreach ($taxonomies as $taxonomy) {
 			// get the terms related to post
 			$terms = get_the_terms( $post->ID, $taxonomy );
@@ -58,15 +58,17 @@ get_header(); ?>
 		$current_tax = get_query_var('lessons');
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
-					'lessons' => $current_terms,
+					'lessons' => get_the_terms( $post->ID, 'lessons' ),
 					'posts_per_page' => 40,			
 						);
 	       $loop = new WP_Query( $mypost );
 		   
 		   while ( $loop->have_posts() ) : $loop->the_post();
 		   ?>
+		
+		
 			   
-			 <article id="post-<?php the_ID(); ?>" class="indivstep">
+			
 	  		<?php   $post_image_id = get_post_thumbnail_id($post_to_use->ID);
 	  		   		if ($post_image_id) {
 	  		   			$thumbnail = wp_get_attachment_image_src( $post_image_id, 'post-thumbnail', false);
@@ -75,41 +77,40 @@ get_header(); ?>
 					   		 $techniquemeta = $full_mb->the_meta();
 							 $mooo = $techniquemeta['Type'];
 	  		   		} ?>
-				<div style=" background-size: cover!important;-webkit-background-size: cover!important;background-image: url('<?php echo $thumbnail; ?>');" class="stepimg">
-					
 					
 					<?php if ($mooo == "a") { ?>
-					<div style="background:url('<?php bloginfo('stylesheet_directory');?>/images/greendiamond.png')" class="stepicon">						<img src="<?php bloginfo('stylesheet_directory');?>/images/videoicon.png">
-					</div>
+						 <article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="border: 5px solid #c6dfed !important;
+"><a href="<?php the_permalink() ?>">
 					<?php } ?>
-					
-					<?php if ($mooo == "b") { ?>
-					<div style="background:url('<?php bloginfo('stylesheet_directory');?>/images/reddiamond.png')" class="stepicon">						<img src="<?php bloginfo('stylesheet_directory');?>/images/checkmark.png">
-					</div>
+					<?php if ($mooo == "b") { ?> 
+						<article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="	border: 5px solid #E08484 !important;
+"><a href="<?php the_permalink() ?>">
 					<?php } ?>
-					
 					<?php if ($mooo == "c") { ?>
-					<div style="background:url('<?php bloginfo('stylesheet_directory');?>/images/bluediamond.png')" class="stepicon">						<img src="<?php bloginfo('stylesheet_directory');?>/images/thumbsup.png">
-					</div>
+						 <article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="	border: 5px solid #7dbd78 !important;
+"><a href="<?php the_permalink() ?>">
 					<?php } ?>
+					
+			<div style=" background-size: cover!important;-webkit-background-size: cover!important;background-image: url('<?php echo $thumbnail; ?>');" class="stepimg">
+					
+					
+			
 						
 				</div>
 				<div class="stepinfo">
 					<?php if ($mooo == "a") { ?>
-					<h3 style="color:#68c361" class="lessonnumber"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
 					<?php } ?>
 					<?php if ($mooo == "b") { ?>
-					<h3 style="color:#E08484" class="lessonnumber"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:#E08484" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
 					<?php } ?>
 					<?php if ($mooo == "c") { ?>
-					<h3 style="color:#41b0b0" class="lessonnumber"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:#7dbd78" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
 					<?php } ?>
-					<h4 class="lessontitle"><?php echo $techniquemeta['description'] ?></h4>
-					<p class="lessondesc"><?php print_r($mooo)?></p>
 					
-			</div>
+			</div> </a>
 	           </article>
- 
+		  
 	       <?php endwhile; ?>
 	   </div>
 <?php endwhile; ?>			
@@ -166,7 +167,7 @@ if ($appendix1 != '') { ?>
 	<div class="innerprojecttechniques">
     <?php
 	
-	$current_terms = custom_taxonomies_terms_links();
+	$current_terms = custom_taxonomies_terms_links('lessons');
 	
 	$current_tax = get_query_var('lessons');
        $mypost = array(
@@ -182,19 +183,20 @@ if ($appendix1 != '') { ?>
 	 <article id="techniques-<?php the_ID(); ?>" class="techniques">
 		 <?php 	 global $full_mb;
 		 $techniquemeta = $full_mb->the_meta();
-		 if ($techniquemeta != '') {
+		 $techniquedoober = $techniquemeta['techniques'];
+		 if ($techniquedoober != '') {
 		 ?>
 		 
-		 <h4><?php the_title(); ?></h4>
+		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4>
 		 <?php
 		 
 		 foreach ($techniquemeta['techniques'] as $techniqueindiv)
 		 { 
 			 $realmin = str_pad($techniqueindiv['Min'], 2, '0', STR_PAD_LEFT); 
 			 $realsec = str_pad($techniqueindiv['Sec'], 2, '0', STR_PAD_LEFT); 
-			 
+			 $theinteger = ($realmin*60)+$realsec;
 			 ?>
-			 <a href="<?php echo rtrim(get_permalink( $id ),'/')?>#ST<?php echo $realmin . $realsec  ?>">
+			 <a href="<?php echo rtrim(get_permalink( $id ),'/')?>?ST=<?php echo $theinteger  ?>">
 				<span> <?php 
 		     echo $realmin . ':' . $realsec  ; ?> </span> <?php
 			 
@@ -233,4 +235,45 @@ jQuery(".appendix ul.video-list li:nth-child(even)").addClass("appendixright");
 });
 </script>
   
+<script>
+
+
+jQuery(document).ready(
+	function(){
+	    var divs = jQuery(".firstpanel");
+	    for(var i = 0; i < divs.length; i+=3) {
+	      divs.slice(i, i+3).wrapAll("<div class='projectrow2' style='display:table;width:95%;margin:auto'></div>");
+	    }
+		jQuery('.projectrow2:even').addClass('fromleft');
+		jQuery('.projectrow2:odd').addClass('fromright');
+		
+		jQuery(".projectrow2").each(function(){
+			var chickens = jQuery(this).children('.hello').length;
+			var cows = 3-chickens;
+				while (cows-- > 0 ) {
+				jQuery('<div class="duber3 fillerthing" style="display:table-cell;"></div>').insertAfter('.hello:last');
+			};
+		    });
+			
+			jQuery(".projectrow2").each(function(){
+			    jQuery('.hello + .hello').before($('<div style="text-align:center" class="horizontal2"></div>'));
+			
+			    });
+				jQuery(".projectrow2").each(function(){
+				    jQuery('.hello + .fillerthing').before($('<div style="text-align:center" class="noline2"></div>'));
+			
+				    });
+					jQuery(".projectrow2").each(function(){
+					    jQuery('.fillerthing + .fillerthing').before($('<div style="text-align:center" class="noline2"></div>'));
+			
+					    });
+						 jQuery('.projectrow2 + .projectrow2').before($("<div class='projectrow2filler' style='display:table;width:95%;margin:auto;height:75px'></div>"));
+						 
+						jQuery('.fromleft').next('.projectrow2filler').addClass('vertlineright2');
+			
+				jQuery('.fromright').next('.projectrow2filler').addClass('vertlineleft2');
+				
+				
+			});
+			</script>
 <?php get_footer(); ?>
