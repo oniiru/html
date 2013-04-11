@@ -8,7 +8,6 @@ Template:       wordpress-bootstrap
 */
 
 @import url("../wordpress-bootstrap/style.css");
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 @font-face {
     font-family: 'GoodTimes';

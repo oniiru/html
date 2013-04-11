@@ -8,9 +8,9 @@
 <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	
 	<head>
-		<script src="//cdn.optimizely.com/js/175175161.js"></script>
-		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<script src="//cdn.optimizely.com/js/175175161.js"></script>
 		
 		<title>
 			<?php if ( !is_front_page() ) { echo wp_title( ' ', true, 'left' ); echo ' | '; }
@@ -45,7 +45,7 @@
 
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/bootstrap.less">
   		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/jquery.bxslider.css">
-		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
 		
 
 		<!-- wordpress head functions -->
