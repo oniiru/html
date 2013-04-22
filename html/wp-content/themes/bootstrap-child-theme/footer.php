@@ -54,11 +54,12 @@
 		var FileVersion2 = jQuery('#tab3 a').text();
 		mixpanel.track_links('#tab3 a', 'Downloaded Fileset', {
 		    'Page': '<?php the_title(); ?>',
-			'Version': FileVersion1,
+			'Version': FileVersion2,
 			
 		});
 		mixpanel.track_links('.videohome a', 'Watched Intro Video');
 		mixpanel.track_links('.homesec4 a', 'Clicked Bottom CTA Button');
+		mixpanel.track_links('.header-background-image a', 'Clicked Top CTA Button');
 		mixpanel.track_links('.headersignupbtn', 'Clicked Sign Up Button', {
 		    'Type': 'Header Button',
 		    'Page': '<?php the_title(); ?>'	
