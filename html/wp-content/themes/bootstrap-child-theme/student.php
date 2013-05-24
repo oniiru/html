@@ -42,7 +42,7 @@ Template Name: Student Pricing
 											<h5>This is your current level</h5>
 
 								  	<?php } elseif(pmpro_hasMembershipLevel('1')){ ?>    
-										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 2,"https")?>">Upgrade</a>
+										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 4,"https")?>">Upgrade</a>
 									<?php } else { ?>
 										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 4,"https")?>">Start 7 Day Free Trial</a>
 										<?php }?>
