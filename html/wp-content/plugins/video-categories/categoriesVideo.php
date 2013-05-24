@@ -174,7 +174,7 @@ class categoriesVideo {
 			$arID = 'item_' . $post->ID;
 			$expired_date = get_post_meta($post->ID, 'expire_date', true);
 			$free_content = get_post_meta($post->ID, 'free_content', true);
-			if ($free_content == 'on') {
+			if (($free_content == 'on') && (pmpro_hasMembershipLevel(array(0,1)))){
 				$free_image = '<img class="freeimage" src="' . plugin_dir_url() . '/video-categories/images/freecontentribbon.png" />';
 			} else {
 				$free_image = '';
