@@ -1185,9 +1185,9 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 									</tbody>
 									</table>   
 									<?php } elseif($current_user->ID && !$pmpro_review) { ?>                        	                       										
-		
 										<p class="signouttext">You are logged in as <strong><?php echo $current_user->user_login?></strong>. If you would like to use a different account for this membership, <a href="<?php echo wp_logout_url($_SERVER['REQUEST_URI']);?>">log out now</a>.</p>
 									<?php } ?>
+									<p style="font-size:12px; color:white; padding:3px 10px;line-height:1.2em "> Your email address will not be shared, nor spammed. In fact, we won't send you any email unless specifically requested.</p>
 	
 									<?php					
 										if($tospage && !$pmpro_review)
