@@ -1028,7 +1028,9 @@
 		//did we find it?
 		if(empty($dbcode->id))
 		{
-			if($return_errors)
+			if(($return_errors) && ($pmpro_level->id !== '7'))
+				return array(false, "A valid registration key is required. Please contact your instructor for further assistance.");
+			elseif($return_errors)
 				return array(false, "The code could not be found.");
 			else
 				return false;
@@ -1045,7 +1047,7 @@
 		if(!empty($dbcode->starts) && $dbcode->starts > $today)
 		{
 			if($return_errors)
-				return array(false, "This discount code goes into effect on " . date(get_option('date_format'), $dbcode->starts) . ".");
+				return array(false, "This code goes into effect on " . date(get_option('date_format'), $dbcode->starts) . ".");
 			else
 				return false;
 		}
@@ -1054,7 +1056,7 @@
 		if(!empty($dbcode->expires) && $dbcode->expires < $today)
 		{
 			if($return_errors)
-				return array(false, "This discount code expired on " . date(get_option('date_format'), $dbcode->expires) . ".");
+				return array(false, "This code expired on " . date(get_option('date_format'), $dbcode->expires) . ".");
 			else
 				return false;
 		}
@@ -1066,7 +1068,7 @@
 			if($used >= $dbcode->uses)
 			{
 				if($return_errors)
-					return array(false, "This discount code is no longer valid.");
+					return array(false, "This code is no longer valid.");
 				else
 					return false;
 			}

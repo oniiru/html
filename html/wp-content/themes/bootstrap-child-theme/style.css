@@ -1824,7 +1824,7 @@ margin-top:5px !important;
 
 form.pmpro_form label {
 	float: none !important;
-	margin: 8px 0px 0px!important;
+	margin: 7px 0px 0px!important;
 	text-align: left !important;
 	font-weight: 500 !important;
 	font-size:16px;
@@ -1848,7 +1848,7 @@ form.pmpro_form div {
 	margin:none !important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
 	width:355px;
 }
 
@@ -2501,6 +2501,26 @@ ul.bxslider {
 	
 }
 
+.studentregistration div.opaque_placeholder {
+	float:none !important;
+	margin-left:0px !important;
+	margin-top:40px;
+}
+.studentregistration .pmpro_submit {
+	margin-top:20px;
+}
+
+.studentregistration .pmpro_form {
+	width:390px;
+}
+
+
+.opaque2 {
+	margin-top:5px !important;
+}
+input#classtitle {
+	width:365px;
+}
 .pmpro_checkout thead th {
 	color: #ddd;
 	font-size: 20px;
@@ -2517,7 +2537,7 @@ div.opaque_placeholder label {
 	color: #9A9DA1;
 	cursor: text;
 	left: 10px;
-	line-height: 1;
+	line-height: 1.2;
 	margin: 0;
 	overflow: hidden;
 	position: absolute;
@@ -2681,7 +2701,7 @@ form.pmpro_form div {
 	margin:none !important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
 	width:355px;
 }
 
@@ -3017,6 +3037,10 @@ height:auto;
 	.littlebillfix {
 		margin-left:0px !important;
 		margin-top:30px !important;
+	}
+	
+	.studentregistration .littlebillfix {
+		margin-top:40px !important;
 	}
 	.billingpage .cvvfix {
 		margin-top:7px;
@@ -3618,7 +3642,7 @@ margin-top: 20px;
 min-width: 260px!important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
 width: 250px;
 }
 
@@ -3662,6 +3686,7 @@ padding:10px 20px;
 
 .pmpro_form p {
 	padding:0px;
+	width:275px;
 }
 
 .awesomeradio_label p {
@@ -3679,12 +3704,18 @@ max-width: 120px !important;
 	margin-top:30px !important;
 }
 
+.studentregistration .passfix {
+	margin-top:40px !important;
+}
+
 .pmpro_thead-msg {
 	margin-left:0px;
 	width:263px;
 }
 	
-	
+.studentregistration .post_content p {
+	line-height:1.3px;
+}
 .questionfix {
 	display:none;
 }
@@ -3692,7 +3723,9 @@ max-width: 120px !important;
 .pmpro_form thead th {
 	font-size: 21px !important;	
 }
-
+.studentregistration #pmpro_user_fields {
+	margin-top:15px;
+} 
 #pmpro_user_fields {
 	margin-top:40px;
 }

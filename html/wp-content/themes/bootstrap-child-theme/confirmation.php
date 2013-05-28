@@ -113,7 +113,7 @@ Template Name: ConfirmationTemplate
 							} 
 						?>  
 
-						<p align="center"><a href="<?php echo pmpro_url("account")?>">View Your Membership Account &raquo;</a></p>           
+						<p align="center"><a href="http://solidwize.com/training">Let's get to it!</a></p>           
 					
 						<script type="text/javascript">
 						mixpanel.alias("<?php echo $current_user->ID ?>");

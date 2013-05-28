@@ -212,11 +212,16 @@
 				else
 					$this->data["discount_code"] = "";
 			}
-			elseif(pmpro_isLevelFree($user->membership_level))
+			elseif((pmpro_isLevelFree($user->membership_level) && ($user->membership_level->name !== 'academic')))
 			{
 				$this->template = "checkout_free";		
 				$this->data["discount_code"] = "";		
-			}						
+			}
+			elseif($user->membership_level->name == 'academic')			
+			{
+				$this->template = "checkout_academic";		
+				$this->data["discount_code"] = "";		
+			}		
 			else
 			{
 				$this->template = "checkout_freetrial";

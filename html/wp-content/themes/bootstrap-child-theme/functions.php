@@ -138,7 +138,7 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
             $wp_user_object->set_role('freemember');
     }
 
-    if (($level_id == 2) || ($level_id == 3) || ($level_id == 4)) {
+    if (($level_id == 2) || ($level_id == 3) || ($level_id == 4) || ($level_id == 7)){
         $wp_user_object = new WP_User($user_id);
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)))
             $wp_user_object->set_role('standardmember');
@@ -246,5 +246,103 @@ include_once 'metaboxes/full-spec.php';
 // 
 // include_once 'metaboxes/select-spec.php';
 
+/*
+  Only let level 1 members sign up if they use a discount code.
+  Place this code in your active theme's functions.php or a custom plugin.
+*/
+function my_pmpro_registration_checks($pmpro_continue_registration)
+{
+  //only bother if things are okay so far
+	if(!$pmpro_continue_registration)
+		return $pmpro_continue_registration;
+ 
+	//level = 1 and there is no discount code, then show an error message
+	global $pmpro_level, $discount_code;
+	
+  //if($pmpro_level->id == 1 && (empty($discount_code) || $discount_code != "REQUIRED_CODE")) //use this conditional to check for a specific code.
+  if($pmpro_level->id == 7 && (empty($discount_code) || $discount_code != "JCSCHOOLS"))
+	{
+		pmpro_setMessage("A valid registration key is required. Please contact your instructor for further assistance.", "pmpro_error");
+		return false;
+	}
+	
+	return $pmpro_continue_registration;
+}
+add_filter("pmpro_registration_checks", "my_pmpro_registration_checks");
 
+//update the user after checkout
+function update_course_title($user_id)
+{
+	if(isset($_REQUEST['classtitle']))
+	{
+		$classtitle = $_REQUEST['classtitle'];
+	}
+	elseif(isset($_SESSION['classtitle']))
+	{
+		//maybe in sessions?
+		$classtitle = $_SESSION['classtitle'];
+		
+		//unset
+		
+		unset($_SESSION['classtitle']);
+	}
+	
+	
+	if(isset($classtitle))
+		update_user_meta($user_id, "class_title", $classtitle);
+}
+add_action('pmpro_after_checkout', 'update_course_title');
+//require the fields
+function course_registration_checks()
+{
+	global $pmpro_msg, $pmpro_msgt, $current_user;
+
+	$classtitle = $_REQUEST['classtitle'];
+ 
+	if($classtitle || $current_user->ID)
+	{
+		//all good
+		return true;
+	}
+	else
+	{
+		$pmpro_msg = "Please complete all required fields.";
+		$pmpro_msgt = "pmpro_error";
+		return false;
+	}
+}
+add_filter("pmpro_registration_checks", "course_registration_checks");
+
+function my_show_extra_profile_fields($user)
+{
+?>
+	<h3>Extra profile information</h3>
+ 
+	<table class="form-table">
+		
+		<tr>
+			<th><label for="repname">Course Title</label></th>
+ 
+			<td>
+				<input type="text" name="classtitle" id="classtitle" value="<?php echo esc_attr( get_user_meta($user->ID, 'class_title', true) ); ?>" class="regular-text" /><br />				
+			</td>
+		</tr>
+ 
+	</table>
+<?php
+}
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+function my_save_extra_profile_fields( $user_id ) 
+{
+ 
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+ 
+	
+	if(isset($_POST['classtitle']))
+		update_usermeta( $user_id, 'class_title', $_POST['classtitle'] );
+}
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
 ?>
