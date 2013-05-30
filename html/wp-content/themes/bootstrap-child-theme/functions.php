@@ -260,7 +260,7 @@ function my_pmpro_registration_checks($pmpro_continue_registration)
 	global $pmpro_level, $discount_code;
 	
   //if($pmpro_level->id == 1 && (empty($discount_code) || $discount_code != "REQUIRED_CODE")) //use this conditional to check for a specific code.
-  if($pmpro_level->id == 7 && (empty($discount_code) || $discount_code != "JCSCHOOLS1"))
+  if($pmpro_level->id == '7' && (empty($discount_code) || $discount_code != "JCSCHOOLS1"))
 	{
 		pmpro_setMessage("A valid registration key is required. Please contact your instructor for further assistance.", "pmpro_error");
 		return false;
@@ -299,7 +299,7 @@ function course_registration_checks()
 
 	$classtitle = $_REQUEST['classtitle'];
  
-	if($classtitle || $current_user->ID)
+	if($classtitle || ($pmpro_level->id == '7'))
 	{
 		//all good
 		return true;
