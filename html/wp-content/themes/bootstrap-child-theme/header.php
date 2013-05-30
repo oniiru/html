@@ -161,7 +161,7 @@ mixpanel.init("48ebc33d8f538e16132f168d4b402d94");</script><!-- end Mixpanel -->
 												
 								  				
 								
-								<a href="<?php bloginfo('url'); ?>\pricing" class="btn btn-small btn-custom headersignupbtn">Sign Up</a>
+								<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-small btn-custom headersignupbtn">Sign Up</a>
 								
 								</div>
 								<?php 	};
