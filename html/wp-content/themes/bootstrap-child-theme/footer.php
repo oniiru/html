@@ -98,7 +98,7 @@
 		    'Page': '<?php the_title(); ?>'	
 		});
 		
-		mixpanel.track_links('.blogpitchsidebar', 'Clicked Sign Up Button', {
+		mixpanel.track_links('.blogpitchsidebar2', 'Clicked Sign Up Button', {
 		    'Type': 'Blog Side Bar',
 		    'Page': '<?php the_title(); ?>'	
 		});
