@@ -1028,9 +1028,7 @@
 		//did we find it?
 		if(empty($dbcode->id))
 		{
-			if(($return_errors) && ($pmpro_level->id !== '7'))
-				return array(false, "A valid registration key is required. Please contact your instructor for further assistance.");
-			elseif($return_errors)
+			if($return_errors)
 				return array(false, "The code could not be found.");
 			else
 				return false;
