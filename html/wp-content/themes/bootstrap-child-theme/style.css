@@ -1320,24 +1320,28 @@ h1.webinars {
 
 #webinars {
 	width: 900px;
-	height: 368px;
+	height: 388px;
 	box-shadow: 0 0 10px #222222;
 	margin: 0 auto 0 auto;
 	
 	
 	
 }
+
+.page-template-webinars-php #content {
+	width:1000px;
+}
 #webinarsleft {
 	width: 620px;
 	float: left;
 	background: white url('images/ajax-loader.gif') no-repeat 50% 50% !important;
-	height: 368px;
+	height: 388px;
 	margin-bottom: 10px;
 }
 #webinarsright {
 	float: right;
 	width: 250px;
-	height: 358px;
+	height: 378px;
 	background: #f8f8f8;
 	color: #000;
 	font-family: "Open Sans" sans-serif;
