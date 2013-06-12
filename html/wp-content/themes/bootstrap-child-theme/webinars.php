@@ -21,7 +21,7 @@ Template Name: Webinars
 				<h1 class="webinars">Get your questions answered with SolidWize Webinars</h1>
 				<div id="webinars">
 					<div id="webinarsleft">
-<iframe src="http://player.vimeo.com/video/68000787?title=0&amp;byline=0&amp;portrait=0" width="620" height="388" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="http://player.vimeo.com/video/68000787?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="620" height="388" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 				<div id="webinarsright">
 				<h3 style="font-weight:700;font-size: 21px !important;margin: 20px 0 0px">Beginning Simulation</h3>
