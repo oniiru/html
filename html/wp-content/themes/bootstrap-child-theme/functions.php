@@ -2,7 +2,7 @@
 function theme_styles2()  
 { 
     
-    wp_register_style( 'wp-bootstrap', get_stylesheet_directory_uri() . '/style.css', array(), '2.0', 'all' );
+    wp_register_style( 'wp-bootstrap', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
   
 }
 add_action('wp_enqueue_scripts', 'theme_styles2');
