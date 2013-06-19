@@ -16,13 +16,13 @@
 					?>
 
 					<?php if (!$pmpro_confirm) { ?>
+						<h2>Membership Cancellation</h2>
+						<p style="margin-bottom:20px">We're sorry to see you go! If you are sure you want to cancel your membership, please take 3 seconds to let us know how we can improve. It would really mean a lot.</p>
+						<?php echo do_shortcode('[gravityform id="6" name="Cancellation Form" title="false" description="false"]' ) ?>
 
-						<p>Are you sure you want to cancel your membership?</p>
-
-						<p>
-							<a class="yeslink btn btn-danger" onCLick="trackcancel()" href="<?php echo pmpro_url("cancel", "?confirm=true") ?>">Yes, cancel my account</a>
+						<p class="cancelrawr">
 							|
-							<a class="nolink btn btn-info" href="<?php echo pmpro_url("account") ?>">No, keep my account</a>
+							<a class="nolink btn btn-info" href="<?php echo pmpro_url("account") ?>">Wait! Keep my account</a>
 						</p>
 					<?php } else { ?>
 						<p>Click here to <a href="<?php echo get_home_url() ?>">go to the home page</a>.</p>

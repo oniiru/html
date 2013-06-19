@@ -346,3 +346,16 @@ function my_save_extra_profile_fields( $user_id )
 add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
 ?>
+<?php
+function form_submit_button($button,$form){
+	if($form['id'] == '6') {
+    return '<input type="submit" class="yeslink btn btn-danger" id="gform_submit_button_' . $form['id'] . '" value="' . $form['button']['text'] . '">';
+}
+else {
+	return '<input type="submit" class="btn btn-custom" id="gform_submit_button_' . $form['id'] . '" value="' . $form['button']['text'] . '">';
+}
+}
+add_filter('gform_submit_button','form_submit_button',10,2);
+
+
+?>

@@ -1327,7 +1327,22 @@ h1.webinars {
 	
 	
 }
+.gform_wrapper .top_label .gfield_error .ginput_container {
+max-width: 97% !important
+}
+#cancelmembership textarea {
+	margin-bottom:20px;
+	font-size:14px;
+	color:black;
+	padding:6px;
+}
+.cancelrawr {
+	margin-top:-50px;
+}
 
+.nolink {
+	margin-left:4px;
+}
 .page-template-webinars-php #content {
 	width:1000px;
 }
@@ -1423,7 +1438,7 @@ h1.webinars {
 	max-width:500px;
 	text-align:center;
 	margin:100px auto;
-	padding: 50px 15px;
+	padding: 15px;
 	background: #f8f8f8;
 	border: 1px solid #ddd;
 	-moz-border-radius: 10px;
