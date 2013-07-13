@@ -348,7 +348,7 @@ add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
 ?>
 <?php
 function form_submit_button($button,$form){
-	if($form['id'] == '6') {
+	if($form['id'] == '4') {
     return '<input type="submit" class="yeslink btn btn-danger" id="gform_submit_button_' . $form['id'] . '" value="' . $form['button']['text'] . '">';
 }
 else {
