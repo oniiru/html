@@ -60,7 +60,7 @@ get_header(); ?>
 				   </div>
 		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $techniquemeta['vidembed'] . '?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
 		</div>
-		<?php echo the_title()?>
+		<div class="lessontitle"><?php echo the_title()?></div>
 	 		 
 		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
 		 
