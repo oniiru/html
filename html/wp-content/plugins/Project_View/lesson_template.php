@@ -30,11 +30,6 @@ get_header(); ?>
 	} ?>
  <?php  global $full_mb;
    		 $techniquemeta = $full_mb->the_meta(); ?>
-<div class="closedprojectbar">
-	<div class="closedinner">
-		<h1><?php echo the_title()	?></h1>
-	</div>
-</div>
 <div id="content" class="lessonview clearfix row-fluid">
 	
 	<div id="main" class="clearfix homepage rawr" role="main">

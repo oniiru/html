@@ -927,6 +927,7 @@ background-color: #2f96b4;
 		width:100%;
 		top:40%;
 		display:none;
+		background:rgba(0,0,0,.6);
 	}
 	
 	.newbutton p, .newbutton2 p{
@@ -934,7 +935,7 @@ background-color: #2f96b4;
 		font-size:18px;
 	}
 	.js-video {
-	  height: 0;
+	  height: 54px;
 	 
 	  padding-bottom: 56%;
 	  margin-bottom: 10px;
