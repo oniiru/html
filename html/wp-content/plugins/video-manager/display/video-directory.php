@@ -85,8 +85,14 @@ class IonVideoDirectoryDisplay {
 												$o = unserialize($list['options']);
 
 												$o = $o[0];
+												
 												if ($ion_auth_users->all($o['options'])) {
-													if ($google_analytic == 'on') {
+													if (strpos($list['embed_value'],'iframe') == false) {
+												    ?>
+													<a href="<?php echo stripslashes($list['embed_value']) ?>"> <?php echo $list['video_name']?></a>
+													<?php }
+
+													elseif ($google_analytic == 'on') {
 														?>
 														<a onclick="trackpersonclick()" class="<?php echo (!empty($o['media_id']) ? 'show_jw_player' : 'show_iframe'); ?>" href="#<?php echo sanitize_title($list['video_name']); ?>-<?php echo $list['ID']; ?><?php echo (!empty($o['media_id']) ? '_wrapper' : ''); ?>" title="<?php echo stripslashes($list['video_name']); ?>"><?php echo stripslashes($list['video_name']); ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($o['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
@@ -96,7 +102,12 @@ class IonVideoDirectoryDisplay {
 														<?php
 													}
 												} else {
-													if ($google_analytic == 'on') {
+													
+													if (strpos($list['embed_value'],'iframe') == false) {
+												    ?>
+													<a class="login-pop noaccess" href="#-<?php echo $popup_id; ?>"> <?php echo $list['video_name']?></a>
+													<?php }
+													elseif ($google_analytic == 'on') {
 														?>
 														<a title="<?php echo stripslashes($list['video_name']); ?>" class="login-pop noaccess" onclick="trackclicktry()" href="#-<?php echo $popup_id; ?>"><?php echo $list['video_name']; ?></a><?php if ($duration) : ?><span class="video-duration"><?php if ($o['duration']['hours'] !== '000') : echo abs($list['duration']['hours']); ?>hr<?php endif; ?> <?php echo $o['duration']['minutes']; ?>m <?php echo $o['duration']['seconds']; ?>s</span><?php endif; ?>
 														<?php
@@ -106,11 +117,14 @@ class IonVideoDirectoryDisplay {
 														<?php
 													}
 												}
+											
 												?>
 											</li>
 											<?php
 										}
 									endif;
+									
+								
 									?>
 								</ul><!-- .video-list -->
 								
