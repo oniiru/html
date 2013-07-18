@@ -8,27 +8,6 @@ get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 	
-	<?php // get taxonomies terms links
-	function custom_taxonomies_terms_links() {
-		// get post by post id
-		$post = get_post($post->ID);
-		// get post type by post
-		$post_type = $post->post_type;
-		// get post type taxonomies
-		$taxonomies = get_object_taxonomies($post_type);
-		foreach ($taxonomies as $taxonomy) {
-			// get the terms related to post
-			$terms = get_the_terms( $post->ID, $taxonomy );
-			if ( !empty( $terms ) ) {
-				$out = array();
-				foreach ( $terms as $term )
-					$out[] = $term->slug;
-				$return = join( ', ', $out );
-			}
-		}
-		return $return;
-	} ?>
-	
 	
 <div class="closedprojectbar">
 	<div class="closedinner">
@@ -53,10 +32,16 @@ get_header(); ?>
 	   <div style="display:block">
 		
 	    <?php
+		$terms = get_the_terms( $post->ID, 'lessons' );
+
+			$varlesson = array();
+		foreach ( $terms as $term ) {
+			$varlesson[] = $term->name;
+		}
+					
+			$current_terms = join( ", ", $varlesson );
 		
-		$current_terms = custom_taxonomies_terms_links();
 		
-		$current_tax = get_query_var('lessons');
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
 					'lessons' => $current_terms,
@@ -168,9 +153,15 @@ if ($appendix1 != '') { ?>
 	<div class="innerprojecttechniques">
     <?php
 	
-	$current_terms = custom_taxonomies_terms_links('lessons');
+	$terms = get_the_terms( $post->ID, 'lessons' );
+
+		$varlesson = array();
+	foreach ( $terms as $term ) {
+		$varlesson[] = $term->name;
+	}
+				
+		$current_terms = join( ", ", $varlesson );
 	
-	$current_tax = get_query_var('lessons');
        $mypost = array(
 		   		'post_type' => 'lesson_views',
 				'lessons' => $current_terms,
