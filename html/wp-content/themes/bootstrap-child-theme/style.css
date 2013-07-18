@@ -3066,10 +3066,21 @@ height:auto;
 	.pricingpoints {
 		height:250px;
 	}
+	.projecttechniques {
+		width:auto;
+		float:none;
+	}
+	.projectcomments {
+		width:auto;
+		float:none;
+	}
 	
 	.littlebillfix {
 		margin-left:0px !important;
 		margin-top:30px !important;
+	}
+	.lessontitle {
+		font-size:16px;
 	}
 	
 	.studentregistration .littlebillfix {
