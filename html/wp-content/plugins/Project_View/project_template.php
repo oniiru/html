@@ -11,7 +11,7 @@ get_header(); ?>
 	<?php // get taxonomies terms links
 	function custom_taxonomies_terms_links() {
 		// get post by post id
-		$post = &get_post($post->ID);
+		$post = get_post($post->ID);
 		// get post type by post
 		$post_type = $post->post_type;
 		// get post type taxonomies
@@ -59,7 +59,7 @@ get_header(); ?>
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
  					'posts_per_page' => 40,	
-					'lessons' => $current_terms
+					'lessons' => $current_terms,
 						);
 	       $loop = new WP_Query( $mypost );
 		   
