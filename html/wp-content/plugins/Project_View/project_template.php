@@ -156,9 +156,9 @@ if ($appendix1 != '') { ?>
 	$terms = get_the_terms( $post->ID, 'lessons' );
 
 		$varlesson = array();
-	foreach ( $terms as $term ) {
+			foreach ( $terms as $term ) {
 		$varlesson[] = $term->name;
-	}
+	};
 				
 		$current_terms = join( ", ", $varlesson );
 	
