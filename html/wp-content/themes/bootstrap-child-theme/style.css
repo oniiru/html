@@ -881,6 +881,10 @@ background-color: #2f96b4;
 		
 	}
 	
+	p.indicator-hint {
+		font-size:11px !important;
+	}
+	
 	.theinfo a:hover {
 		text-decoration:none !important;
 	}

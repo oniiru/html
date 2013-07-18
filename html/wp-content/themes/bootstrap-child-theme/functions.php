@@ -316,6 +316,8 @@ add_filter("pmpro_registration_checks", "course_registration_checks");
 function my_show_extra_profile_fields($user)
 {
 ?>
+<?php if ($pmpro_level->id == '7') {?> 
+
 	<h3>Extra profile information</h3>
  
 	<table class="form-table">
@@ -330,6 +332,7 @@ function my_show_extra_profile_fields($user)
  
 	</table>
 <?php
+}
 }
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
