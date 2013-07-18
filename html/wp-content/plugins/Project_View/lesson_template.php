@@ -34,7 +34,7 @@ get_header(); ?>
   				 while ( $loop->have_posts() ) : $loop->the_post();
 				
   				?>
-  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>. <?php echo var_dump($post) ?> </i></p></a></div>
+  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
 			 
          <?php endwhile;   wp_reset_query();?>
 			   <div class="js-video [vimeo, widescreen]">
