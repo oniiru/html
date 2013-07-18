@@ -3844,9 +3844,14 @@ p.signouttext {
 	
 	
 }
-
+.rightalert {
+	margin-bottom:0px !important;
+}
 .projecttechniques h3 {
 	font-size:14px;
+}
+#menu-footer-menu li {
+	font-size:12px;
 }
 }
 /* Mobile Portrait Size Only (devices and browsers) */
