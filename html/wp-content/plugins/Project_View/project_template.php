@@ -58,13 +58,13 @@ get_header(); ?>
 		$current_tax = get_query_var('lessons');
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
-					'lessons' => get_the_terms( $post->ID, 'lessons' ),
-					'posts_per_page' => 40,			
+ 					'posts_per_page' => 40,	
+					'lessons' => $current_tax,	
 						);
 	       $loop = new WP_Query( $mypost );
 		   
 		   while ( $loop->have_posts() ) : $loop->the_post();
-		   ?>
+		   ?>	
 		
 		
 			   
