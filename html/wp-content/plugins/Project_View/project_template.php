@@ -85,13 +85,13 @@ get_header(); ?>
 				</div>
 				<div class="stepinfo">
 					<?php if ($mooo == "a") { ?>
-					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
 					<?php } ?>
 					<?php if ($mooo == "b") { ?>
-					<h3 style="color:#E08484" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:#E08484" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
 					<?php } ?>
 					<?php if ($mooo == "c") { ?>
-					<h3 style="color:#7dbd78" class="lessonnumber2"><?php echo $techniquemeta['lessontitle'] ?></h3>
+					<h3 style="color:#7dbd78" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
 					<?php } ?>
 					
 			</div> </a>
@@ -148,7 +148,7 @@ if ($appendix1 != '') { ?>
  <?php comments_template('',true); ?>
 </div>
 <div class="projecttechniques">
-	<h3> <?php echo var_dump($post->ID)?> </h3>
+	<h3> Techniques and Toolsets Covered </h3>
 	<p class="techniquesexplained"> Click below to bypass the lesson and learn only about that technique or toolset. </p>
 	<div class="innerprojecttechniques">
     <?php
