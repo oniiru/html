@@ -3066,6 +3066,10 @@ height:auto;
 	.pricingpoints {
 		height:250px;
 	}
+	#main {
+		margin-left:10px;
+		margin-right:10px;
+	}
 	.projecttechniques {
 		width:auto;
 		float:none;
@@ -3838,7 +3842,11 @@ p.signouttext {
 #no-access .btn {
 	font-size:16px;
 	
+	
 }
 
+.projecttechniques h3 {
+	font-size:14px;
+}
 }
 /* Mobile Portrait Size Only (devices and browsers) */
