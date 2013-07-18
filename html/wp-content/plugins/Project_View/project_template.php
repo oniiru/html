@@ -148,7 +148,7 @@ if ($appendix1 != '') { ?>
  <?php comments_template('',true); ?>
 </div>
 <div class="projecttechniques">
-	<h3> Techniques and Toolsets Covered </h3>
+	<h3> <?php echo var_dump($terms)?> </h3>
 	<p class="techniquesexplained"> Click below to bypass the lesson and learn only about that technique or toolset. </p>
 	<div class="innerprojecttechniques">
     <?php
