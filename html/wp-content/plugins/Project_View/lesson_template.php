@@ -7,27 +7,7 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-	
-	<?php // get taxonomies terms links
-	function custom_taxonomies_terms_links() {
-		// get post by post id
-		$post = get_post($post->ID);
-		// get post type by post
-		$post_type = $post->post_type;
-		// get post type taxonomies
-		$taxonomies = get_object_taxonomies($post_type);
-		foreach ($taxonomies as $taxonomy) {
-			// get the terms related to post
-			$terms = get_the_terms( $post->ID, $taxonomy );
-			if ( !empty( $terms ) ) {
-				$out = array();
-				foreach ( $terms as $term )
-					$out[] = $term->slug;
-				$return = join( ', ', $out );
-			}
-		}
-		return $return;
-	} ?>
+
  <?php  global $full_mb;
    		 $techniquemeta = $full_mb->the_meta(); ?>
 <div id="content" class="lessonview clearfix row-fluid">
@@ -36,8 +16,15 @@ get_header(); ?>
 	   <div style="display:block">
   		 <div style="display:block;overflow:hidden;max-width:900px;margin:auto;margin-bottom:30px">
   			<?php 
-			$current_terms = custom_taxonomies_terms_links();
-  		 	$current_tax = get_query_var('lessons');
+			$terms = get_the_terms( $post->ID, 'lessons' );
+
+				$varlesson = array();
+			foreach ( $terms as $term ) {
+				$varlesson[] = $term->name;
+			}
+						
+				$current_terms = join( ", ", $varlesson );
+			
   		        $parentpost = array(
   		 		   		'post_type' => 'project_views',
   		 				'lessons' => $current_terms,
@@ -47,7 +34,7 @@ get_header(); ?>
   				 while ( $loop->have_posts() ) : $loop->the_post();
 				
   				?>
-  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>. rawr <?php echo $current_terms ?></i></p></a></div>
+  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
 			 
          <?php endwhile;   wp_reset_query();?>
 			   <div class="js-video [vimeo, widescreen]">
