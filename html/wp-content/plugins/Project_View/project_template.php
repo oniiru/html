@@ -59,7 +59,7 @@ get_header(); ?>
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
  					'posts_per_page' => 40,	
-					'lessons' => $current_tax,	
+					'lessons' => $current_terms
 						);
 	       $loop = new WP_Query( $mypost );
 		   
