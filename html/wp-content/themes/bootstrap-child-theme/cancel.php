@@ -18,7 +18,7 @@
 					<?php if (!$pmpro_confirm) { ?>
 						<h2>Membership Cancellation</h2>
 						<p style="margin-bottom:20px">We're sorry to see you go! If you are sure you want to cancel your membership, please take 3 seconds to let us know how we can improve. It would really mean a lot.</p>
-						<?php echo do_shortcode('[gravityform id="6" name="Cancellation Form" title="false" description="false"]' ) ?>
+						<?php echo do_shortcode('[gravityform id="4" name="Cancellation Form" title="false" description="false"]' ) ?>
 
 						<p class="cancelrawr">
 							|

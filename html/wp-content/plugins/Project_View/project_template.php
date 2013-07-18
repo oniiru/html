@@ -11,7 +11,7 @@ get_header(); ?>
 	<?php // get taxonomies terms links
 	function custom_taxonomies_terms_links() {
 		// get post by post id
-		$post = get_post($post->ID);
+		$post = &get_post($post->ID);
 		// get post type by post
 		$post_type = $post->post_type;
 		// get post type taxonomies
