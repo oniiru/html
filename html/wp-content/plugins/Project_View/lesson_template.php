@@ -57,7 +57,7 @@ get_header(); ?>
 				  </div>
 				   <div class="newbutton">
 					   <p><b>Looking good!</b> The Next Lesson is...</p>
-					  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;') ?></div>
+					  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;', true, '', 'lessons') ?></div>
 				   </div>
 		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $techniquemeta['vidembed'] . '?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
 		</div>
@@ -65,8 +65,8 @@ get_header(); ?>
 	 		 
 		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
 		 
-		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo;') ?></div>
-		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous') ?></div>
+		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
+		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
 		 
 	 </div>
 		 
