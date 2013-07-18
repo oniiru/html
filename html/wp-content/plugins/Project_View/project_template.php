@@ -85,13 +85,13 @@ get_header(); ?>
 				</div>
 				<div class="stepinfo">
 					<?php if ($mooo == "a") { ?>
-					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
+					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php echo var_dump($term)?></h3>
 					<?php } ?>
 					<?php if ($mooo == "b") { ?>
-					<h3 style="color:#E08484" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
+					<h3 style="color:#E08484" class="lessonnumber2"><?php echo var_dump($term)?></h3>
 					<?php } ?>
 					<?php if ($mooo == "c") { ?>
-					<h3 style="color:#7dbd78" class="lessonnumber2"><?php echo var_dump($post->ID)?></h3>
+					<h3 style="color:#7dbd78" class="lessonnumber2"><?php echo var_dump($term)?></h3>
 					<?php } ?>
 					
 			</div> </a>
