@@ -36,6 +36,7 @@ get_header(); ?>
 	   <div style="display:block">
   		 <div style="display:block;overflow:hidden;max-width:900px;margin:auto;margin-bottom:30px">
   			<?php 
+			$current_terms = custom_taxonomies_terms_links();
   		 	$current_tax = get_query_var('lessons');
   		        $parentpost = array(
   		 		   		'post_type' => 'project_views',

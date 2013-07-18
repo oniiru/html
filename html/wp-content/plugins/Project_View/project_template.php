@@ -15,7 +15,7 @@ get_header(); ?>
 		// get post type by post
 		$post_type = $post->post_type;
 		// get post type taxonomies
-		$taxonomies = 'lessons';
+		$taxonomies = get_object_taxonomies($post_type);
 		foreach ($taxonomies as $taxonomy) {
 			// get the terms related to post
 			$terms = get_the_terms( $post->ID, $taxonomy );
@@ -28,6 +28,7 @@ get_header(); ?>
 		}
 		return $return;
 	} ?>
+	
 	
 <div class="closedprojectbar">
 	<div class="closedinner">
@@ -58,8 +59,8 @@ get_header(); ?>
 		$current_tax = get_query_var('lessons');
 	       $mypost = array(
 			   		'post_type' => 'lesson_views',
- 					'posts_per_page' => 40,	
 					'lessons' => $current_terms,
+ 					'posts_per_page' => 40,	
 						);
 	       $loop = new WP_Query( $mypost );
 		   
