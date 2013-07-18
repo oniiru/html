@@ -111,7 +111,7 @@ Template Name: account
 											<div class="pmpro_box">				
 												<h3><?php if((isset($ssorder->status) && $ssorder->status == "success") && (isset($ssorder->gateway) && in_array($ssorder->gateway, array("authorizenet", "paypal", "stripe")))) { ?><a class="pmpro_a-right" href="<?php echo pmpro_url("billing", "")?>">Edit</a><?php } ?>Billing Information</h3>
 												<?php if(!empty($baddress1)) { ?>
-												<p>
+												<!-- <p>
 													<strong>Billing Address</strong><br />
 													<?php echo $bfirstname . " " . $blastname?>
 													<br />		
@@ -122,7 +122,7 @@ Template Name: account
 													<?php } ?>                         
 													<br />
 													<?php echo formatPhone($bphone)?>
-												</p>
+												</p> -->
 												<?php } ?>
 												<p>
 													<strong>Payment Method</strong><br />
