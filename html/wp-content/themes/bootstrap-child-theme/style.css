@@ -383,7 +383,7 @@ color: rgb(134, 134, 134);
 	vertical-align:-1px;
 }
 
-.accordion-caret:before {
+.accordion-caret .accordion-toggle:before {
 	content:"\f0da";
 	margin-left:5px;
 }
