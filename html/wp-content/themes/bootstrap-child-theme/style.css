@@ -371,7 +371,9 @@ color: rgb(134, 134, 134);
 	
 }
 
-
+.closedinnerleft {
+	display:inline-block;
+}
 .closedinnerright {
 	float:right;
 	display:inline-block;
