@@ -164,15 +164,19 @@ if ($appendix1 != '') { ?>
 	   
 	   while ( $loop->have_posts() ) : $loop->the_post();
 	   ?>
-	   
+	   <div class="accordion" id="accordion2">
 	 <article id="techniques-<?php the_ID(); ?>" class="techniques">
 		 <?php 	 global $full_mb;
 		 $techniquemeta = $full_mb->the_meta();
 		 $techniquedoober = $techniquemeta['techniques'];
 		 if ($techniquedoober != '') {
 		 ?>
-		 
+		 <div class="accordion-group">
+		     <div class="accordion-heading">
+		       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
 		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4>
+		 <div id="collapseOne" class="accordion-body collapse in">
+		      <div class="accordion-inner">
 		 <?php
 		 
 		 foreach ($techniquemeta['techniques'] as $techniqueindiv)
@@ -192,9 +196,11 @@ if ($appendix1 != '') { ?>
 		 }
 	 }
 		 ?>
-		
+	 </div>
+	     </div>
+	   </div>
          </article>
-
+</div>
      <?php endwhile; ?>
  </div>
 </div>
