@@ -7,11 +7,11 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-	
-	
+   
 <div class="closedprojectbar">
 	<div class="closedinner">
 		<h1> <?php the_title(); ?>	</h1>
+		<p><?php echo get_post_meta( get_the_ID(), 'Project_description', true ); ?></p>
 		<div class="closedinnerright">
 		</div>
 	</div>
