@@ -304,6 +304,31 @@ Template Name: Billing Template
 									jQuery('input[type=submit]', this).attr('disabled', 'disabled');
 									jQuery('input[type=image]', this).attr('disabled', 'disabled');
 								});
+								function placeHoldersToggle() {
+									jQuery.each(jQuery('.opaque_placeholder'), function(){
+										if(jQuery(this).find('input').val()){
+											jQuery(this).find('label').hide();
+										}else {
+										jQuery(this).find('label').show();
+												}
+											});
+																			}
+																		
+											jQuery(document).ready(function(){
+												jQuery.each(jQuery('.opaque_placeholder'), function(){			
+										jQuery(this).find('input').keydown(function(){
+											jQuery(this).parent().find('label').hide();
+										});
+										jQuery(this).find('input').keyup(function(){
+											if(jQuery(this).val()) {
+												jQuery(this).parent().find('label').hide();
+											} else {
+												jQuery(this).parent().find('label').show();
+											}
+										});
+									});
+									});
+									setInterval('placeHoldersToggle()', 100);
 							</script>
 						<?php } ?>
 					<?php } else { ?>

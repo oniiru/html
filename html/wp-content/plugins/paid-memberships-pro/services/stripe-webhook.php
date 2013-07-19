@@ -1,4 +1,4 @@
-<?php	
+<?php			
 	global $isapage;
 	$isapage = true;
 	
@@ -16,7 +16,7 @@
 		require_once(dirname(__FILE__) . "/../includes/lib/Stripe/Stripe.php");
 			
 	Stripe::setApiKey(pmpro_getOption("stripe_secretkey"));
-			
+		
 	// retrieve the request's body and parse it as JSON
 	if(empty($_REQUEST['event_id']))
 	{
@@ -30,11 +30,6 @@
 	{
 		$event_id = $_REQUEST['event_id'];
 	}
-	
-	//TEST STEP 1 (Anton)
-	//At this step an ID of existing transaction is being set, so when script is executed from the Stripe panel
-	//not the passed dummy ID is taken, but existing event emulated
-	//	$event_id = 'evt_14rPPCsGjrPVkl';
 		
 	//get the event through the API now
 	try
@@ -44,56 +39,50 @@
 	catch(Exception $e)
 	{
 		die("Could not find an event with ID #" . $event_id . ". " . $e->getMessage());
+		//$event = $post_event;			//for testing you may want to assume that the passed in event is legit
 	}
-	
+		
 	global $wpdb;
-	
+		
 	//real event?
 	if(!empty($event->id))
 	{	
 		//check what kind of event it is
-		if($event->type == "invoice.payment_succeeded")
+		if($event->type == "charge.succeeded")
 		{	
 			//do we have this order yet? (check status too)
 			$order = getOrderFromInvoiceEvent($event);
 			
-			
-			//TEST STEP 2 (Anton)
-			//Set found order empty, so the script thinks there is no order with the same event ID already existing
-			//	$order = NULL;
 			//no? create it
 			if(empty($order->id))
 			{
 				//last order for this subscription
-				$old_order = getOldOrderFromInvoiceEvent($event);
+				$old_order = getOldOrderFromInvoiceEvent($event);				
+				
+				if(empty($old_order))
+					die("Couldn't find the original subscription.");
+					
 				$user_id = $old_order->user_id;	
 				$user = get_userdata($user_id);
+				$user->membership_level = pmpro_getMembershipLevelForUser($user_id);
 				
-				if(empty($old_order->id))
-					die("Couldn't find the original subscription.");
+				if(empty($user))
+					die("Couldn't find the old order's user. Order ID = " . $old_order->id . ".");
 				
 				$invoice = $event->data->object;
-				
-				//TEST STEP 3 (Anton)
-				//Unfortunately existing invoice event has total of $0 - supposedly it's stored for 
-				//trial period payment. So we should set some amount for testing
-				//$invoice->total = '3000';
-				
+								
 				//alright. create a new order/invoice
 				$morder = new MemberOrder();
 				$morder->user_id = $old_order->user_id;
 				$morder->membership_id = $old_order->membership_id;
-				$morder->InitialPayment = $invoice->total / 100;	//not the initial payment, but the class is expecting that
-				$morder->PaymentAmount = $invoice->total / 100;
+				$morder->InitialPayment = $invoice->amount / 100;	//not the initial payment, but the class is expecting that
+				$morder->PaymentAmount = $invoice->amount / 100;
 				$morder->payment_transaction_id = $invoice->id;
 				$morder->subscription_transaction_id = $invoice->customer;
 				
 				$morder->FirstName = $old_order->FirstName;
 				$morder->LastName = $old_order->LastName;
-				//Anton: Here was the error: why they might be runnig a new query while Email address is already present in $user var?
-				//Though i didn't check why it failed :)
-				//$morder->Email = $wpdb->get_var("SELECT user_email FROM $wpdb->users WHERE ID = '" . $this->user_id . "' LIMIT 1");		
-				$morder->Email = $user->user_email; //Here goes the fix!
+				$morder->Email = $wpdb->get_var("SELECT user_email FROM $wpdb->users WHERE ID = '" . $old_order->user_id . "' LIMIT 1");		
 				$morder->Address1 = $old_order->Address1;
 				$morder->City = $old_order->billing->city;
 				$morder->State = $old_order->billing->state;
@@ -118,19 +107,20 @@
 				$morder->ExpirationDate_YdashM = $morder->expirationyear . "-" . $morder->expirationmonth;
 				
 				//save
+				$morder->status = "success";
 				$morder->saveOrder();
 				$morder->getMemberOrderByID($morder->id);
 								
-				 //email the user their invoice				
-				// $pmproemail = new PMProEmail();				
-				// $pmproemail->sendInvoiceEmail($user, $morder);	
+				//email the user their invoice				
+				$pmproemail = new PMProEmail();				
+				$pmproemail->sendInvoiceEmail($user, $morder);	
 			}
 			else
 			{
 				die("We've already processed this order with ID #" . $event->id);
 			}
 		}
-		elseif($event->type == "invoice.payment_failed")
+		elseif($event->type == "charge.failed")
 		{
 			//last order for this subscription
 			$old_order = getOldOrderFromInvoiceEvent($event);
@@ -139,6 +129,8 @@
 			
 			if(!empty($old_order->id))
 			{			
+				do_action("pmpro_subscription_payment_failed", $old_order);	
+				
 				//prep this order for the failure emails
 				$morder = new MemberOrder();
 				$morder->user_id = $user_id;
@@ -178,8 +170,10 @@
 			$user = getUserFromCustomerEvent($event);
 			if(!empty($user->ID))
 			{			
+				do_action("pmpro_stripe_subscription_deleted", $user->ID);	
+				
 				$pmproemail = new PMProEmail();	
-				$pmproemail->data = array("body"=>"<p>" . $user->display_name . " (" . $user->user_login . ", " . $user->user_email . ") has had their payment subscription cancelled by Stripe. Please check that this user's membership is cancelled on your site if it should be.</p>");
+				$pmproemail->data = array("body"=>"<p>" . sprintf(__("%s has had their payment subscription cancelled by Stripe. Please check that this user's membership is cancelled on your site if it should be.", "pmpro"), $user->display_name . " (" . $user->user_login . ", " . $user->user_email . ")") . "</p>");
 				$pmproemail->sendEmail(get_bloginfo("admin_email"));	
 			}
 			else
@@ -251,4 +245,3 @@
 		else
 			return false;		
 	}
-?>

@@ -1,8 +1,8 @@
 <?php	
 	//only admins can get this
-	if(!function_exists("current_user_can") || !current_user_can("manage_options"))
+	if(!function_exists("current_user_can") || (!current_user_can("manage_options") && !current_user_can("pmpro_memberslist_csv")))
 	{
-		die("You do not have permissions to perform this action.");
+		die(__("You do not have permissions to perform this action.", "pmpro"));
 	}	
 	
 	global $wpdb;	
@@ -34,7 +34,12 @@
 		$end = $pn * $limit;
 		$start = $end - $limit;		
 	}
-		
+	else
+	{
+		$end = NULL;
+		$start = NULL;
+	}	
+	
 	if($s)
 	{
 		$sqlQuery = "SELECT SQL_CALC_FOUND_ROWS u.ID, u.user_login, u.user_email, UNIX_TIMESTAMP(u.user_registered) as joindate, u.user_login, u.user_nicename, u.user_url, u.user_registered, u.user_status, u.display_name, mu.membership_id, mu.initial_payment, mu.billing_amount, mu.cycle_period, UNIX_TIMESTAMP(mu.enddate) as enddate, m.name as membership FROM $wpdb->users u LEFT JOIN $wpdb->usermeta um ON u.ID = um.user_id LEFT JOIN $wpdb->pmpro_memberships_users mu ON u.ID = mu.user_id LEFT JOIN $wpdb->pmpro_membership_levels m ON mu.membership_id = m.id WHERE mu.status = 'active' AND mu.membership_id > 0 AND (u.user_login LIKE '%" . $wpdb->escape($s) . "%' OR u.user_email LIKE '%" . $wpdb->escape($s) . "%' OR um.meta_value LIKE '%" . $wpdb->escape($s) . "%') ";
@@ -54,9 +59,14 @@
 		if($limit)
 			$sqlQuery .= "LIMIT $start, $limit";
 	}
-		
+	
+	$sqlQuery = apply_filters("pmpro_members_list_sql", $sqlQuery);	
+	
 	$theusers = $wpdb->get_results($sqlQuery);	
-	$csvoutput = "id,username,firstname,lastname,email,billing firstname,billing lastname,address1,address2,city,state,zipcode,country,phone,membership,initial payment,fee,term,joined,expires";
+
+	$heading = "id,username,firstname,lastname,email,billing firstname,billing lastname,address1,address2,city,state,zipcode,country,phone,membership,initial payment,fee,term,joined,expires";
+	$heading = apply_filters("pmpro_members_list_csv_heading", $heading);
+	$csvoutput = $heading;
 	
 	//these are the meta_keys for the fields (arrays are object, property. so e.g. $theuser->ID)
 	$default_columns = array(
@@ -70,7 +80,7 @@
 		array("metavalues", "pmpro_baddress1"),
 		array("metavalues", "pmpro_baddress2"),
 		array("metavalues", "pmpro_bcity"),
-		array("metavalues", "pmpro_bzipcode"),
+		array("metavalues", "pmpro_bstate"),
 		array("metavalues", "pmpro_bzipcode"),
 		array("metavalues", "pmpro_bcountry"),
 		array("metavalues", "pmpro_bphone"),
@@ -80,6 +90,9 @@
 		array("theuser", "cycle_period")
 		//joindate and enddate are handled specifically below
 	);
+
+	//filter
+	$default_columns = apply_filters("pmpro_members_list_csv_default_columns", $default_columns);
 	
 	//any extra columns
 	$extra_columns = apply_filters("pmpro_members_list_csv_extra_columns", array());

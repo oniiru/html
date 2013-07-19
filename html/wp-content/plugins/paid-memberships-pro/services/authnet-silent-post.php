@@ -99,6 +99,8 @@
 			// Suspend the user's account
 				//But we can't suspend the account, maybe a future feature
 
+			do_action("pmpro_subscription_payment_failed", $old_order);	
+
 			//prep this order for the failure emails
 			$morder = new MemberOrder();
 			$morder->user_id = $user_id;
@@ -128,7 +130,7 @@
 		{
 			//response 4? send an email to the admin			
 			$pmproemail = new PMProEmail();	
-			$pmproemail->data = array("body"=>"<p>A payment is being held for review within Authorize.net.</p><p>Payment Information From Authorize.net:<br />" . nl2br(var_export($fields, true)));
+			$pmproemail->data = array("body"=>__("<p>A payment is being held for review within Authorize.net.</p><p>Payment Information From Authorize.net", "pmpro") . ":<br />" . nl2br(var_export($fields, true)));
 			$pmproemail->sendEmail(get_bloginfo("admin_email"));			
 		}
 	}	

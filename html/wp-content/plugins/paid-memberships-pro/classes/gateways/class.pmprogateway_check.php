@@ -10,6 +10,11 @@
 		
 		function process(&$order)
 		{
+			//clean up a couple values
+			$order->payment_type = "Check";
+			$order->CardType = "";
+			$order->cardtype = "";
+			
 			//check for initial payment
 			if(floatval($order->InitialPayment) == 0)
 			{
@@ -52,7 +57,7 @@
 				else
 				{
 					if(empty($order->error))
-						$order->error = "Unknown error: Authorization failed.";
+						$order->error = __("Unknown error: Authorization failed.", "pmpro");
 					return false;
 				}
 			}
@@ -103,14 +108,14 @@
 							if($this->void($order))
 							{
 								if(!$order->error)
-									$order->error = "Unknown error: Payment failed.";							
+									$order->error = __("Unknown error: Payment failed.", "pmpro");
 							}
 							else
 							{
 								if(!$order->error)
-									$order->error = "Unknown error: Payment failed.";
+									$order->error = __("Unknown error: Payment failed.", "pmpro");
 								
-								$order->error .= " A partial payment was made that we could not void. Please contact the site owner immediately to correct this.";
+								$order->error .= " " . __("A partial payment was made that we could not void. Please contact the site owner immediately to correct this.", "pmpro");
 							}
 							
 							return false;								
@@ -119,14 +124,14 @@
 					else
 					{
 						//only a one time charge
-						$order->status = "success";	//saved on checkout page											
+						$order->status = apply_filters("pmpro_check_status_after_checkout", "success");	//saved on checkout page											
 						return true;
 					}
 				}
 				else
 				{
 					if(empty($order->error))
-						$order->error = "Unknown error: Payment failed.";
+						$order->error = __("Unknown error: Payment failed.", "pmpro");
 					
 					return false;
 				}	
@@ -174,7 +179,10 @@
 			//create a code for the order
 			if(empty($order->code))
 				$order->code = $order->getRandomCode();
-						
+			
+			//filter order before subscription. use with care.
+			$order = apply_filters("pmpro_subscribe_order", $order, $this);
+			
 			//simulate a successful subscription processing
 			$order->status = "success";		
 			$order->subscription_transaction_id = "CHECK" . $order->code;				
@@ -198,4 +206,3 @@
 			return true;
 		}	
 	}
-?>

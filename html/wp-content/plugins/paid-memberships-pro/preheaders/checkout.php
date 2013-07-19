@@ -7,7 +7,7 @@
 	//blank array for required fields, set below
 	$pmpro_required_billing_fields = array();
 	$pmpro_required_user_fields = array();
-	
+		
 	//was a gateway passed?
 	if(!empty($_REQUEST['gateway']))
 		$gateway = $_REQUEST['gateway'];
@@ -15,7 +15,7 @@
 		$gateway = "paypalexpress";
 	else
 		$gateway = pmpro_getOption("gateway");			
-	
+		
 	//set valid gateways - the active gateway in the settings and any gateway added through the filter will be allowed
 	if(pmpro_getOption("gateway", true) == "paypal")
 		$valid_gateways = apply_filters("pmpro_valid_gateways", array("paypal", "paypalexpress"));
@@ -25,7 +25,7 @@
 	//let's add an error now, if an invalid gateway is set
 	if(!in_array($gateway, $valid_gateways))
 	{	
-		$pmpro_msg = "Invalid gateway.";
+		$pmpro_msg = __("Invalid gateway.", 'pmpro');
 		$pmpro_msgt = "pmpro_error";
 	}	
 	
@@ -88,10 +88,12 @@
 	}		
 		
 	global $wpdb, $current_user, $pmpro_requirebilling;	
+	//unless we're submitting a form, let's try to figure out if https should be used
+	
 	if(!pmpro_isLevelFree($pmpro_level) && $gateway != "check")
 	{
 		//require billing and ssl
-		$pagetitle = "Checkout: Payment Information";
+		$pagetitle = __("Checkout: Payment Information", 'pmpro');
 		$pmpro_requirebilling = true;
 		$besecure = pmpro_getOption("use_ssl");
 		/*
@@ -104,11 +106,15 @@
 	else
 	{
 		//no payment so we don't need ssl
-		$pagetitle = "Setup Your Account";
+		$pagetitle = __("Setup Your Account", 'pmpro');
 		$pmpro_requirebilling = false;
 		$besecure = false;		
 	}
-		
+	
+	//in case a discount code was used or something else made the level free, but we're already over ssl
+	if(!$besecure && !empty($_REQUEST['submit-checkout']) && is_ssl())
+		$besecure = true;	//be secure anyway since we're already checking out
+	
 	//code for stripe (unless the level is free)
 	if($gateway == "stripe" && !pmpro_isLevelFree($pmpro_level))
 	{
@@ -126,7 +132,7 @@
 			var pmpro_require_billing = true;
 												
 			jQuery(document).ready(function() {
-				jQuery(".pmpro_form").submit(function(event) {
+				jQuery("#pmpro_form, .pmpro_form").submit(function(event) {
 								
 				//double check in case a discount code made the level free				
 				if(pmpro_require_billing)
@@ -144,8 +150,9 @@
 							?>
 							,address_line1: jQuery('#baddress1').val(),
 							address_line2: jQuery('#baddress2').val(),
-							address_zip: jQuery('#bzipcode').val(),
+							address_city: jQuery('#bcity').val(),					
 							address_state: jQuery('#bstate').val(),					
+							address_zip: jQuery('#bzipcode').val(),							
 							address_country: jQuery('#bcountry').val()
 						<?php
 							}
@@ -172,7 +179,7 @@
 					alert(response.error.message);
 					jQuery(".payment-errors").text(response.error.message);
 				} else {
-					var form$ = jQuery(".pmpro_form");					
+					var form$ = jQuery("#pmpro_form, .pmpro_form");					
 					// token contains id, last4, and card type
 					var token = response['id'];					
 					// insert the token into the form so it gets submitted to the server
@@ -180,8 +187,8 @@
 										
 					//insert fields for other card fields
 					form$.append("<input type='hidden' name='CardType' value='" + response['card']['type'] + "'/>");
-					form$.append("<input type='hidden' name='AccountNumber' value='" + response['card']['last4'] + "'/>");
-					form$.append("<input type='hidden' name='ExpirationMonth' value='" + response['card']['exp_month'] + "'/>");
+					form$.append("<input type='hidden' name='AccountNumber' value='XXXXXXXXXXXXX" + response['card']['last4'] + "'/>");
+					form$.append("<input type='hidden' name='ExpirationMonth' value='" + ("0" + response['card']['exp_month']).slice(-2) + "'/>");
 					form$.append("<input type='hidden' name='ExpirationYear' value='" + response['card']['exp_year'] + "'/>");							
 					
 					// and submit
@@ -200,6 +207,19 @@
 			return $fields;
 		}
 		add_filter("pmpro_required_billing_fields", "pmpro_stripe_dont_require_CVV");
+	}
+	
+	//code for Braintree
+	if($gateway == "braintree")
+	{
+		//don't require the CVV, but look for cvv (lowercase) that braintree sends
+		function pmpro_braintree_dont_require_CVV($fields)
+		{
+			unset($fields['CVV']);	
+			$fields['cvv'] = true;
+			return $fields;
+		}
+		add_filter("pmpro_required_billing_fields", "pmpro_braintree_dont_require_CVV");
 	}
 		
 	//get all levels in case we need them
@@ -287,7 +307,7 @@
 	else
 		$bconfirmemail = "";
 		
-	if(isset($_REQUEST['CardType']))
+	if(isset($_REQUEST['CardType']) && !empty($_REQUEST['AccountNumber']))
 		$CardType = $_REQUEST['CardType'];
 	else
 		$CardType = "";
@@ -313,7 +333,8 @@
 	else
 		$discount_code = "";
 	// if(isset($_REQUEST['username']))
-		$username = trim($_REQUEST['bemail']);	
+		$username = trim($_REQUEST['bemail']);
+	
 	if(isset($_REQUEST['password']))
 		$password = $_REQUEST['password'];
 	else
@@ -335,6 +356,14 @@
 		$stripeToken = $_REQUEST['stripeToken'];				
 	}
 	
+	//for Braintree, load up values
+	if(isset($_REQUEST['number']) && isset($_REQUEST['expiration_date']) && isset($_REQUEST['cvv']))
+	{
+		$braintree_number = $_REQUEST['number'];
+		$braintree_expiration_date = $_REQUEST['expiration_date'];
+		$braintree_cvv = $_REQUEST['cvv'];
+	}
+	
 	//_x stuff in case they clicked on the image button with their mouse
 	if(isset($_REQUEST['submit-checkout']))
 		$submit = $_REQUEST['submit-checkout'];
@@ -344,7 +373,7 @@
 		$submit = true;	
 	elseif(!isset($submit))
 		$submit = false;
-		
+	
 	//require fields
 	$pmpro_required_billing_fields = array(
 		"bfirstname" => $bfirstname,
@@ -430,44 +459,44 @@
 		}
 			
 		if(!empty($pmpro_error_fields))
-		{
-			pmpro_setMessage("Please complete all required fields.", "pmpro_error");
+		{			
+			pmpro_setMessage(__("Please complete all required fields.", "pmpro"), "pmpro_error");
 		}				
 		if(!empty($password) && $password != $password2)
 		{			
-			pmpro_setMessage("Your passwords do not match. Please try again.", "pmpro_error");
+			pmpro_setMessage(__("Your passwords do not match. Please try again.", "pmpro"), "pmpro_error");
 			$pmpro_error_fields[] = "password";
 			$pmpro_error_fields[] = "password2";
 		}
 		if(!empty($bemail) && $bemail != $bconfirmemail)
 		{
-			pmpro_setMessage("Your email addresses do not match. Please try again.", "pmpro_error");
+			pmpro_setMessage(__("Your email addresses do not match. Please try again.", "pmpro"), "pmpro_error");
 			$pmpro_error_fields[] = "bemail";
 			$pmpro_error_fields[] = "bconfirmemail";			
 		}		
 		if(!empty($bemail) && !is_email($bemail))
 		{
-			pmpro_setMessage("The email address entered is in an invalid format. Please try again.", "pmpro_error");
+			pmpro_setMessage(__("The email address entered is in an invalid format. Please try again.", "pmpro"), "pmpro_error");
 			$pmpro_error_fields[] = "bemail";
 			$pmpro_error_fields[] = "bconfirmemail";				
 		}
 		elseif (!empty($bemail) && $pmpro_level->id == 4 && substr($bemail, -4) != '.edu') {
-			pmpro_setMessage("You must use a .edu email to sign up for our student plan. If you are a full time student, but don't have a .edu address, please email andrew@solidwize.com.", "pmpro_error");
-			$pmpro_error_fields[] = "bemail";
-			$pmpro_error_fields[] = "bconfirmemail";
-		}
+				pmpro_setMessage("You must use a .edu email to sign up for our student plan. If you are a full time student, but don't have a .edu address, please email andrew@solidwize.com.", "pmpro_error");
+					$pmpro_error_fields[] = "bemail";
+					$pmpro_error_fields[] = "bconfirmemail";
+				}
 		if(!empty($tospage) && empty($tos))
 		{
-			pmpro_setMessage("Please check the box to agree to the " . $tospage->post_title . ".", "pmpro_error");
+			pmpro_setMessage(sprintf(__("Please check the box to agree to the %s.", "pmpro"), $tospage->post_title), "pmpro_error");
 			$pmpro_error_fields[] = "tospage";					
 		}
 		if(!in_array($gateway, $valid_gateways))
 		{
-			pmpro_setMessage("Invalid gateway.", "pmpro_error");			
+			pmpro_setMessage(__("Invalid gateway.", "pmpro"), "pmpro_error");			
 		}
 		if(!empty($fullname))
 		{
-			pmpro_setMessage("Are you a spammer?", "pmpro_error");			
+			pmpro_setMessage(__("Are you a spammer?", "pmpro"), "pmpro_error");			
 		}
 		
 		if($pmpro_msgt == "pmpro_error")
@@ -490,13 +519,13 @@
 			
 			if(!empty($oldusername))
 			{
-				pmpro_setMessage("That username is already taken. Please try another.", "pmpro_error");
+				pmpro_setMessage(__("That username is already taken. Please try another.", "pmpro"), "pmpro_error");
 				$pmpro_error_fields[] = "username";				
 			}
 			
 			if(!empty($oldemail))
 			{
-				pmpro_setMessage("That email address is already taken. Please try another.", "pmpro_error");
+				pmpro_setMessage(__("That email address is already taken. Please try another.", "pmpro"), "pmpro_error");
 				$pmpro_error_fields[] = "bemail";						
 				$pmpro_error_fields[] = "bconfirmemail";						
 			}
@@ -516,7 +545,7 @@
 						
 					if(!$resp->is_valid) 
 					{
-						$pmpro_msg = "reCAPTCHA failed. (" . $resp->error . ") Please try again.";
+						$pmpro_msg = sprintf(__("reCAPTCHA failed. (%s) Please try again.", "pmpro"), $resp->error);
 						$pmpro_msgt = "pmpro_error";
 					} 
 					else 
@@ -586,6 +615,15 @@
 						if(isset($stripeToken))
 							$morder->stripeToken = $stripeToken;
 						
+						//Braintree values
+						if(isset($braintree_number))
+						{
+							$morder->braintree = new stdClass();
+							$morder->braintree->number = $braintree_number;
+							$morder->braintree->expiration_date = $braintree_expiration_date;
+							$morder->braintree->cvv = $braintree_cvv;
+						}
+						
 						//not saving email in order table, but the sites need it
 						$morder->Email = $bemail;
 						
@@ -646,7 +684,7 @@
 													
 						if(!empty($pmpro_processed))
 						{
-							$pmpro_msg = "Payment accepted.";
+							$pmpro_msg = __("Payment accepted.", "pmpro");
 							$pmpro_msgt = "pmpro_success";	
 							$pmpro_confirmed = true;
 						}			
@@ -654,7 +692,7 @@
 						{																								
 							$pmpro_msg = $morder->error;
 							if(empty($pmpro_msg))
-								$pmpro_msg = "Unknown error generating account. Please contact us to setup your membership.";
+								$pmpro_msg = __("Unknown error generating account. Please contact us to setup your membership.", "pmpro");
 							$pmpro_msgt = "pmpro_error";								
 						}	
 													
@@ -693,13 +731,13 @@
 			else
 			{
 				$pmpro_msg = $morder->error;
-				$pmpro_msgt = "error";
+				$pmpro_msgt = "pmpro_error";
 			}		
 		}
 		else
 		{
-			$pmpro_msg = "The PayPal Token was lost.";
-			$pmpro_msgt = "error";
+			$pmpro_msg = __("The PayPal Token was lost.", "pmpro");
+			$pmpro_msgt = "pmpro_error";
 		}
 	}
 	elseif(!empty($_REQUEST['confirm']))
@@ -761,13 +799,13 @@
 			else
 			{								
 				$pmpro_msg = $morder->error;
-				$pmpro_msgt = "error";
+				$pmpro_msgt = "pmpro_error";
 			}
 		}
 		else
 		{
-			$pmpro_msg = "The PayPal Token was lost.";
-			$pmpro_msgt = "error";
+			$pmpro_msg = __("The PayPal Token was lost.", "pmpro");
+			$pmpro_msgt = "pmpro_error";
 		}
 	}
 	
@@ -788,7 +826,7 @@
 							"last_name" => $blastname)
 							);
 			if (!$user_id) {
-				$pmpro_msg = "Your payment was accepted, but there was an error setting up your account. Please contact us.";
+				$pmpro_msg = __("Your payment was accepted, but there was an error setting up your account. Please contact us.", "pmpro");
 				$pmpro_msgt = "pmpro_error";
 			} else {
 			
@@ -883,7 +921,7 @@
 					else
 						$code_order_id = "";
 						
-					$wpdb->query("INSERT INTO $wpdb->pmpro_discount_codes_uses (code_id, user_id, order_id, timestamp) VALUES('" . $discount_code_id . "', '" . $current_user->ID . "', '" . $code_order_id . "', now())");										
+					$wpdb->query("INSERT INTO $wpdb->pmpro_discount_codes_uses (code_id, user_id, order_id, timestamp) VALUES('" . $discount_code_id . "', '" . $current_user->ID . "', '" . intval($code_order_id) . "', now())");										
 				}
 			
 				//save billing info ect, as user meta																		
@@ -895,13 +933,13 @@
 				if(!empty($bfirstname))
 				{
 					$old_firstname = get_user_meta($user_id, "first_name", true);
-					if(!empty($old_firstname))
+					if(empty($old_firstname))
 						update_user_meta($user_id, "first_name", $bfirstname);
 				}
 				if(!empty($blastname))
 				{
 					$old_lastname = get_user_meta($user_id, "last_name", true);
-					if(!empty($old_lastname))
+					if(empty($old_lastname))
 						update_user_meta($user_id, "last_name", $blastname);
 				}
 						
@@ -946,12 +984,12 @@
 				//uh oh. we charged them then the membership creation failed
 				if($morder->cancel())
 				{
-					$pmpro_msg = "IMPORTANT: Something went wrong during membership creation. Your credit card authorized, but we cancelled the order immediately. You should not try to submit this form again. Please contact the site owner to fix this issue.";
+					$pmpro_msg = __("IMPORTANT: Something went wrong during membership creation. Your credit card authorized, but we cancelled the order immediately. You should not try to submit this form again. Please contact the site owner to fix this issue.", "pmpro");
 					$morder = NULL;
 				}
 				else
 				{
-					$pmpro_msg = "IMPORTANT: Something went wrong during membership creation. Your credit card was charged, but we couldn't assign your membership. You should not submit this form again. Please contact the site owner to fix this issue.";
+					$pmpro_msg = __("IMPORTANT: Something went wrong during membership creation. Your credit card was charged, but we couldn't assign your membership. You should not submit this form again. Please contact the site owner to fix this issue.", "pmpro");
 				}
 			}
 		}
@@ -964,9 +1002,9 @@
 		if($pmpro_requirebilling && !pmpro_getOption("gateway", true))
 		{
 			if(pmpro_isAdmin())			
-				$pmpro_msg = "You must <a href=\"" . get_admin_url(NULL, '/admin.php?page=pmpro-membershiplevels&view=payment') . "\">setup a Payment Gateway</a> before any payments will be processed.";
+				$pmpro_msg = sprintf(__('You must <a href="%s">setup a Payment Gateway</a> before any payments will be processed.', 'pmpro'), get_admin_url(NULL, '/admin.php?page=pmpro-membershiplevels&view=payment'));
 			else
-				$pmpro_msg = "A Payment Gateway must be setup before any payments will be processed.";
+				$pmpro_msg = __("A Payment Gateway must be setup before any payments will be processed.", "pmpro");
 			$pmpro_msgt = "";
 		}
 		
@@ -986,5 +1024,4 @@
 		//$AccountNumber = hideCardNumber(get_user_meta($current_user->ID, "pmpro_AccountNumber", true), false);
 		$ExpirationMonth = get_user_meta($current_user->ID, "pmpro_ExpirationMonth", true);
 		$ExpirationYear = get_user_meta($current_user->ID, "pmpro_ExpirationYear", true);	
-	}			
-?>
+	}	

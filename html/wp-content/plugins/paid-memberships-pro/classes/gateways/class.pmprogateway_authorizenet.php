@@ -52,7 +52,7 @@
 				else
 				{					
 					if(empty($order->error))
-						$order->error = "Unknown error: Authorization failed.";
+						$order->error = __("Unknown error: Authorization failed.", "pmpro");
 					return false;
 				}
 			}
@@ -103,14 +103,13 @@
 							if($this->void($order))
 							{
 								if(!$order->error)
-									$order->error = "Unknown error: Payment failed.";							
+									$order->error = __("Unknown error: Payment failed.", "pmpro");
 							}
 							else
 							{
 								if(!$order->error)
-									$order->error = "Unknown error: Payment failed.";
-								
-								$order->error .= " A partial payment was made that we could not void. Please contact the site owner immediately to correct this.";
+									$order->error = __("Unknown error: Payment failed.", "pmpro");								
+								$order->error .= " " . __("A partial payment was made that we could not void. Please contact the site owner immediately to correct this.", "pmpro");
 							}
 														
 							return false;								
@@ -126,7 +125,7 @@
 				else
 				{					
 					if(empty($order->error))
-						$order->error = "Unknown error: Payment failed.";
+						$order->error = __("Unknown error: Payment failed.", "pmpro");
 					
 					return false;
 				}	
@@ -150,6 +149,8 @@
 			$path = "/gateway/transact.dll";												
 			$post_url = "https://" . $host . $path;
 
+			$post_url = apply_filters("pmpro_authorizenet_post_url", $post_url, $gateway_environment);
+			
 			//what amount to authorize? just $1 to test
 			$amount = "1.00";		
 			
@@ -183,7 +184,7 @@
 				"x_exp_date"		=> $order->ExpirationDate,
 				
 				"x_amount"			=> $amount,
-				"x_description"		=> $order->membership_level->name . " Membership",
+				"x_description"		=> $order->membership_level->name . " " . __("Membership", "pmpro"),
 
 				"x_first_name"		=> $order->FirstName,
 				"x_last_name"		=> $order->LastName,
@@ -256,7 +257,9 @@
 			
 			$path = "/gateway/transact.dll";												
 			$post_url = "https://" . $host . $path;
-												
+			
+			$post_url = apply_filters("pmpro_authorizenet_post_url", $post_url, $gateway_environment);
+			
 			$post_values = array(
 				
 				// the API Login ID and Transaction Key must be replaced with valid values
@@ -327,6 +330,8 @@
 			$path = "/gateway/transact.dll";												
 			$post_url = "https://" . $host . $path;
 
+			$post_url = apply_filters("pmpro_authorizenet_post_url", $post_url, $gateway_environment);
+			
 			//what amount to charge?			
 			$amount = $order->InitialPayment;
 						
@@ -403,7 +408,7 @@
 				// additional options may be required depending upon your server configuration
 				// you can find documentation on curl options at http://www.php.net/curl_setopt
 			curl_close ($request); // close curl object
-			
+						
 			// This line takes the response and breaks it into an array using the specified delimiting character
 			$response_array = explode($post_values["x_delim_char"],$post_response);
 			if($response_array[0] == 1)
@@ -428,6 +433,9 @@
 
 			if(empty($order->code))
 				$order->code = $order->getRandomCode();
+			
+			//filter order before subscription. use with care.
+			$order = apply_filters("pmpro_subscribe_order", $order, $this);
 			
 			if(!empty($order->gateway_environment))
 				$gateway_environment = $order->gateway_environment;
@@ -777,8 +785,8 @@
 			else  
 			{								
 				$order->status = "error";
-				$order->error = "Could not connect to Authorize.net";
-				$order->shorterror = "Could not connect to Authorize.net";
+				$order->error = __("Could not connect to Authorize.net", "pmpro");
+				$order->shorterror = __("Could not connect to Authorize.net", "pmpro");
 				return false;				
 			}
 		}	
@@ -820,6 +828,7 @@
 		function send_request_via_curl($host,$path,$content)
 		{
 			$posturl = "https://" . $host . $path;
+			$posturl = apply_filters("pmpro_authorizenet_post_url", $posturl, pmpro_getOption("gateway_environment"));
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $posturl);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

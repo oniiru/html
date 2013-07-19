@@ -87,7 +87,7 @@ function wp_authenticate_username_password($user, $username, $password) {
 	$user = get_user_by('login', $username);
 
 	if ( !$user )
-		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid username. <a href="%s" title="Password Lost and Found">Lost your password</a>'), wp_lostpassword_url()));
+		return new WP_Error('invalid_username', sprintf(__('<strong>ERROR</strong>: Invalid username. <a href="%s" title="Password Lost and Found">Lost your password</a>?'), wp_lostpassword_url()));
 
 	if ( is_multisite() ) {
 		// Is user marked as spam?
@@ -107,7 +107,7 @@ function wp_authenticate_username_password($user, $username, $password) {
 		return $user;
 
 	if ( !wp_check_password($password, $user->user_pass, $user->ID) )
-		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>' ),
+		return new WP_Error( 'incorrect_password', sprintf( __( '<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href="%2$s" title="Password Lost and Found">Lost your password</a>?' ),
 		$username, wp_lostpassword_url() ) );
 
 	return $user;
@@ -474,7 +474,7 @@ class WP_User_Query {
 					$search_columns = array('user_email');
 				elseif ( is_numeric($search) )
 					$search_columns = array('user_login', 'ID');
-				elseif ( preg_match('|^https?://|', $search) && ! wp_is_large_network( 'users' ) )
+				elseif ( preg_match('|^https?://|', $search) && ! ( is_multisite() && function_exists( 'wp_is_large_network' ) && wp_is_large_network( 'users' ) ) )
 					$search_columns = array('user_url');
 				else
 					$search_columns = array('user_login', 'user_nicename');
