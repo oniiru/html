@@ -13,6 +13,7 @@ get_header(); ?>
 		<h1> <?php the_title(); ?>	</h1>
 		<p><?php echo get_post_meta( get_the_ID(), 'Project_description', true ); ?></p>
 		<div class="closedinnerright">
+			<?php echo get_post_meta( get_the_ID(), 'Project_vid_embed', true ); ?>
 		</div>
 	</div>
 </div>

@@ -360,6 +360,17 @@ color: rgb(134, 134, 134);
 	
 }
 
+.closedinner p {
+	max-width: 425px;
+	font-family: "open sans" !important;
+	font-weight: 300;
+	font-size: 20px;
+	color: white;
+	margin-top: 20px;
+	line-height: 1.3em;
+	
+}
+
 
 .closedinnerright {
 	float:right;
