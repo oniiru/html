@@ -3097,6 +3097,11 @@ height:auto;
 	.appendix ul li {
 		width:auto;
 	}
+	
+	.appendix ul li a {
+		width:auto;
+		font-size:14px;
+	}
 	.projecttechniques {
 		width:auto;
 		float:none;
