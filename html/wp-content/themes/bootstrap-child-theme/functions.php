@@ -359,6 +359,15 @@ else {
 }
 }
 add_filter('gform_submit_button','form_submit_button',10,2);
-
-
+/*
+  Cancel subscriptions when the subscription is deleted at Stripe
+  
+  Requires PMPro 1.6 or higher.
+*/
+function my_pmpro_stripe_subscription_deleted($user_id)
+{
+	//cancel the membership
+	pmpro_changeMembershipLevel(0, $user_id);
+}
+add_action("pmpro_stripe_subscription_deleted", "my_pmpro_stripe_subscription_deleted");
 ?>
