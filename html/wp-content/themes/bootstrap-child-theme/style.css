@@ -3085,6 +3085,18 @@ height:auto;
 		margin-left:10px;
 		margin-right:10px;
 	}
+	
+	li.appendixleft {
+		float:none;
+	}
+	
+	li.appendixright {
+		float:none;
+	}
+	
+	.appendix ul li {
+		width:auto;
+	}
 	.projecttechniques {
 		width:auto;
 		float:none;

@@ -21,7 +21,7 @@ get_header(); ?>
 				$varlesson = array();
 			foreach ( $terms as $term ) {
 				$varlesson[] = $term->name;
-			}
+			};
 						
 				$current_terms = join( ", ", $varlesson );
 			
