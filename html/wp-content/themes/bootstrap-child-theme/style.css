@@ -3100,7 +3100,7 @@ height:auto;
 	
 	.appendix ul li a {
 		width:auto;
-		font-size:14px;
+		font-size:14px !important;
 	}
 	.projecttechniques {
 		width:auto;
