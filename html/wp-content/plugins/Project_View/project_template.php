@@ -174,7 +174,7 @@ if ($appendix1 != '') { ?>
 		 <div class="accordion-group">
 		     <div class="accordion-heading">
 		       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse-<?php the_ID(); ?>">
-		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4>
+		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4></a></div>
 		 <div id="collapse-<?php the_ID(); ?>" class="accordion-body collapse">
 		      <div class="accordion-inner">
 		 <?php
