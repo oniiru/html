@@ -13,17 +13,7 @@ get_header(); ?>
 	<div class="closedinner">
 		<h1> <?php the_title(); ?>	</h1>
 		<div class="closedinnerright">
-			<p> More Info <span class="caret"></span></p>
 		</div>
-	</div>
-	<div class="openinner">
-		<div class="openinnerleft">
-		<h1> <?php the_title(); ?></h1>
-		<p>	<?php the_content(); ?></p>
-	</div>
-	<div class="openinnerright">
-		<?php echo get_post_meta( get_the_ID(), 'Project_vid_embed', true ); ?>
-	</div>
 	</div>
 </div>
 <div id="content" class="clearfix row-fluid">
