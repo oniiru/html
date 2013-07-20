@@ -45,11 +45,6 @@ array( 'title', 'editor', 'comments',
 add_action( 'admin_init', 'projects_admin' );
 
 function projects_admin() {
-    add_meta_box( 'projects_video_meta_box',
-        'Video Embed for Projects Page',
-        'display_projects_video_meta_box',
-        'project_views', 'normal', 'high'
-    );
     add_meta_box( 'projects_appendix_meta_box',
         'Appendix Video List',
         'display_projects_appendix_meta_box',
@@ -57,44 +52,6 @@ function projects_admin() {
     );
 }
 
-function display_projects_video_meta_box( $project_view ) {
-    // Retrieve current name of the Director and Movie Rating based on review ID
-    $Project_vid_embed = 
-		esc_html( get_post_meta( $project_view->ID, 'Project_vid_embed', true ) );
-    $Project_description = 
-		esc_html( get_post_meta( $project_view->ID, 'Project_description', true ) );
-    ?>
-	<table>
-	<tr>
-	<td style="width: 100%">
-	 <textarea type="text" style="width:800px;height:75px" placeholder="Intro Video Embed Code..." name="project_intro_embed"/><?php echo $Project_vid_embed; ?></textarea>
-	</td>
-	</tr>
-	<tr>
-	<td style="width: 100%">
-	 <textarea type="text" style="width:800px;height:75px" placeholder="Project Description" name="project_description"/><?php echo $Project_description; ?></textarea>
-	</td>
-	</tr>
-	</table>
-   
-    <?php
-}
-
-add_action( 'save_post', 'add_projects_video_field', 10, 2 );
-
-function add_projects_video_field( $project_view_id, $project_view ) {
-    // Check post type for movie reviews
-    if ( $project_view->post_type == 'project_views' ) {
-        // Store data in post meta table if present in post data
-        if ( isset( $_POST['project_intro_embed'] )) {
-            update_post_meta( $project_view_id, 'Project_vid_embed', $_POST['project_intro_embed'] );
-        }
-        if ( isset( $_POST['project_description'] )) {
-            update_post_meta( $project_view_id, 'Project_description', $_POST['project_description'] );
-        }
-       
-    }
-}
 
 
 function display_projects_appendix_meta_box( $project_view ) {
