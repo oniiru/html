@@ -156,6 +156,7 @@ if ($appendix1 != '') { ?>
 		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4></a></div>
 		 <div id="collapse-<?php the_ID(); ?>" class="accordion-body collapse">
 		      <div class="accordion-inner">
+				  rawr
 		 <?php
 		 
 		 foreach ($techniquemeta['techniques'] as $techniqueindiv)
