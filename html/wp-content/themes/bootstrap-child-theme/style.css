@@ -383,11 +383,6 @@ color: rgb(134, 134, 134);
 	vertical-align:-1px;
 }
 
-.accordion-caret .accordion-toggle:before {
-	content:"\f0da";
-	margin-left:5px;
-}
-
 .accordion-caret .accordion-toggle:not(.collapsed):before {
 	content:"\f0d7";	
 	margin-left:0px;
@@ -397,7 +392,11 @@ color: rgb(134, 134, 134);
 	content:"\f0da";
 	margin-left:5px;
 }
+.accordion-caret .accordion-toggle:before {
+	content:"\f0d7";	
+	margin-left:0px;
 
+}
 .closedinner h1, .openinner h1 {
 	margin: 0px;
 	line-height: 1em;
