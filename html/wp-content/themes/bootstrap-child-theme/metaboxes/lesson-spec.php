@@ -1,6 +1,6 @@
 <?php
 
-$project_mb = new WPAlchemy_MetaBox(array
+$full_mb = new WPAlchemy_MetaBox(array
 (
 	'id' => '_full_met2a',
 	'title' => 'Lessons Rawr Techniques',

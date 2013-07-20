@@ -1,6 +1,6 @@
 <?php
 
-$full_mb = new WPAlchemy_MetaBox(array
+$project_mb = new WPAlchemy_MetaBox(array
 (
 	'id' => '_project_meta',
 	'title' => 'Project Options',
