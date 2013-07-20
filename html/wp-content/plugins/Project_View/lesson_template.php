@@ -13,7 +13,9 @@ get_header(); ?>
 	<div id="main" class="clearfix homepage rawr" role="main">
 	   <div style="display:block">
   		 <div style="display:block;overflow:hidden;max-width:900px;margin:auto;margin-bottom:30px">
-  			<?php 
+		    <?php  global $full_mb;
+		      		 $techniquemeta = $full_mb->the_meta(); 
+					 
 			$terms = get_the_terms( $post->ID, 'lessons' );
 
 				$varlesson = array();
@@ -32,9 +34,8 @@ get_header(); ?>
   				 while ( $loop->have_posts() ) : $loop->the_post();
 				
   				?>
-			    <?php  global $full_mb;
-			      		 $techniquemeta = $full_mb->the_meta(); ?>
-  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>. <?php echo var_dump( $techniquemeta )?></i></p></a></div>
+			   
+  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
 			 
          <?php endwhile;   wp_reset_query();?>
 			   <div class="js-video [vimeo, widescreen]">
