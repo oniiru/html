@@ -8,8 +8,6 @@ get_header(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
- <?php  global $full_mb;
-   		 $techniquemeta = $full_mb->the_meta(); ?>
 <div id="content" class="lessonview clearfix row-fluid">
 	
 	<div id="main" class="clearfix homepage rawr" role="main">
@@ -34,6 +32,8 @@ get_header(); ?>
   				 while ( $loop->have_posts() ) : $loop->the_post();
 				
   				?>
+			    <?php  global $full_mb;
+			      		 $techniquemeta = $full_mb->the_meta(); ?>
   			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>. <?php echo var_dump( $techniquemeta )?></i></p></a></div>
 			 
          <?php endwhile;   wp_reset_query();?>
