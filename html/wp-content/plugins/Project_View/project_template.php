@@ -70,6 +70,7 @@ get_header(); ?>
 		  
 	       <?php endwhile; ?>
 	   </div>
+<?php endwhile; ?>			
 
 <?php else : ?>
 <article id="post-not-found">
