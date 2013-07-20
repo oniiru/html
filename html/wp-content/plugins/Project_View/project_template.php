@@ -118,6 +118,7 @@ if ($appendix1 != '') { ?>
  <div class="projectcomments">
  <?php comments_template('',true); ?>
 </div>
+
 <div class="projecttechniques">
 	<h3> Techniques and Toolsets Covered </h3>
 	<p class="techniquesexplained"> Click below to bypass the lesson and learn only about that technique or toolset. </p>
@@ -144,6 +145,7 @@ if ($appendix1 != '') { ?>
 	   ?>
 	   <div class="accordion" id="accordion2">
 	 <article id="techniques-<?php the_ID(); ?>" class="techniques">
+		 hello <?php echo var_dump( $terms )?>
 		 <?php 	 global $full_mb;
 		 $techniquemeta = $full_mb->the_meta();
 		 $techniquedoober = $techniquemeta['techniques'];
