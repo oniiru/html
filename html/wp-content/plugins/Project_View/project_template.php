@@ -57,42 +57,19 @@ get_header(); ?>
 							 $mooo = $techniquemeta['Type'];
 	  		   		} ?>
 					
-					<?php if ($mooo == "a") { ?>
-						 <article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="border: 5px solid #c6dfed !important;
+						 <article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="border: 5px solid #7dbd78 !important;
 "><a href="<?php the_permalink() ?>">
-					<?php } ?>
-					<?php if ($mooo == "b") { ?> 
-						<article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="	border: 5px solid #E08484 !important;
-"><a href="<?php the_permalink() ?>">
-					<?php } ?>
-					<?php if ($mooo == "c") { ?>
-						 <article id="post-<?php the_ID(); ?>" class="hello duber3 firstpanel indivstep" style="	border: 5px solid #7dbd78 !important;
-"><a href="<?php the_permalink() ?>">
-					<?php } ?>
 					
 			<div style=" background-size: cover!important;-webkit-background-size: cover!important;background-image: url('<?php echo $thumbnail; ?>');" class="stepimg">
-					
-					
-			
-						
-				</div>
+						</div>
 				<div class="stepinfo">
-					<?php if ($mooo == "a") { ?>
 					<h3 style="color:rgb(133, 133, 133)" class="lessonnumber2"><?php the_title(); ?></h3>
-					<?php } ?>
-					<?php if ($mooo == "b") { ?>
-					<h3 style="color:#E08484" class="lessonnumber2"><?php the_title(); ?></h3>
-					<?php } ?>
-					<?php if ($mooo == "c") { ?>
-					<h3 style="color:#7dbd78" class="lessonnumber2"><?php the_title(); ?></h3>
-					<?php } ?>
 					
 			</div> </a>
 	           </article>
 		  
 	       <?php endwhile; ?>
 	   </div>
-<?php endwhile; ?>			
 
 <?php else : ?>
 <article id="post-not-found">
@@ -225,7 +202,7 @@ jQuery(".appendix ul.video-list li:nth-child(even)").addClass("appendixright");
 		
 });
 </script>
-  
+
 <script>
 
 
