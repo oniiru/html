@@ -145,7 +145,6 @@ if ($appendix1 != '') { ?>
 	   ?>
 	   <div class="accordion" id="accordion2">
 	 <article id="techniques-<?php the_ID(); ?>" class="techniques">
-		 hello <?php echo var_dump( $terms )?>
 		 <?php 	 global $full_mb;
 		 $techniquemeta = $full_mb->the_meta();
 		 $techniquedoober = $techniquemeta['techniques'];
@@ -177,8 +176,9 @@ if ($appendix1 != '') { ?>
 	 }
 		 ?>
 	 </div>
-	     </div>
-	   </div>
+	 </div>
+	 </div>
+	   
          </article>
 </div>
      <?php endwhile; ?>
