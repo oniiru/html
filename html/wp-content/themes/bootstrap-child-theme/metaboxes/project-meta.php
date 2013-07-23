@@ -35,6 +35,11 @@
 			<input type="text" name="<?php $mb->the_name(); ?>" placeholder="The Vimeo ID (just the number)" value="<?php $mb->the_value(); ?>">
 		</p>
 		
+		<p>
+			<?php $mb->the_field('totallength'); ?>
+			<input type="text" name="<?php $mb->the_name(); ?>" placeholder="Total Length of Project in Min." value="<?php $mb->the_value(); ?>">
+		</p>
+		
 		
 		
 		<?php $mb->the_field('projectimage'); ?>
@@ -47,7 +52,7 @@
 		    </p>
 			
 			<?php $mb->the_field('backgroundimage'); ?>
-			    <?php $wpalchemy_media_access->setGroupName('nn')->setInsertButtonLabel('Insert'); ?>
+			    <?php $wpalchemy_media_access->setGroupName('nn2')->setInsertButtonLabel('Insert'); ?>
 			
 			    <p>
 					<label>Background Image</label>
@@ -56,7 +61,7 @@
 			    </p>
 				
 				<p>
-					<?php $mb->the_field('BG Adjustments'); ?>
+					<?php $mb->the_field('bgadjustments'); ?>
 					<input type="text" value="<?php $mb->the_value(); ?>" placeholder="Adjust the background image if needed" rows="3" name="<?php $mb->the_name(); ?>" />
 				</p>
  

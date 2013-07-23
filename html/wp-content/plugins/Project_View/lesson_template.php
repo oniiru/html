@@ -12,7 +12,7 @@ get_header(); ?>
 	
 	<div id="main" class="clearfix homepage rawr" role="main">
 	   <div style="display:block">
-  		 <div style="display:block;overflow:hidden;max-width:900px;margin:auto;margin-bottom:30px">
+  		 <div style="display:block;overflow:hidden;max-width:800px;margin:auto;margin-bottom:30px">
 		    <?php  global $full_mb;
 		      		 $techniquemeta = $full_mb->the_meta(); 
 					 
