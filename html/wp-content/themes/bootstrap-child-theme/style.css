@@ -1091,13 +1091,13 @@ background-color: #2f96b4;
 		font-size: 14px;
 		font-weight: 800;
 		color: white;
-		background: #2fbf75;
+		background: #989E9B;
 		border-radius: 3px;
 		display: inline;
 		padding: 4px 10px;
 		float: right;
 		position: relative;
-		top: 10px;
+		bottom:-10px;
 		margin-left:10px;
 	}
 	
@@ -1109,26 +1109,26 @@ background-color: #2f96b4;
 		font-size: 14px;
 		font-weight: 800;
 		color: white;
-		background: #f17438;
+		background: #2fbf75;
 		border-radius: 3px;
 		display: inline;
 		padding: 4px 10px;
 		float: right;
 		position: relative;
-		top: 10px;
+		bottom:-10px;
 		margin-left:10px;
 	}
 	p.newtag {
 		font-size: 14px;
 		font-weight: 800;
 		color: white;
-		background: #463051;
+		background: #754D8A;
 		border-radius: 3px;
 		display: inline;
 		padding: 4px 10px;
 		float: right;
 		position: relative;
-		top: 10px;
+		bottom:-10px;
 	}
 	p.indicator-hint {
 		font-size:11px !important;
@@ -3689,6 +3689,11 @@ padding-top: 4px;
 .projectcontainer {
 	margin-left:5px !important;
 	margin-right:5px !important;
+}
+
+p.freetag, p.newtag, p.watchnowtag {
+	padding: 2px 7px;
+	bottom: 2px;
 }
 
 }
