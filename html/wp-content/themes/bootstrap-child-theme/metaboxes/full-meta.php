@@ -3,13 +3,10 @@
 
 		<p class="soft-warning" style="display:none;color:red">Remember to click save to save your new sort order! </p>
 	
-		<p>
-			<?php $mb->the_field('lessontitle'); ?>
-			<input type="text" placeholder="Title" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
-		</p> 
+	
 		<p>
 			<?php $mb->the_field('description'); ?>
-			<input type="text" placeholder="Description" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
+			<input type="text" placeholder="Sub-heading" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
 			
 		</p>
 	

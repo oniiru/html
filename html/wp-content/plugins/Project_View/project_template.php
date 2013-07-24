@@ -107,7 +107,7 @@ get_header(); ?>
 	</div>
 	<div class="projectindivtext">
 	<a href="<?php the_permalink() ?>">
-		<h2> <?php echo $techniquemeta['lessontitle']?> </h2>
+		<h2> <?php echo the_title() ?></h2>
 		<p><?php echo $techniquemeta['description']?> </p>
 	</a>
 	</div>
@@ -205,7 +205,7 @@ if ($appendix1 != '') { ?>
 		 <div class="accordion-group accordion-caret">
 		     <div class="accordion-heading">
 		       <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse-<?php the_ID(); ?>">
-		 <h4><?php echo $techniquemeta['lessontitle'] ?></h4></a></div>
+		 <h4><?php echo the_title() ?></h4></a></div>
 		 <div id="collapse-<?php the_ID(); ?>" class="accordion-body collapse">
 		      <div class="accordion-inner">
 		 <?php
