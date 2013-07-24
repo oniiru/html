@@ -115,7 +115,7 @@ get_header(); ?>
 			        jQuery("[rel='tooltip']").tooltip();
 			    });
 			</script>
-		<p data-toggle="tooltip" rel="tooltip" class="watchnowtag" title="Watch now! No Signup required.">DEMO LESSON  (?) </p> <?php
+		<p data-toggle="tooltip" rel="tooltip" class="watchnowtag" title="Watch now! No signup required.">DEMO LESSON  (?) </p> <?php
 			 } else{};?>
 		<?php }; 
 		$new_content = get_post_meta($post->ID, 'new_content', true);
