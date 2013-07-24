@@ -1069,7 +1069,7 @@ background-color: #2f96b4;
 	}
 	
 	.projectindivtext h2 {
-		font-size: 21px;
+		font-size: 20px;
 		color: #0088cc;
 		font-weight: 400;
 		line-height: 1em;
@@ -4247,6 +4247,10 @@ color: white;
 padding-top: 17px;
 padding-right: 5px;
 font-size: 28px;
+}
+
+.innerprojecttechniques a {
+	font-size:12px;
 }
 
 }
