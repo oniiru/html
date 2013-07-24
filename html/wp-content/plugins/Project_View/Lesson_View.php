@@ -33,6 +33,8 @@ array(
 'parent' => 'Parent Lesson'
 ),
 'public' => true,
+'rewrite' => array( 'slug' => 'lessons' ),
+
 'menu_position' => 5,
 'supports' =>
 array( 'title', 'editor', 'comments',
