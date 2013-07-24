@@ -31,6 +31,7 @@ array(
 'not_found_in_trash' =>
 'No Projects found in Trash',
 'parent' => 'Parent Project'
+'rewrite' => array( 'slug' => 'courses' ),
 ),
 'public' => true,
 'menu_position' => 5,
