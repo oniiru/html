@@ -30,7 +30,7 @@ array(
 'not_found' => 'No Projects found',
 'not_found_in_trash' =>
 'No Projects found in Trash',
-'parent' => 'Parent Project'
+'parent' => 'Parent Project',
 'rewrite' => array( 'slug' => 'courses' ),
 ),
 'public' => true,
