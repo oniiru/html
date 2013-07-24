@@ -4303,5 +4303,8 @@ font-size: 28px;
 	font-size:12px;
 }
 
+p.freetag, p.newtag, p.watchnowtag {
+	bottom:-17px;
+}
 }
 /* Mobile Portrait Size Only (devices and browsers) */
