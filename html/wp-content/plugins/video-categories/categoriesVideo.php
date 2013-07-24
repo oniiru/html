@@ -35,6 +35,7 @@ class categoriesVideo {
 
 	function createMetaAccessBox() {
 		add_meta_box('new-meta-boxvideo', 'Video Manager Settings', array(&$this, 'metaAccessBoxVideo'), 'page', 'normal', 'high');
+		add_meta_box('new-meta-boxvideo', 'Video Manager Settings', array(&$this, 'metaAccessBoxVideo'), 'lesson_views', 'side', 'low');
 		add_submenu_page('options-general.php', 'Log the search result', 'Log the search result', 'administrator', 'log-search-result', array(&$this, 'log_search_result'));
 	}
 

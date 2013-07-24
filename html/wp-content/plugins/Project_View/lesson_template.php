@@ -30,44 +30,156 @@ get_header(); ?>
   		 				'lessons' => $current_terms,
   		 				'posts_per_page' => 1,			
   		 					);
-  		        $loop = new WP_Query( $parentpost );
-  				 while ( $loop->have_posts() ) : $loop->the_post();
-				
-  				?>
+							?>
 			   
-  			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
+				   
+				   <?php if('Anyone' == $techniquemeta['access']) { ?>
+	     		       <?php $loop = new WP_Query( $parentpost );
+	     				 while ( $loop->have_posts() ) : $loop->the_post();
+				
+	     				?>
+			   
+	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
 			 
-         <?php endwhile;   wp_reset_query();?>
-			   <div class="js-video [vimeo, widescreen]">
-				   <div class="newbutton2">
-					   <p><b>Way to go! </b>That was the last lesson in this section.</p>
-					  <a class="btn btn-large btn-custom" href="<?php bloginfo('url'); ?>/training"> Find more lessons!</a>
-				  </div>
-				   <div class="newbutton">
-					   <p><b>Looking good!</b> The Next Lesson is...</p>
-					  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;', true, '', 'lessons') ?></div>
-				   </div>
-		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $techniquemeta['vidembed'] . '?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
-		</div>
-		<div class="lessontitle"><?php echo the_title()?></div>
+	            <?php endwhile;   wp_reset_query();?>
+					   <div class="js-video [vimeo, widescreen]">
+						   <div class="newbutton2">
+							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
+							  <a class="btn btn-large btn-custom" href="<?php bloginfo('url'); ?>/training"> Find more lessons!</a>
+						  </div>
+						   <div class="newbutton">
+							   <p><b>Looking good!</b> The Next Lesson is...</p>
+							  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;', true, '', 'lessons') ?></div>
+						   </div>
+					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+		   		</div>
+		   		<div class="lessontitle"><?php echo the_title()?></div>
 	 		 
-		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
 		 
-		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
-		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
+		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
+		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
 		 
-	 </div>
+		   	 </div>
 		 
-	 <script>
-	 jQuery(document).ready( function(){
-		 jQuery('.leftalert:empty, .rightalert:empty').hide();
+		   	 <script>
+		   	 jQuery(document).ready( function(){
+		   		 jQuery('.leftalert:empty, .rightalert:empty').hide();
 		 
-	 });
-	 </script>
+		   	 });
+		   	 </script>
 		 
 		 
 		
-			 </div>
+		   			 </div>
+					   <?php } elseif('Free' == $techniquemeta['access']) {?> 
+					   
+					   <?php
+					   	if(pmpro_hasMembershipLevel('1'))
+					   	{
+					   	?>
+						<!-- Free and Has Free Membership -->
+ 	     		       <?php $loop = new WP_Query( $parentpost );
+ 	     				 while ( $loop->have_posts() ) : $loop->the_post();
+				
+ 	     				?>
+			   
+ 	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
+			 
+ 	            <?php endwhile;   wp_reset_query();?>
+ 					   <div class="js-video [vimeo, widescreen]">
+ 						   <div class="newbutton2">
+ 							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
+ 							  <a class="btn btn-large btn-custom" href="<?php bloginfo('url'); ?>/training"> Find more lessons!</a>
+ 						  </div>
+ 						   <div class="newbutton">
+ 							   <p><b>Looking good!</b> The Next Lesson is...</p>
+ 							  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;', true, '', 'lessons') ?></div>
+ 						   </div>
+ 					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+ 		   		</div>
+ 		   		<div class="lessontitle"><?php echo the_title()?></div>
+	 		 
+ 		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+		 
+ 		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
+ 		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
+		 
+ 		   	 </div>
+		 
+ 		   	 <script>
+ 		   	 jQuery(document).ready( function(){
+ 		   		 jQuery('.leftalert:empty, .rightalert:empty').hide();
+		 
+ 		   	 });
+ 		   	 </script>
+		 
+		 
+		
+ 		   			 </div>
+						
+						
+						<?php } else {?>
+							<!-- Free but doesn't have free membership -->
+							
+							<?php } ?>
+							
+					   
+					   <?php } elseif ('Paid' == $techniquemeta['access']) {?>  
+					   
+						   <?php
+						   	if(pmpro_hasMembershipLevel(array(2,3,4,5,6,7)))
+						   	{
+						   	?>
+							<!-- Paid and has paid membership -->
+	 	     		       <?php $loop = new WP_Query( $parentpost );
+	 	     				 while ( $loop->have_posts() ) : $loop->the_post();
+				
+	 	     				?>
+			   
+	 	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
+			 
+	 	            <?php endwhile;   wp_reset_query();?>
+	 					   <div class="js-video [vimeo, widescreen]">
+	 						   <div class="newbutton2">
+	 							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
+	 							  <a class="btn btn-large btn-custom" href="<?php bloginfo('url'); ?>/training"> Find more lessons!</a>
+	 						  </div>
+	 						   <div class="newbutton">
+	 							   <p><b>Looking good!</b> The Next Lesson is...</p>
+	 							  <div class="nolink btn btn-large btn-custom"><?php be_next_post_link('%link', '%title &raquo;', true, '', 'lessons') ?></div>
+	 						   </div>
+	 					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+	 		   		</div>
+	 		   		<div class="lessontitle"><?php echo the_title()?></div>
+	 		 
+	 		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+		 
+	 		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
+	 		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
+		 
+	 		   	 </div>
+		 
+	 		   	 <script>
+	 		   	 jQuery(document).ready( function(){
+	 		   		 jQuery('.leftalert:empty, .rightalert:empty').hide();
+		 
+	 		   	 });
+	 		   	 </script>
+		 
+		 
+		
+	 		   			 </div>
+						
+							<?php } else {?>
+								<!-- Paid but doesn't have paid membership -->
+								
+								<?php } ?>
+					   <?php }; ?>
+				   
+	
+			
+		
 <?php endwhile; ?>			
 
 <?php else : ?>

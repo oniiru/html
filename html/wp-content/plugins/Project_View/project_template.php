@@ -109,9 +109,23 @@ get_header(); ?>
 	<a href="<?php the_permalink() ?>">
 		<h2> <?php echo the_title() ?></h2>
 		<p><?php echo $techniquemeta['description']?> </p>
-	</a>
-	</div>
-	<?php }; ?>
+		<?php if('Free' == $techniquemeta['access']) {?> <p class="freetag">FREE LESSON </p><?php } elseif('Anyone' == $techniquemeta['access']) { ?>
+			<script type="text/javascript">
+			    jQuery(function () {
+			        jQuery("[rel='tooltip']").tooltip();
+			    });
+			</script>
+		<p data-toggle="tooltip" rel="tooltip" class="watchnowtag" title="Watch now! No Signup required.">DEMO LESSON  (?) </p> <?php
+			 } else{};?>
+		<?php }; 
+		$new_content = get_post_meta($post->ID, 'new_content', true);
+		$expired_date = get_post_meta($post->ID, 'expire_date', true);
+		
+		if ($new_content == 'on' && strtotime($expired_date) >= strtotime('now')) { ?>
+			<p class="newtag"> NEW</p> <?php } else{};?>
+
+		</a>
+	
 	           </article>
 		  
 	       <?php endwhile; ?>
@@ -144,6 +158,7 @@ if(NULL !== $teeheeid) {
 		width:210px;
 		height:210px;
 		margin:auto;
+	
 	}
 	</style>
 <div class="nextprojectimage"> 

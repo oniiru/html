@@ -1011,7 +1011,7 @@ background-color: #2f96b4;
 	.projectquiz {
 		width: 300px;
 		margin: auto;
-		background: #559e78;
+		background: #2fbf75;
 		border-radius: 3px;
 		text-align: right;
 		height: 75px;
@@ -1019,7 +1019,7 @@ background-color: #2f96b4;
 	}
 	
 	.projectquiz:hover {
-		background-color:#4E8568
+		background-color:#559e78;
 	}
 	
 	.projectquiz h2 {
@@ -1058,7 +1058,7 @@ background-color: #2f96b4;
 	.projectindivtext {
 		height:88px;
 		margin-top:8px;
-		border:1px solid #ddd;
+		border:1px solid #bebbbb;
 		display:inline-block;
 		width:440px;
 		border-radius: 0 5px 5px 0;
@@ -1086,6 +1086,49 @@ background-color: #2f96b4;
 		font-size:16px;
 		color:#262626;
 		font-weight:300;
+	}
+	p.freetag {
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		background: #2fbf75;
+		border-radius: 3px;
+		display: inline;
+		padding: 4px 10px;
+		float: right;
+		position: relative;
+		top: 10px;
+		margin-left:10px;
+	}
+	
+	div[class="tooltip-inner"] {
+	    font-size:13px !important
+	}
+	
+	p.watchnowtag {
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		background: #f17438;
+		border-radius: 3px;
+		display: inline;
+		padding: 4px 10px;
+		float: right;
+		position: relative;
+		top: 10px;
+		margin-left:10px;
+	}
+	p.newtag {
+		font-size: 14px;
+		font-weight: 800;
+		color: white;
+		background: #463051;
+		border-radius: 3px;
+		display: inline;
+		padding: 4px 10px;
+		float: right;
+		position: relative;
+		top: 10px;
 	}
 	p.indicator-hint {
 		font-size:11px !important;
