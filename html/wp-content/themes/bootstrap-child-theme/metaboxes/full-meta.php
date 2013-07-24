@@ -16,9 +16,16 @@
 			<option value="">Select...</option>
 			<option value="a"<?php $mb->the_select_state('a'); ?>>Video Lesson</option>
 			<option value="b"<?php $mb->the_select_state('b'); ?>>Quiz</option>
-			<option value="c"<?php $mb->the_select_state('c'); ?>>Other</option>
 		</select><br><br>
 		
+		<label>Who has access</label>
+		<?php $mb->the_field('access'); ?>
+		<select name="<?php $mb->the_name(); ?>">
+			<option value="Anyone"<?php $mb->the_select_state('Anyone'); ?>>Anyone</option>
+			<option value="Free"<?php $mb->the_select_state('Free'); ?>>Free</option>
+			<option value="Paid"<?php $mb->the_select_state('Paid'); ?>>Paid</option>
+			
+		</select><br><br>
 		<p>
 			<?php $mb->the_field('vidembed'); ?>
 			<input type="text" name="<?php $mb->the_name(); ?>" placeholder="The Vimeo ID (just the number)" value="<?php $mb->the_value(); ?>">

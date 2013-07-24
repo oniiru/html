@@ -283,7 +283,7 @@ padding:0px;
 	
 }
 .projectcomments textarea#comment {
-	width:97%;
+	width:96%;
 }
 
 .projectcomments ol.commentlist li.bypostauthor {
@@ -343,6 +343,8 @@ color: rgb(134, 134, 134);
 	font-size: 14px;
 	font-weight: 400;
 	display:inline-block;
+	max-width:85%;
+	vertical-align:top;
 	
 }
 
