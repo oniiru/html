@@ -30,10 +30,11 @@ array(
 'not_found' => 'No Projects found',
 'not_found_in_trash' =>
 'No Projects found in Trash',
-'parent' => 'Parent Project',
-'rewrite' => array( 'slug' => 'courses' ),
+'parent' => 'Parent Project'
 ),
 'public' => true,
+'rewrite' => array( 'slug' => 'courses' ),
+
 'menu_position' => 5,
 'supports' =>
 array( 'title', 'editor', 'comments',
