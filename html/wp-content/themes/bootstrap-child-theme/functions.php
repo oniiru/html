@@ -417,9 +417,10 @@ function team_registration_checks()
 add_filter("pmpro_registration_checks", "hub_registration_checks");
 
 function my_show_extra_profile_fields($user)
-{
+{	
+	$newmemberlevel = $user->membership_level->ID;
 ?>
-<?php if ($pmpro_level->id == '7') {?> 
+<?php if ($newmemberlevel == '7') {?> 
 
 	<h3>Extra profile information</h3>
  
@@ -436,7 +437,7 @@ function my_show_extra_profile_fields($user)
 	</table>
 <?php
 }
-elseif ($pmpro_level->id == '8') {?> 
+elseif ($newmemberlevel == '8') {?> 
 
 		<h3>Best Robotics Information</h3>
  
