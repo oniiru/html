@@ -228,7 +228,7 @@ function special_nav_class($classes, $item) {
 }
 add_action( 'init', 'blockusers_init' );
 function blockusers_init() {
-    if ( is_admin() && ! current_user_can( 'manage_options' ) &&
+    if ( is_admin() && ! current_user_can( 'edit_pages' ) &&
        ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
         wp_redirect( home_url() );
         exit;
