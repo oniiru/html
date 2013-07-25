@@ -113,7 +113,7 @@ elseif('Paid' == $projectmeta['access']) { ?>
 	</div>
 	<div class="vertline firstvert"></div>
 	<div id="main" class="clearfix homepage projectcontainer" role="main">
-	   <div style="display:block">
+	   <div style="display:block; margin-bottom:50px">
 		
 		   <?php
 		   		   
