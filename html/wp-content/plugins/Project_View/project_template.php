@@ -61,9 +61,50 @@ get_header(); ?>
 			echo $loop->post_count;
 			?> Lessons &nbsp;&#8226;&nbsp; <?php echo $projectmeta['totallength']?> Min. Total</p> </span>
 	</div>
-		<div class="closedinnerright">
-<?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>		</div>
+		
+ <?php if('Free' == $projectmeta['access']) { ?>		
+	 <?php if ( is_user_logged_in() ) { ?>  
+	 	<div style="margin-top:55px !important" class="closedinnerright">
+	 	<?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
+		 
+		 
+		  <?php } else {?> 
+		 <div class="closedinnerright">
+		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
+<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-success btn-large"> Start This Course for Free </a>
+<p class="demolessons"> - or watch demo lessons below - </p>
+<?php } }
+elseif('Paid' == $projectmeta['access']) { ?>
+   <?php
+   	if(pmpro_hasMembershipLevel('0'))
+   	{
+   	?>
+		 <div class="closedinnerright">
+		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
+<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-success btn-large"> Enroll Now to Begin </a>
+<p class="demolessons"> - or watch demo lessons below - </p>
+
+<?php }
+	elseif(pmpro_hasMembershipLevel('1'))
+	{
+	?>
+		 <div class="closedinnerright">
+		 <?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
+<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-success btn-large"> Upgrade Now to Begin </a>
+<p class="demolessons"> - or watch demo lessons below - </p>
+
+<?php } else {?>
+	
+ 	<div style="margin-top:55px !important" class="closedinnerright">
+ 	<?php echo '<iframe id="main_video" src="http://player.vimeo.com/video/' . $projectmeta['vidembed'] . '?api=1&amp;player_id=main_video" width="350" height="219" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>' ?>
+	
+	<?php }
+}; ?>
+
+
 	</div>
+	</div>
+
 </div>
 
 <div id="content" class="clearfix row-fluid projectcontent">

@@ -7,41 +7,56 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <?php  global $full_mb;
+      		 $techniquemeta = $full_mb->the_meta(); 
+			 
+	$terms = get_the_terms( $post->ID, 'lessons' );
 
-<div id="content" class="lessonview clearfix row-fluid">
+		$varlesson = array();
+	foreach ( $terms as $term ) {
+		$varlesson[] = $term->name;
+	};
+				
+		$current_terms = join( ", ", $varlesson );
 	
-	<div id="main" class="clearfix homepage rawr" role="main">
-	   <div style="display:block">
-  		 <div style="display:block;overflow:hidden;max-width:800px;margin:auto;margin-bottom:30px">
-		    <?php  global $full_mb;
-		      		 $techniquemeta = $full_mb->the_meta(); 
-					 
-			$terms = get_the_terms( $post->ID, 'lessons' );
+        $parentpost = array(
+ 		   		'post_type' => 'project_views',
+ 				'lessons' => $current_terms,
+ 				'posts_per_page' => 1,			
+ 					);
+		
+					?>
+ <style type="text/css">
+ .lessontop {
+	 <?php $backgroundimage = $techniquemeta['backgroundimage']; 
+	if ( NULL == $backgroundimage){ ?>
+		background-image: url('<?php echo plugins_url() ?>/Project_View/projectdefaultbg.png');
+		<?php } else {?> 
+		background-image: url('<?php echo $backgroundimage ?>');	
+			<?php }; ?>
+	
+	 background-color:<?php echo $techniquemeta['color']?> !important;
+	 background-repeat:no-repeat;
+	 background-position:right -75px;
+	 <?php echo $techniquemeta['bgadjustments']?>
+ }
+ </style>
+	<div class="lessontop">
 
-				$varlesson = array();
-			foreach ( $terms as $term ) {
-				$varlesson[] = $term->name;
-			};
-						
-				$current_terms = join( ", ", $varlesson );
-			
-  		        $parentpost = array(
-  		 		   		'post_type' => 'project_views',
-  		 				'lessons' => $current_terms,
-  		 				'posts_per_page' => 1,			
-  		 					);
-							?>
+		    
 			   
 				   
 				   <?php if('Anyone' == $techniquemeta['access']) { ?>
-	     		       <?php $loop = new WP_Query( $parentpost );
-	     				 while ( $loop->have_posts() ) : $loop->the_post();
-				
-	     				?>
-			   
-	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
-			 
-	            <?php endwhile;   wp_reset_query();?>
+					   <div class="content lessonview clearfix row-fluid">
+						   <?php $forwardimg = plugins_url().'/Project_View/forwardarrow.png';
+						   		$backimg = plugins_url().'/Project_View/backarrow.png' ?>
+	
+					   	<div class="clearfix homepage rawr main" role="main">
+   				  		 <div class="backarrow"><?php be_previous_post_link('%link', '<img src="'.$backimg.'" alt="Previous" />', true, '', 'lessons') ?></div>
+				 		 <div class="forwardarrow"><?php be_next_post_link('%link', '<img src="'.$forwardimg.'" alt="Next" />', true, '', 'lessons') ?></div>
+							
+					   	   <div style="display:block">
+					     		 <div style="display:block;overflow:hidden;max-width:800px;margin:auto;">
 					   <div class="js-video [vimeo, widescreen]">
 						   <div class="newbutton2">
 							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
@@ -53,13 +68,31 @@ get_header(); ?>
 						   </div>
 					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
 		   		</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+</div>
+<div class="content lessonview clearfix row-fluid">
+	
+	<div class="clearfix homepage rawr" role="main">
+	   <div style="display:block">
+  		 <div style="text-align:right;display:block;overflow:hidden;max-width:800px;margin:auto;margin-bottom: 56px;border-bottom: 1px solid #ddd;padding-bottom: 15px;">
+			 <div class="titlewrap">
 		   		<div class="lessontitle"><?php echo the_title()?></div>
-	 		 
-		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
-		 
-		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
-		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
-		 
+  		       <?php $loop = new WP_Query( $parentpost );
+  				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+  				?>
+	   
+  			<a class="nounderline" href="<?php echo get_permalink() ?>"><p class="returnproject">Back to the Course: <?php the_title()?></p></a>
+	 
+         <?php endwhile;   wp_reset_query();?>
+	 </div>
+		   		 <div class="downloadfileset"><a style="font-weight:bold" class="nounderline" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+
 		   	 </div>
 		 
 		   	 <script>
@@ -75,18 +108,20 @@ get_header(); ?>
 					   <?php } elseif('Free' == $techniquemeta['access']) {?> 
 					   
 					   <?php
-					   	if(pmpro_hasMembershipLevel('1'))
+					   		if(pmpro_hasMembershipLevel(array(1,2,3,4,5,6,7)))
 					   	{
 					   	?>
 						<!-- Free and Has Free Membership -->
- 	     		       <?php $loop = new WP_Query( $parentpost );
- 	     				 while ( $loop->have_posts() ) : $loop->the_post();
-				
- 	     				?>
-			   
- 	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
-			 
- 	            <?php endwhile;   wp_reset_query();?>
+ 					   <div class="content lessonview clearfix row-fluid">
+ 						   <?php $forwardimg = plugins_url().'/Project_View/forwardarrow.png';
+ 						   		$backimg = plugins_url().'/Project_View/backarrow.png' ?>
+	
+ 					   	<div class="clearfix homepage rawr main" role="main">
+    				  		 <div class="backarrow"><?php be_previous_post_link('%link', '<img src="'.$backimg.'" alt="Previous" />', true, '', 'lessons') ?></div>
+ 				 		 <div class="forwardarrow"><?php be_next_post_link('%link', '<img src="'.$forwardimg.'" alt="Next" />', true, '', 'lessons') ?></div>
+							
+ 					   	   <div style="display:block">
+ 					     		 <div style="display:block;overflow:hidden;max-width:800px;margin:auto;">
  					   <div class="js-video [vimeo, widescreen]">
  						   <div class="newbutton2">
  							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
@@ -98,13 +133,31 @@ get_header(); ?>
  						   </div>
  					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
  		   		</div>
+ 			</div>
+ 		</div>
+		
+ 	</div>
+	
+ </div>
+ </div>
+ <div class="content lessonview clearfix row-fluid">
+	
+ 	<div class="clearfix homepage rawr" role="main">
+ 	   <div style="display:block">
+   		 <div style="text-align:right;display:block;overflow:hidden;max-width:800px;margin:auto;margin-bottom: 56px;border-bottom: 1px solid #ddd;padding-bottom: 15px;">
+ 			 <div class="titlewrap">
  		   		<div class="lessontitle"><?php echo the_title()?></div>
-	 		 
- 		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
-		 
- 		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
- 		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
-		 
+   		       <?php $loop = new WP_Query( $parentpost );
+   				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+   				?>
+	   
+   			<a class="nounderline" href="<?php echo get_permalink() ?>"><p class="returnproject">Back to the Course: <?php the_title()?></p></a>
+	 
+          <?php endwhile;   wp_reset_query();?>
+ 	 </div>
+ 		   		 <div class="downloadfileset"><a style="font-weight:bold" class="nounderline" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+
  		   	 </div>
 		 
  		   	 <script>
@@ -117,11 +170,46 @@ get_header(); ?>
 		 
 		
  		   			 </div>
+ 	     		      
 						
 						
 						<?php } else {?>
-							<!-- Free but doesn't have free membership -->
+							<!-- Free but doesn't have any membership -->
+							 <div class="content lessonview clearfix row-fluid">
+							 	<div class="clearfix homepage rawr noaccesslesson main" role="main">
+				 	   		       <?php $loop = new WP_Query( $parentpost );
+				 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+				 	   				?>
+	   
+									<h3><?php the_title()?></h3>
+							<?php endwhile;   wp_reset_query();?>
+		 	   		   
+							<h1><?php the_title()?></h1>
+ 		 	   		       <?php $loop = new WP_Query( $parentpost );
+ 		 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+ 			         		 $projectmeta = $project_mb->the_meta();
+ 							 $demoid = $projectmeta['bestexample']
+							 
+ 							 ?>
+							<img width="150" height="150" src="<?php echo $projectmeta['projectimage'] ?>">
+							<p>This lesson is totally free.<br> Simply sign up for a SolidWize Free Plan and enjoy!</p>
+<a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-large btn-success">Get Started for Free </a>
 							
+								</div>
+							 </div>
+							 
+						 </div>
+						 <div class="lessonbanner">
+						 	<div class="clearfix homepage rawr main" role="main">
+			 	   		       
+			 	   			
+	 				   			<p> Or <a class="nounderline" href="<?php echo get_permalink($demoid) ?>">watch a demo lesson</a> from this course</p>
+								<?php endwhile;   wp_reset_query();?>
+				   			
+	 					   		
+							 </div>
+							 
 							<?php } ?>
 							
 					   
@@ -132,14 +220,16 @@ get_header(); ?>
 						   	{
 						   	?>
 							<!-- Paid and has paid membership -->
-	 	     		       <?php $loop = new WP_Query( $parentpost );
-	 	     				 while ( $loop->have_posts() ) : $loop->the_post();
-				
-	 	     				?>
-			   
-	 	     			 <div style="width:100%; height:23px;text-align:right;padding-top:2px"><a href="<?php echo get_permalink() ?>"><p><i>Return to <?php the_title()?>.</i></p></a></div>
-			 
-	 	            <?php endwhile;   wp_reset_query();?>
+	 					   <div class="content lessonview clearfix row-fluid">
+	 						   <?php $forwardimg = plugins_url().'/Project_View/forwardarrow.png';
+	 						   		$backimg = plugins_url().'/Project_View/backarrow.png' ?>
+	
+	 					   	<div id="main" class="clearfix homepage rawr" role="main">
+	    				  		 <div class="backarrow"><?php be_previous_post_link('%link', '<img src="'.$backimg.'" alt="Previous" />', true, '', 'lessons') ?></div>
+	 				 		 <div class="forwardarrow"><?php be_next_post_link('%link', '<img src="'.$forwardimg.'" alt="Next" />', true, '', 'lessons') ?></div>
+							
+	 					   	   <div style="display:block">
+	 					     		 <div style="display:block;overflow:hidden;max-width:800px;margin:auto;">
 	 					   <div class="js-video [vimeo, widescreen]">
 	 						   <div class="newbutton2">
 	 							   <p><b>Way to go! </b>That was the last lesson in this section.</p>
@@ -151,13 +241,31 @@ get_header(); ?>
 	 						   </div>
 	 					   <iframe id="main_video" src="http://player.vimeo.com/video/<?php echo $techniquemeta['vidembed']?>?api=1&amp;player_id=main_video" width="700" height="438" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
 	 		   		</div>
+	 			</div>
+	 		</div>
+		
+	 	</div>
+	
+	 </div>
+	 </div>
+	 <div class="content lessonview clearfix row-fluid">
+	
+	 	<div class="clearfix homepage rawr" role="main">
+	 	   <div style="display:block">
+	   		 <div style="text-align:right;display:block;overflow:hidden;max-width:800px;margin:auto;margin-bottom: 56px;border-bottom: 1px solid #ddd;padding-bottom: 15px;">
+	 			 <div class="titlewrap">
 	 		   		<div class="lessontitle"><?php echo the_title()?></div>
-	 		 
-	 		   		 <div class="alert alert-info dlalert"><a style="font-weight:bold" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
-		 
-	 		   		 <div style="margin-left:10px;width:70px" class="alert alert-info rightalert"><?php be_next_post_link('%link', 'Next &raquo', true, '', 'lessons') ?></div>
-	 		   		 <div class="alert alert-info rightalert"><?php be_previous_post_link('%link', '&laquo; Previous', true, '', 'lessons') ?></div>
-		 
+	   		       <?php $loop = new WP_Query( $parentpost );
+	   				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+	   				?>
+	   
+	   			<a class="nounderline" href="<?php echo get_permalink() ?>"><p class="returnproject">Back to the Course: <?php the_title()?></p></a>
+	 
+	          <?php endwhile;   wp_reset_query();?>
+	 	 </div>
+	 		   		 <div class="downloadfileset"><a style="font-weight:bold" class="nounderline" href="<?php echo $techniquemeta['filesets']?>"> Download the Exercise Fileset</a> </div>
+
 	 		   	 </div>
 		 
 	 		   	 <script>
@@ -170,11 +278,81 @@ get_header(); ?>
 		 
 		
 	 		   			 </div>
-						
-							<?php } else {?>
+	 	     		     
+							<?php } elseif(pmpro_hasMembershipLevel('1')) {?>
 								<!-- Paid but doesn't have paid membership -->
-								
-								<?php } ?>
+   							 <div class="content lessonview clearfix row-fluid">
+   							 	<div class="clearfix homepage rawr noaccesslesson main" role="main">
+   				 	   		       <?php $loop = new WP_Query( $parentpost );
+   				 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+   				 	   				?>
+	   
+   									<h3><?php the_title()?></h3>
+   							<?php endwhile;   wp_reset_query();?>
+		 	   		   
+   							<h1><?php the_title()?></h1>
+    		 	   		       <?php $loop = new WP_Query( $parentpost );
+    		 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+    			         		 $projectmeta = $project_mb->the_meta();
+    							 $demoid = $projectmeta['bestexample']
+							 
+    							 ?>
+   							<img width="150" height="150" src="<?php echo $projectmeta['projectimage'] ?>">
+   							<p>This lesson requires a SolidWize Pro Membership. 
+   Sign up today for instant access with a free 7-day trial.</p>
+   <a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-large btn-success">Upgrade Now to Get Started </a>
+							
+   								</div>
+   							 </div>
+							 
+   						 </div>
+   						 <div class="lessonbanner">
+   						 	<div class="clearfix homepage rawr main" role="main">
+			 	   		       
+			 	   			
+   	 				   			<p> Or <a class="nounderline" href="<?php echo get_permalink($demoid) ?>">watch a demo lesson</a> from this course</p>
+   								<?php endwhile;   wp_reset_query();?>
+				   			
+	 					   		
+   							 </div>
+								<?php } else { ?>
+	   							 <div class="content lessonview clearfix row-fluid">
+	   							 	<div class="clearfix homepage rawr noaccesslesson main" role="main">
+	   				 	   		       <?php $loop = new WP_Query( $parentpost );
+	   				 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+		
+	   				 	   				?>
+	   
+	   									<h3><?php the_title()?></h3>
+	   							<?php endwhile;   wp_reset_query();?>
+		 	   		   
+	   							<h1><?php the_title()?></h1>
+	    		 	   		       <?php $loop = new WP_Query( $parentpost );
+	    		 	   				 while ( $loop->have_posts() ) : $loop->the_post();
+	    			         		 $projectmeta = $project_mb->the_meta();
+	    							 $demoid = $projectmeta['bestexample']
+							 
+	    							 ?>
+	   							<img width="150" height="150" src="<?php echo $projectmeta['projectimage'] ?>">
+	   							<p>This lesson requires a SolidWize Pro Membership. 
+	   Sign up today for instant access with a free 7-day trial.</p>
+	   <a href="<?php bloginfo('url'); ?>/pricing" class="btn btn-large btn-success">Enroll Now to Begin </a>
+							
+	   								</div>
+	   							 </div>
+							 
+	   						 </div>
+	   						 <div class="lessonbanner">
+	   						 	<div class="clearfix homepage rawr main" role="main">
+			 	   		       
+			 	   			
+	   	 				   			<p> Or <a class="nounderline" href="<?php echo get_permalink($demoid) ?>">watch a demo lesson</a> from this course</p>
+	   								<?php endwhile;   wp_reset_query();?>
+				   			
+	 					   		
+	   							 </div>
+							<?php	}?>
 					   <?php }; ?>
 				   
 	
@@ -196,6 +374,9 @@ get_header(); ?>
 
 <?php endif; ?>
 <?php wp_reset_query(); ?>
+
+</div></div>
+<div class="content lessonview clearfix row-fluid">
 
 	
  <div class="projectcomments">

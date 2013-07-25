@@ -57,6 +57,7 @@ h1 {
 
 
 
+
 .pricingpoints {
 	height:220px;
 }
@@ -177,6 +178,8 @@ h1 {
 	
 }
 
+
+
 .innerprojecttechniques {
 	padding:10px 10px;
 	background:white;
@@ -289,7 +292,7 @@ padding:0px;
 .projectcomments ol.commentlist li.bypostauthor {
 background:white;	
 }
-#main article {
+#main article, .main article {
 	margin-bottom:0px;
 }
 .projectcomments ol.commentlist li {
@@ -450,9 +453,20 @@ p.extraprojectinfo span {
 	float:right;
 	display:inline-block;
 	vertical-align:middle;
-	margin-top:55px;
+	margin-top:30px;
+	text-align:center;
 	
 }
+
+.closedinnerright iframe {
+	display:block;
+	margin:auto;
+}
+.closedinnerright a {
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
 .closedinnerright p {
 	display:inline-block;
 	vertical-align:middle;
@@ -888,7 +902,7 @@ background-color: #2f96b4;
 		direction:rtl;
 		
 	}
-	#main article {
+	#main article, .main article {
 		padding:0px !important;
 	}
 	.fillerthing {
@@ -910,7 +924,7 @@ background-color: #2f96b4;
 	}
 	
 	.lessonview {
-		margin-top:20px !important;
+		margin-top:0px !important;
 	}
 	.leftalert {
 		display:inline-block;
@@ -1177,18 +1191,69 @@ background-color: #2f96b4;
 	.dlalert a:hover, .leftalert a:hover, .rightalert a:hover {
 		text-decoration:none;
 	}
-	
+	.titlewrap {
+		display:inline-block;
+	}
 	.lessontitle {
-		background: #f8f8f8;
-		padding: 10px;
-		border: 1px solid #ddd;
-		border-radius: 0 0 5px 5px;
-		margin-bottom: 5px;
-		font-weight: 700;
-		font-size: 23px;
-		color: #535353;
+		padding: 5px;
+		text-transform: uppercase;
+		margin-bottom: 0px;
+		font-weight: 300;
+		font-size: 22px;
+		color: #252525;
+		text-align: right;
+		padding-right: 0px;
+		padding-bottom:0px;
+		display:inline-block;
+	}
+	.downloadfileset a {
+		color:#0C82CE;
+	}
+	.noaccesslesson {
+		height:480px ;
+	}
+	.downloadfileset {
+		display: inline-block;
+		float: left;
+		font-size: 14px;
+		margin-top: 2px;
+	}
+	.backarrow {
+		float:left;
+		position: relative;
+		margin-top: 209px;
+		left: 30px;
+		width:35px;
 	}
 	
+	.lessonbanner p {
+		color: white;
+		font-size: 15px;
+		margin-top: 13px;
+		font-style: italic;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+	.forwardarrow {
+		float:right;
+		position: relative;
+		margin-top: 209px;
+		right: 30px;
+		width:35px;
+	}
+	.returnproject {
+		font-weight: 700;
+		color: #0C82CE;
+		font-size: 12px;
+		text-align:right;
+	}
+	.returnproject:hover {
+		color:#036494;
+	}
+	
+	a.nounderline:hover {
+		text-decoration:none;
+	}
 	.nolink a {color:white;text-shadow:1px 1px 1px black;}
 	
 	.nolink a:hover {text-decoration:none; color:white;}
@@ -1336,7 +1401,7 @@ margin: auto;
 	text-align:left;
 }
 
-#content {
+#content, .content {
 	width:1000px;
 	margin:50px auto 0;
 	padding:0px;
@@ -3187,6 +3252,61 @@ h2.categoryTitle {
 	width:600px;
 	height:337px;
 }
+
+p.demolessons {
+	display: block;
+	font-size: 12px;
+	font-weight: 500;
+	font-style: italic;
+	margin-top: -8px;
+}
+.lessontop {
+	width:100%;
+	background:#463051;
+
+}
+
+.lessonbanner {
+	height:50px;
+	background:#282828;
+	margin-bottom: 50px;
+}
+
+.noaccesslesson h1 {
+	line-height: 1em;
+	font-weight: 900 !important;
+	font-size: 44px !important;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	font-family: "open sans", sans-serif !important;
+	max-width: 600px;
+	margin: auto;
+	margin-bottom:10px;
+}
+
+.noaccesslesson h3 {
+	margin: 0px;
+	line-height: 1em;
+	font-weight: 900 !important;
+	font-size: 18px !important;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	font-family: "open sans", sans-serif !important;
+	margin-top:30px;
+	margin-bottom:20px;
+}
+
+.noaccesslesson p {
+	margin: auto	;
+	line-height: 1.3em;
+	font-weight: 300 !important;
+	font-size: 16px !important;
+	color: white;
+	font-family: "open sans", sans-serif !important;
+	margin-top: 10px;
+	max-width: 382px;
+	margin-bottom:20px;
+}
 /* 6 - Media Queries
 ================================================== */
 @media only screen and (max-width: 910px){
@@ -3204,7 +3324,7 @@ h2.categoryTitle {
 	.middlething img, .leftthing img, .rightthing img {
 		width:240px !important;
 	}
-	#content {
+	#content, .content {
 		width:820px;
 		margin:50px auto 0;
 		padding:0px;
@@ -3337,7 +3457,7 @@ height:auto;
 	.pricingpoints {
 		height:250px;
 	}
-	#main {
+	#main, .main {
 		margin-left:10px;
 		margin-right:10px;
 	}
@@ -3419,11 +3539,11 @@ margin: auto;
 		width:auto;
 	}
 	
-	#content {
+	#content, .content {
 		width:459px;
 	}
 	
-	#content.projectcontent {
+	.content.projectcontent {
 		width:100%;
 	}
 	
@@ -3619,10 +3739,11 @@ max-width: 169px !important;
 }
 
 .closedprojectbar {
-	height:500px;
+	height:525px;
 	text-align:center;
 
 }
+
 
 .closedinnerleft h1{
 	max-width:inherit;
@@ -3796,7 +3917,7 @@ font-size: 17px !important;
 }
 
 
-#content {
+#content, .content {
 	width:inherit;
 }
 

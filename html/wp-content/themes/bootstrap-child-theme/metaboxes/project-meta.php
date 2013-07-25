@@ -33,7 +33,6 @@
 		<label>Who has access</label>
 		<?php $mb->the_field('access'); ?>
 		<select name="<?php $mb->the_name(); ?>">
-			<option value="Anyone"<?php $mb->the_select_state('Anyone'); ?>>Anyone</option>
 			<option value="Free"<?php $mb->the_select_state('Free'); ?>>Free</option>
 			<option value="Paid"<?php $mb->the_select_state('Paid'); ?>>Paid</option>
 			
@@ -72,10 +71,52 @@
 				
 				<p>
 					<?php $mb->the_field('bgadjustments'); ?>
-					<input type="text" value="<?php $mb->the_value(); ?>" placeholder="Adjust the background image if needed" rows="3" name="<?php $mb->the_name(); ?>" />
+					<input type="text" value="<?php $mb->the_value(); ?>" placeholder="Adjust the background image if needed (css)" rows="3" name="<?php $mb->the_name(); ?>" />
 				</p>
  
-		  
+				<div class="my_meta_control">
+					
+				<?php	$terms = get_the_terms( $post->ID, 'lessons' );
+
+						$varlesson = array();
+					foreach ( $terms as $term ) {
+						$varlesson[] = $term->name;
+					};
+				
+						$current_terms = join( ", ", $varlesson ); ?>
+						
+				            <?php $mb->the_field('bestexample'); ?>
+				            <p style="margin:2px 0;">
+				                <label>Best Free Example</label><br />
+				                
+								<select name="<?php $mb->the_name(); ?>">
+				                    <?php
+									global $full_mb;
+				                    $selected = ' selected="selected"';
+				                    global $post;
+				                    $args = array( 'post_type' => 'lesson_views', 'lessons' => $current_terms,'posts_per_page' => 200 );
+				                    $custom_posts = get_posts($args);
+									
+									
+				                    foreach($custom_posts as $post) : setup_postdata($post);
+									$techniquemeta = $full_mb->the_meta(); 
+									$accessmeta = $techniquemeta['access'];
+									if ("Anyone" == $accessmeta) { ?>
+									<option value="<?php echo get_the_id() ?>"
+										                       <?php if ($mb->get_the_value() == get_the_id() ) echo $selected;
+										                        echo '>' . get_the_title() . '</option>' . "\n";
+									
+									
+										}; 
+							
+				                    endforeach; 
+				                    ?>
+								</select>
+				            </p>
+ 
+						 
+    
+				</div>
 	
 	
 	

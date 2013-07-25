@@ -17,20 +17,20 @@ function create_project_view() {
 register_post_type( 'project_views',
 array(
 'labels' => array(
-'name' => 'Projects',
-'singular_name' => 'Project',
+'name' => 'Courses',
+'singular_name' => 'Course',
 'add_new' => 'Add New',
-'add_new_item' => 'Add New Project',
+'add_new_item' => 'Add New Course',
 'edit' => 'Edit',
-'edit_item' => 'Edit Project',
-'new_item' => 'New Project',
+'edit_item' => 'Edit Course',
+'new_item' => 'New Course',
 'view' => 'View',
-'view_item' => 'View Project',
-'search_items' => 'Search Projects',
-'not_found' => 'No Projects found',
+'view_item' => 'View Course',
+'search_items' => 'Search Courses',
+'not_found' => 'No Courses found',
 'not_found_in_trash' =>
-'No Projects found in Trash',
-'parent' => 'Parent Project'
+'No Courses found in Trash',
+'parent' => 'Parent Course'
 ),
 'public' => true,
 'rewrite' => array( 'slug' => 'courses' ),

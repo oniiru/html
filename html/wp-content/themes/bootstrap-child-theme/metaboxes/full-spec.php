@@ -8,6 +8,7 @@ $full_mb = new WPAlchemy_MetaBox(array
 	'context' => 'normal', // same as above, defaults to "normal"
 	'priority' => 'high', // same as above, defaults to "high"
 	'template' => get_stylesheet_directory() . '/metaboxes/full-meta.php'
+	
 ));
 
 /* eof */
