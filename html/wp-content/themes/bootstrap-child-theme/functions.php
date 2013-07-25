@@ -129,25 +129,36 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
 
     if ($level_id == 0) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
+        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
     if ($level_id == 1) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)))
+        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
 
     if (($level_id == 2) || ($level_id == 3) || ($level_id == 4) || ($level_id == 7)){
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
             $wp_user_object->set_role('standardmember');
     }
 
     if (($level_id == 5) || ($level_id == 6)) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
             $wp_user_object->set_role('promotionalmember');
+    }
+	
+    if ($level_id == 8) {
+        $wp_user_object = new WP_User($user_id);
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)))
+            $wp_user_object->set_role('bestroboticsmember');
+    }
+    if ($level_id == 9) {
+        $wp_user_object = new WP_User($user_id);
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+            $wp_user_object->set_role('ecocadmember');
     }
 
 }
@@ -267,6 +278,12 @@ function my_pmpro_registration_checks($pmpro_continue_registration)
 		pmpro_setMessage("A valid registration key is required. Please contact your instructor for further assistance.", "pmpro_error");
 		return false;
 	}
+    //if($pmpro_level->id == 1 && (empty($discount_code) || $discount_code != "REQUIRED_CODE")) //use this conditional to check for a specific code.
+    if($pmpro_level->id == 8 && (empty($discount_code) || $discount_code != "BESTROBOTICS2013"))
+  	{
+  		pmpro_setMessage("A valid registration key is required..", "pmpro_error");
+  		return false;
+  	}
 	
 	return $pmpro_continue_registration;
 }
@@ -294,6 +311,51 @@ function update_course_title($user_id)
 		update_user_meta($user_id, "class_title", $classtitle);
 }
 add_action('pmpro_after_checkout', 'update_course_title');
+
+//update the user after checkout
+function update_hub_name($user_id)
+{
+	if(isset($_REQUEST['hubname']))
+	{
+		$hubname = $_REQUEST['hubname'];
+	}
+	elseif(isset($_SESSION['hubname']))
+	{
+		//maybe in sessions?
+		$hubname = $_SESSION['hubname'];
+		
+		//unset
+		
+		unset($_SESSION['hubname']);
+	}
+	
+	
+	if(isset($hubname))
+		update_user_meta($user_id, "hub_name", $hubname);
+}
+add_action('pmpro_after_checkout', 'update_hub_name');
+//update the user after checkout
+function update_team_name($user_id)
+{
+	if(isset($_REQUEST['teamname']))
+	{
+		$teamname = $_REQUEST['teamname'];
+	}
+	elseif(isset($_SESSION['teamname']))
+	{
+		//maybe in sessions?
+		$teamname = $_SESSION['teamname'];
+		
+		//unset
+		
+		unset($_SESSION['teamname']);
+	}
+	
+	
+	if(isset($teamname))
+		update_user_meta($user_id, "team_name", $teamname);
+}
+add_action('pmpro_after_checkout', 'update_team_name');
 //require the fields
 function course_registration_checks()
 {
@@ -315,6 +377,45 @@ function course_registration_checks()
 
 add_filter("pmpro_registration_checks", "course_registration_checks");
 
+function hub_registration_checks()
+{
+	global $pmpro_msg, $pmpro_msgt, $current_user, $pmpro_level;
+	$hubname = $_REQUEST['hubname'];
+ 
+		if((($pmpro_level->id == 8) && $hubname) || ($pmpro_level->id != 8))
+		{
+		//all good
+		return true;
+		}
+		else
+		{
+		$pmpro_msg = "Please complete all required fields.";
+		$pmpro_msgt = "pmpro_error";
+		return false;
+		}
+	}
+
+add_filter("pmpro_registration_checks", "hub_registration_checks");
+function team_registration_checks()
+{
+	global $pmpro_msg, $pmpro_msgt, $current_user, $pmpro_level;
+	$teamname = $_REQUEST['teamname'];
+ 
+		if((($pmpro_level->id == 8) && $teamname) || ($pmpro_level->id != 8))
+		{
+		//all good
+		return true;
+		}
+		else
+		{
+		$pmpro_msg = "Please complete all required fields.";
+		$pmpro_msgt = "pmpro_error";
+		return false;
+		}
+	}
+
+add_filter("pmpro_registration_checks", "hub_registration_checks");
+
 function my_show_extra_profile_fields($user)
 {
 ?>
@@ -335,6 +436,34 @@ function my_show_extra_profile_fields($user)
 	</table>
 <?php
 }
+elseif ($pmpro_level->id == '8') {?> 
+
+		<h3>Best Robotics Information</h3>
+ 
+		<table class="form-table">
+		
+			<tr>
+				<th><label for="repname">Hub Name</label></th>
+ 
+				<td>
+					<input type="text" name="hubname" id="hubname" value="<?php echo esc_attr( get_user_meta($user->ID, 'hub_name', true) ); ?>" class="regular-text" /><br />				
+				</td>
+			</tr>
+			<tr>
+				<th><label for="repname">Team Name</label></th>
+ 
+				<td>
+					<input type="text" name="teamname" id="teamname" value="<?php echo esc_attr( get_user_meta($user->ID, 'team_name', true) ); ?>" class="regular-text" /><br />				
+				</td>
+			</tr>
+ 
+		</table>
+
+	<?php
+		
+		
+}
+
 }
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
@@ -347,6 +476,10 @@ function my_save_extra_profile_fields( $user_id )
 	
 	if(isset($_POST['classtitle']))
 		update_usermeta( $user_id, 'class_title', $_POST['classtitle'] );
+	if(isset($_POST['hubname']))
+		update_usermeta( $user_id, 'hub_name', $_POST['hubname'] );
+	if(isset($_POST['teamname']))
+		update_usermeta( $user_id, 'team_name', $_POST['teamname'] );
 }
 add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
 add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );

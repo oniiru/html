@@ -2208,7 +2208,7 @@ form.pmpro_form div {
 	margin:none !important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, input#hubname, input#teamname, .studentregistration input#discount_code {
 	width:355px;
 }
 
@@ -2878,7 +2878,7 @@ ul.bxslider {
 .opaque2 {
 	margin-top:5px !important;
 }
-input#classtitle {
+input#classtitle input#hubname, input#teamname, {
 	width:365px;
 }
 .pmpro_checkout thead th {
@@ -3061,7 +3061,7 @@ form.pmpro_form div {
 	margin:none !important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, input#hubname, input#teamname, .studentregistration input#discount_code {
 	width:355px;
 }
 
@@ -4189,7 +4189,7 @@ margin-top: 20px;
 min-width: 260px!important;
 }
 
-input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, .studentregistration input#discount_code {
+input#bfirstname, input#blastname, input#password, input#bemail, input#AccountNumber, input#classtitle, input#hubname, input#teamname, .studentregistration input#discount_code {
 width: 250px;
 }
 
