@@ -14,7 +14,7 @@ function wp_aff_show_thankyou_page()
 	$output .= '<h2 class="wp_aff_title">'.AFF_THANK_YOU.'</h2>';
 	$output .= '<h3>'.AFF_REGO_COMPLETE.'</h3>';
 	$output .= '<p class="message">'.AFF_REGO_COMPLETE_MESSAGE_ON_PAGE_VIEW;
-	$output .= '<a style="color:#CC0000;" href="'.wp_aff_view_get_url_with_separator("login").'"> '.AFF_LOGIN_HERE.'</a></p>';
+	$output .= '<br><a style="margin-top:20px" class="btn btn-custom btn-large" href="'.wp_aff_view_get_url_with_separator("login").'"> '.AFF_LOGIN_HERE.'</a></p>';
 	return $output;	
 }
 ?>

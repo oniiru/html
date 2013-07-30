@@ -67,7 +67,7 @@ function wp_aff_show_signup_form($recaptcha_error='')
 	  ?>
 
     <!-- Start Registration Form -->
-      <form action="" method="post" name="regForm" id="regForm" >
+      <form style="width:500px; margin-top:20px" 	action="" method="post" name="regForm" id="regForm" >
         <table width="95%" border="0" cellpadding="3" cellspacing="3" class="forms">
         
           <tr> 
@@ -113,37 +113,7 @@ function wp_aff_show_signup_form($recaptcha_error='')
             	echo '<td><b><input type="text" name="paypal_email" size="20" value="'.$_POST['paypal_email'].'"></b></td>';          		
           	}
           	?>
-          </tr>
-          <tr> 
-            <td><b><?php echo AFF_TAX_ID; ?>:</b></td>
-            <td><b> 
-              <input type="text" name="tax_id" size="20" value="<?php echo $_POST['tax_id']; ?>">
-              </b></td>
-          </tr>          
-          <tr> 
-            <td><b><?php echo AFF_ADDRESS; ?>:</b></td>
-            <td><b> 
-              <input type="text" name="astreet" size="20" value="<?php echo $_POST['astreet']; ?>">
-              </b></td>
-          </tr>
-          <tr> 
-            <td><b><?php echo AFF_TOWN; ?>:</b></td>
-            <td><b> 
-              <input type="text" name="atown" size="20" value="<?php echo $_POST['atown']; ?>">
-              </b></td>
-          </tr>
-          <tr> 
-            <td><b><?php echo AFF_STATE; ?>:</b></td>
-            <td><b> 
-              <input type="text" name="astate" size="20" value="<?php echo $_POST['astate']; ?>">
-              </b></td>
-          </tr>
-          <tr> 
-            <td><b><?php echo AFF_ZIP; ?>:</b></td>
-            <td><b> 
-              <input type="text" name="apostcode" size="20" value="<?php echo $_POST['apostcode']; ?>">
-              </b></td>
-          </tr>
+          </tr>    
           <tr> 
             <td><b><?php echo AFF_COUNTRY; ?>:</b></td>
             <td><b> 
@@ -157,7 +127,7 @@ function wp_aff_show_signup_form($recaptcha_error='')
           </tr>
 
           <tr> 
-            <td><b><?php echo AFF_PHONE; ?>:</b></td>
+            <td><b><?php echo AFF_PHONE; ?>: *</b></td>
             <td><b> 
               <input type="text" name="aphone" size="20" value="<?php echo $_POST['aphone']; ?>">
               </b></td>
@@ -175,15 +145,16 @@ function wp_aff_show_signup_form($recaptcha_error='')
             <td colspan="2"><h4><strong><?php echo AFF_LOGIN_DETAILS; ?></strong></h4></td>
           </tr>
           <tr> 
-            <td class="randomadjust"><?php echo AFF_USERNAME; ?><span class="required"><font color="#CC0000">*</font></span></td>
+            <td ><?php echo AFF_USERNAME; ?><span class="required"><font color="#CC0000">*</font></span></td>
             <td><input name="user_name" type="text" id="user_name" class="required username" minlength="5" value="<?php echo $_POST['user_name']; ?>" > 
-            	<br /><span style="color:red; font: bold 12px verdana; " id="checkid" ></span>
+            	
             </td>
             
           <tr>
           	<td></td>
           	<td>
-              <input name="btnAvailable" type="button" class="button" id="btnAvailable" onclick='jQuery(document).ready(function($){$("#checkid").html("<?php echo AFF_SI_PLEASE_WAIT; ?>"); $.get("<?php echo WP_AFF_PLATFORM_URL.'/affiliates/checkuser.php'; ?>",{ cmd: "check", user: $("#user_name").val() } ,function(data){  $("#checkid").html(data); }); });' value="<?php echo AFF_AVAILABILITY_BUTTON_LABEL; ?>">                        	
+				<span style="color:red; font: bold 12px verdana;margin-left:5px " id="checkid" ></span><br />
+              <input style="margin-left:-6px" name="btnAvailable" type="button" class="button" id="btnAvailable" onclick='jQuery(document).ready(function($){$("#checkid").html("<?php echo AFF_SI_PLEASE_WAIT; ?>"); $.get("<?php echo WP_AFF_PLATFORM_URL.'/affiliates/checkuser.php'; ?>",{ cmd: "check", user: $("#user_name").val() } ,function(data){  $("#checkid").html(data); }); });' value="<?php echo AFF_AVAILABILITY_BUTTON_LABEL; ?>">                        	
           	</td>
           </tr>  			  	     
             
@@ -245,7 +216,7 @@ function wp_aff_show_signup_form($recaptcha_error='')
       </form>
 
       <p>&nbsp;</p>
-      <p><?php echo AFF_ALREADY_MEMBER; ?>? <img src="<?php echo WP_AFF_PLATFORM_URL.'/affiliates/images/login.png'; ?>" /> <a style="color:#CC0000" href="<?php echo $login_url; ?>"><?php echo AFF_LOGIN_HERE; ?></a></p>
+      <p><?php echo AFF_ALREADY_MEMBER; ?>?	 <a style="color:#CC0000" href="<?php echo $login_url; ?>"><?php echo AFF_LOGIN_HERE; ?></a></p>
 <?php
 }
 
@@ -354,7 +325,7 @@ function wp_aff_signup_form_processing_code()
 		//exit();		
 		
   	    echo "<h2 class='wp_aff_title'>".AFF_THANK_YOU."</h2> <p class='message'>".AFF_REGO_COMPLETE."</p>";
-  	    echo '<a style="color:#CC0000" href="'.$login_url.'">'.AFF_LOGIN_HERE.'</a>';
+  	    echo '<a style="display:block" class="btn btn-cusom btn-large" href="'.$login_url.'">'.AFF_LOGIN_HERE.'</a>';
 	  	return "processed";
 	}	
 }

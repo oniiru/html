@@ -93,7 +93,7 @@ include "header.php"; ?>
           <tr> 
             <td colspan="2"> <div align="center"> 
                 <p> 
-                  <input name="doReset" type="submit" class="button" id="doLogin3" value="<?php echo AFF_RESET_BUTTON_LABEL; ?>">
+                  <input name="doReset" type="submit" class="btn btn-custom" id="doLogin3" value="<?php echo AFF_RESET_BUTTON_LABEL; ?>">
                 </p>
                 <p><img src="images/register.png" /> <a style="color:#CC0000;" href="register.php"><?php echo AFF_AFFILIATE_SIGN_UP_LABEL; ?></a><font color="#EEE">
                   |</font> <img src="images/login.png" /> <a href="login.php"><?php echo AFF_LOGIN_PAGE_LINK_TEXT; ?></a></p>

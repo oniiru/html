@@ -28,7 +28,6 @@ function wp_aff_show_contact_form()
 	    $output .= "<br /><strong>".AFF_C_MSG_SENT."</strong><br /><br />";
 	}
 
-	$output .= '<img src="'.WP_AFF_PLATFORM_URL.'/affiliates/images/contact.png" alt="Contact Icon" />';
 	
 	global $wpdb;
 	$affiliates_table_name = WP_AFF_AFFILIATES_TBL_NAME;

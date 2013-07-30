@@ -28,7 +28,7 @@ border: 3px solid #DDD;
 -khtml-border-radius: 3px;
 -webkit-border-radius: 3px;
 border-radius: 3px;
-padding:5px 0 0 0;
+padding: 5px 10px 0 10px;
 margin:10px 0;
 }
 #wp_aff_nav ul{
@@ -70,6 +70,28 @@ cursor:hand;
   float: left;
   list-style:none;
 }
+
+#wp_aff_inside label {
+	display:inline;
+}
+#update_user input, #update_user textarea, #update_user select  {
+	float:right;
+}
+
+#wp_aff_inside form {
+	margin-bottom:30px;
+}
+#update_user label {
+	position:relative;
+	top:8px;
+}
+
+#update_user p {
+	height:40px;
+}
+#wp_aff_inside img {
+	box-shadow:none !important;
+}
 /*** affiliate view body ***/
 #wp_aff_inside {
   border: 3px solid #DDD;
@@ -80,7 +102,6 @@ cursor:hand;
   padding: 20px 10px 20px 10px;
   text-align: center;
   margin:0 0 10px 0;
-  width:95%;
   word-wrap:break-word;  
 }
 .wp_aff_title {
@@ -317,7 +338,6 @@ form#wp_aff_contact label {
 display: block;
 margin-left: auto;
 margin-right: auto;
-width: 300px; 
 padding: 10px;
 }
 .wp-aff-box{

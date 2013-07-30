@@ -61,68 +61,70 @@ function wp_aff_show_edit_details()
 		<img src="<?php echo WP_AFF_PLATFORM_URL.'/affiliates/images/user_signup.png'; ?>" alt="affiliate details icon" />
 	      <form action="" method="post" ENCTYPE=multipart/form-data>
 	        <div id="update_user">
-	          <p><label><?php echo AFF_AFFILIATE_ID; ?>:</label>
+	          <p><label style="top:0px"><?php echo AFF_AFFILIATE_ID; ?>:</label>
 	          <?php echo '<strong>'.$_SESSION['user_id'].'</strong>'; ?>
 	          </p>
+			  <p>
 	          <label><?php echo AFF_PASSWORD; ?>: </label>
-	          <span style="font-size:10px;"><?php echo AFF_LEAVE_EMPTY_TO_KEEP_PASSWORD; ?></span>
-
 	            <input class="user-edit" type=password name=password value="">
-	            <input name="encrypted-pass" type="hidden" value="<?php echo $editingaff->pass; ?>" size="20" />            	            
-	        
+	            <input placeholder="<?php echo AFF_LEAVE_EMPTY_TO_KEEP_PASSWORD; ?>" name="encrypted-pass" type="hidden" value="<?php echo $editingaff->pass; ?>" size="20" />
+				            	            
+			</p>
+			<p>
 	          <label><?php echo AFF_COMPANY; ?>: </label>
 	            <input class="user-edit" type=text name=clientcompany value="<?php echo $editingaff->company; ?>">
-	          
-	          
+			</p>
+			<p>
 	          <label><?php echo AFF_FIRST_NAME; ?>: </label>
 	            <input class="user-edit" type=text name=clientfirstname value="<?php echo $editingaff->firstname; ?>">
-	          
+			</p>
+			<p>
 	          <label><?php echo AFF_LAST_NAME; ?>: </label>
 	            <input class="user-edit" type=text name=clientlastname value="<?php echo $editingaff->lastname; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_EMAIL; ?>: </label>
 	            <input class="user-edit" type=text name=clientemail value="<?php echo $editingaff->email; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_ADDRESS; ?>: </label>
 	            <input class="user-edit" type=text name=clientstreet value="<?php echo $editingaff->street; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_TOWN; ?>: </label>
 	            <input class="user-edit" type=text name=clienttown value="<?php echo $editingaff->town; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_STATE; ?>: </label>
 	            <input class="user-edit" type=text name=clientstate value="<?php echo $editingaff->state; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_COUNTRY; ?>: </label>
 	            <select class="user-select" name=clientcountry class=dropdown>
 	                <?php foreach($GLOBALS['countries'] as $key => $country)
 	                    print '<option value="'.$key.'" '.($editingaff->country == $key ? 'selected' : '').'>'.$country.'</option>'."\n";
 	                ?>
 	            </select>
-	          
+			</p><p>
 	          <label><?php echo AFF_ZIP; ?>: </label>
 	            <input class="user-edit" type=text name=clientpostcode value="<?php echo $editingaff->postcode; ?>">
-	          
+			</p><P>
 	          <label><?php echo AFF_WEBSITE; ?>: </label>
 	            <input class="user-edit" type=text name=webpage value="<?php echo $editingaff->website; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_PHONE; ?>: </label>
 	            <input class="user-edit" type=text name=clientphone value="<?php echo $editingaff->phone; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_FAX; ?>: </label>
 	            <input class="user-edit" type=text name=clientfax value="<?php echo $editingaff->fax; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_PAYPAL_EMAIL; ?>: </label>
 	            <input class="user-edit" type=text name=clientpaypalemail value="<?php echo $editingaff->paypalemail; ?>">
-	          
+			</p><p>
 	          <label><?php echo AFF_BANK_ACCOUNT_DETAILS; ?>: </label>
 	          	<textarea name="account_details" cols="23" rows="2"><?php echo $editingaff->account_details; ?></textarea>	           
-	          	          
+	          	   </p><p style="top: 10px;position: relative;">       
 	          <label><?php echo AFF_TAX_ID; ?>: </label>
 	            <input class="user-edit" type=text name=tax_id value="<?php echo $editingaff->tax_id; ?>">	            
-
+			</p>
 			  
 	          <input type=hidden name=commited value=yes>
-	          <input class="button" type=submit name=Submit value="<?php echo AFF_UPDATE_BUTTON_TEXT; ?>">
+	          <input class="btn btn-success" type=submit name=Submit value="<?php echo AFF_UPDATE_BUTTON_TEXT; ?>">
 	          
 	        </div>
 	      </form>

@@ -122,7 +122,7 @@ function wp_aff_show_stats_between_dates($start_date,$end_date)
 	$currency = get_option('wp_aff_currency');
 	echo '
 	<table id="reports" width="300">
-	<tbody>';
+	<tbody style="text-align:left">';
 
 		echo '<tr>';
 		echo '<td><strong>'.AFF_TOTAL_CLICKS.' : </strong></td>';

@@ -33,7 +33,7 @@ define('AFF_LOGIN_BUTTON_LABEL', 'Login');
 
 // Sign up Page
 define('AFF_SIGNUP_PAGE_TITLE', 'Affiliate Signup');
-define('AFF_SIGNUP_PAGE_MESSAGE', 'Please register for an affiliate account. Registration is quick and free! Please note that fields marked <font color="#CC0000">*</font> are required.');
+define('AFF_SIGNUP_PAGE_MESSAGE', 'Please register for an affiliate account. Registration is quick and free! <br>Please note that fields marked <font color="#CC0000">*</font> are required.');
 define('AFF_TITLE', 'Title');
 define('AFF_FIRST_NAME', 'First Name');
 define('AFF_LAST_NAME', 'Last Name');
@@ -61,9 +61,9 @@ define('AFF_LOGIN_HERE', 'Login Here');
 
 // Thank you page
 define('AFF_THANK_YOU', 'Thank you');
-define('AFF_REGO_COMPLETE', 'Your registration is now complete!');
+define('AFF_REGO_COMPLETE', 'You\'re all set!');
 define('AFF_REGO_COMPLETE_MESSAGE', 'A welcome email has been sent to your email address (do not forget to check your spam folder). You can <a style="color:#CC0000;" href="login.php">login here</a>');
-define('AFF_REGO_COMPLETE_MESSAGE_ON_PAGE_VIEW', 'A welcome email has been sent to your email address (do not forget to check your spam folder).');
+define('AFF_REGO_COMPLETE_MESSAGE_ON_PAGE_VIEW', 'A welcome email has been sent to your email address.');
 
 // Forgot Password page
 define('AFF_FORGOT_PASS_PAGE_TITLE', 'Forgot Password');

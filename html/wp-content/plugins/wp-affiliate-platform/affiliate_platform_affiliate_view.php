@@ -107,31 +107,19 @@ function wp_aff_view_main_index()
 
     $output .= '<h3 class="wp_aff_title">'.$wp_aff_index_title.'</h3>';
 
-    $output .= '<div id="aff-box-content">';
-    $output .= '<div class="wp-aff-box"><img src="'.WP_AFF_PLATFORM_URL.'/affiliates/images/user_signup.png" class="center" alt="Affiliate Sign up icon" />
-    <div id="aff-box-action">
-    <div style="float: left;">
-        <a href="'.$signup_url.'"><img src="'.WP_AFF_PLATFORM_URL.'/affiliates/images/signup_round_40.png" /></a>
-    </div>';
-    
-    $output .= '<div class="action-head"><a href="'.$signup_url.'">'.AFF_SIGN_UP.'</a></div>    
-    </div></div>';
-
-    $output .= '<div class="wp-aff-box"><img src="'.WP_AFF_PLATFORM_URL.'/affiliates/images/login_icon_128.png" class="center" alt="Affiliate Login icon" />
-    <div id="aff-box-action">
-    <div style="float: left;">
-        <a href="'.$login_url.'"><img src="'.WP_AFF_PLATFORM_URL.'/affiliates/images/login_icon_round_48.png" /></a>
-    </div>
-        <div class="action-head"><a href="'.$login_url.'">'.AFF_LOGIN.'</a></div>        
-    </div></div><div class="wp_aff_clear"></div>
-    </div>';
-    
     $wp_aff_index_body_tmp = $wp_aff_platform_config->getValue('wp_aff_index_body');
     $wp_aff_index_body = html_entity_decode($wp_aff_index_body_tmp, ENT_COMPAT, "UTF-8");
     $output .= '<div id="wp_aff-index-body">'.$wp_aff_index_body.'</div>';
 	$output .= '<div class="wp_aff_clear"></div>';
-	
+    $output .= '<div id="aff-box-content">';    
+    $output .= '<a class="btn btn-custom btn-large" style="margin-right:20px" href="'.$signup_url.'">Join the SolidWize Affiliate Program</a> 
+   ';
+
+    $output .= 'or <a href="'.$login_url.'">Log in </a>     
+    <div class="wp_aff_clear"></div>
+    </div>';
 	$output .= '</div>';
+	
 	$output .= wp_aff_view_get_footer();
 	return $output;
 }

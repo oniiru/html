@@ -100,10 +100,10 @@ function wp_aff_show_forgot_pass_page()
           <tr> 
             <td colspan="2"> <div align="center"> 
                 <p> 
-                  <input name="doReset" type="submit" class="button" id="doLogin3" value="<?php echo AFF_RESET_BUTTON_LABEL; ?>">
+                  <input name="doReset" type="submit" class="btn btn-success" id="doLogin3" value="<?php echo AFF_RESET_BUTTON_LABEL; ?>">
                 </p>
-                <p><img src="<?php echo WP_AFF_PLATFORM_URL.'/affiliates/images/register.png'; ?>" /> <a style="color:#CC0000;" href="<?php echo wp_aff_view_get_url_with_separator("signup"); ?>"><?php echo AFF_AFFILIATE_SIGN_UP_LABEL; ?></a><font color="#EEE">
-                  |</font> <img src="<?php echo WP_AFF_PLATFORM_URL.'/affiliates/images/login.png'; ?>" /> <a href="<?php echo wp_aff_view_get_url_with_separator("login"); ?>"><?php echo AFF_LOGIN_PAGE_LINK_TEXT; ?></a></p>
+                <p> <a style="color:#CC0000;" href="<?php echo wp_aff_view_get_url_with_separator("signup"); ?>"><?php echo AFF_AFFILIATE_SIGN_UP_LABEL; ?></a><font color="#EEE">
+                  |</font>  <a href="<?php echo wp_aff_view_get_url_with_separator("login"); ?>"><?php echo AFF_LOGIN_PAGE_LINK_TEXT; ?></a></p>
               </div></td>
           </tr>
         </table>
