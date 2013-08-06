@@ -110,14 +110,14 @@ define('AFF_P_DISPLAYING_PAYOUTS_HISTORY', 'Displaying Payouts History Between')
 define('AFF_P_LAST_20_PAYMENTS', 'Showing last 20 Recent Payments that you received');
 
 // Banners Page
-define('AFF_B_BANNER_PAGE_TITLE', 'Affiliate Banners and Links');
-define('AFF_B_BANNERS_PAGE_MESSAGE', 'To add the desired banner or text link to your website simply Select the code from the text area on the right (Crtl+A), Copy and Paste it into your website. To see the banner in full size just click on the banner image.');
-define('AFF_B_BANNERS', 'Here are some links that you can use');
+define('AFF_B_BANNER_PAGE_TITLE', 'Creatives');
+define('AFF_B_BANNERS_PAGE_MESSAGE', 'Below are some images and text that you can use to promote SolidWize. Simply copy the code on the right and paste it onto your site to get started.');
+define('AFF_B_BANNERS', '');
 define('AFF_B_BANNER_NAME', 'Banner Name');
 define('AFF_B_BANNER_LINK', 'Banner/Link');
 define('AFF_B_CODE', 'Code');
 define('AFF_B_NO_BANNER', 'The admin has not configured any Banners/Links yet');
-define('AFF_B_CREATIVE_PAGE_TITLE', 'Creatives for Affiliates');
+define('AFF_B_CREATIVE_PAGE_TITLE', 'Creatives');
 define('AFF_B_CREATIVE_PAGE_MESSAGE', 'Pre written and optimized text copy with links built into it that you can use on your site');
 define('AFF_B_NO_CREATIVE', 'The admin has not configured any creatives yet');
 
@@ -139,11 +139,11 @@ define('AFF_NAV_EDIT_PROFILE', 'Edit Profile');
 define('AFF_NAV_REFERRALS', 'Referrals');
 define('AFF_NAV_SALES', 'Sales');
 define('AFF_NAV_PAYMENT_HISTORY', 'Payment History');
-define('AFF_NAV_BANNERS', 'Banners/Links');
+define('AFF_NAV_BANNERS', 'Images');
 define('AFF_NAV_CONTACT', 'Contact');
 define('AFF_NAV_LOGOUT', 'Logout');
 define('AFF_NAV_ADS', 'Ads');
-define('AFF_NAV_CREATIVES', 'Creatives');
+define('AFF_NAV_CREATIVES', 'Text');
 
 // Misc
 define('AFF_SI_USEREXISTS', 'Affiliate ID already exists, please choose different Affiliate ID!');

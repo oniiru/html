@@ -15,14 +15,14 @@ function wp_aff_show_creatives()
 	$aff_banners_table =  WP_AFF_BANNERS_TBL_NAME;    	 	
 	$resultset = $wpdb->get_results("select * from $aff_banners_table ORDER BY name asc",OBJECT); 
 	
-	$output .= '<div id="subnav">';
-	$output .= '<li><a href="'.wp_aff_view_get_url_with_separator("ads").'">'.AFF_NAV_BANNERS.'</a></li>';
-	$output .= '<li><a href="'.wp_aff_view_get_url_with_separator("creatives").'">'.AFF_NAV_CREATIVES.'</a></li></div>';
+	
 	$output .= '<div style="clear:both;"></div><br />';
 	
 	$output .= "<h3 class='wp_aff_title'>".AFF_B_CREATIVE_PAGE_TITLE."</h3>";
-	$output .= "<p style='text-align:left;'>".AFF_B_CREATIVE_PAGE_MESSAGE."</p>";
-	
+	$output .= "<p style='text-align:center;'>".AFF_B_CREATIVE_PAGE_MESSAGE."</p>";
+	$output .= '<div class="creativenav" id="subnav">';
+	$output .= '<li><a class="btn btn-custom" style="margin-right:20px" href="'.wp_aff_view_get_url_with_separator("ads").'">'.AFF_NAV_BANNERS.'</a></li>';
+	$output .= '<li><a class="btn btn-custom" href="'.wp_aff_view_get_url_with_separator("creatives").'">'.AFF_NAV_CREATIVES.'</a></li></div>';
 	if ($resultset) 
 	{
 		$output .= '
