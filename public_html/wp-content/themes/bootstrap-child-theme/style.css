@@ -44,10 +44,8 @@ h1 {
 }
 
 .post_content p {
-	line-height: 1.5em;
+	line-height: 1.2em;
 	font-size: 16px;
-	font-weight: 300;
-	margin-bottom: 20px;
 }
 .pricingq {
 	width: 17px;
