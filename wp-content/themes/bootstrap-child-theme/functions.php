@@ -129,36 +129,46 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
 
     if ($level_id == 0) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
     if ($level_id == 1) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+        if ((in_array("promotionalmember", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('freemember');
     }
 
     if (($level_id == 2) || ($level_id == 3) || ($level_id == 4) || ($level_id == 7)){
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('standardmember');
     }
 
     if (($level_id == 5) || ($level_id == 6)) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('promotionalmember');
     }
 	
     if ($level_id == 8) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('bestroboticsmember');
     }
     if ($level_id == 9) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)))
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('ecocadmember');
+    }
+    if ($level_id == 10) {
+        $wp_user_object = new WP_User($user_id);
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
+            $wp_user_object->set_role('intro');
+    }
+    if ($level_id == 11) {
+        $wp_user_object = new WP_User($user_id);
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)))
+            $wp_user_object->set_role('desktop');
     }
 
 }
