@@ -112,9 +112,10 @@ function pmpro_memberships_arrange(){
 		'intro' => array('10'),
 		'pro' => array('2', '3'),
 		'student' => array('4'),
+		'studentintro' => array('14'),
+		'studentupgrade' => array('15'),
 		'upgraded' => array('12', '13'),
-			
-			
+		
 	);
 }
 add_action('init', 'pmpro_memberships_arrange');
@@ -169,7 +170,7 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)) || (in_array("upgraded", $wp_user_object->roles)))
             $wp_user_object->set_role('ecocadmember');
     }
-    if ($level_id == 10) {
+    if (($level_id == 10) || ($level_id == 14)){
         $wp_user_object = new WP_User($user_id);
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)) || (in_array("upgraded", $wp_user_object->roles)))
             $wp_user_object->set_role('intro');
@@ -179,7 +180,7 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("upgraded", $wp_user_object->roles)))
             $wp_user_object->set_role('desktop');
     }
-    if ($level_id == 12) {
+    if (($level_id == 12) || ($level_id == 13) || ($level_id == 15)) {
         $wp_user_object = new WP_User($user_id);
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
             $wp_user_object->set_role('upgraded');
@@ -203,17 +204,12 @@ function my_pmpro_profile_start_date($date, $order) {
 add_filter("pmpro_profile_start_date", "my_pmpro_profile_start_date", 10, 2);
 
 function my_pmpro_level_cost_text($cost, $level) {
-    if ($level->id == 3) {
+    if (($level->id == 3) || ($level->id == 13)) {
         $cost = str_replace("Year.", "Year", $cost);
         $cost .= "";
     }
 
-    if ($level->id == 2) {
-        $cost = str_replace("Month.", "Month", $cost);
-        $cost .= "";
-    }
-
-    if ($level->id == 4) {
+    if (($level->id == 2) || ($level->id == 4) || ($level->id == 12) || ($level->id == 15)) {
         $cost = str_replace("Month.", "Month", $cost);
         $cost .= "";
     }
@@ -306,7 +302,7 @@ function my_pmpro_registration_checks($pmpro_continue_registration)
     //if($pmpro_level->id == 1 && (empty($discount_code) || $discount_code != "REQUIRED_CODE")) //use this conditional to check for a specific code.
     if($pmpro_level->id == 8 && (empty($discount_code) || $discount_code != "BESTROBOTICS2013"))
   	{
-  		pmpro_setMessage("A valid registration key is required..", "pmpro_error");
+  		pmpro_setMessage("A valid registration key is required.", "pmpro_error");
   		return false;
   	}
 	
