@@ -893,9 +893,10 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
-							<?php } elseif (($pmpro_level->id == '7') || ($pmpro_level->id == '11')) {?>  <!-- start student Registration --> 
-								
-								<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Student Registration</h1>
+							<?php } elseif (($pmpro_level->id == '7') || ($pmpro_level->id == '11	')) {?>  <!-- start student Registration --> 
+								<?php if ($pmpro_level->id == '7') { ?>
+								<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Student Registration</h1><?php } else {?>
+									<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Faculty Registration</h1><?php } ?>
 								<h3 style="text-align:center;color:darkgrey;margin-bottom:25px"></h3>
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
@@ -929,8 +930,10 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 										<tr>
 											<th colspan="2">
 												<p>
-													
+													<?php if ($pmpro_level->id == '7') { ?>
 													Fill out the form below to access your SolidWize account. Please see your instructor for the registration key.
+													<?php } else {?>
+														Fill out the form below to access your online account <?php }; ?>
 												</p>
 											</th>						
 										</tr>
@@ -1187,7 +1190,9 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 									<?php } elseif($current_user->ID && !$pmpro_review) { ?>                        	                       										
 										<p class="signouttext">You are logged in as <strong><?php echo $current_user->user_login?></strong>. If you would like to use a different account for this membership, <a href="<?php echo wp_logout_url($_SERVER['REQUEST_URI']);?>">log out now</a>.</p>
 									<?php } ?>
+									<?php if ($pmpro_level->id == '7') { ?>
 									<p style="font-size:12px; color:white; padding:3px 10px;line-height:1.2em "> Your email address will not be shared, nor spammed. In fact, we won't send you any email unless specifically requested.</p>
+									<?php } else {}?>
 	
 									<?php					
 										if($tospage && !$pmpro_review)
