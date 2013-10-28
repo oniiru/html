@@ -129,8 +129,13 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
 
     if ($level_id == 0) {
         $wp_user_object = new WP_User($user_id);
-        if ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
+		if ((in_array("upgraded", $wp_user_object->roles))) {
+			pmpro_changeMembershipLevel(10, $user_id);
+			$wp_user_object->set_role('intro');
+		}
+        elseif ((in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles))) {
             $wp_user_object->set_role('freemember');
+		}
     }
     if ($level_id == 1) {
         $wp_user_object = new WP_User($user_id);
@@ -170,10 +175,16 @@ function my_pmpro_after_change_membership_level($level_id, $user_id) {
         if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)))
             $wp_user_object->set_role('desktop');
     }
+    if ($level_id == 12) {
+        $wp_user_object = new WP_User($user_id);
+        if ((in_array("freemember", $wp_user_object->roles)) || (in_array("subscriber", $wp_user_object->roles)) || (in_array("standardmember", $wp_user_object->roles)) || (in_array("promotionalmember", $wp_user_object->roles)) || (in_array("bestroboticsmember", $wp_user_object->roles)) || (in_array("ecocadmember", $wp_user_object->roles)) || (in_array("intro", $wp_user_object->roles)) || (in_array("desktop", $wp_user_object->roles)))
+            $wp_user_object->set_role('upgraded');
+    }
 
 }
 
 add_action("pmpro_after_change_membership_level", "my_pmpro_after_change_membership_level", 10, 2);
+
 /*
   30 day free trial for annual plan
  */
@@ -517,45 +528,5 @@ function my_pmpro_stripe_subscription_deleted($user_id)
 }
 add_action("pmpro_stripe_subscription_deleted", "my_pmpro_stripe_subscription_deleted");
 //update the user after checkout
-function add_to_sendy( $user_id )
-{
-	//-------------------------- You need to set these --------------------------//
-	$your_installation_url = 'http://solidwize.com/sendy'; //Your Sendy installation (without the trailing slash)
-	$list = 'rhih9CzBo4VHp4kgEjZxAQ'; //Can be retrieved from "View all lists" page
-	$success_url = 'http://google.com'; //URL user will be redirected to if successfully subscribed
-	$fail_url = 'http://yahoo.com'; //URL user will be redirected to if subscribing fails
-	//POST variables
-	$sendyname = 'andrew omally';
-	$sendyemail =  'omally@rawr.com';
-	$sendyfname = 'asdf';
-	$sendylname = 'asdf';
-	$sendydate = '10/13/1986';
-	$sendyphone = '23432343';
-	
-	
-	$boolean = 'true';
-	
-	//Subscribe
-	$postdata = http_build_query(
-	    array(
-	    'name' => $sendyname,
-	    'email' => $sendyemail,
-	    'list' => $list,
-		'firstname' => $sendyfname,
-		'lastname' => $sendylname,
-		'subscribedate' => $sendydate,
-		'phonenumber' => $sendyphone,
-	    'boolean' => 'true'
-	    )
-	);
-	$opts = array('http' => array('method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata));
-	$context  = stream_context_create($opts);
-	$result = file_get_contents($your_installation_url.'/subscribe', false, $context);
-	//check result and redirect
-	if($result)
-		header("Location: $success_url");
-	else
-		header("Location: $fail_url");
-}
-add_action('pmpro_after_checkout', 'add_to_sendy');
+
 ?>
