@@ -85,9 +85,7 @@ Template Name: Checkout Template
 																				<?php echo apply_filters("the_content", stripslashes($levelDetails->description)); ?>
 																			</small>
 																		</p>
-																		<?php ; else : ?>
-																			Hello
-																			<?php ; endif;?>
+																		<?php endif; ?>
 																		<p id="membership_<?php echo $mid ?>_details" >
 																		<strong><?php echo pmpro_getLevelCost($levelDetails); ?>
 																			<?php echo pmpro_getLevelExpiration($levelDetails); ?></strong>
