@@ -895,7 +895,7 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 					</article> <!-- end article -->
 							<?php } elseif (($pmpro_level->id == '7') || ($pmpro_level->id == '11	')) {?>  <!-- start student Registration --> 
 								<?php if ($pmpro_level->id == '7') { ?>
-								<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Student Registration</h1><?php } else {?>
+								<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Student Registration</h1><?php } elseif($pmpro_level->id == '11') {?>
 									<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Faculty Registration</h1><?php } ?>
 								<h3 style="text-align:center;color:darkgrey;margin-bottom:25px"></h3>
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -932,8 +932,9 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 												<p>
 													<?php if ($pmpro_level->id == '7') { ?>
 													Fill out the form below to access your SolidWize account. Please see your instructor for the registration key.
-													<?php } else {?>
-														Fill out the form below to access your online account <?php }; ?>
+													<?php } elseif($pmpro_level->id == '11') { ?>
+														Fill out the form below to access your online account 
+														<?php } ?>
 												</p>
 											</th>						
 										</tr>
@@ -1192,7 +1193,7 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 									<?php } ?>
 									<?php if ($pmpro_level->id == '7') { ?>
 									<p style="font-size:12px; color:white; padding:3px 10px;line-height:1.2em "> Your email address will not be shared, nor spammed. In fact, we won't send you any email unless specifically requested.</p>
-									<?php } else {}?>
+									<?php } elseif($pmpro_level->id == '11') {};?>
 	
 									<?php					
 										if($tospage && !$pmpro_review)
