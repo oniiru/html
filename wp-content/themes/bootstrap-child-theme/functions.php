@@ -519,7 +519,38 @@ add_action("pmpro_stripe_subscription_deleted", "my_pmpro_stripe_subscription_de
 //update the user after checkout
 function add_to_sendy()
 {
+	//-------------------------- You need to set these --------------------------//
+	$your_installation_url = 'http://solidwize.com/sendy'; //Your Sendy installation (without the trailing slash)
+	$list = 'rhih9CzBo4VHp4kgEjZxAQ'; //Can be retrieved from "View all lists" page
+
+	//POST variables
+	$sendyname = 'andrew omally';
+	$sendyemail =  'omally@rawr.com';
+	$sendyfname = '';
+	$sendylname = '';
+	$sendydate = '';
+	$sendyphone = '';
 	
+	
+	$boolean = 'true';
+	
+	//Subscribe
+	$postdata = http_build_query(
+	    array(
+	    'name' => $sendyname,
+	    'email' => $sendyemail,
+	    'list' => $list,
+		'firstname' => $sendyfname,
+		'lastname' => $sendylname,
+		'subscribedate' => $sendydate,
+		'phonenumber' => $sendyphone,
+	    'boolean' => 'true'
+	    )
+	);
+	$opts = array('http' => array('method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata));
+	$context  = stream_context_create($opts);
+	$result = file_get_contents($your_installation_url.'/subscribe', false, $context);
+
 }
 add_action('pmpro_after_checkout', 'add_to_sendy');
 ?>
