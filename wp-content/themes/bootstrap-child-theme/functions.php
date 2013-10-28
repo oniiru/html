@@ -517,19 +517,20 @@ function my_pmpro_stripe_subscription_deleted($user_id)
 }
 add_action("pmpro_stripe_subscription_deleted", "my_pmpro_stripe_subscription_deleted");
 //update the user after checkout
-function add_to_sendy()
+function add_to_sendy( $user_id )
 {
 	//-------------------------- You need to set these --------------------------//
 	$your_installation_url = 'http://solidwize.com/sendy'; //Your Sendy installation (without the trailing slash)
 	$list = 'rhih9CzBo4VHp4kgEjZxAQ'; //Can be retrieved from "View all lists" page
-
+	$success_url = 'http://google.com'; //URL user will be redirected to if successfully subscribed
+	$fail_url = 'http://yahoo.com'; //URL user will be redirected to if subscribing fails
 	//POST variables
 	$sendyname = 'andrew omally';
 	$sendyemail =  'omally@rawr.com';
-	$sendyfname = '';
-	$sendylname = '';
-	$sendydate = '';
-	$sendyphone = '';
+	$sendyfname = 'asdf';
+	$sendylname = 'asdf';
+	$sendydate = '10/13/1986';
+	$sendyphone = '23432343';
 	
 	
 	$boolean = 'true';
@@ -550,7 +551,11 @@ function add_to_sendy()
 	$opts = array('http' => array('method'  => 'POST', 'header'  => 'Content-type: application/x-www-form-urlencoded', 'content' => $postdata));
 	$context  = stream_context_create($opts);
 	$result = file_get_contents($your_installation_url.'/subscribe', false, $context);
-
+	//check result and redirect
+	if($result)
+		header("Location: $success_url");
+	else
+		header("Location: $fail_url");
 }
 add_action('pmpro_after_checkout', 'add_to_sendy');
 ?>
