@@ -109,8 +109,12 @@ function pmpro_memberships_arrange(){
 	global $membershipGroups;
 	$membershipGroups = array(
 		'free' => array('1'),
+		'intro' => array('10'),
 		'pro' => array('2', '3'),
-		'student' => array('4')
+		'student' => array('4'),
+		'upgraded' => array('12', '13'),
+			
+			
 	);
 }
 add_action('init', 'pmpro_memberships_arrange');
