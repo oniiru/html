@@ -17,7 +17,7 @@ Template Name: Checkout Template
 					$pmpro_stripe_lite = apply_filters("pmpro_stripe_lite", false);	
 				?>
 				<div id="main" class="span12 clearfix" role="main">
-					<?php if (($pmpro_level->id !== '7') && ($pmpro_level->id !== '8') && ($pmpro_level->id !== '9')) { ?> 
+					<?php if (($pmpro_level->id !== '7') && ($pmpro_level->id !== '8') && ($pmpro_level->id !== '9') && ($pmpro_level->id !== '11')) { ?> 
 					
 					<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Sign Up Today</h1>
 					<h3 style="text-align:center;color:darkgrey;margin-bottom:25px">Get started in only 30 seconds.</h3>
@@ -85,7 +85,9 @@ Template Name: Checkout Template
 																				<?php echo apply_filters("the_content", stripslashes($levelDetails->description)); ?>
 																			</small>
 																		</p>
-																		<?php endif; ?>
+																		<?php ; else : ?>
+																			Hello
+																			<?php ; endif;?>
 																		<p id="membership_<?php echo $mid ?>_details" >
 																		<strong><?php echo pmpro_getLevelCost($levelDetails); ?>
 																			<?php echo pmpro_getLevelExpiration($levelDetails); ?></strong>
