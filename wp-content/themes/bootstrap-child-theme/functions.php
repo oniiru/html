@@ -516,4 +516,10 @@ function my_pmpro_stripe_subscription_deleted($user_id)
 	pmpro_changeMembershipLevel(0, $user_id);
 }
 add_action("pmpro_stripe_subscription_deleted", "my_pmpro_stripe_subscription_deleted");
+//update the user after checkout
+function add_to_sendy()
+{
+	
+}
+add_action('pmpro_after_checkout', 'add_to_sendy');
 ?>
