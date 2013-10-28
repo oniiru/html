@@ -893,7 +893,7 @@ padding-right: 50px !important;" value="<?php if($pmpro_requirebilling) { ?>Star
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->
-							<?php } elseif ($pmpro_level->id == '7') {?>  <!-- start student Registration --> 
+							<?php } elseif (($pmpro_level->id == '7') || ($pmpro_level->id == '11')) {?>  <!-- start student Registration --> 
 								
 								<h1 style="text-align: center;font-weight: 700 !important;margin-top: -15px;color: rgb(77, 77, 77);">Student Registration</h1>
 								<h3 style="text-align:center;color:darkgrey;margin-bottom:25px"></h3>
