@@ -50,7 +50,7 @@ Template Name: Pricing Page
 											Assembly Design
 										</li>
 										<li>
-											Comprehensive Exercise Files
+											Comprehensive exercise files
 										</li>
 										<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
 											Fanatical customer support - office hours, chat, email, phone, you name it!
@@ -82,7 +82,7 @@ Template Name: Pricing Page
 									<div class="pricingpoints">	
 									
 											<ul>
-												<li> All intro courses</li>
+												<li> All Intro courses</li>
 											<li>
 												Sheet Metal
 											</li>
@@ -102,7 +102,7 @@ Template Name: Pricing Page
 												Past Webinars
 											</li>
 											<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
-												Comprehensive excercise files and CSWP Prep
+												Comprehensive excercise files and CSWP prep
 											</li>
 											<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
 												Fanatical customer support - office hours, chat, email, phone, you name it!
