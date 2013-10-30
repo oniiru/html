@@ -60,10 +60,15 @@ h1 {
 
 
 
-.pricingpoints {
-	height:220px;
+.freeplan .pricingpoints, .businessplan .pricingpoints {
+	height:252px;
 }
-
+.monthlyplan .pricingpoints {
+	height:323px;
+}
+.businessplan .pricingpoints{
+	height:290px;
+}
 .content {
 	width:980px;
 }
@@ -558,7 +563,12 @@ max-width:980px;
 
 	
 }
-
+.page-template-student-php .pricingpage .monthlyplan .pricingpoints {
+	height:305px;
+}
+.page-template-student-php .pricingpage .monthlyplan {
+	height:682px;
+}
 .nextprojectinfo p {
 	font-size:18px;
 	max-width:190px;
@@ -605,7 +615,7 @@ max-width:980px;
 
 .freeplan, .monthlyplan, .businessplan {
 	width: 278px;
-	height: 600px;
+	height: 700px;
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: middle;
@@ -632,35 +642,78 @@ max-width:980px;
 .pricingplanimg img {
 	max-width: 85% !important;
 }
+.pricingpoints ul {
+	text-align:left;
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.pricingpoints li {
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+	line-height: 2em;
+	border-bottom: 1px dotted lightgrey;
+	font-size: 0.9em;
+	}
+
+.pricingpoints li:first-child {
+	border-top:1px dotted lightgrey;
+}
 
 .pricingplan p {
 	padding-bottom: 10px;
-	margin-top: 10px;
-	border-bottom: 1px dotted lightgrey;
+	margin-top: 20px;
 	line-height:1.3em;
 	}
 	
-
+	.businessplan.pricingplan p {
+		padding-bottom: 10px;
+		margin-top: 10px;
+		line-height:1.3em;
+		text-align:left;
+		}
+	
 	.mooo {
 		border-bottom:0px !important;
 		font-weight:600;
-		font-style:italic;
 	}
 
 .pricingplan h2{
-	font-size:36px;
-	font-family:"open sans" sans-serif;
+	font-size: 24px;
+	font-family: "open sans" sans-serif;
+	font-weight: 700;
+	color: rgb(61, 61, 61);
+	margin-bottom:0px;
+}
+.pricingplan h4{
+	font-size: 14px;
+	font-family: "open sans" sans-serif;
+	font-weight: 700;
+	color: rgb(61, 61, 61);
+	margin-top:0px;
 	
 }
-
+.pricingribbon {
+	position: absolute;
+	top: -10px;
+	left: -8px;
+	margin-top: 0px !important;
+}
 .pricingplan h4 {
 	line-height:14px;
 	font-weight:700px;
-	margin-bottom:15px;
+	margin-bottom:20px;
 }
 .freeplan {
-	border-right: 1px solid #ebebeb;
+border: 4px double #A5A5A5;
+height: 620px ;
+position:relative;
 }
+
+.businessplan {
+	height:632px;}
 
 .freeplan:hover, .monthlyplan:hover, .businessplan:hover {
 	background:#d9edf7;
@@ -2564,6 +2617,7 @@ color: rgb(77, 75, 75);
 	font-weight: 300;
 	padding-top: 13px;
 }
+
 .homesec1 {
 	width: 100%;
 	display: block;
@@ -3336,11 +3390,21 @@ p.demolessons {
 		margin:0 42px;
 	}
 
-	.pricingpoints {
-		height:245px;
+	.freeplan .pricingpoints {
+		height:265px !important;
+	}
+	
+	.monthlyplan .pricingpoints {
+		height:360px !important;
+	}
+	.businessplan .pricingpoints {
+		height:317px !important;
 	}
 	.homesec2 p {
 		width: 242px;
+	}
+	.pricingplan h2 {
+		font-size:21px;
 	}
 	
 	.bx-viewport {width:97.5% !important;}
@@ -3405,9 +3469,17 @@ margin-top: -6px;
 	width:auto;
 }
 
-.freeplan, .monthlyplan, .businessplan {
+ .monthlyplan, .businessplan {
 width: 230px;
 height:auto;
+}
+
+.page-template-student-php .pricingpage .monthlyplan {
+height: auto;
+}
+.freeplan {
+	width:222px;
+	height:auto;
 }
 
 .pricingcontainer {
@@ -3415,7 +3487,7 @@ height:auto;
 }
 .pricingcontainer .btn-large {
 	font-size:17px;
-	margin-bottom:30px;
+	margin-bottom:15px;
 }
 
 .pricingpage .accordion h3 {
@@ -3516,6 +3588,10 @@ margin: auto;
 		width:250px;
 		
 			
+	}
+	.pricingribbon {
+		top: -7px;
+		left: -5px;
 	}
 	.pricingpage .accordion .span6 {
 		width:99%;
@@ -3789,14 +3865,6 @@ padding: 7px 7px 7px 10px;
 text-align: left;
 }
 
-.projectindivtext h2 {
-font-size: 15px;
-color: #0088cc;
-font-weight: 400;
-line-height: 1em;
-margin-bottom: 1px;
-padding-top: 4px;
-}
 
 .projectindivtext p {
 	font-size:11px;
@@ -3818,7 +3886,28 @@ p.freetag, p.newtag, p.watchnowtag {
 	padding: 2px 7px;
 	bottom: 2px;
 }
+.pricingplan h4 {
+	font-size:13px;
+}
+.businessplan.pricingplan p {
+text-align:center;	
+}
 
+.freeplan {
+	height:630px;
+}
+.freeplan .pricingpoints {
+	height:265px !important;
+}
+.monthlyplan .pricingpoints {
+	height:360px !important;
+}
+.businessplan .pricingpoints {
+height: 298px;
+}
+.monthlyplan {
+height:750px !important;
+}
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -3840,6 +3929,21 @@ p.freetag, p.newtag, p.watchnowtag {
 	font-size:14px;
 	margin-left:0px;
 	
+}
+
+.singlepitch {
+	text-align: center;
+}
+
+.singlepitch h3 {font-size:15px;
+}
+.projectindivtext h2 {
+font-size: 15px;
+color: #0088cc;
+font-weight: 400;
+line-height: 1em;
+margin-bottom: 1px;
+padding-top: 4px;
 }
 .blogpitch a {
 	font-size:14px;
@@ -4152,11 +4256,39 @@ h3.directory-name span {
 height: 150px;
 
 }
-
+.nav-container {
+width: 980px;
+margin: 6px auto 0;
+position: relative;
+}
+.solidlogo {
+	top:2px;
+}
 .freeplan img {
 margin-top: 20px;
 }
+.pricingplan h4 {
+	font-size:13px;
+}
+.businessplan.pricingplan p {
+text-align:center;	
+}
 
+.businessplan .pricingpoints {
+	height: 300px
+} 
+.freeplan {
+	height:590px;
+}
+.freeplan .pricingpoints {
+	height:265px !important;
+}
+.monthlyplan .pricingpoints {
+	height:360px !important;
+}
+.monthlyplan {
+height:750px;
+}
 .singlepitch {
 	text-align: center;
 }
@@ -4421,7 +4553,9 @@ padding-top: 17px;
 padding-right: 5px;
 font-size: 28px;
 }
-
+.pricingpage .monthlyplan {
+height: 740px;
+}
 .innerprojecttechniques a {
 	font-size:12px;
 }

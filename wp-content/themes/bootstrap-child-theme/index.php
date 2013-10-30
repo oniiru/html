@@ -60,7 +60,7 @@
 					<?php endif; ?>
 					<?php if (!is_user_logged_in()) { ?>
 					<div class="blogpitch">
-						<h3>Start learning SolidWorks <br>for free with <span class="solidwizei">S</span><span>olid</span><span class="solidwizei">W</span><span>ize</span>.</h3>
+						<h3>Start learning SolidWorks <br>today with <span class="solidwizei">S</span><span>olid</span><span class="solidwizei">W</span><span>ize</span>.</h3>
 						<a class="btn btn-success btn-large blogpitchout" href="<?php bloginfo('url'); ?>/training"> Watch Tutorials </a>
 					</div>
 					<?php } ?>

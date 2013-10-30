@@ -12,7 +12,7 @@ Template Name: Pricing Page
 				<div id="main" class="span12 clearfix" role="main">
 					<center>
 					<h1>Learn SolidWorks the Right Way</h1>
-					<h3>7 day free trial, 30 day money back guarantee.</h3>
+					<h3>30 day money back guarantee.</h3>
 				</center>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -24,21 +24,50 @@ Template Name: Pricing Page
 								<div class="freeplan pricingplan">
 								
 									<div class="pricingplanimg">
+										<img class="pricingribbon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/newribbon.png">
+										
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/intropricing.png">
 									</div>
-									<h2>Free</h2>
-									<h4><br>Includes:</h4>
+									<h2>Intro To SolidWorks</h2>
+									<h4><br>Includes unlimited lifetime access to:</h4>
 									<div class="pricingpoints">	
-									<p>
-									Free access to our Intro and Part Modeling sections forever. </p>
-									<p style="border-bottom:0px">Comprehensive excercise files for both sections.
-									</p></div>
-									<?php if(pmpro_hasMembershipLevel('1')) 
+										<style>
+										.pricingpoints li {
+											background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/images/check.png');
+										}
+										</style>
+								 <ul>
+										<li>
+											Intro to SolidWorks 
+										</li>
+										<li>
+											Parts Modeling
+										</li>
+										<li>
+											Drawing
+										</li>
+										<li>
+											Assembly Design
+										</li>
+										<li>
+											Comprehensive Exercise Files
+										</li>
+										<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
+											Fanatical customer support - office hours, chat, email, phone, you name it!
+										</li>
+									</ul>
+									
+									
+									<p class="mooo">Get lifetime access for a <br>one-time payment of <span style="font-weight: bolder;font-size: 1.2em;margin-left: 4px;">$57.</span> <br><span style="color:red; font-size:.7em">Available for a limited time at this price.</span>
+									
+									</p>
+								</div>
+									<?php if(pmpro_hasMembershipLevel(array(10,14)))
 									{ ?>  
 											<h5>This is your current level</h5>
 
 								  	<?php } else { ?>    
-										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 1,"https")?>">Get Started</a>
+										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 10,"https")?>">Get Started</a>
 									<?php }?>
 									
 								</div>
@@ -48,23 +77,50 @@ Template Name: Pricing Page
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/proimage.png">
 									</div>
-									<h2>Pro</h2>
-									<h4><br>Includes:</h4>	
+									<h2>Pro Membership</h2>
+									<h4><br>Includes unlimited access to <br>our entire <a style="color: rgb(109, 17, 109); font-weight: bold;" target="_blank" href="<?php bloginfo('url'); ?>/training">library of training material.</a></h4>	
 									<div class="pricingpoints">	
 									
-									<p>
-									Unlimited access to our entire library of training material. <img class="pricingq" src="<?php echo get_stylesheet_directory_uri(); ?>/images/question.png"> </p>
-									<p>Comprehensive excercise files, quizzes and CSWP prep course. </p>
-								<p>	Fanatical customer support - office hours, chat, email, phone, you name it!</p>
-									<p class="mooo">Starting at $34/Month (if paid annually)
+											<ul>
+												<li> All intro courses</li>
+											<li>
+												Sheet Metal
+											</li>
+											<li>
+												Surfacing
+											</li>
+											<li>
+												Weldments
+											</li>
+											<li>
+												SolidWorks Certification CSWA/CSWP
+											</li>
+											<li>
+												Photoview 360
+											</li>
+											<li>
+												Past Webinars
+											</li>
+											<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
+												Comprehensive excercise files and CSWP Prep
+											</li>
+											<li style="line-height: 1.1em;background-position: 0 9px;padding: 5px 0px 5px 40px;">
+												Fanatical customer support - office hours, chat, email, phone, you name it!
+											</li>
+									
+										</ul>
+									
+								
+									<p class="mooo">Starting at <span style="font-weight: bolder;font-size: 1.2em;margin-left: 4px;">
+										< $25/Month </span><br> (if paid annually)
 									
 									</p></div>
-									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6)))									
+									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6,12,13,15)))									
 									{ ?>  
 											<h5>This is your current level</h5>
 
-								  	<?php } elseif(pmpro_hasMembershipLevel('1')){ ?>    
-										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 2,"https")?>">Upgrade</a>
+								  	<?php } elseif(pmpro_hasMembershipLevel(array(10,14))){ ?>    
+										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 12,"https")?>">Upgrade</a>
 									<?php } else { ?>
 										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 2,"https")?>">Start 7 Day Free Trial</a>
 										<?php }?>
@@ -74,17 +130,21 @@ Template Name: Pricing Page
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/enterprise.png">
 									</div>
-									<h2>Teams</h2>
-									<h4><br>Includes:</h4>	
+									<h2>SolidWize Teams</h2>
 									<div class="pricingpoints">	
 									
-									<p>
-										Get your whole team up to speed with Pro Memberships.	<br>
+									<p style="margin-top:14px">
+										Get your whole team up to speed with Pro Memberships for all!
 									 </p>
-									<p> Custom content based on your specific needs.
+									<p> Get custom content based on the specific needs of your organization.
 									</p>
-									 	<p class="mooo">Deep discounts for multi-user accounts.
-									</p> </div>
+									<p> Consulting and individual training available on a retainer basis.
+									</p>
+									<p> Increase productivity, reduce errors, and assist your design team in creating more unique, innovative designs.
+									</p>
+									<p class="mooo"> Deep discounts for multi-user accounts.
+									</p>
+									 	 </div>
 									<a class="btn btn-custom btn-large" href="#businesscontactmodal" data-toggle="modal">Contact Us</a>
 								</div>
 							<div class="alert alert-info studentalert">
