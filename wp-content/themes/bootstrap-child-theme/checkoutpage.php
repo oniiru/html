@@ -87,8 +87,8 @@ Template Name: Checkout Template
 																		</p>
 																		<?php endif; ?>
 																		<p id="membership_<?php echo $mid ?>_details" >
-																		<strong><?php echo pmpro_getLevelCost($levelDetails); ?>
-																			<?php echo pmpro_getLevelExpiration($levelDetails); ?></strong>
+																		<strong><?php if(pmpro_getLevelCost($levelDetails) !== '' ) {echo pmpro_getLevelCost($levelDetails); } else {echo "$".$levelDetails->initial_payment;}?>
+																		</strong>
 																		</p>
 																	</label>
 																</div>
