@@ -27,7 +27,7 @@ Template Name: Webinars
 				<h3 style="font-weight:700;font-size: 21px !important;margin: 20px 0 0px">Faster Modeling Part 1</h3>
 				<h4 style="margin-top: 0px;
 font-size:18px !important"><b>Free </b>SolidWorks Webinar</h4><br>
-<div style="border-bottom:1px dotted black;padding-bottom:20px;">Learn the tips and tricks to speed up your modeling process. We'll cover shortcuts, sketchtools, design library, surfacing tools, and general tips to speed up your part modeling.
+<div style="border-bottom:1px dotted black;padding-bottom:20px;">Learn the tricks for speeding up your modeling process. We'll cover shortcuts, sketchtools, design library, surfacing tools, and general tips to make you are more efficent modeler.
 </div>
 <!-- 				<h3 style="font-size:1em;margin-top:10px;margin-bottom:20px;">We're holding two sessions: </h3> -->				
 		<p style="font-size: 24px !important;
@@ -42,7 +42,7 @@ margin-top: 15px; ">Tuesday Nov. 5th <br> 10am PST (1pm EST)</p>
 <div class="fb-like" style="margin-top:20px" data-href="http://facebook.com/solidwize" data-send="true" data-width="450" data-show-faces="false"></div>
 		</div>
 				<div id="webinarstext">
-					We have a great webinar on faster modeling in SolidWorks. This webinar is going to be part of a series in which I cover all kinds of tips and tricks to producing quicker solidworks designs. For part one, I'll be taking you through quite a few SolidWorks shortcuts and more efficient sketching and part modeling. If that sounds like something of interest to you, sign up for our free webinar on faster modeling in solidworks.
+					We have a great webinar on faster modeling in SolidWorks this week. This webinar is going to be part of a series in which I cover all kinds of tips and tricks to producing quicker SolidWorks designs. For part one, I'll be taking you through quite a few SolidWorks shortcuts for more efficient sketching and part modeling. If that sounds like something of interest to you, sign up for our free webinar on faster modeling in SolidWorks.
 </div>
 
 		</div><!-- end content -->
