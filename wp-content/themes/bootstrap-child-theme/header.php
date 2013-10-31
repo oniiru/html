@@ -121,7 +121,12 @@ mixpanel.init("48ebc33d8f538e16132f168d4b402d94");</script><!-- end Mixpanel -->
 		<header role="banner">
 		
 			<div id="inner-header" class="clearfix">
-				
+				<div class="hellobar">
+					<div class="hello-inner">
+						<p class="hidewhensmall"> Now get lifetime access to over 101 SolidWorks lessons for only $57 (limited-time offer) <a class="btn btn-small btn-custom" href="<?php bloginfo('url'); ?>/pricing">Learn more</a> </p>
+						<p style="display:none" class="showwhensmall"> 101 SolidWorks lessons for only $57<a class="btn btn-small btn-custom" href="<?php bloginfo('url'); ?>/pricing">Learn more</a> </p>
+					</div>
+				</div>
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
 						<div class="container-fluid nav-container">

@@ -29,12 +29,22 @@ Template:       wordpress-bootstrap
 	font-style: normal;
 }
 
+.navbar-fixed-top {
+top: 40px !important;
+}
 
+.pricingheader .navbar-fixed-top {
+top: 0px !important;
+}
 
 
 body {
 	font-family:"open sans" sans-serif !important;
-	padding-top:96px !important;
+	padding-top:136px !important;
+}
+
+body.page-template-pricing-page-php {
+	padding-top:76px !important;
 }
 
 h1 {
@@ -185,7 +195,29 @@ h1 {
 	
 }
 
+.hellobar {
+	width:100%;
+	height:40px;
+	background: rgb(255, 127, 8);
+	position:fixed;
+	top:0px;
+	z-index:1030;
+	font-weight:600;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.66);
+	font-size: 1.1em;
+	color:white;
+}
 
+.hello-inner {
+	text-align:center;
+	padding-top:8px;
+}
+
+.hello-inner a {
+	
+	margin-left:10px;
+	margin-top:-1px;
+}
 
 .innerprojecttechniques {
 	padding:10px 10px;
@@ -3527,6 +3559,13 @@ height: auto;
 		float:none;
 		margin-bottom:30px;
 	}
+	.hidewhensmall {
+		display:none;
+	}
+	.showwhensmall {
+		display:block !important;
+		
+	}
 	
 	.pricingpoints {
 		height:250px;
@@ -4110,6 +4149,10 @@ margin-left: 0px;
 	position:absolute;
 }
 
+.hellobar {
+	position:absolute;
+}
+
 .homesec4 h4 {
 	font-size:15px;
 }
@@ -4261,7 +4304,7 @@ width: 980px;
 margin: 6px auto 0;
 position: relative;
 }
-.solidlogo {
+body.page-template-pricing-page-php .solidlogo {
 	top:2px;
 }
 .freeplan img {
