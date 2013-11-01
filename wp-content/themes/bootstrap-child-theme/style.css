@@ -713,11 +713,12 @@ max-width:980px;
 	}
 
 .pricingplan h2{
-	font-size: 24px;
+	font-size: 21px;
 	font-family: "open sans" sans-serif;
 	font-weight: 700;
 	color: rgb(61, 61, 61);
-	margin-bottom:0px;
+	margin-bottom:15px;
+	line-height:1.2em;
 }
 .pricingplan h4{
 	font-size: 14px;

@@ -28,7 +28,7 @@ Template Name: Pricing Page
 										
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/intropricing.png">
 									</div>
-									<h2>Intro To SolidWorks</h2>
+									<h2>SolidWorks Fundamentals</h2>
 									<h4><br>Includes unlimited lifetime access to:</h4>
 									<div class="pricingpoints">	
 										<style>
@@ -64,8 +64,7 @@ Template Name: Pricing Page
 								</div>
 									<?php if(pmpro_hasMembershipLevel(array(10,14)))
 									{ ?>  
-											<h5>This is your current level</h5>
-
+<p href="#" style="text-shadow:none !important;padding: 4px 14px; !important; margin-top:0px !important" class="btn">This is your current level</p>
 								  	<?php } else { ?>    
 										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 10,"https")?>">Get Started</a>
 									<?php }?>
@@ -77,12 +76,12 @@ Template Name: Pricing Page
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/proimage.png">
 									</div>
-									<h2>Pro Membership</h2>
+									<h2 style="margin-top:14px">Pro Membership</h2>
 									<h4><br>Includes unlimited access to <br>our entire <a style="color: rgb(109, 17, 109); font-weight: bold;" target="_blank" href="<?php bloginfo('url'); ?>/training">library of training material.</a></h4>	
 									<div class="pricingpoints">	
 									
 											<ul>
-												<li> All Intro courses</li>
+												<li> All Fundamental Courses</li>
 											<li>
 												Sheet Metal
 											</li>
@@ -117,7 +116,7 @@ Template Name: Pricing Page
 									</p></div>
 									<?php if(pmpro_hasMembershipLevel(array(2,3,5,6,12,13,15)))									
 									{ ?>  
-											<h5>This is your current level</h5>
+											<p href="#" style="text-shadow:none !important;padding: 4px 14px; !important; margin-top:0px" class="btn">This is your current level</p>
 
 								  	<?php } elseif(pmpro_hasMembershipLevel(array(10,14))){ ?>    
 										<a class="btn btn-custom btn-large " href="<?php echo pmpro_url("checkout", "?level=" . 12,"https")?>">Upgrade</a>
@@ -130,7 +129,7 @@ Template Name: Pricing Page
 									<div class="pricingplanimg">
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/enterprise.png">
 									</div>
-									<h2>SolidWize Teams</h2>
+									<h2 style="margin-bottom:29px;margin-top:12px">SolidWize Teams</h2>
 									<div class="pricingpoints">	
 									
 									<p style="margin-top:14px">
