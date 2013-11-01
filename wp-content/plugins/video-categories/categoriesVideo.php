@@ -61,7 +61,7 @@ class categoriesVideo {
 		echo '<p><label>Subtitle - To be included on video category page</label><br/>';
 		echo '<input type="text" id="subtitle_field" name="subtitle_field" size="70" value="' . $subTitle . '"/></p>';
 		echo '<p><input type="checkbox" id="free_content" name="free_content" ' . $freeChecked . ' />&nbsp;&nbsp;';
-		echo '<label for="free_content">Free Content</label>';		
+		echo '<label for="free_content">Included in Fundamentals</label>';		
 		echo '<p><input type="checkbox" id="new_content" name="new_content" ' . $newChecked . ' />&nbsp;&nbsp;';
 		echo '<label for="new_content">New Content</label>&nbsp;&nbsp;&nbsp;&nbsp;<label>Expires : </label>' . $expireDate . '</p>';
 	}
