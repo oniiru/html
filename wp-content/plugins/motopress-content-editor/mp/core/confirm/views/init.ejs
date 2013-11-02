@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <div class="motopress-close motopress-icon-remove" data-dismiss="modal" aria-hidden="true"></div>
+    <p id="confirmModalLabel"></p>
+</div>
+<div class="modal-body">
+    <p id="confirmModalMessage"></p>
+</div>
+<div class="modal-footer">
+    <button id="motopress-confirm-yes" class="btn-blue" <% if(action) { %>data-motopress-action="<%= action %>"<% } %>>
+        <%= yes %>
+    </button>
+    <button class="btn-default" data-dismiss="modal" aria-hidden="true">
+        <%= no %>
+    </button>
+</div>

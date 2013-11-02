@@ -1,0 +1,18 @@
+Regular License
+
+The Regular License grants you, the purchaser, an ongoing, non-exclusive, worldwide license to make use of the plugin you have selected. Read the rest of this license for the details that apply to your use of the Item.
+You are licensed to use the plugin to create one single website for yourself or for one client.
+
+Things you can do with the plugin
+You are licensed to use the plugin to create one single website for yourself or for one client.
+You can create one website for a client, and you can transfer that single end product to your client for any fee. This license is then transferred to your client.
+You can modify or manipulate the plugin. You can combine it with other works and make a derivative work from it. The resulting works are subject to the terms of this license.
+
+Things you can't do with the plugin
+You can't redistribute the plugin or make it available for free after the purchase.
+You can't sell the final website, except to one client. (If you or your client want to sell the end product, you will need the Extended License.)
+Although you can modify the plugin and therefore delete unwanted components before creating your single website, you can't extract and use a single component of the plugin on a stand-alone basis.
+You must not permit an end user of the website to extract the plugin and use it separately from the final website.
+
+Other license terms
+This license can be terminated if you breach it. If that happens, you must stop making copies of or distributing the end product until you remove the plugin from it.

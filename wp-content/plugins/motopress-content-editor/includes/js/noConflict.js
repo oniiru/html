@@ -1,0 +1,1 @@
+if(typeof $==="undefined"||parent.MP.Utils.version_compare($.fn.jquery,jQuery.fn.jquery,"<")){var $=jQuery.noConflict()};
